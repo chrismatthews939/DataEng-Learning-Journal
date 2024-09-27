@@ -1,4 +1,4 @@
-# Data Fundamentals Session 1 28/09/2024
+# Data Fundamentals Session 1 - 28/09/2024
 ## Objectives
 Topic 1 - Fundamentals of the data-driven enterprise
 - Data Driven Culture
