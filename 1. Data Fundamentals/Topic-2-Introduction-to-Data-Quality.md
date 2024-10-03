@@ -153,13 +153,13 @@ Unique Identifiers (UID) - Unique within a system
 Universally Unique ID (UUID) - Globally unique sometimes called Globally Unique Id (GUID)
 
 ## Topic 2 Reflections
-- When designing DPs think about:
-  - Data quality and reliability. Use time with the stakeholders to understand requirements to drive this. How often is the data needed etc
-  - Open standards. Are there any existing to be adhered to (Finance etc) is my design cost effective and future proofed. Use FAIR data standard as guideline. For example improve "FIND" from FAIR principals by improving our DP catalogue.
-  - Make sure I'm using the correct data formats for the task. Think about things like cost, storage, performance, security and interoperability beforehand. For example a JSON output might include string info that's difficult to encrypt and also it this format easy for an end user to query
-  - ![Use online converter tools if I need to change file formats](https://www.freeformatter.com/xml-to-json-converter.html)
-  - Utilise the naming conventions guide for DP consistency (downloaded PDF - Naming conventions for data management)
-  - Use these principals to improve DP veracity (how trustworthy it is) and value
+When designing DPs think about:
+- Data quality and reliability. Use time with the stakeholders to understand requirements to drive this. How often is the data needed etc
+- Open standards. Are there any existing to be adhered to (Finance etc) is my design cost effective and future proofed. Use FAIR data standard as guideline. For example improve "FIND" from FAIR principals by improving our DP catalogue.
+- Make sure I'm using the correct data formats for the task. Think about things like cost, storage, performance, security and interoperability beforehand. For example a JSON output might include string info that's difficult to encrypt and also it this format easy for an end user to query
+- ![Use online converter tools if I need to change file formats](https://www.freeformatter.com/xml-to-json-converter.html)
+- Utilise the naming conventions guide for DP consistency (downloaded PDF - Naming conventions for data management)
+- Use these principals to improve DP veracity (how trustworthy it is) and value
 Try and push for a culture change of collaboration and standardisation accross squads
 Being a better data steward as a guardian for accuracy, integrity, timeliness
 Ensuring we cover all the types of data testing (Horizontal Tesing, Historical Analysis, Rule Base Testing, Statistical Testing). Aim to introduce tool like Pandas to the squad.
