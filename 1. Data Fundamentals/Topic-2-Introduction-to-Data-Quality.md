@@ -173,3 +173,16 @@ When designing DPs think about:
 Try and push for a culture change of collaboration and standardisation accross squads
 Being a better data steward as a guardian for accuracy, integrity, timeliness
 Ensuring we cover all the types of data testing (Horizontal Tesing, Historical Analysis, Rule Base Testing, Statistical Testing). Aim to introduce tool like Pandas to the squad.
+
+## Topic 2 Apply Task 1
+![Kaggle Data](https://www.kaggle.com/code/faressayah/ibm-hr-analytics-employee-attrition-performance)
+- What is the usability score of this dataset and is it “good” or “bad”?
+  - 8.82. Let down by credability
+- How is this usability score calculated?
+  - Completeness, Compatability, Credibility
+- What are the two credibility issues with this dataset and why are they important?
+  - Source and Update Frequency. Important if you wanted to build anything robust from this
+- How many columns does this dataset have?
+  - 35
+- What is the licence for this dataset and how would you summarise the usage rights in your own words?
+  - Open data contract. Open for use with disclaimers
