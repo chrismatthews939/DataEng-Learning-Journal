@@ -182,6 +182,15 @@ Validation Tools
      - Data quality management platforms (Informatica data quality, Talend Data Quality)
      - Data Profiling Software (SAS Data Quality, Oracle Data Profiling)
      - Data Validation Frameworks (Apache Griffin, Great Expectations)
+
+### Data Testing
+Horizontal Tesing. Horizontal testing is a fundamental data quality testing methodology that focuses on ensuring data consistency and integrity across multiple data sources. 
+
+Historical Analysis. Historical analysis plays a vital role in data quality management by enabling organisations to track changes in data quality over time. Understanding historical data trends and patterns allows data engineers to identify anomalies, track changes in data quality metrics over time, and ensure the long-term integrity of the data.
+
+Rule Base Testing. Rule-based testing is an essential component of data quality assurance, involving the validation of data against predefined rules or criteria. As data engineers, understanding rule-based testing methodologies is key to ensuring compliance with quality standards and regulatory requirements.
+
+Statistical Testing. Statistical testing techniques help assess the reliability and quality of datasets by detecting deviations from expected patterns or distributions. Statistical testing techniques empower data engineers to identify anomalies and outliers within datasets using advanced statistical methods. 
   
 ## Lecure notes
 Big Data 5 V's:
@@ -211,3 +220,6 @@ Universally Unique ID (UUID) - Globally unique sometimes called Globally Unique 
   - Use these principals to improve DP veracity (how trustworthy it is) and value
 Try and push for a culture change of collaboration and standardisation accross squads
 Being a better data steward as a guardian for accuracy, integrity, timeliness
+Ensuring we cover all the types of data testing (Horizontal Tesing, Historical Analysis, Rule Base Testing, Statistical Testing). Aim to introduce tool like Pandas to the squad.
+
+
