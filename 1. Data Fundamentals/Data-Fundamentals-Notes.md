@@ -1,4 +1,4 @@
-# Topic 1 - Fundamentals of the data-driven enterprise - 28/09/2024
+# Topic 1 - Fundamentals of the Data-Driven Enterprise - 28/09/2024
 
 ## Objectives
 - Data Driven Culture
@@ -56,7 +56,7 @@
 - I'll aim to introduce this into my team by reinforcing the benefits of evidence based decision making.
 - I'll also aim to adhere to the engineering best practices listed above.
 
-# Topic 2 - Introduction to data quality - 03/10/2024
+# Topic 2 - Introduction to Data Quality - 03/10/2024
 
 ## Objectives
 - Recognise the core metrics in data engineering essential for ensuring data quality
@@ -142,12 +142,13 @@ CSV (Comma-Separated Values) is a widely used format for storing and exchanging 
   - Limited data types
   - Susceptable to error because of delimiters and line terminators
 
-- Fixing inconsistent formats
-    - Standardise the use of delimiters
-- Datatype mismatch
-    - Provide a schema alongside
-- Header misalignment 
-    - Try to make this consistent
+- CSV Common Problems:
+  - Fixing inconsistent formats
+      - Standardise the use of delimiters
+  - Datatype mismatch
+      - Provide a schema alongside
+  - Header misalignment 
+      - Try to make this consistent
 
 ### Navigating quality issues in JSON data formats
 JSON (JavaScript Object Notation) is a lightweight, human-readable format primarily used for transmitting data between servers and web applications, enhancing user experiences and performance
@@ -167,9 +168,46 @@ JSON is the data format that underpins many of the most popular online services 
   - Limited data types
   - Nesting complexity: Complex nested structures in JSON can complicate parsing and processing, leading to performance issues
 
+- JSON Common Problems:
+  - Complicated (parsing errors). JSON allows for deeply nested structures, where objects can contain other objects or arrays of objects
+      - To fix carefully design JSON structures beforehand
+  - Key value pair integrity (Key-value pairs refer to a data structure where each element in the structure is represented by a unique key and its corresponding value)
+      - Establish naming conventions to maintain key value pair integrity
+  - Large files can cause issue with memory usage 
+      - Think about this beforehand and use thinks like compression if needed
+   
+### Strategies for Data Quality
+Validation Tools
+ - Automated validation tools are essential components of data quality management, enabling organisations to identify and correct format-specific issues efficiently.
+     - Data quality management platforms (Informatica data quality, Talend Data Quality)
+     - Data Profiling Software (SAS Data Quality, Oracle Data Profiling)
+     - Data Validation Frameworks (Apache Griffin, Great Expectations)
+  
+## Lecure notes
+Big Data 5 V's:
+- Volume MB, GB etc. Big data will be TB
+- Variety
+- Velocity. How quickly it becomes stale
+- Veracity. How trustworthy it is
+- Value
+
+Data Quality Metrics:
+- Accuracy, correctness
+- Integrity, completeness
+- Consistency, uniformity
+- Timeliness, availability
+- Reliability, robustness
+
+Unique Identifiers (UID) - Unique within a system
+Universally Unique ID (UUID) - Globally unique sometimes called Globally Unique Id (GUID)
+
 ## Topic 2 Reflections
 - When designing DPs think about:
   - Data quality and reliability. Use time with the stakeholders to understand requirements to drive this. How often is the data needed etc
-  - Open standards. Are there any existing to be adhered to (Finance etc) is my design cost effective and future proofed. Use FAIR data standard as guideline
+  - Open standards. Are there any existing to be adhered to (Finance etc) is my design cost effective and future proofed. Use FAIR data standard as guideline. For example improve "FIND" from FAIR principals by improving our DP catalogue.
   - Make sure I'm using the correct data formats for the task. Think about things like cost, storage, performance, security and interoperability beforehand. For example a JSON output might include string info that's difficult to encrypt and also it this format easy for an end user to query
-  - 
+  - ![Use online converter tools if I need to change file formats](https://www.freeformatter.com/xml-to-json-converter.html)
+  - Utilise the naming conventions guide for DP consistency (downloaded PDF - Naming conventions for data management)
+  - Use these principals to improve DP veracity (how trustworthy it is) and value
+Try and push for a culture change of collaboration and standardisation accross squads
+Being a better data steward as a guardian for accuracy, integrity, timeliness
