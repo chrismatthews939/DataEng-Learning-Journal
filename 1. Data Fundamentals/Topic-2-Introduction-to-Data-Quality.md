@@ -182,7 +182,15 @@ Ensuring we cover all the types of data testing (Horizontal Tesing, Historical A
   - Completeness, Compatability, Credibility
 - What are the two credibility issues with this dataset and why are they important?
   - Source and Update Frequency. Important if you wanted to build anything robust from this
+ 
+Kaggle file issues
+- Inconsistent formatting Y/N or Yes/No
+- Employee number is sequential and poor use for a key
 - How many columns does this dataset have?
   - 35
+
+My own edited file for Apply Task 1 is saved in this folder.
+
+
 - What is the licence for this dataset and how would you summarise the usage rights in your own words?
   - Open data contract. Open for use with disclaimers
