@@ -188,9 +188,22 @@ Kaggle file issues
 - Employee number is sequential and poor use for a key
 - How many columns does this dataset have?
   - 35
-
-My own edited file for Apply Task 1 is saved in this folder.
-
-
 - What is the licence for this dataset and how would you summarise the usage rights in your own words?
   - Open data contract. Open for use with disclaimers
+
+
+My own edited file called Kaggle_Data for Apply Task 1 is saved in this folder.
+
+KSBs covered in this exercise:
+
+## Topic 2 Apply Task 2
+Arrange a shadowing session with a data engineer or a subject matter expert in your organisation to observe how they leverage automated data quality management tools in their workflow.
+
+An overview of the automated data quality management tools you researched
+Key features and capabilities of these tools
+Examples of how they are used in your organisation or industry
+Potential challenges or limitations you identified
+Best practices and recommendations for effective implementation and usage
+
+
+K9, K10, K11, K16, K19, K21, K28, K4, K5, K7, K29, K30, K20, K24, K25, K26, K27, K3, K4, K5, K26
