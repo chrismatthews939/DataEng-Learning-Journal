@@ -56,3 +56,4 @@
 - I'll aim to introduce this into my team by reinforcing the benefits of evidence based decision making.
 - I'll also aim to adhere to the engineering best practices listed above.
 
+KSBs covered in this topic and exercises: K19
