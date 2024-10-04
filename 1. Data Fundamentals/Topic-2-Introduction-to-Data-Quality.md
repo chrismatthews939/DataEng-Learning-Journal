@@ -194,8 +194,6 @@ Kaggle file issues
 
 My own edited file called Kaggle_Data for Apply Task 1 is saved in this folder.
 
-KSBs covered in this topic and exercises: K4, K5, K7, K9, K10, K11, K16, K17, K21, K28, K30, S1, S12, S22, S26
-
 ## Topic 2 Apply Task 2
 Arrange a shadowing session with a data engineer or a subject matter expert in your organisation to observe how they leverage automated data quality management tools in their workflow.
 
@@ -204,3 +202,5 @@ Key features and capabilities of these tools
 Examples of how they are used in your organisation or industry
 Potential challenges or limitations you identified
 Best practices and recommendations for effective implementation and usage
+
+KSBs covered in this topic and exercises: K4, K5, K7, K9, K10, K11, K16, K17, K21, K28, K30, S1, S12, S22, S26
