@@ -69,6 +69,7 @@ XML Strengths
 - Human-readable: As we have learnt, XML documents are easy to read and understand, making them accessible to both humans and machines
 - Flexibility: XML allows users to define custom tags and structures, providing flexibility in representing diverse types of data
 - Interoperability: XML serves as a universal format for data exchange, enabling seamless communication between different systems and platforms
+
 XML Weaknesses
 - Verbose syntax: XML documents can become overly complex and repetitive, especially for large datasets, leading to increased file size and complexity
 - Parsing overhead: Processing XML documents requires parsing, which can be computationally intensive, particularly for complex structures or nested elements
@@ -87,6 +88,7 @@ CSV (Comma-Separated Values) is a widely used format for storing and exchanging 
 CSV Strengths:
 - Human readable
 - Simple structure
+
 CSV Weaknesses:
 - Lack a standardised schema
 - Limited data types
@@ -112,6 +114,7 @@ JSON Strengths:
 - Human readable
 - Lightweight. Smaller file size than XML because of simple structure
 - Native Javascript support
+
 JSON Weaknesses:
 - Optionality of schema: Unlike XML, JSON does not have a built-in mechanism for defining a schema, which can lead to issues with data validation and consistency
 - Limited data types
