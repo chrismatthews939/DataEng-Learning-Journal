@@ -194,16 +194,33 @@ Kaggle file issues
 - What is the licence for this dataset and how would you summarise the usage rights in your own words?
   - Open data contract. Open for use with disclaimers
 
-
 My own edited file called Kaggle_Data for Apply Task 1 is saved in this folder.
 
 ## Topic 2 Apply Task 2
 Arrange a shadowing session with a data engineer or a subject matter expert in your organisation to observe how they leverage automated data quality management tools in their workflow.
 
-An overview of the automated data quality management tools you researched
-Key features and capabilities of these tools
-Examples of how they are used in your organisation or industry
-Potential challenges or limitations you identified
-Best practices and recommendations for effective implementation and usage
+Hour with Data Science team
+An overview of the automated data quality management tools you researched. We looked at Dataflow, Airflow and Bigquery
+Key features and capabilities of these tools. Dataflow for error checking and BQ to show logging and scheduling
+Examples of how they are used in your organisation or industry. Running survival curve pipelines
+Potential challenges or limitations you identified. Potential for errors to be flagged but no resoure to fix them in a timely manner
+Best practices and recommendations for effective implementation and usage. Modulisation and simplify DAG components
 
 KSBs covered in this topic and exercises: K4, K5, K7, K9, K10, K11, K16, K17, K21, K28, K30, S1, S12, S22, S26
+
+## Topic 2 Apply Task 3
+In this exercise, your task is to create a high-quality dataset by consolidating data 
+from three separate low-quality datasets
+
+Steps taken:
+- Consolidated datasets into one sheet called 'consolidated'
+- Analysed the datasets and concluded consitent fields are HF_NAME and STAR_RATING
+- Looked for inconsistent formatting and changed star rating to be a INT64 because it's smaller in case the dataset grows
+- I added an extra field for Region. This way if issues are identified you can pin point it to a specific feed and get that fixed
+- Some info such as data facilities being private or public was useful but not much good for analysis if it's not available for all areas. I would ask to get this included to all areas
+- Added a tab with a JSON schema for the new consolidated dataset
+
+- Created a new CSV dataset with Schema attached
+- Loaded CSV into Notebook to do EDA using pandas (notebook is in this GitHub Repo)
+- Check for null values
+- Check for dulicates
