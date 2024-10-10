@@ -69,13 +69,97 @@ Specific limitiation of Waterfall in Data Science:
 - Lack of stakeholder feedback. The Waterfall model limits the ability to obtain timely feedback from stakeholders and end-users, increasing the risk of delivering a solution that no longer meets their needs.
 - Challenges with data complexity. Data engineering projects, with their complex data sources and quality issues, pose challenges that the Waterfall model struggles to address due to its lack of flexibility and space for experimentation, limiting opportunities for learning and optimisation.
 
+## Embracing Agile principles for data engineering
 
-  
+- Faster iteration
+- Feedback loops
+- Enhanced collaboration
+- Responsivness to change
+- Flexible planning
+
+Two framworks in Agile. Scrum and Kanban
+
+### Scrum
+Scrum, a widely adopted Agile framework, emphasises efficient collaboration and streamlined workflows through specific roles and ceremonies. 
+
+### Kanban
+Kanban, a methodology emphasising visualising work and limiting work in progress (WIP), is particularly beneficial in environments focusing on bug fixes and testing.
+
+## Navigating roles and responsibilities in Agile Scrum
+
+### Scrum Roles:
+- Scrum master
+  - The scrum master serves as a guardian of Agile principles, ensuring that the team adheres to the Scrum framework and removing any impediments that hinder progress. 
+- Product Owner
+  - Representing the voice of the customer, the product owner holds the responsibility of prioritising tasks and features based on business requirements and stakeholder needs. 
+- Team Members
+  - Comprising data scientists, engineers, and analysts, the team members collectively bring diverse skill sets and expertise to the project. 
+
+### Scrum Ceremonies:
+- Stand up
+- Sprint review
+- Sprint retrospective
+- Sprint planning
+
+## Applying Lean and Six Sigma principles
+In the world of process improvement methodologies, Lean and Six Sigma stand out as two prominent approaches, each with its own unique focus and principles. While Lean emphasises waste reduction and process optimisation, Six Sigma targets quality improvement.
+
+### Lean Approach
+Lean is a continuous improvement methodology focused on eliminating waste and optimising processes. 
+
+Following Lean principles can help to: 
+- Identify and address data quality issues, such as missing values, outliers, or inconsistencies
+- Streamline data collection, pre-processing, and transformation workflows to improve efficiency
+- Avoid running resources that are not being efficiently utilised
+- Prevent data pipelines from being used for unnecessary tasks
+
+### Six Sigma Approach
+Six Sigma, on the other hand, is a data-driven approach aimed at improving quality by reducing variability and defects. 
+
+Apply Six Sigma can help to:
+- Continuously monitor and optimise data pipelines and analytical models to maintain high performance
+- Establish rigorous testing and validation procedures to ensure the accuracy and reliability of data-driven insights
+- Implement statistical process control techniques to identify and address root causes of data quality issues
+
+Many organisations have found success in combining Lean and Six Sigma methodologies, known as Lean Six Sigma. This hybrid approach leverages the strengths of both frameworks, creating a powerful tool for driving continuous improvement and delivering high-quality, data-driven solutions.
+
+Key Point
+Applying Lean and Six Sigma is data engineering. 
+
+Lean methodologies encourage the elimination of non-value-adding activities and focus on streamlining processes. In the context of identifying data sources and understanding data processing concepts and methods, Lean can facilitate quicker and more efficient decision-making regarding which data sources to prioritise and which data processing methods are most efficient for the task at hand. 
+
+Six Sigma adds to this by using data-driven techniques to identify variances in data quality and processing efficiency, allowing for a more precise selection of data sources and methodologies.
+
+Example Applying Six Sigma to a real problem:
+A financial services firm uses customer transaction data to detect fraudulent activity. The data, however, is riddled with inaccuracies and inconsistencies, leading to a high rate of false positives and negatives in fraud detection. The firm applies the Define, Measure, Analyse, Improve, and Control (DMAIC) process of Six Sigma to the data cleansing process. 
+
+1. Define: The objective is clearly defined as reducing inaccuracies in transaction data
+2. Measure: Current error rates are measured
+3. Analyse: The root causes of data inaccuracies are identified (e.g., incorrect data entry, outdated information)
+4. Improve: Solutions are implemented, such as automated data validation checks and regular data quality audits
+5. Control: New standards and controls are established to maintain the improved data quality level
+6. Benefit: The structured approach leads to significantly reduced inaccuracies, enhancing the effectiveness of fraud detection algorithms. This results in reduced operational losses and improved customer trust
+
+### 5 Whys
+In Lean Six Sigma, the 5 Whys methodology serves as a powerful tool for root cause analysis. This is a very simple technique to get you started. The basic concept is to ask “why?” five times to dig deep into the root of a problem. The logic behind it is that in the first few questions you will find one of the causes of the problem, and by the 5th question you will see the process failure behind that problem. 
+
+## Effective stakeholder engagement
+Methods:
+- Capturing requirements with user stories
+- Effective communication channels
+- Gathering insights through interviews and observations
+- Collaborative workshops and personas
+- Aligning technical specifications
+
+![power-interest stakeholder management grid](https://www.google.com/search?sca_esv=97958ac28674b0c2&q=power-interest+stakeholder+management+grid&udm=2&fbs=AEQNm0Aa4sjWe7Rqy32pFwRj0UkWd8nbOJfsBGGB5IQQO6L3J_86uWOeqwdnV0yaSF-x2jon2iao6KWCaVjfn7ahz_sf9q37Zv4dbJ4TW_6SnErfFZ77vWA-JewUZjVu3roP919JJ7LB0XgUlbeu3TIUlWj0Hp1JHzwq5YPaSgTTkAC-edWrnsX-_paLirvXRRRiouDZnf1O&sa=X&ved=2ahUKEwjov87lz4OJAxWQTkEAHY2XMOMQtKgLegQIExAB&biw=1440&bih=799&dpr=1.5#vhid=asTO3F6TAVz61M&vssid=mosaic)
+
 ## Lecure notes
 ...
 
 ## Topic 3 Reflections
 Learning about different approaches I can understand why we use Agile in BT. Both the business strategy and stakeholder demand on specific projects is fast changing and Agile helps us readjust to continue delivering at pace.
+
+I have a project that's in the early stages and I'll use the power interest stakeholder management grid to map the various stakeholder groups then focusing engagement efforts on high-power, high-interest stakeholders. I'll also implement more forumns and workshops.
 
 ## Topic 3 Apply Task 1
 ...
