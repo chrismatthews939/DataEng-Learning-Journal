@@ -155,13 +155,31 @@ Methods:
 ![power-interest stakeholder management grid](https://www.google.com/search?sca_esv=97958ac28674b0c2&q=power-interest+stakeholder+management+grid&udm=2&fbs=AEQNm0Aa4sjWe7Rqy32pFwRj0UkWd8nbOJfsBGGB5IQQO6L3J_86uWOeqwdnV0yaSF-x2jon2iao6KWCaVjfn7ahz_sf9q37Zv4dbJ4TW_6SnErfFZ77vWA-JewUZjVu3roP919JJ7LB0XgUlbeu3TIUlWj0Hp1JHzwq5YPaSgTTkAC-edWrnsX-_paLirvXRRRiouDZnf1O&sa=X&ved=2ahUKEwjov87lz4OJAxWQTkEAHY2XMOMQtKgLegQIExAB&biw=1440&bih=799&dpr=1.5#vhid=asTO3F6TAVz61M&vssid=mosaic)
 
 ## Lecure notes
-...
+Agile elements
+- Sprint planning. Plan the work for next few weeks based on priorities
+- Planning poker. Fair assessment of amount of work per task. Group choose a amount and then discuss if they disagree
+- Backlog grooming/refinement. Go through backlog
+- Sprint Review. Demo to users
+- Sprint retro. How did sprint go
+- Burndown charts. How close to planning did you deliver
+- Definition of done. Define what needs to be done to perfect quality
+
+User story checklist:
+- Keep them short
+- Keep them simple
+- Write from perspective of the user
+- Make the value of the story clear
+- Describe the functionality
+- Write for team to understand
+- Add acceptence criteria
 
 ## Topic 3 Reflections
 Learning about different approaches I can understand why we use Agile in BT. Both the business strategy and stakeholder demand on specific projects is fast changing and Agile helps us readjust to continue delivering at pace.
 
 I have a project that's in the early stages and I'll use the power interest stakeholder management grid to map the various stakeholder groups then focusing engagement efforts on high-power, high-interest stakeholders. I'll also implement more forumns and workshops.
 
+Think about how we structure our stories and epics because I think it's slightly different to the definitions set in the course
+
 ## Topic 3 Apply Task 1
-...
+topic3_apply_task1.xlsx in this repo
 
