@@ -183,3 +183,6 @@ Think about how we structure our stories and epics because I think it's slightly
 ## Topic 3 Apply Task 1
 topic3_apply_task1.xlsx in this repo
 
+## Topic 3 Apply Task 2
+topic3_apply_task2.xlsx in this repo
+
