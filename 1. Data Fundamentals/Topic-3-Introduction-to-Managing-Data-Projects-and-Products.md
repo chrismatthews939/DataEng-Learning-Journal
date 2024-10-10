@@ -186,3 +186,6 @@ topic3_apply_task1.xlsx in this repo
 ## Topic 3 Apply Task 2
 topic3_apply_task2.xlsx in this repo
 
+## Topic 3 Apply Task 3
+I've incorporated this into my Reflctions for Topic 3
+
