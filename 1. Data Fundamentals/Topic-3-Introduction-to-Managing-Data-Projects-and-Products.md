@@ -8,9 +8,10 @@
 - Argue how a data-driven culture can be championed within your organisation by leveraging the synergies between Agile, Lean and SixSigma approaches
 
 ## Key Concepts
+
 Most popular methodologies are Waterfall and Agile.
 
-## Agile
+### Agile
 More modern approach. Work in sprints. Best when trends change fast. Spotify is a good example because music trends change fast.
 
 Stages:
@@ -31,7 +32,7 @@ Drawbacks of Agile:
 - Demands constant communication
 - Costs are unpredicable 
 
-## Waterfall
+### Waterfall
 More traditional linear approach. Best for when requirements are very clear and non flexible. Think of NASA they can't afford to change things the goal is very clear.
 
 Stages:
