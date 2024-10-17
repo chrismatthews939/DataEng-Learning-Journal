@@ -99,7 +99,7 @@ Overview:
 - Wireframes:
   - Purpose: Provide a basic structural outline of the data product, emphasising functionality over aesthetics.
   - Example: A wireframe for an HR dashboard shows the arrangement of elements and user interactions without detailed styling.
-![wireframe example}(https://i.pinimg.com/736x/a7/b1/c8/a7b1c89df7f1c1b5c9141bacd9b4149e.jpg)
+![wireframe example](https://i.pinimg.com/736x/a7/b1/c8/a7b1c89df7f1c1b5c9141bacd9b4149e.jpg)
 
 - Mockups:
   - Purpose: Add aesthetic elements like colour schemes and fonts to wireframes, offering stakeholders a more realistic view of the final product.
