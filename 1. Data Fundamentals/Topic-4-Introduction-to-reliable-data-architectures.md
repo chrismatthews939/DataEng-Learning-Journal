@@ -112,7 +112,7 @@ Overview:
 
 ## Navigating data seas with architectural governance
 ### The Open Group Architecture Framework (TOGAF)
-![TOGAF Link]()
+![TOGAF Link](https://www.opengroup.org/togaf)
 1. Usage patterns - Understanding how different user groups interact with the system aids in designing user-centric architectures.
 2. Data flow - Visualising how data moves through systems identifies potential bottlenecks and security risks.
 3. Physical setup - Considering the physical deployment of resources impacts performance, redundancy, and disaster recovery strategies.
