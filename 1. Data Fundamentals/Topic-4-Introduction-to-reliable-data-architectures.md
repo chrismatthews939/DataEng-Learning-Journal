@@ -11,7 +11,9 @@ Three main types of design in data engineering:
 2. Entity-relationship diagrams (ERDs)
 3.Architecture diagrams (e.g. Layered architecture, microservices architecture) 
 
-## Unified modelling language (UML) diagrams
+## Diagrams
+
+### Unified Modelling Language (UML) diagrams
 ### Use Case Diagrams
 A use case diagram is a diagram that provides a visual representation of how users interact with a system. It illustrates the various interactions between users (actors) and the system to accomplish specific tasks or goals. 
 
@@ -23,8 +25,11 @@ Use case diagrams play a crucial role in system analysis and design by providing
 - Highlighting dependencies and relationships
 - Maintaining clarity and readability
 
-## EDRs
+### EDRs
 An entity relationship diagram (ERD) serves as a powerful visualisation tool for understanding the relationships between different entities within an application or database.
+
+### DFDs
+Data Flow Diagrams (DFDs) are particularly useful for visualising the flow of data through a system, including sources, destinations, and any intermediate transformations or processes. 
 
 ### Logical Diagrams
 Logical diagrams are designed to illustrate the high-level flow of data within our system without referencing any specific vendors.
@@ -34,6 +39,11 @@ Logical diagrams are designed to illustrate the high-level flow of data within o
 A solution diagram provides a more detailed representation of our system architecture, including specific vendor solutions or platforms.
 It highlights the exact systems and technologies involved at each stage of data processing, offering a more concrete view of our solution landscape.
 ![Solution Diagram](https://www.gliffy.com/sites/gliffy/files/image/2021-03/GCParchitecturediagramexample.png)
+
+Prior to cloud technologies taking over in the pipeline space Hadoop was the main play for orchestrating services.
+
+## Layered Architecture
+
 
 ## Lecure notes
 
