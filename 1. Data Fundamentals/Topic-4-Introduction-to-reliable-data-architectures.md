@@ -14,6 +14,8 @@ Three main types of design in data engineering:
 ## Diagrams
 
 ### Unified Modelling Language (UML) diagrams
+![UML Diagrams](https://miro.com/blog/wp-content/uploads/2021/12/image2-1.png)
+
 ### Use Case Diagrams
 A use case diagram is a diagram that provides a visual representation of how users interact with a system. It illustrates the various interactions between users (actors) and the system to accomplish specific tasks or goals. 
 
@@ -123,12 +125,35 @@ Overview:
 - Metadata management 
 
 ## Lecure notes
+UML is a broad title that covers lots of diagram types. 
 
+Design vs architecture diagrams
+Design diagrams are the abstract idea for stakeholders. Will have people in in.
+
+Architecture diagrams are the more technical boundaries. These are strategic and don't include technical detail
+
+To get into the detail add layers you can drill down into
+
+Team task to draw diagram for renting a book.
+(https://lucid.app/lucidchart/d261fb27-6691-4c94-b8b8-2130536f4361/edit?viewport_loc=108%2C98%2C1672%2C933%2C.Q4MUjXso07N&invitationId=inv_f0100800-6093-4eed-acd2-53e70c6711aa)
+
+Tips for drawing diagrams:
+- Version control, so you can see changes over time.
+- Simplify where possible
+- Create logical groupings
+- Include descriptions
+- Avoid too many acronyms
+
+![Deployment architecture diagram](https://storage.googleapis.com/gweb-cloudblog-publish/images/Screen_Shot_2022-02-16_at_12.33.28_PM.max-2600x2600.png)
+
+Data Mesh is another architecture framework
 
 ## Topic 4 Reflections
 Previously I've just made up diagrams to try and visualise processes to a user but now I have a better grasp of the best practices I will think about the type of diagram best suited for the job. 
 I've learned in this module that most of my work is in the data processing layer. Knowing this will enable me to better design solutions by seperating from the other layers.
 Improve how I visualise the DPs I work on for the users
+Spend an hour shadowing our architects to go through diagrams
+Draw a diagram for the process I'm building at work. Use this as evidence. Think about the use cases.
 
 ## Topic 4 Apply Task 1
 ...
