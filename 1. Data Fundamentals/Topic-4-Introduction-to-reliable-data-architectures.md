@@ -43,13 +43,35 @@ It highlights the exact systems and technologies involved at each stage of data 
 Prior to cloud technologies taking over in the pipeline space Hadoop was the main play for orchestrating services.
 
 ## Layered Architecture
+![Three layered architecture](https://th.bing.com/th/id/OIP._IXn5RXEi_KUKwCazKo6NgHaE0?rs=1&pid=ImgDetMain)
 
+### Data Storage Layer
+This layer is where all the data utilised by the system is stored, encompassing both structured and unstructured data like text, images, and video. It is commonly managed using a relational database management system (RDBMS), a NoSQL database, or a data lake.
+
+Benefits of a storage layer:
+- Scalability: Separating data storage from processing allows the system to scale more efficiently to handle larger volumes of data.
+- Security: It is possible to secure the data storage layer independently, which helps mitigate the risk of unauthorised access.
+- Data integrity: The data storage layer maintains data consistency and accuracy by enforcing data integrity constraints like unique keys and foreign key relationships.
+  
+### Data Processing Layer
+This layer handles operations on the data, such as filtering, sorting, aggregation, and transformation. It typically uses data processing frameworks like Apache Spark or Apache Flink, or stream processing engines like Apache Kafka. 
+
+Benefits of processing layer:
+- Performance: By processing data in parallel, this layer can achieve high throughput and low latency.
+- Flexibility: The data processing layer supports a diverse range of data processing tasks, from simple filtering to complex machine learning algorithms.
+- Resilience: It provides fault tolerance and automatic recovery, helping the system handle failures smoothly and stay operational.
+
+### Data Presentation Layer
+The data presentation layer is responsible for displaying the data to end-users in a useful manner, this layer is usually implemented through a web application or business intelligence tools like Tableau or Power BI.
+
+Benefits 
 
 ## Lecure notes
 
 
 ## Topic 4 Reflections
-...
+Previously I've just made up diagrams to try and visualise processes to a user but now I have a better grasp of the best practices I will think about the type of diagram best suited for the job. 
+I've learned in this module that most of my work is in the data processing layer. Knowing this will enable me to better design solutions by seperating from the other layers.
 
 ## Topic 4 Apply Task 1
 ...
