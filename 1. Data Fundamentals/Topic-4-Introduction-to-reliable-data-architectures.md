@@ -156,6 +156,7 @@ Spend an hour shadowing our architects to go through diagrams
 Draw a diagram for the process I'm building at work. Use this as evidence. Think about the use cases.
 
 ## Topic 4 Apply Task 1
+word file topic4-apply-task1-design_docs_lucidchart in this repo
 ...
 
 
