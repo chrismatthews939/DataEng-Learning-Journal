@@ -64,7 +64,63 @@ Benefits of processing layer:
 ### Data Presentation Layer
 The data presentation layer is responsible for displaying the data to end-users in a useful manner, this layer is usually implemented through a web application or business intelligence tools like Tableau or Power BI.
 
-Benefits 
+Benefits of data presentation layer:
+- Usability: A user-friendly interface makes it straightforward for end-users to interact with the data and gain insights.
+- Customisation: The presentation layer can be tailored to meet a wide array of use cases and user preferences, offering a flexible and adaptable interface.
+- Integration: It can integrate with other applications and services to provide a seamless user experience, enabling users to utilise the data across different contexts.
+
+## Microservices Architectures
+In a monolithic architecture, an application is built as a single, indivisible unit, making it challenging to introduce new features, scale specific components, or maintain and update parts of the system independently. This can lead to longer development cycles, increased risk of system-wide failures, and difficulties in scaling and adapting to changing requirements.
+
+A microservices architecture breaks down an application into small, independent services, each responsible for a specific business capability or domain. These services are loosely coupled, meaning they can be developed, deployed, and scaled independently without affecting the entire system.
+
+You can think of a microservices architecture as a city, where each available service represents a specialised service provider (e.g., a grocery store, a hospital, a bank). Just as these service providers operate independently and specialise in their respective domains, microservices are self-contained units that focus on a specific business capability. They communicate with each other through well-defined APIs, much like how residents of a city interact with different service providers to fulfil their needs.
+
+Benefits of microservices:
+- Decentralised services - Each service is a separate codebase, managed by a small development team, allowing for faster development cycles and easier maintenance.
+- Independent deployment - Services can be updated and deployed independently, without impacting the rest of the application, enabling faster bug fixes and feature releases.
+- Polygot programming - Services can be written in different programming languages and technologies, allowing teams to choose the best tools for their specific needs.
+- Scalability - Individual services can be scaled independently based on demand, optimising resource utilisation and improving cost-efficiency.
+- Fault isolation - If one service fails, it does not bring down the entire application, ensuring better resilience and availability.
+- API Gateway - The API gateway acts as a single-entry point for clients, decoupling them from the internal services and enabling cross-cutting concerns like authentication, logging, and load balancing.
+
+## Designing Data Product Visually
+
+## Data Products
+Data products encompass a wide range of deliverables, including dashboards, reports, APIs, and data feeds. What sets data products apart is their ability to provide actionable insights, facilitate decision-making, and drive business outcomes. They are characterised by their relevance, accuracy, timeliness, and usability, making them indispensable assets for data-driven organisations.
+
+### A good DP
+- Aligns with business KPIs
+- Deep understanding of pain points
+- Iterative development and feedback loops
+
+### Visualising a DP
+Overview:
+- Wireframes:
+  - Purpose: Provide a basic structural outline of the data product, emphasising functionality over aesthetics.
+  - Example: A wireframe for an HR dashboard shows the arrangement of elements and user interactions without detailed styling.
+![wireframe example}(https://i.pinimg.com/736x/a7/b1/c8/a7b1c89df7f1c1b5c9141bacd9b4149e.jpg)
+
+- Mockups:
+  - Purpose: Add aesthetic elements like colour schemes and fonts to wireframes, offering stakeholders a more realistic view of the final product.
+  - Example: A mockup of the HR dashboard includes colour, typography, and preliminary interactive designs.
+- Prototypes:
+  - Purpose: Simulate user interactions with the product, instrumental in identifying usability issues before final development.
+  - Use in usability testing: Central to testing user interactions and behaviours, providing insights for improvement.
+
+*Remember to communicate with stakeholders during this design*
+
+## Navigating data seas with architectural governance
+### The Open Group Architecture Framework (TOGAF)
+![TOGAF Link]()
+1. Usage patterns - Understanding how different user groups interact with the system aids in designing user-centric architectures.
+2. Data flow - Visualising how data moves through systems identifies potential bottlenecks and security risks.
+3. Physical setup - Considering the physical deployment of resources impacts performance, redundancy, and disaster recovery strategies.
+4. Networking - Outlining network topologies and protocols ensures efficient data transfer and compliance with security policies.
+
+- Data Dictionaries
+- Data Catalogues
+- Metadata management 
 
 ## Lecure notes
 
@@ -72,6 +128,7 @@ Benefits
 ## Topic 4 Reflections
 Previously I've just made up diagrams to try and visualise processes to a user but now I have a better grasp of the best practices I will think about the type of diagram best suited for the job. 
 I've learned in this module that most of my work is in the data processing layer. Knowing this will enable me to better design solutions by seperating from the other layers.
+Improve how I visualise the DPs I work on for the users
 
 ## Topic 4 Apply Task 1
 ...
