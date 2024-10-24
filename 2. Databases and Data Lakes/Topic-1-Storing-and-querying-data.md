@@ -6,7 +6,7 @@
    
 ## Why business are not throwing away data
 Cost of storage has dramatically reduced
-![cost over time]([https://learn.bpp.com/pluginfile.php/1325836/mod_scorm/content/2/scormcontent/assets/historical-cost-of-computer-memory-and-storage.png](https://www.google.com/url?sa=i&url=https%3A%2F%2Fourworldindata.org%2Fdata-insights%2Fthe-price-of-computer-storage-has-fallen-exponentially-since-the-1950s&psig=AOvVaw2ue1k9w6jQXTdWsHyX6Yqv&ust=1729841960351000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPDbrdLBpokDFQAAAAAdAAAAABAJ))
+![cost over time](https://www.google.com/url?sa=i&url=https%3A%2F%2Fourworldindata.org%2Fdata-insights%2Fthe-price-of-computer-storage-has-fallen-exponentially-since-the-1950s&psig=AOvVaw2ue1k9w6jQXTdWsHyX6Yqv&ust=1729841960351000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPDbrdLBpokDFQAAAAAdAAAAABAJ)
 
 
 ## Lecure notes
