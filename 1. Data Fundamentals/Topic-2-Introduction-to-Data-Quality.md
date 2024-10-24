@@ -147,7 +147,7 @@ Rule-based testing is an essential component of data quality assurance, involvin
 Statistical Testing
 Statistical testing techniques help assess the reliability and quality of datasets by detecting deviations from expected patterns or distributions. Statistical testing techniques empower data engineers to identify anomalies and outliers within datasets using advanced statistical methods. 
   
-## Lecure notes
+## Lecture notes
 Big Data 5 V's:
 - Volume MB, GB etc. Big data will be TB
 - Variety
