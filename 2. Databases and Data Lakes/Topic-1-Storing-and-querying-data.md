@@ -115,6 +115,10 @@ An operational data store (ODS) is a type of database that's often used as an in
 
 ![ODS](https://www.techtarget.com/rms/onlineimages/how_ods_works-f_mobile.png)
 
+### Data Lakehouses
+More recently a new term of data lakehouses are emerging. These are a combination of data lakes and data warehouses
+![data lakehouse](https://www.databricks.com/wp-content/uploads/2020/01/data-lakehouse-new.png)
+
 ## Intro to Data Structuring: Schema-on-Write, Relational Modelling
 ### Objectives
 - Comprehend the principle of schema-on-write and its significance in relational data modelling.
@@ -159,11 +163,86 @@ Best of Both Worlds: Many organisations opt for a hybrid approach, combining on-
 ## Lecture notes
 ### Storage Options
 File systems (File Directories)
+Linux assumes everything is a file
+Powershell on Windows is a way of navigating the filesystems. Powershell is more functional than cdm prompt. It has "cmdlets" commands which are more detailed than you can do in cmd prompt. cmdlets show as orange in the terminal.
+![powershell cheat sheet](https://cdn.comparitech.com/wp-content/uploads/2018/12/PowerShell-Cheat-Sheet-1.jpg)
 
 
+Example code in powershell to sum up size of files in a directory:
+$directory = "C:\Users\helen\OneDrive\Documents\Chris\BPP Level5 Data Engineer\Module2_Databases_and_Data_Lakes"
+
+Get-ChildItem -Path $directory -Directory | ForEach-Object {
+ $folder = $_
+ $totalSize = (Get-ChildItem -Path $_.FullName -File | Measure-Object -Property Length -Sum).Sum / 1MB
+ "{0} has a total size of {1:N2} MB" -f $folder.Name, $totalSize
+} 
+
+We practiced using cd to navigate to a directory and then ran these scripts
+cd ...
+.\script.ps1
+
+Also looked at binary formats, hexidecimal and text files.
+
+Unicode is a bigger file format but supports more characters than ASCII. If you want Japanese characters you might need UTF8 or UTF16 or UTF32. Obviously you want the samllest one possible that supports what you need. You can google the answers to this.
+
+I read the book Code that explained these in great detail.
+
+### MIME
+MIME types are files extentions. HTML, TXT, PDF etc
+
+File encryption uses keys. Key is a special type of file with a number in it. We'll cover this in more detail in cyber security module.
+
+### Databases
+Moving from files databases are a much more powerful way to query data
+- Local database runs on laptop
+- Remote database are common and provide access to multiple users. This can be on employers servers and not cloud
+- Cloud services providers are outsourced server centers. Or a company could create their own cloud. These are called private clouds.
+
+Types of cloud storage:
+- Block storage
+  - Offers dedicated, low latency storage
+  - Callable and offers high performance
+  - Similar to local direct attached storage  or storage area network (SAN)
+  - Offers disaster recovery
+  - Example Amazon Elastic Block Storage (Amazon EBS)
+
+- File storage
+  - Stores data as files
+  - Highly scalable
+  - Ideal for repos and media stores
+  - Example Amazon Elastic File Storage (Amazon EFS)
+
+- Object storage
+  - Stores unstructured, semi structured or structured data
+  - Highly scalable
+  - Offers unique identifier for each object
+  - Lower cost to traditional storage
+ 
+### Data modelling
+Data modelling skills essentially keep the data tidy
+SQL
+
+Data Models have three parts:
+- Structure of the data. What does it look like. Schema is conceptual structure. Don't confuse with the phrase 'Data Structure' this is list, arrays, dictionaries in programming
+- Operations of the data. What's available
+- Constraints of the data. What's allowed. Age > 0 etc. Two catagories domain constraints real world (what you expect, data types, range constraints, format constraints such as email adresses and rule based constraints) and integrity constraints database integrity (primary keys, null values, duplication)
+
+Domain is an old school word for data types VARCHAR, FLOAT etc
+
+ANSI SQL is SQL sntax that works across different systems. SQL server and MYSQL etc. Some syntax is unique to the system
+FLOAT is floating value so accepts decimals
+
+Relations means a table
+records can mean rows
+fields can mean columns
+cardinality is number of unquie values
+
+![for sql practice](https://sqlfiddle.com/)
 
 ## Topic 1 Reflections
-
+What can I automate with scripts?
+Consolidating files locally in powershell
+Cloud functions to do these things in the cloud. I want to be able to use GCP pub/sub to trigger a cloud function for event based data loading.
 
 ## Consolidation Task 1
 Reflect on the dramatic decrease in storage costs over the decades and the strategic implications of this trend for data-driven decision-making within the context of the HR department.
