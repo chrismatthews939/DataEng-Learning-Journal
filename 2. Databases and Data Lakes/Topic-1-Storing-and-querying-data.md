@@ -1,12 +1,10 @@
 # Topic 1 - Storing and querying data - 24/10/2024
-
-## Objectives
+  
+## Why business are not throwing away data
+### Objectives
 - Analyse the economic factors contributing to the decrease in data storage costs over the decades.
 - Evaluate the strategic impact of data accumulation and its utilisation in decision-making processes.
-- Understand the evolution and functionality of HDFS and its impact on data storage and computation.
-- Differentiate between various data storage systems and their applicable use cases.
-   
-## Why business are not throwing away data
+
 Cost of storage has dramatically reduced
 ![cost over time](https://ourworldindata.org/images/published/historical-cost-of-computer-memory-and-storage-desktop.png)
 
@@ -27,7 +25,10 @@ Examples include:
 - AWS Data Exchange
 
 ## Storing Files: HDFS, Key-Value Stores, Columnar – Parquet Format, Filesystems
-
+### Objectives
+- Understand the evolution and functionality of HDFS and its impact on data storage and computation.
+- Differentiate between various data storage systems and their applicable use cases.
+  
 ### Hadoop Distributed File System (HDFS)
 An introduction to Hadoop Distributed File System (HDFS) as a revolutionary technology between 2008-2016, which turned data centres into computing clusters by bringing computation to the data. 
 
@@ -97,12 +98,69 @@ A globally distributed, multi-model database service that supports key-value, do
 A fully managed, high-performance, wide-column NoSQL key-value store that is part of the Google Cloud Platform (GCP) ecosystem.
 
 ## Data Lakes, Data Warehouses, and Operational Data Stores
+### Objectives
+- Differentiate between data lakes, data warehouses, and operational data stores, understanding their unique features and use cases.
+- Assess the role of each data storage solution in supporting data-driven decision-making and analytics within an organisation.
+
+### Data Lakes
+Unstructured Data's Haven: Data lakes act as vast reservoirs of raw, unstructured data, capturing everything from logs and XML files to social media posts. They offer unparalleled flexibility in data storage, allowing businesses to store data in its native format without the need for upfront schema definition. This flexibility makes data lakes an ideal solution for storing large volumes of diverse data, enabling advanced analytics and machine learning models that can drive significant insights and innovation. 
+
+### Data Warehouses
+Structured for Analysis: In contrast, data warehouses are highly structured repositories designed to facilitate efficient data analysis and reporting. They resemble a well-organised email system with sub-inboxes and labels, where data is categorised and stored in a manner that makes it easily accessible for specific queries and reports. This structured environment supports complex queries, business intelligence, and data mining efforts, enabling organisations to derive actionable insights from their accumulated data. Data warehouses are essential for businesses that rely on historical data analysis to inform strategic decisions, offering a stable and reliable platform for data storage and retrieval.
+
+### Operational Data Stores (ODS)
+Real-Time Data Processing: Operational data stores are designed for the real-time processing of transactional data, supporting day-to-day business operations. They enable the immediate availability of operational data for analysis and decision-making, acting as a bridge between transactional databases and data warehouses or data lakes.
+
+An operational data store (ODS) is a type of database that's often used as an interim logical area for a data warehouse. ODSes are designed to integrate data from multiple sources for lightweight data processing activities such as operational reporting and real-time analysis.
+
+![ODS](https://www.techtarget.com/rms/onlineimages/how_ods_works-f_mobile.png)
+
+## Intro to Data Structuring: Schema-on-Write, Relational Modelling
+### Objectives
+- Comprehend the principle of schema-on-write and its significance in relational data modelling.
+- Apply the concepts of relational modelling to effectively structure and organise data within a database.
+
+### Schema on write
+Schema-on-write is a foundational concept in data management, particularly relevant to relational databases. It requires that the schema, or structure of the data, be defined before any data is written to the database. This pre-definition ensures data consistency and integrity, as each data entry must conform to the established schema, including data types, relationships, and constraints. This approach is akin to planning the architecture of a building before construction begins, ensuring that all components fit together as intended and meet specific standards.
+
+Schema on Write	
+- Fast reads	
+- Slower loads	
+- Not agile	
+- Structured	 
+- Fewer errors	
+
+Schema on Read
+- Slower reads
+- Fast loads
+- Very agile
+- Structured / Unstructured
+- More errors
+
+### The Fundamentals of Relational Modelling
+Relational modelling is a method used to structure data in a database by defining relationships among data points. It involves organising data into tables (relations) that include rows (records) and columns (attributes). Key concepts such as primary keys (unique identifiers for each record) and foreign keys (identifiers that establish relationships between tables) are crucial. Relational models facilitate efficient data retrieval and manipulation through structured queries. This methodical approach to organising data is similar to creating a detailed map of a city, where every element has a specific place and relation to others, enabling easy navigation and management.
+
+![Relational Database Model](https://lh6.googleusercontent.com/proxy/_2f-1E5ZHJroEc64R0VYDnUDj1cdJfsrjKOGt3t9Xpnc7SXviaOXkOBAvCrSa7DegDmx_BIbyAFARejLoU-JcN0f_qMpk0GC-w)
+
+## Storing Data On-Premise vs. In the Cloud
+### Objectives
+- Articulate the advantages and disadvantages of on-premise and cloud-based data storage solutions.
+- Evaluate the implications of on-premise and cloud storage options on data security, scalability, cost, and accessibility.
+
+### On-prem storage
+On-premise storage involves maintaining data servers and infrastructure within an organisation's physical premises. This traditional method offers complete control over the data environment, including security protocols and access mechanisms. It is akin to keeping valuable documents in a safe within one's own house, where access and security can be directly managed. However, this comes with the responsibility of managing hardware, software, and ensuring data protection, which can be costly and resource-intensive. On-premise storage is best suited for organisations with high-security requirements or those that handle sensitive data, where regulatory compliance and data sovereignty are paramount.
+
+### Cloud storage
+Cloud storage represents the shift towards hosting data on servers managed by third-party providers, accessible over the internet. This model offers flexibility, scalability, and cost-efficiency, as organizations can easily adjust their storage needs and only pay for the capacity they use. The cloud storage model can be compared to renting a safe deposit box in a bank; while it's off-site and managed by another entity, it promises security, accessibility, and scalability. However, it also involves trusting a third party with the data and potentially facing issues related to data transfer speeds and internet dependency. Cloud storage is ideal for organisations looking for operational flexibility, cost savings on hardware, and the ability to scale quickly.
+
+### Hybrid storage
+Best of Both Worlds: Many organisations opt for a hybrid approach, combining on-premise and cloud storage to leverage the strengths of both. This strategy allows sensitive data to be kept on-premise for security reasons while utilising the cloud for scalability and flexibility, especially for non-sensitive data and applications that benefit from cloud computing resources.
+
+## Lecture notes
+### Storage Options
+File systems (File Directories)
 
 
-
-
-## Lecure notes
-...
 
 ## Topic 1 Reflections
 
@@ -149,4 +207,18 @@ Consider factors such as data volume, query performance requirements, and the na
 
 Identifying a stakeholder in your business who could provide further insights or feedback on your proposed solution.
 - Solution architects.
+
+## Consolidation Task 4
+Investigate a specific example where restructuring data according to relational modelling principles enhanced operational efficiency or decision-making.
+- Moving from on-prem to GCP BigQuery
+Write down your analysis in your learning journal, including the current challenges, proposed improvements, and the expected benefits.
+- BigQuery is optimised for flat tables, so the challenge was taking the on-prem relational architecture and making it optimised for a cloud environment
+
+## Consolidation Task 5
+Analyse the data storage strategy currently employed by your organisation. Consider the types of data you manage, their sensitivity, and your organisation's operational needs.
+- We have a cloud based model. Telcoms has an enormous amount of data and cloud based solutions are more scalable and manageable.
+How could a shift towards a cloud, on-premise, or hybrid storage solution impact your data management practices? Document your thoughts in your learning journal, focusing on potential benefits and challenges.
+- I've seen the benefits of moving to cloud for our org. Scalability, lots of products to help with optimisation, orchestration, analysis, storage and compute. The issues have been with having a clear understanding of the costs involved and stopping teams spending money needlessly. With almost infinite CPUs the risk of spending a lot of money is huge.
+Discuss your analysis with a colleague or stakeholder who could offer additional insights or perspectives on the feasibility and implications of such a shift.
+Discussed with our lead engineer
 
