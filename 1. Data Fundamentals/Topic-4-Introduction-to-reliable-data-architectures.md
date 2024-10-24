@@ -124,7 +124,7 @@ Overview:
 - Data Catalogues
 - Metadata management 
 
-## Lecure notes
+## Lecture notes
 UML is a broad title that covers lots of diagram types. 
 
 Design vs architecture diagrams
