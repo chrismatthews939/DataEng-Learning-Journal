@@ -97,3 +97,6 @@ Databases I've encountered at work
   - GCP Bigquery. Some training on bigquery was available but it had to be completed outside of working hours
 
 ## Topic 2 Applied Exercise 
+K15, K24, K17, B5, B1, S7, S9, S27
+
+
