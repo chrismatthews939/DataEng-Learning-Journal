@@ -167,7 +167,7 @@ _ can be used for any letter. So name LIKE '_r%' could be names liek Brian, Arno
 DDL - Data definition language. Tables, schemas
 DML - Data manipulation language. Queries
 
-Practice SQL Website
+Practice SQL Website - https://sqliteonline.com/
 ![https://sqliteonline.com/](https://sqliteonline.com/)
 
 ### Open Source vs Proprietary 
