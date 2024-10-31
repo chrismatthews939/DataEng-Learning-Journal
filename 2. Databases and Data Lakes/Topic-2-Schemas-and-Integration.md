@@ -99,4 +99,13 @@ Databases I've encountered at work
 ## Topic 2 Applied Exercise 
 K15, K24, K17, B5, B1, S7, S9, S27
 
+Applied exercise reflections
+Reflective Learning: Your portfolio should also include a personal reflection discussing the
+lessons learned throughout this exercise. Emphasize how these experiences have solidified
+your understanding of the importance of data quality, performance, and effective problem-
+solving within professional environments. Showcase how this exercise has prepared you to
+take proactive steps and assume accountability in your role (B1). Reflect on your readiness to
+meet deadlines, adapt to changing priorities, and your contribution to sustainability and
+environmental strategies (S27). Feel free to adjust aspects of this exercise (such as data types
+or column names) to better reflect the nature of the data at your workplace.
 
