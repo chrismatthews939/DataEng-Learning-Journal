@@ -148,7 +148,41 @@ Pros
 Cons
 - Bloated
 - Storage costs
-- Performance impact 
+- Performance impact
+
+### Metadata
+Data about data
+![A good example where you can explore data in NSW Australia](https://nsw.digitaltwin.terria.io/)
+
+We use this to understand where we have sensitive data etc
+
+### Apache Iceberg
+A big open table format for huge analytics datasets. You can change the schema in a data lake without downtime or performance penalties. Supports deletes, updates. Can adapt to new fields and new data types.
+
+SQL (structured query language)
+Works with structured data
+
+_ can be used for any letter. So name LIKE '_r%' could be names liek Brian, Arnold etc
+
+DDL - Data definition language. Tables, schemas
+DML - Data manipulation language. Queries
+
+Practice SQL Website
+![https://sqliteonline.com/](https://sqliteonline.com/)
+
+### Open Source vs Proprietary 
+Open source
+- Linux, Ubuntu
+- Free to use
+- No one is reponsible
+- Users can modify the software
+- Full support from vendor
+
+Proprietary
+- Paid for software
+- Cannot modify
+- Better support 
+- Full support from vendor
 
 ## Topic 2 Reflections
 Databases I've encountered at work
@@ -161,6 +195,8 @@ Databases I've encountered at work
 K15, K24, K17, B5, B1, S7, S9, S27
 
 Applied exercise reflections
+word doc with evidence
+
 Reflective Learning: Your portfolio should also include a personal reflection discussing the
 lessons learned throughout this exercise. Emphasize how these experiences have solidified
 your understanding of the importance of data quality, performance, and effective problem-
