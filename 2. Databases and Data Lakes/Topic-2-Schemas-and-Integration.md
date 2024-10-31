@@ -96,4 +96,4 @@ Databases I've encountered at work
 - Cloud
   - GCP Bigquery. Some training on bigquery was available but it had to be completed outside of working hours
 
-
+## Topic 2 Applied Exercise 
