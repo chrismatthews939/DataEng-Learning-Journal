@@ -82,12 +82,73 @@ Understanding the nuances between different database systems is crucial for opti
 
 When choosing a database solution, it is essential to consider vendor-specific differences. These can include unique features, performance optimisations, cost implications, and integration capabilities with other tools and services. For instance, Redshift integrates seamlessly with other AWS services, making it a preferable choice for businesses already embedded within the AWS ecosystem.
 
-
-
-
-
 ## Lecture notes
+### Databases
+OLAP (online analytical processing)
+- Information focus
+- Analytical
+- Slow
+- Denormalised
+- Examples. Reports, healthcare analysis, research
 
+OLTP (online transactional processing)
+- Operational focus
+- Fast
+- Normalised
+- Current
+- Examples. ATM, online orders, hotel booking, flight booking
+
+Normalised data
+- Split into small dimension tables and pulled together in fact tables
+
+Denormalised data
+- One big table
+
+### Star schema vs Snowflake schema
+![Star schema](https://blog.mediamenteconsulting.it/wp-content/uploads/2019/12/image-1.png)
+
+Star has dim and a fact tables that join but snowflake has further dims that link to another dim, so dim_date might also have further dims for dim_month, dim_quarter etc.
+
+## Lesson task
+Normalised vs Denormalised. Pros and Cons
+
+The process of taking a database design, and apply a set of formal criteria and rules, is called Normal Forms.
+Common normal forms are the first 3.
+1. First Normal Form (1 NF)
+   - The first normal form requires that a table satisfies the following conditions:
+   - Rows are not ordered
+   - Columns are not ordered
+   - There is duplicated data
+   - Row-and-column intersections always have a unique value
+   - All columns are “regular” with no hidden values
+2. Second Normal Form (2 NF)
+  - An entity is in a second normal form if all of its attributes depend on the whole primary key. So this means that the values in the different columns have a dependency on the other columns
+3. Third Normal Form (3 NF)
+  - The third normal form states that you should eliminate fields in a table that do not depend on the key
+
+![Normal forms example](https://cdn.botpenguin.com/assets/website/Normalisation_2e461cfbde.png)
+
+### Normalised data
+Pros
+- Reduces redundant data. Denormalised tables will more than likely include duplicate values, which can lead to unnecessary size and performance reduction
+- Less need for updates
+- Faster queries
+
+Cons
+- More complex design
+- Risk of users not understanding joins and getting incorrect results
+- Not compatible with some visualisation tools
+
+### Denormalised data
+Pros
+- Easier for some users. Analytics, ML models 
+- Easier to maintain single version of truth
+- Can be optimised with some data warehouses. For example BigQuery partitions can make denormalised tables very fast to query
+
+Cons
+- Bloated
+- Storage costs
+- Performance impact 
 
 ## Topic 2 Reflections
 Databases I've encountered at work
