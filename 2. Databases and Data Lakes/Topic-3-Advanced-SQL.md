@@ -55,12 +55,112 @@ Data modelling is the process of creating a visual representation of a system or
   - These are plans or methods implemented to improve database performance. Indexing strategies involve creating indexes on tables to speed up the retrieval of rows at the cost of additional writes and storage space to maintain the index data structures
 - Indexes
   - Indexes are special lookup tables that the database search engine can use to speed up data retrieval
+- Subquery
+ - These are detailed requirements that describe what the end-users need the database to do, from how data should be input, to how it should be manipulated, accessed, and presented
 - Database Business Requirements
-  - These are specifications derived from business needs that outline what the business intends to achieve with the database
+  - A query embedded within another SQL query. Subqueries can be used in various clauses, including SELECT, FROM, WHERE, and even JOINs, enabling complex data manipulations in a single operation
 - Database User Requirements
  - These are detailed requirements that describe what the end-users need the database to do, from how data should be input, to how it should be manipulated, accessed, and presented
 
+### ACID
+The ACID properties (Atomicity, Consistency, Isolation, Durability) provide a foundation for reliable database transactions, ensuring that all operations within a transaction are completed successfully or not at all
 
+- Atomicity. Transactions are all or nothing.
+- Consistency. Only valid data saved
+- Isolation. Transactions do not affect each other
+- Durability. Written data will not be lost
+
+## Writing Nested CRUD SQL Queries
+CREATE
+READ
+UPDATE
+DELETE
+
+### Nested Queries
+Execution: Nested queries run once; correlated queries run for each outer row
+Dependency: Nested queries are independent; correlated queries rely on the outer query
+
+SELECT * FROM Customers
+WHERE CustomerID IN (SELECT CustomerID FROM Orders);
+
+When to use: 
+Isolate inner results before the outer query runs
+
+### Correlated Queries
+Performance: Correlated queries can be slower due to multiple executions
+SELECT * FROM Customers c
+WHERE EXISTS (
+  SELECT 1 FROM Orders o
+  WHERE o.CustomerID = c.CustomerID
+);
+
+When to use: 
+Compare each outer row against a set of changing values
+
+Performance tips:
+- Correlated queries are resource-intensive and may be slower
+- Consider rewriting correlated queries as joins for efficiency
+- Use correlated queries for complex conditions involving row comparisons
+- Understanding and using these queries effectively can improve database query performance
+
+## Joins and Database Normalisation
+![SQL Joins](https://i.ytimg.com/vi/Yh4CrPHVBdE/sddefault.jpg)
+
+Cross joins are the product matrix.
+![Cartesian product](https://www.cs.mtsu.edu/~xyang/3080/images/cartesian.png)
+
+### Normalisation
+Normalisation addresses issues of redundancy and integrity by ensuring that each piece of data is stored only once, thus eliminating data anomalies. It systematically organises data attributes into tables according to dependencies and applies a series of rules, or normal forms
+
+- First Normal Form (1NF)
+  - Ensures all columns hold atomic values and each record is unique
+- Second Normal Form (2NF)
+  - Requires that all non-key attributes are fully functional dependent on the primary key
+- Third Normal Form (3NF)
+  - Ensures that no transitive dependencies exist between non-key attributes and the primary key
+ 
+### Group by
+Aggregates data
+
+### Windowing functions
+Provide powerful analytical capabilities over a subset of rows, returning a value for each row in the original set
+Window functions operate on a set of rows and return a single value for each row from the underlying query. This is useful for running totals, moving averages, and other cumulative or comparative statistics
+
+Over Clause
+Specifies the partitioning and ordering of a data set before the window function is applied
+
+Running Totals and Averages
+Commonly used for financial and performance tracking over specific intervals
+
+Frame Specification
+Allows the window to be defined over a range of rows relative to the current row, providing flexible data analysis options
+
+## Risks and Disaster Recovery, Shards in Database Systems
+
+**Risk Assessment**
+Regularly identifying and assessing risks to data security and system integrity. This involves evaluating potential threats and the likelihood of their occurrence.
+
+**Disaster Recovery Planning**
+Developing and implementing plans that ensure data can be recovered and systems restored after a disaster. This includes maintaining backups, having redundant systems in place, and ensuring that staff are trained in recovery procedures.
+
+**Continuous Monitoring and Testing**
+Regular testing of disaster recovery procedures to ensure they are effective when needed. Continuous monitoring of system performance and security helps in early detection of issues that could lead to data loss.
+
+**Sharding for Scalability and Performance**
+Sharding is a database architecture pattern that involves dividing a larger database into smaller, more manageable pieces, or "shards," which can be spread across multiple servers. This not only enhances the performance but also aids in handling larger datasets efficiently.
+
+**Horizontal Partitioning**
+Sharding typically involves dividing a database horizontally, where rows of a database table are held separately, rather than dividing the table schema. Each shard contains the same schema with a different subset of data.
+
+**Load Distribution**
+By distributing the data across multiple shards, which can be hosted on separate hardware or networked servers, sharding helps in balancing the load and reducing the response time for data queries.
+
+**Data Locality**
+Sharding can improve performance by locating data closer to where it is most frequently accessed, reducing latency and speeding up access times.
+
+
+
+  
 ## Lecture notes
 
 
