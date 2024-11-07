@@ -37,29 +37,29 @@ Data modelling is the process of creating a visual representation of a system or
   - Indexes
  
 ### Key Definitions
-- Triggers
+- **Triggers**
   - Database triggers are procedures that automatically execute in response to specific events on a particular table or view in a database. They are used to maintain the integrity of the data across complex business rules and relationships
-- Views
+- **Views**
   - Views are virtual tables based on SQL queries
-- Stored Procedures
+- **Stored Procedures**
   - Stored procedures are SQL code that you can save, so the code can be reused over and over again
-- Normalisation
+- **Normalisation**
   - Normalisation is a systematic approach of decomposing tables to eliminate data redundancy (repetition) and undesirable characteristics like Insertion, Update, and Deletion Anomalies
-- Redundancy
+- **Redundancy**
   - In the context of database management, redundancy occurs when the same piece of data is stored in two or more separate places, either within the same database or across multiple databases
-- Comprehensive Data Types
+- **Comprehensive Data Types**
   - These are specific kinds of data attributes that define the kind of data a column can hold in a database. They help in accurately describing the data characteristics, such as integers, decimals, dates, or strings, ensuring that data inputs are processed and stored correctly
-- Constraint Implementations
+- **Constraint Implementations**
   - Constraints in a database ensure the accuracy and reliability of the data in the database. They enforce rules on the data fields, such as primary keys, foreign keys, unique, not null, and check constraints, to maintain data integrity and enforce business rules
-- Indexing Strategies
+- **Indexing Strategies**
   - These are plans or methods implemented to improve database performance. Indexing strategies involve creating indexes on tables to speed up the retrieval of rows at the cost of additional writes and storage space to maintain the index data structures
-- Indexes
+- **Indexes**
   - Indexes are special lookup tables that the database search engine can use to speed up data retrieval
-- Subquery
+- **Subquery**
  - These are detailed requirements that describe what the end-users need the database to do, from how data should be input, to how it should be manipulated, accessed, and presented
-- Database Business Requirements
+- **Database Business Requirements**
   - A query embedded within another SQL query. Subqueries can be used in various clauses, including SELECT, FROM, WHERE, and even JOINs, enabling complex data manipulations in a single operation
-- Database User Requirements
+- **Database User Requirements**
  - These are detailed requirements that describe what the end-users need the database to do, from how data should be input, to how it should be manipulated, accessed, and presented
 
 ### ACID
