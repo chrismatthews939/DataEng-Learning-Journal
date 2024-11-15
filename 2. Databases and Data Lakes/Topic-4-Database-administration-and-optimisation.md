@@ -137,12 +137,87 @@ Obviously wrong stuff
 
 Archive old data. This is secure and shrinks the storage
 
+Most of the time regulatory requirements are longer than the business requirements.
 
+Some regulatory requirements can be a long time. X rays for example are kept for 10years in case a person has issues later in life. Aircraft docs are 50 years.
 
+Reasons for archiving:
+- Cost saving
+- System performance
+- Compliance
+- Disaster recovery
+- Extra security
+- Reduce environmental impacts
+
+### SQL Optimisation
+**Query profiling**
+Gathers info about a query
+Syntax can vary but for MySQL for example it's EXPLAIN, SHOW PROFILE
+This is will show the execution steps
+
+![GCP query plans](https://cloud.google.com/bigquery/docs/query-plan-explanation)
+
+**Indexing**
+Don't do on rows with too many iterations. Think of the fields that have have most benefit in joins
+
+**Rewriting**
+Simplify queries
+Use subqueries, joins and unions efficiently 
+You can also use joins instead of complex subqueries
+Test different options
+
+**Partitioning**
+Split large tables into smaller ones
+
+**Denormalisation**
+Trade off between storage and query speed
+
+**Caching**
+Keep frequently accessed data in memory
+
+Example bad join. This will run the below query for every customer id
+SELECT
+  COUNT(*)
+FROM orders
+WHERE customer_id IN (SELCT customer_id FROM customers WHERE city = 'New York');
+
+Example optimised join. This will join the two and filter once
+SELECT
+  COUNT(*)
+FROM orders o
+JOIN customers c ON o.customer_id = c.customer_id
+WHERE c.city = 'New York');
+
+### Database recovery models
+A recovery model is a database property that controls how transactions are logged, whether the log allows backups and what kind of restore options are available
+
+**Simple** = Only the latest backup can be restored
+
+**Full** = Can restore to different points
+
+**PITR** = Point in time recovery. Automated backups
+
+### Security
+Give developers relevant access for their role
+
+### SQL Injection
+Security breach
+People can write queries that interrogate the database. 
+For example:
+SELECT * FROM mytable WHERE lname = '"request.form("lastname") & "" form input' or 'a'='a
+
+The result is that the query won't find the last name, so the or kicks in and because a=a all records are returned 
+
+You protect against it by using:
+- Stored procedures
+- Watching for quotes
+- Control statement generation
+- Parameter queries
 
 ## Topic 4 Reflections
-We don't do enough high level data profiling on our DPs
-We should regulary archive old data
+We don't do enough high level data profiling on our DPs.
+
+We should regulary archive old data.
 
 
 
