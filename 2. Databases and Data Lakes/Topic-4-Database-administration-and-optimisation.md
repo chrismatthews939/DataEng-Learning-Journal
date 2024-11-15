@@ -125,8 +125,24 @@ Database configuration tuning involves adjusting database configuration paramete
 **Collaboration**
 Collaboration between data engineers and database administrators (DBAs) is essential for smooth integration and optimization of databases within the data ecosystem. Data engineers focus on data pipelines, data integration, and overall data architecture, while DBAs specialize in database management, performance tuning, and security. Effective communication, regular discussions on database requirements, performance goals, and optimization strategies, and collaboration on database design, schema changes, and migration plans are crucial. Knowledge sharing, conducting joint performance reviews and analysis sessions, and continuously learning from each other's expertise help improve overall database management.
 
+## lecutre notes
+### Data profiling
+Determining the actual content, structure and quality of data
+
+Data profiling functions/tools (like data prep in GCP cover things like:
+Listing values with frequency of occurence
+High and low values
+Obviously wrong stuff
+![IBM infosphere information analyzer](https://i.ytimg.com/vi/r121Opaangk/maxresdefault.jpg)
+
+Archive old data. This is secure and shrinks the storage
 
 
 
 
 ## Topic 4 Reflections
+We don't do enough high level data profiling on our DPs
+We should regulary archive old data
+
+
+
