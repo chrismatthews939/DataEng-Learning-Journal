@@ -158,6 +158,13 @@ By distributing the data across multiple shards, which can be hosted on separate
 **Data Locality**
 Sharding can improve performance by locating data closer to where it is most frequently accessed, reducing latency and speeding up access times.
 
+### SQL help
+**Query optimisations**
+https://www.geeksforgeeks.org/best-practices-for-sql-query-optimizations/ 
+
+**Windowing functions**
+https://mode.com/sql-tutorial/sql-window-functions 
+
 ## Topic 3 Reflections
 From the notes I think communicating change is something I can improve in my role. We have strict guidelines in place before pushing schema changes to production but I don't think communicating these changes to the team and users is done as best possible.
 
