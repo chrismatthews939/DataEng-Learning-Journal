@@ -2,7 +2,7 @@
   
 ## Understanding NoSQL databases
 
-### NoSQL
+### NoSQL (not only SQL)
 What are NoSQL databases?
 
 NoSQL databases, standing for "Not Only SQL," are a type of database that can store and retrieve data that is modelled in ways other than the tabular relations used in relational databases. 
@@ -23,7 +23,6 @@ The four main types of NoSQL database are as follows:
 4. Graph databases
 
 ![4 types of NoSQL database](https://media.geeksforgeeks.org/wp-content/uploads/20220405112418/NoSQLDatabases.jpg)
-
 
 - **Document databases** -
 Document databases store data in documents like JSON (JavaScript Object Notation) objects. Each document contains pairs of fields and values. The values can typically be a variety of types including strings, numbers, booleans, arrays, or objects, and their structure doesn't have to be predefined.
@@ -119,9 +118,26 @@ However, when data maturity reaches a point, or structured querying and analysis
 - Schema stability - As the business evolves, the data model in MongoDB might undergo frequent changes. SQL databases, with their stable schema, can offer more predictability
 
 ## lecture notes
-### 
+###  Hands on learning MongoDB in Google collab
+MongoDB has no schemas and no joins
+
+**MongoDB Practice**
+https://www.mongodb.com/products/platform/atlas-database
+![MongoDB practice](https://www.mongodb.com/products/platform/atlas-database )
+
+**Google Collab**
+https://colab.research.google.com/
+![Google Collab](https://colab.research.google.com/)
+
+Createded MongoDB_CRUD.ipynb file in Google collab to practice creating, reading, updating and deleting data.
+
+**MongoDB reference documents**
+https://www.mongodb.com/docs/manual/reference/operator/query/lt/ 
+![MongoDB Ref Docs](https://www.mongodb.com/docs/manual/reference/operator/query/lt/ )
+
+
 
 ## Topic 5 Reflections
-
+Do some research into where we have NoSQL in our processes/pipelines
 
 
