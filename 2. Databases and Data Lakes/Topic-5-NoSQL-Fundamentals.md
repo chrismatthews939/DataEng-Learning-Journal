@@ -22,7 +22,7 @@ The four main types of NoSQL database are as follows:
 3. Wide-column stores
 4. Graph databases
 
-![4 types of NoSQL dtb](https://media.geeksforgeeks.org/wp-content/uploads/20220405112418/NoSQLDatabases.jpg)
+![4 types of NoSQL database](https://media.geeksforgeeks.org/wp-content/uploads/20220405112418/NoSQLDatabases.jpg)
 
 
 - **Document databases** -
@@ -45,10 +45,80 @@ Graph databases use graph structures (a network of nodes and edges) for semantic
 
   - Example: Neo4j is a popular graph database. In a social network application, each user could be a node and each relationship (like a friend connection) could be an edge.
 
+![Popular NoSQL databases](https://ares.decipherzone.com/blog-manager/uploads/ckeditor_Top%2010%20NoSQL%20Databases%20in%202022.png)
 
+## Discovering MongoDB
 
+### MongoDB
+MongoDB Offers
+- A flexible schema
+- Scalability
+- Robust querying capabilities
+- A JSON-like document model
+- An ability to handle large volumes of unstructured and semi-structured data
 
-## lecutre notes
+### How MongoDB Stores data
+
+- **Collections** -
+**Analogous (equivalent) to tables in SQL databases**. A collection holds documents, and does not require its documents to have the same schema.
+
+- **Documents** -
+Documents - Consists of key-value pairs and are the basic unit of data in MongoDB. They are analogous to rows in an SQL table but can contain data of any type and structure.
+
+![Mongo DB vs MySQL Naming Conventions](https://media.geeksforgeeks.org/wp-content/uploads/terminology-differences-gfg-1.png)
+
+MongoDB stores data records as Binary JSON (BSON) documents. BSON is a binary representation of JSON documents, it follows the same structure as JSON, though it contains more data types. 
+![MongoDB documents are composed of field-and-value pairs and have the following structure:](https://studio3t.com/wp-content/uploads/2018/10/mongodb-document-structure.png)
+
+For the BSON spec see here (https://bsonspec.org/)
+
+For the Mongo spec see here (https://www.mongodb.com/docs/manual/reference/bson-types/)
+
+**Extracting Unstructured Data**
+- Extract from: Web pages, logs, multimedia files, social media feeds
+- Retrieve with: Web scraping tools, APIs, file parsers
+- Complexity: Can be challenging due to the diverse nature of sources and lack of structure
+- Tools: Beautiful Soup (for web scraping), multimedia and Machine Learning processing libraries
+
+**Transforming Unstructured Data**
+- Nature of data: Includes text, images, videos, logs. No predefined schema
+- Cleansing: Text: remove stop words, stemming. Images: resize, normalise
+- Enrichment: Extract metadata, sentiment analysis on text, extract features from images
+- Transformation: Text: convert to numerical format (TF- IDF, embeddings). Images: convert to pixel values
+- Schema evolution: More flexible to changes due to schema-less nature, but ensuring consistency is challenging
+- Complexity: Complexity in pre-processing and converting to a structured format
+- Tools: Text: NLTK, spaCy. Images: OpenCV, TensorFlow
+
+## Unstructured data from MongoDB to SQL
+Before reporting it's best practice to move this data into a SQL database
+
+## Challenges when moving the data into SQL ETL
+MongoDB, a NoSQL database, offers flexibility in handling diverse and evolving data structures.
+However, when data maturity reaches a point, or structured querying and analysis are required, SQL databases become indispensable.
+
+### Transformation challenges
+**Data Quality** 
+- Solution: Data cleaning using tools/libraries like pandas
+**Computational intensity** 
+- Solution: Use efficient algorithms or distribute computation
+**Evolution of data** 
+- Regularly review transformation logic and maintain modular code
+
+### Loading challenges
+**Scalability** 
+- Opt for scalable databases or partitioning strategies
+**Data integrity** 
+- Implement data validation checks before loading
+**Performance** 
+- Regularly index databases and optimise queries
+
+### Advantages of loading NoSQL data into a SQL database
+- Structured querying - SQL databases excel at complex query operations, which can be invaluable for intricate analysis
+- Data integrity - SQL databases often enforce ACID (Atomicity, Consistency, Isolation, Durability) properties more strictly
+- Integration with Business Intelligence (BI) tools - Many BI tools have built-in connectors and optimisations for SQL databases
+- Schema stability - As the business evolves, the data model in MongoDB might undergo frequent changes. SQL databases, with their stable schema, can offer more predictability
+
+## lecture notes
 ### 
 
 ## Topic 5 Reflections
