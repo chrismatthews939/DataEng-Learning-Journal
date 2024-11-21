@@ -117,7 +117,7 @@ However, when data maturity reaches a point, or structured querying and analysis
 - Integration with Business Intelligence (BI) tools - Many BI tools have built-in connectors and optimisations for SQL databases
 - Schema stability - As the business evolves, the data model in MongoDB might undergo frequent changes. SQL databases, with their stable schema, can offer more predictability
 
-## lecture notes
+## Lecture notes
 ###  Hands on learning MongoDB in Google collab
 MongoDB has no schemas and no joins
 
