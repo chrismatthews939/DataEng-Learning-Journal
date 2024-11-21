@@ -164,3 +164,5 @@ Something like analysing Amazon reviews to add some labels would use this
 Do some research into where we have NoSQL in our processes/pipelines
 I'll practice using some of these NoSQL databases
 
+MongoDB practice file is in this repo called mongodb_crud_tutorial
+
