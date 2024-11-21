@@ -135,9 +135,32 @@ Createded MongoDB_CRUD.ipynb file in Google collab to practice creating, reading
 https://www.mongodb.com/docs/manual/reference/operator/query/lt/ 
 ![MongoDB Ref Docs](https://www.mongodb.com/docs/manual/reference/operator/query/lt/ )
 
+### Redis
+**Redis** is a very popular in-memory key-value database
+It's really fast because it reads from memory not storage.
 
+Values can be strings, lists and sets.
+
+Because it's in RAM it's limited to how much is can store. 
+
+It's used for data that needs to be read and written very quickly 
+
+Drawbacks:
+- Merges to different tables are difficult
+- Having no schema makes it hard to understand the data
+- Not stored in a normalised way
+- Not ideal for reporting. SQL is better for complex queries
+
+Services like Spotify for example use column based NoSQL databases because it won't store the things it doesn't need, as opposed to a SQL database that will have NULL values and capture everything.
+
+Recommenders systems in telecoms or supermarkets use graph based databases to link what products tend to be purchased with others.
+
+**NLP Pipelines**
+Natural language processing
+
+Something like analysing Amazon reviews to add some labels would use this
 
 ## Topic 5 Reflections
 Do some research into where we have NoSQL in our processes/pipelines
-
+I'll practice using some of these NoSQL databases
 
