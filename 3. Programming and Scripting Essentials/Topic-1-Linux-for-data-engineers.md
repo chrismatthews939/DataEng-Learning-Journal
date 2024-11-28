@@ -26,7 +26,7 @@ This flexibility is particularly valuable in a data-driven enterprise, where tai
 ### Linux in action (Mars rover mission)
 The rovers send back a continuous stream of data, including images, environmental readings, and scientific measurements. This data must be transmitted over vast distances, processed, and analysed quickly. Linux systems manage this entire process, from the initial reception of data at ground stations to its analysis and storage. NASA extensively uses the Linux system for various technical applications, including:
 
-- **Data processing**: Engineers use CLI tools to process raw data from space missions. Commands such as grep, awk, and sed help in filtering and transforming data efficiently, which is essential for extracting meaningful information from vast datasets.
+- **Data processing**: Engineers use CLI tools to process raw data from space missions. Commands such as **grep, awk, and sed** help in filtering and transforming data efficiently, which is essential for extracting meaningful information from vast datasets.
 
 - **System monitoring**: Monitoring the health and performance of computational clusters is critical. CLI tools like top, htop, and dstat provide real-time insights into system resource usage, helping engineers to maintain system stability and performance.
 
@@ -124,18 +124,210 @@ It changes the location of a file or directory within the filesystem or changes 
 The cp command is used to copy files and directories. It creates a duplicate of the specified file or directory in the target location, preserving the original. 
 With appropriate options, it can also copy directories recursively.
 
-![Video explaining the Linux file system](https://www.youtube.com/watch?v=bbmWOjuFmgA)
+Video explaining the Linux file system - https://www.youtube.com/watch?v=bbmWOjuFmgA
 
 ## Key Linux utilities for data engineers
+Utilities for manipulating and analysing text files, include tools such as grep, sed, and awk. These tools are vital for parsing log files, transforming data, and extracting insights. Here is a brief overview of these tools: 
 
+- **Global regular expression print (grep):** These search for patterns within files.
+- **Stream editor (sed):** The stream editor is used for modifying file content
+- **awk:** This is used for pattern scanning and processing language
 
+**A Netflix case study**
+Netflix ensures service reliability by meticulously monitoring its log files using the powerful Unix command-line utility grep. 
+This tool, integral to their system administration toolkit, allows them to search through massive log files for specific patterns that indicate errors or anomalies. 
+By automating the use of grep, Netflix can swiftly identify and respond to potential issues, maintaining the seamless streaming experience their users expect.
 
+The primary function of **grep** is to search for and highlight specific text patterns within files. Netflix uses grep to scan logs for common error keywords such as "error," "fail," and "exception." This is often done in a case-insensitive manner to ensure no relevant log entry is missed. The ability to search through logs efficiently helps Netflix quickly isolate errors and understand the context in which they occur, which is crucial for rapid troubleshooting and maintaining service uptime. 
 
+Moreover, Netflix combines grep with other command-line tools to enhance its log analysis capabilities. By using grep alongside utilities for sorting, counting, and aggregating data, they can track error frequencies and identify recurring issues. This comprehensive approach not only aids in immediate problem resolution but also helps in proactive maintenance, allowing Netflix to preemptively address issues before they escalate, thus ensuring consistent and reliable service for its global user base 
 
+### Mastering grep: Efficient log file analysis for error detection
+grep is a powerful command-line tool in Unix-like systems that allows you to search for specific patterns (regular expressions) within text files. When it comes to analysing log files, grep becomes an indispensable ally. In this section, we will explore various grep commands and examples to efficiently detect errors, failures, and exceptions in log files. Whether you are troubleshooting system issues or monitoring application logs, mastering grep will significantly enhance your productivity. Here are examples of how to use grep to scan log files for common error keywords such as "error," "fail," and "exception" in a Unix-like system:
 
+**Basic usage**
+To search for the keyword "error" in a log file named application.log, you would use: grep "error" application.log
 
+**Case insensitive search**
+To search for "error" in a case-insensitive manner, which also captures "Error" and "ERROR":
 
+  grep -i "error" application.log
 
+**Multiple keywords**
+To search for multiple keywords such as "error," "fail," and "exception":
+
+grep -E "error|fail|exception" application.log
+Alternatively, you can use the -e option to specify multiple patterns:
+
+  grep -e "error" -e "fail" -e "exception" application.log
+
+**Contextual search**
+To display lines containing "error" along with 2 lines of context before and after each match:
+
+grep -C 2 "error" application.log
+
+**Count matches**
+To count the number of lines that match the keyword "error":
+
+  grep -c "error" application.log
+
+**Display line numbers**
+To display line numbers along with matching lines:
+
+  grep -n "error" application.log
+
+For a comprehensive search that is case-insensitive, looks for multiple keywords, displays context, and shows line numbers:
+
+  grep -i -n -C 2 -E "error|fail|exception" application.log
+
+**Data transfer and compression**
+Efficient data transfer and compression are crucial for managing large datasets across different systems. Tools for transferring and compressing data, such as rsync, scp, tar, and gzip. 
+
+Explanation and examples include the following:
+- **rsync:** Synchronizes files and directories between two locations
+- **tar and gzip:** Archiving and compressing files
+
+**Grep by example interactive guide** https://antonz.org/grep-by-example/
+
+## Job scheduling and automation
+
+### cron jobs
+A cron job is a scheduled task that runs automatically at specified intervals. The syntax for defining a cron job consists of five fields, which represent the minute, hour, day of the month, month, and day of the week when the task should execute. These fields are separated by spaces and use special symbols to denote specific values, as follows:
+
+- Minute (0-59): The minute when the task should run.
+- Hour (0-23): The hour when the task should run.
+- Day of the Month (1-31): The day of the month when the task should run.
+- Month (1-12): The month when the task should run.
+- Day of the Week (0-6, where 0 represents Sunday): The day of the week when the task should run. For example, the following cron job runs a backup script every day at 2:30 AM: 30 2 * * * /path/to/backup-script.sh.
+
+Cron jobs are commonly used for various technical tasks, including: 
+- Scheduling data backups: Automating regular backups of databases, files, or other critical data.
+- Extract, transform, load (ETL) processes: Running data extraction, transformation, and loading tasks at specific intervals.
+- System maintenance tasks: Performing system cleanup, log rotation, or other maintenance activities automatically.
+
+**Using cron for Job Scheduling**
+In addition to advanced orchestration tools, Airbnb also uses cron, a standard Unix-like operating system utility, to schedule tasks. 
+cron jobs are scheduled commands or scripts that run at specific times or intervals. 
+These jobs are defined in the crontab (cron table) file.
+
+**Understanding crontab**
+crontab is a command-line utility used to schedule cron jobs. Each user can have their own crontab file, and there is also a system-wide crontab for tasks that need to be run by the system.
+To submit a cron job, you use the crontab command with the -e flag, which opens the crontab file for editing. 
+
+**crontab entry format**
+Here’s a breakdown of how to set up a cron job:
+
+* * * * * command_to_run 
+
+Explanation:
+Each asterisk (*) represents a time value:
+
+Minute (0 - 59)
+Hour (0 - 23)
+Day of the month (1 - 31)
+Month (1 - 12)
+Day of the week (0 - 6) (Sunday to Saturday)
+
+**example crontab entries**
+Running a Script Every Day at Midnight:
+
+0 0 * * * /usr/local/bin/daily_job.sh 
+
+Explanation: This line schedules the daily_job.sh script to run at midnight every day. The 0 0 at the beginning specifies the minute and hour (0 minutes past 0 hours, or midnight).
+
+**Running**
+To count the number of lines that match the keyword "error":
+
+grep -c "error" application.log
+
+**Running a script every hour**
+0 * * * * /usr/local/bin/hourly_job.sh 
+
+This line schedules the hourly_job.sh script to run at the start of every hour. 
+The 0 * specifies the job runs at the 0th minute of every hour.
+
+**Submitting a cron job**
+To submit a cron job, you edit the crontab file by running:
+
+crontab -e 
+This opens the user's crontab file in a text editor, where you can add, remove, or edit cron jobs.
+
+Explanation:nBy using cron and crontab, Airbnb ensures that data processing tasks are automated and executed reliably at specified times, contributing to efficient and timely data reporting. 
+
+This automation is crucial for maintaining the smooth operation of their data infrastructure.
+
+### Writing and executing simple scripts in Linux
+**Creating a script file**
+Begin by opening a text editor and creating a new file with a .sh extension. For example, you can use nano:
+nano myscript.sh 
+
+**Give it some 'shebang'!**
+The first line of your script should specify the shell interpreter, known as the shebang. 
+
+For a typical Bash script, you would write:
+#!/bin/bash 
+This line tells the system to use the Bash shell to execute the script.
+
+**Writing commands**
+Add the commands you want the script to execute. 
+
+For example, a simple script to print "Hello, World!" and list the files in the current directory might look like this:
+#!/bin/bash
+ echo "Hello, World!"
+ ls -l 
+
+**Saving and exiting**
+Finally, you should save the file and exit the text editor (in nano, you would press Ctrl+X, then Y to confirm, and Enter to save).
+
+### Making the code executable
+**Make script executable**
+Before running the script, you need to make it executable. This is done using the chmod command:
+chmod +x myscript.sh 
+
+**Execute the scipt**
+Once the script is executable, you can run it from the terminal by specifying the path to the file. 
+
+If the script is in the current directory, use:
+./myscript.sh 
+
+**The script execution process**
+When executed, the shell reads the script file line by line, interpreting and running each command sequentially. 
+This allows for complex operations to be automated simply by running the script.
+
+### Practical applications
+**Automating Backups:** A script can be scheduled to run daily backups of critical data, using the following code:
+#!/bin/bash
+tar -czf backup_$(date +%Y%m%d).tar.gz /path/to/data 
+
+**System Monitoring:** Scripts can check system health and log the status, alerting administrators if necessary, using the following code:
+#!/bin/bash
+echo "System Load:" > /var/log/sysload.log
+uptime >> /var/log/sysload.log 
+
+### Redirection operators
+**>:** This is the redirection operator. It directs the output of the echo command to a file instead of the terminal.
+Types of redirection operators:
+
+**> (Single Redirect):**
+This redirects the output of a command to a file
+If the file exists, its content is overwritten
+If the file does not exist, it is created
+
+**>> (Append Redirect):**
+This redirects the output of a command to a file
+If the file exists, the new output is appended to the end of the file
+If the file does not exist, it is created
+
+### Pipes
+Similar to redirects, pipes (|) are used in Unix-like systems to pass the output of one command as the input to another. 
+
+This is useful for chaining commands together to perform more complex operations. 
+
+Example:
+ls -l | grep "txt"
+Lists detailed information about files and directories, then filters the output to show only those containing "txt".
+
+## Advanced text processing and log management
 
 
 ## Lecture notes
