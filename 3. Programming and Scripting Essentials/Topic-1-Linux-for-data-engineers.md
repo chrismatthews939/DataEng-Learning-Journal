@@ -440,15 +440,40 @@ Any command with -h or --help will give more info
 
 If you don't know the command you can try **man -k [SEARCH TERM]** to try and search by keyword
 
-Navigating 
+**Navigating**
 cd.. - goes up a level
-cd - 
+cd ~/mydir - goes to currently using user dir. (~ pronounced tild e)
+su - switch user
+passwd - change password
+(The below were created before mouses but it's still the way to navigate)
+Enter - moves down a line
+Space - move down one page
+g - moves to top of a page
+G - moves to top of the page
+q - quit
 
+![Linux command cheat sheet](https://images.ctfassets.net/aw6mkmszlj4x/2oDcVTRgDK6KIVBshsKuO8/54d205b6c365cd181430565f3706be9c/linuxthree.png)
 
+### Shell scripting basics
+#!bin/sh
+echo "Welcome to Linux --"$USER
+ehco "Today is: "$(date)
+echo "You're working in: "'pwd'
+echo "Enter your last name:"
+read LNAME 
+echo "Hello " $LNAME
 
+**To practice Linux use this website**
+https://shell.segfault.net/#/dashboard
 
+**nano** is text editor
+can use tab for auto complete (this gives blank editor)
+
+To run something is **./scriptname** ./ is the current directory
+
+remember to change file to executable before running a script
+**chmod +x FILENAME**
 
 ## Topic 1 Reflections
 Try and find area in the business using Linux and speak to the engineers about it
-
 
