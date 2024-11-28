@@ -359,8 +359,96 @@ Rotate logs to prevent overload: logrotate -v /etc/logrotate.conf
 **For more details see Linux command cheat sheet in this repo**
 
 ## Lecture notes
+CLI, Shell and terminal are all the same thing
+
+Linux OS is open source, so unlike MacOS and Windows you can fork the OS and edit/customise it
+
+Mac is POSIX. POSIX means that it can run linux, unix, bsd and recompile and run the code
+
+Linux was created by Linus Torvids
+
+In Linux - "Everything is a file"
+
+A directory is a special type of file
+
+Every file can be four types:
+1. Ordinary file (contains data/info)
+2. Directories (holds files and other directories
+3. Devices (accessing the hardware)
+4. Links (Pointer to another file)
+
+Linux is more efficient because it can write straight to the hardware. Whereas windows for example you write a script to windows that then accesses the hardware
+
+Important directories
+/etc - Configuration files
+/dev - Devices
+/tmp - Temporary files
+/mnt - Mount directory
+
+![Linux file system](https://miro.medium.com/v2/resize:fit:1400/0*bFnHaO8eYpW3dSuz)
+
+bin are the binaries, whaich are the system files
+
+linux rarely ever reboots - another benefit for using it for data transfering 
+
+linux has a GUI for the OS to use it graphically but you can also use via CLI
+
+It's the mantra of superusers to use terminal because you have more control over what you're trying to do
+
+![Ubuntu OS](https://149366088.v2.pressablecdn.com/wp-content/uploads/2017/04/gnome-ubuntu-desktop.jpg)
+
+**Don't do anything as root**
+Root is the all powerful account and shouldn't be used when browsing internet etc. Only for admin tasks (installing software, configuring servers)
+
+**sudo (super user do)**
+this allows you to temporarily become the root user to have extra privileges. Called privilege escallation 
+
+Remember with passwords etc in linux you won't see *'s or any characters
+
+### Linux security model
+
+Attackers will want to get "root" privileges 
+
+crux of problem is use Discretionary access control (DAC) - basically all files have their own permissions
+
+There's a special syntax to this:
+**rwx**: read, write and execute 
+**rw-**: read and write 
+**r--**: read only 
+
+There is a character at the front to show what kind of file it is. For example directory is d and the file might be **drwx**
+
+Regular file is - so **-rwx** is a regular file with those privileges
+
+Set this using **chmod** command
+
+Commands are case sensitive. Lower case
+
+### Linux commands
+**ls** - list dir contents
+**cd** - change dir
+**pwd** - display present working dir
+**cat** - concatenates and displays files
+**echo** - display arguments to the screen
+**man** - display the online manual
+**exit** - exits the shell or session
+**clear** - clears screen
+
+you can string these together. **man cat** for example will sho the manual for the cat command 
+
+Any command with -h or --help will give more info
+
+If you don't know the command you can try **man -k [SEARCH TERM]** to try and search by keyword
+
+Navigating 
+cd.. - goes up a level
+cd - 
+
+
 
 
 
 ## Topic 1 Reflections
+Try and find area in the business using Linux and speak to the engineers about it
+
 
