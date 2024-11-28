@@ -1,0 +1,227 @@
+Bash course 
+
+Bash is a shell a programme that lets you interact with a computer, install stuff etc
+used in terminal and is best to run small scripts on Linux systems
+
+Base short for Bourne again shell (bourne referencing an older type of shell)
+
+Ubuntu or Debian are good applications for setting up Linux VMs
+
+
+help for list of commands. help then a command gives you more info
+clear clears screen
+echo to print stuff
+
+cat reads file
+cat filename
+
+a pipe strings commands together.
+For example if a file is massive you could do 
+cat filename | less 
+this will read the file but before displaying do the next command 'less' to split into pages
+
+unlike other languages () [] and {} are different commands
+
+~ (tilde) represents the $HOME env variable
+For example to see home dir use 
+echo ~
+
+can put multiple echo statements together
+echo;echo "Morespace!";echo
+
+will put a blank line before and after text.
+
+echo -n will clear these rules to go back a single line
+
+~- will go to previous dir
+
+Brace expansion can pass a list 
+{1..4}
+can pass this in a file output to create three files etc
+/tmp/{1..3}/file.txt
+works with letter as well {a..z}
+
+can also pad numbers 
+{01..100} will display 001,002 to 100
+
+Can do intervals
+{1..30..3}
+This will do every 3rd number up to 30
+
+One limit to base is it can't do decimals only full numbers
+
+{a..z..2}
+Every 2nd letter
+
+Can also pass other things
+head n-1 {dir1,dir2,dir3}file.txt
+
+Will show head from file.txt in three directories
+
+Can also do parameters $
+greeting="hello!"
+echo $greeting
+
+echo ${greeating:6}
+this gives ! because it's everything from character 6
+
+$((..)) is more calcs
+
+$((4 * 5 )) give 20
+
+variables
+case sensitive
+
+mygreeting="Hello"
+then $ to use them
+
+echo $mygreeting
+
+use test to check if something is true or false (1 is false, 0 is true)
+
+help test |less
+[ "cat" =  "dog"] 
+give output 1
+
+cat = cat would be 0
+
+Can also add boolean operators into tests
+&& is and 
+|| is or
+
+[ "cat" =~ c*] 
+this is testing if cat starts with c and it will display 0 which is true
+
+-e is to move things over different lines
+\t will table the output
+
+echo -e "Name\tNumber"
+Name	Number
+echo -e "Name\nNumber"
+Name
+Number
+
+You can also feed in the colour codes to change the colour of text or background (red for error message etc)
+echo -e "033[4;31;40mError: 033[0m\033[31;40m Something went wrong. /033[0m"
+
+Rather than have this awkward code in the script it's easier to use variables
+
+red ="\033[31;40m"
+echo -e $none$red"Error: something went wrong"$none
+
+printf allows you to do more formatting than echo
+
+Can use date command and $Y $M $D to convert to dates
+
+Bash can also use arrays
+
+declare -a snacks = ("apple","bannana","orange")
+
+echo ${snack[2]} 
+= orange 
+like python it starts at 0
+
+snacks+=("mango") 
+adds mango to the list
+
+#!/bin/bash is a sequence of characters (#!) called shebang and is used to tell the Linux OS which interpreter to use to parse the rest of the file. 
+You will always see #!/bin/bash or #!/usr/bin/env bash as the first line when writing or reading bash scripts. Shebang starts
+
+Loops (starts with if and ends with if backwards fi
+
+declare a variable and run a loop
+
+declare -i a=3
+
+if[[$a -gt 4]]
+then
+	echo "$a is greater than 4"
+else 
+	echo "$a is not greater than 4"
+fi
+
+For arithmetic use braces
+declare -i a=3
+
+if(($a > 4))
+then
+	echo "$a is greater than 4"
+else 
+	echo "$a is not greater than 4"
+fi
+
+Can also do elif
+if(($a > 4))
+then
+	echo "$a is greater than 4"
+elif (($a > 2))
+	echo "$a is greater than 2"
+else 
+	echo "$a is not greater than 4"
+fi
+
+
+While loops run whilst the condition is true
+while ...
+do ...
+done
+
+Until loops run whilst the condition is false
+until...
+do ...
+done
+
+example loop to count to 10
+
+echo "While loop"
+
+declare -i n=0
+while ((n<10))
+do 
+	echo "n:$n"
+	((n++))
+done
+
+Ctr C will kill a loop when code is running 
+
+Can also do for loops
+for i in ...
+do ...
+done
+
+e.g. to print some files in a folder
+
+for i in $(ls)
+do	
+	echo "Found a file: $i"
+done
+
+case checks a value against a predefined value
+bit like sql case statement 
+
+animal = "dog"
+case $animal in
+   bir) echo "Avian";;
+   dog|puppy echo "Canine";;
+   *) echo "No match";;
+esac
+
+
+functions - allow you to repeated call bit of code
+
+e.g.
+greet() {
+   echo "Hi there, $1!"
+}
+
+echo "And now, a greeting!"
+greet Scott
+
+output is:
+And now, a greeting! 
+Hi there Scott!
+
+
+Reading and writing text files
+read f
+
