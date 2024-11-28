@@ -328,7 +328,35 @@ ls -l | grep "txt"
 Lists detailed information about files and directories, then filters the output to show only those containing "txt".
 
 ## Advanced text processing and log management
+### Advanced grep usage
+Global regular expression print (Grep) is a versatile tool that allows you to search for patterns, extract relevant information, and manipulate text effortlessly. 
+Whether you are dealing with voluminous log files, intricate configuration data, or streaming information, Grep becomes your trusted companion.
 
+By mastering advanced Grep usage, you will acquire the ability to: 
+Fine-tune your search: The minute when the task should run
+Utilise options like -E, -v, and -c to tailor your searches
+Filter out superfluous log entries, zero in on specific patterns, and count occurrences
+
+**Examples**
+Filtering errors:
+Hunt down error messages in log files: grep "error" application.log
+
+Counting occurrences:
+Tally how many times a specific pattern appears: grep -c "warning" access.log
+
+### Log management and monitoring
+Log management plays a pivotal role in maintaining system health, diagnosing issues, and ensuring compliance. 
+As professionals responsible for data infrastructure, we face the challenge of efficiently managing logs, detecting anomalies, and responding promptly to potential threats. 
+Whether you are overseeing logs for a small application or a complex network, mastering these skills ensures smoother operations. 
+
+**Examples**
+Real-time monitoring:
+Keep a vigilant eye on incoming logs: tail -f application.log
+
+Automated rotation: 
+Rotate logs to prevent overload: logrotate -v /etc/logrotate.conf
+
+**For more details see Linux command cheat sheet in this repo**
 
 ## Lecture notes
 
