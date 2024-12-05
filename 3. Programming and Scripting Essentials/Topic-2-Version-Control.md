@@ -120,9 +120,56 @@ Good Feedback:
 Bad Feedback:
 *"This code is slow and inefficient"*
 
-
-
 ## Lecture Notes
+Types of version control:
+- Local. Local computer
+- Central. Central server 
+- Distributed. Git
+
+**Git vs OneDrive/Dropbox**
+Basically the same thing.
+The jargon is slightly different.
+Git pull is Onedrive sync
+Git commit/checkout is Onedrive tracking 
+
+**GitLab vs GitHub**
+
+GitHub is Microsoft - GitLab is own company
+
+![GitLab vs GitHub](https://graffersid.com/wp-content/uploads/2023/08/Difference-Between-GitLab-GitHub.jpg)
+
+**Three stages of Git**
+1. Modified. Files are changed but not committed
+2. Staged. Modified file
+3. Committed. Change is safely stored
+
+Git is acyclical - A can point to B or C but can't point back to A. One direction only
+
+git checkout is a way of going back in time to see an old version
+
+**Semantic Versions**
+
+e.g. 1.12.103
+
+**Major** - Changes that break other people work (complete rewrite) 
+
+**Minor** - Changes that don't brake anything
+
+**Patch** - Bug fixes
+
+**Branches**
+- Main/Master
+- Development branch
+- Merged Branches
+
+![git commands](https://miro.medium.com/v2/resize:fit:1400/1*seVNmyFK4RhNy_wVLQKonQ.png)
+
+**git branching diagram**
+
+![git branching diagram](https://www.nobledesktop.com/image/gitresources/git-branches-merge.png)
+
+Use this link to practice git branching
+https://learngitbranching.js.org/
 
 ## Topic 2 Reflections
 Implement code reviews into our CI/CD process. We currently don't do this with feedback for the developer.
