@@ -171,6 +171,8 @@ e.g. 1.12.103
 Use this link to practice git branching
 https://learngitbranching.js.org/
 
+git branching mantra is *branch fast and branch often* this is because branches just point to a commit and have no storage. It's better to heave lots of branches for small changes than one big branch with all the changes.
+
 ## Topic 2 Reflections
 Implement code reviews into our CI/CD process. We currently don't do this with feedback for the developer.
 
