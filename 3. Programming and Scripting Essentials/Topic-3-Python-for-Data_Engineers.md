@@ -200,8 +200,8 @@ Test-driven development (TDD) is a software development approach where tests are
 ## Lecture Notes
 
 ## Topic 3 Reflections
-Try and design our definition of done to reflect the SDCL.
-Introduce Test driven development 
+- Try and design our definition of done to reflect the SDCL.
+- Introduce Test driven development 
 
 
 
