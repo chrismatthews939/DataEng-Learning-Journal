@@ -1,9 +1,5 @@
 # Topic 3 - Python for data engineers - 12/12/2024
 
-TO Check!
-Apply task - can't get into into it 
-Linux course not completing
-  
 ## Introduction to the Software Development Lifecycle
 
 ### Software development lifecycle SDLC
@@ -190,14 +186,23 @@ Test-driven development (TDD) is a software development approach where tests are
 - **Examples**: Instead of sifting through outdated or incomplete documentation, developers can look at the tests to understand the intended behaviour of the code.
 - **Details**: This documentation, always synced with the code, simplifies onboarding for new developers and code review for existing ones. 
 
-
-
-
-
-
-
-
 ## Lecture Notes
+
+### eXtreme coding XP
+
+A philosophy of coding. Takes it to an extreme level.
+
+- Code reviews
+- Testing
+- Simplicity
+- Design
+- Architecture
+
+### Google Collab Python Practice
+File DataEng_PythonBasics.ipynb in google collab account
+
+**Python build in functions**
+https://docs.python.org/3/library/functions.html
 
 ## Topic 3 Reflections
 - Try and design our definition of done to reflect the SDCL.
