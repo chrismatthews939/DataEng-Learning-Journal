@@ -1235,6 +1235,72 @@ This means that the time complexity for solving this problem is max
 720 routes needs to be checked for 6 cities, 40,320 routes must be checked for 8 cities, and if you have 10 cities to visit, more than 3.6 million routes must be checked!
 '''
 
+'''
+—————
+
+**Recursion**
+
+—————
+
+Function calling itself iteratively
+Recursion is a technique where a function calls itself to solve a problem. Each recursive call reduces the problem size, bringing it closer to a base case, which stops the recursion. Recursion can simplify the solution of complex problems by breaking them down into simpler sub-problems.
+
+For Example:
+You could do a normal loop to count steps. Or a recursive method that runs the function itself. This is good for complex processes like the above factorial example.
+'''
+# ITERATIVE
+def walk(steps):
+  for step in range(1, steps + 1):
+    print(f"You take step #{step}")
+
+# RECURSIVE
+def walk(steps):
+  if steps == 0: # don't need negative steps
+    return # stops the loop if it hits 0
+  walk(steps - 1)
+  print(f"You take step #{step}")
+
+walk(100) will show
+# You take step 100
+# You take step 99 etc down to 0
+
+# But the important bit is, it's actually running a function everytime
+walk(100)
+walk(99)
+walk(98) # etc
+
+# There is a limit to how many recursions you can run
+
+# For a factorial
+# A factorial is a mathematical function that multiplies a number by every number that comes before it, down to one
+# ITERATIVE
+def factorial(x):
+  result = 1
+  if x > 0:
+    for y in range(1, x + 1):
+      result *= y
+    return result
+
+# RECURSIVE
+def factorial(x):
+  if x == 1:
+    return 1 # stops recursion loop
+  else:
+    return x * factorial(x)
+
+print(factorial(10))
+
+# the code here is much easier to write but the drawback is it runs a bit slower*
+
+# A basic example
+def countdown(n): 
+  if n == 0: 
+    print("Blast off!") 
+  else: 
+    print(n) 
+    countdown(n - 1)
+
+countdown(5)
 
 
 
