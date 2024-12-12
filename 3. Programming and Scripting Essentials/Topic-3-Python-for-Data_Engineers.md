@@ -55,6 +55,10 @@ Did you know that Python's simple and readable syntax has made it one of the mos
 
 ![python features](https://media.licdn.com/dms/image/D4D12AQHEHLbwo8rdSg/article-cover_image-shrink_600_2000/0/1673251056920?e=2147483647&v=beta&t=EgmtXW_H_GGYom-GgMYY-30Gul3U0jKFBAYmFUnyy84)
 
+Python’s simplicity and flexibility make it an excellent choice for a wide range of applications, from web development to data science and artificial intelligence. 
+
+Its clean syntax and dynamic typing allow for rapid development and prototyping, while its powerful features like functions and control flow structures enable the creation of complex, interactive programs.
+
 **Syntax**
 Syntax refers to the set of rules that defines the combinations of symbols considered correctly structured programs in a programming language. In Python, syntax is designed to be easy to read and write, making it an excellent choice for beginners and experienced programmers alike. For instance, unlike some other programming languages, Python uses indentation to define code blocks rather than braces or keywords, which enhances readability. 
 
@@ -80,9 +84,115 @@ Control flow refers to the order in which individual statements, instructions, o
 ![python control flow](https://pynative.com/wp-content/uploads/2021/03/python-flow-control-statements.png)
 
 **Recursion**
+*Function calling itself iteratively*
 Recursion is a technique where a function calls itself to solve a problem. Each recursive call reduces the problem size, bringing it closer to a base case, which stops the recursion. Recursion can simplify the solution of complex problems by breaking them down into simpler sub-problems.
 
+*A factorial is a mathematical function that multiplies a number by every number that comes before it, down to one*
 ![python recursion](https://cdn.programiz.com/sites/tutorial2program/files/python-factorial-function.png)
+
+For Example:
+You could do a normal loop to count steps. Or a recursive method that runs the function itself. This is good for complex processes like the above factorial example.
+
+# ITERATIVE
+def walk(steps):
+  for step in range(1, steps + 1):
+    print(f"You take step #{step}")
+
+# RECURSIVE
+def walk(steps):
+  if steps == 0: # don't need negative steps
+    return # stops the loop if it hits 0
+  walk(steps - 1)
+  print(f"You take step #{step}")
+
+walk(100) will show
+You take step 100
+You take step 99 etc down to 0
+
+But the important bit is, it's actually running a function everytime
+walk(100)
+walk(99)
+walk(98) etc
+
+There is a limit to how many recursions you can run
+
+**For a factorial** 
+*A factorial is a mathematical function that multiplies a number by every number that comes before it, down to one*
+# ITERATIVE
+def factorial(x):
+  result = 1
+  if x > 0:
+    for y in range(1, x + 1):
+      result *= y
+    return result
+
+# RECURSIVE
+def factorial(x):
+  if x == 1:
+    return 1 # stops recursion loop
+  else:
+    return x * factorial(x)
+
+print(factorial(10))
+
+*the code here is much easier to write but the drawback is it runs a bit slower*
+
+**A basic example**
+def countdown(n): 
+  if n == 0: 
+    print("Blast off!") 
+  else: 
+    print(n) 
+    countdown(n - 1)
+
+countdown(5)
+
+## Introduction to test-driven development TTD
+Did you know that test-driven development (TDD) can significantly reduce the number of bugs in your code, improving overall software quality and developer productivity? Many leading tech companies, including IBM and Microsoft, use TDD to ensure their software meets the highest standards. This lesson will explore the benefits of TDD, providing you with a comprehensive understanding of why this approach is favoured in modern software development.
+
+Test-driven development (TDD) is a software development approach where tests are written before the actual code. This method involves writing a test for a specific function or feature, running the test to see it fails (since the feature isn't implemented yet), writing the minimum amount of code to pass the test, and then refactoring the code while keeping the tests green (passing). This cycle is often referred to as the Red-Green-Refactor cycle, as follows:
+
+- Red: Write a test that fails because the feature is not yet implemented
+- Green: Write just enough code to make the test pass
+- Refactor: Improve the code while ensuring that all tests still pass
+
+![test driven development](https://www.zealousys.com/wp-content/uploads/2023/09/Steps-to-Implementing-Test-Driven-Development.png)
+
+### The benefits of Test Driven Development 
+
+**Improved code quality**
+
+- **Definition**: TDD encourages writing code that is clean, efficient, and free of defects.
+- **Examples**: By writing tests first, developers are forced to consider edge cases and potential issues early on. This leads to more robust and reliable code.
+- **Details**: Tests serve as a form of documentation, making it easier for other developers to understand the code. Additionally, the need to write tests often leads to simpler, more modular code that is easier to maintain and extend.
+
+**Enhanced productivity**
+
+- **Definition**: TDD can streamline the development process, allowing for faster and more confident coding.
+- **Examples**: Developers can focus on one small piece of functionality at a time, leading to steady progress and reducing the likelihood of getting stuck on complex problems.
+- **Details**: Automated tests provide immediate feedback, helping developers quickly identify and fix bugs. This reduces the time spent on debugging and allows for more efficient use of development time.
+
+**Better test coverage**
+
+- **Definition**: TDD ensures that all features of the code are tested, leading to comprehensive test coverage.
+- **Examples**: By writing tests for every new feature before implementation, developers ensure that each part of the codebase is covered by tests.
+- **Details**: TDD mandates tests before coding, enhancing coverage, reducing bugs, and aiding refactoring by detecting regressions. 
+
+**Facilitates refactoring**
+
+- **Definition**: With a suite of tests in place, developers can refactor code with confidence, knowing that any errors introduced will be quickly detected.
+- **Examples**: Refactoring can improve code readability, reduce complexity, and enhance performance without altering the code's functionality.
+- **Details**: Tests safeguard functionality, promote continuous code improvement, and enhance software scalability and maintainability. 
+
+**Clear documentation**
+
+- **Definition**: Tests serve as live documentation that describes how the code is supposed to behave.
+- **Examples**: Instead of sifting through outdated or incomplete documentation, developers can look at the tests to understand the intended behaviour of the code.
+- **Details**: This documentation, always synced with the code, simplifies onboarding for new developers and code review for existing ones. 
+
+
+
+
 
 
 
@@ -90,7 +200,10 @@ Recursion is a technique where a function calls itself to solve a problem. Each 
 ## Lecture Notes
 
 ## Topic 3 Reflections
-Try and design our definition of done to reflect the SDCL
+Try and design our definition of done to reflect the SDCL.
+Introduce Test driven development 
+
+
 
 
 
