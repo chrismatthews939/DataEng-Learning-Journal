@@ -199,7 +199,7 @@ A philosophy of coding. Takes it to an extreme level.
 - Architecture
 
 ### Google Collab Python Practice
-File DataEng_PythonBasics.ipynb in google collab account
+File **DataEng_PythonBasics.ipynb** in google collab account
 
 **Python build in functions**
 https://docs.python.org/3/library/functions.html
