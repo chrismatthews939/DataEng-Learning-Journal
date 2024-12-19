@@ -523,6 +523,7 @@ def add(a,b):
 result = add(3,4)
 logging.info(f"Result: {result}")
 
+*see python debugging cheat sheet in the folder*
 ![Python debugging](Python_debugging.pdf)
 
 ## Lecture Notes
