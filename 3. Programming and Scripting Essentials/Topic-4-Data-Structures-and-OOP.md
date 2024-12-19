@@ -557,13 +557,13 @@ Imagine a blueprint for building a car. It defines:
 
 Code Example:
 
-class Car:
-    def __init__(self, color, model):
-        self.color = color  # Property
-        self.model = model  # Property
+    class Car:
+        def __init__(self, color, model):
+             self.color = color  # Property
+             self.model = model  # Property
 
-    def drive(self):  # Method
-        print("The car is driving!")
+        def drive(self):  # Method
+             print("The car is driving!")
 At this stage, the class Car is just a concept or a design—it doesn’t create any actual cars yet.
 
 2. **Object**
@@ -577,13 +577,13 @@ Using the blueprint (class), you can build cars. Each car (object) can have diff
 Code Example:
 
 # Create objects (instances) of the class
-car1 = Car("Red", "Sedan")
-car2 = Car("Blue", "SUV")
+    car1 = Car("Red", "Sedan")
+    car2 = Car("Blue", "SUV")
 
 # Use the objects
-print(car1.color)  # Output: Red
-print(car2.model)  # Output: SUV
-car1.drive()       # Output: The car is driving!
+    print(car1.color)  # Output: Red
+    print(car2.model)  # Output: SUV
+    car1.drive()       # Output: The car is driving!
 
 car1 is one car (object) with color "Red" and model "Sedan."
 car2 is another car (object) with color "Blue" and model "SUV."
@@ -599,16 +599,16 @@ car2 is another car (object) with color "Blue" and model "SUV."
 3. **Methods**
 A function inside a class that defines actions or behaviors for objects.
 
-class Car:
-    def __init__(self, color, model):
-        self.color = color  # Property
-        self.model = model  # Property
+       class Car:
+            def __init__(self, color, model):
+                 self.color = color  # Property
+                 self.model = model  # Property
 
-    def drive(self):  # Method
-        print(f"The {self.color} {self.model} is driving!")
+            def drive(self):  # Method
+                  print(f"The {self.color} {self.model} is driving!")
 
-    def honk(self):  # Method
-        print("Beep beep!")
+            def honk(self):  # Method
+                  print("Beep beep!")
 
 *Here the class describes the properties of the car and the methods are what the car can do*
 
@@ -625,16 +625,16 @@ Here’s a simple class to demonstrate self:
 
 Code Example:
 
-class Dog:
-    def __init__(self, name, breed):
-        self.name = name    # Set the object's 'name' property
-        self.breed = breed  # Set the object's 'breed' property
+    class Dog:
+        def __init__(self, name, breed):
+             self.name = name    # Set the object's 'name' property
+             self.breed = breed  # Set the object's 'breed' property
 
-    def bark(self):
-        print(f"{self.name} says Woof!")
+        def bark(self):
+             print(f"{self.name} says Woof!")
 
-    def info(self):
-        print(f"{self.name} is a {self.breed}")
+        def info(self):
+              print(f"{self.name} is a {self.breed}")
 
 **Explanation**:
 self.name: Refers to the name property of the specific object.
@@ -644,12 +644,12 @@ Methods (bark, info) use self to access and manipulate the object’s data.
 Using self in Objects
 Now, let’s create two Dog objects and see how self works differently for each:
 
-dog1 = Dog("Buddy", "Golden Retriever")
-dog2 = Dog("Luna", "Poodle")
+     dog1 = Dog("Buddy", "Golden Retriever")
+     dog2 = Dog("Luna", "Poodle")
 
 '#' Call methods on the objects
-dog1.bark()  # Output: Buddy says Woof!
-dog2.info()  # Output: Luna is a Poodle
+     dog1.bark()  # Output: Buddy says Woof!
+     dog2.info()  # Output: Luna is a Poodle
 
 What Happens:
 When dog1.bark() is called:
