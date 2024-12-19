@@ -201,7 +201,9 @@ Data Serialisation is the process of converting data structures or objects into 
 **Indentation**
 **Definition:** Python uses indentation to define code blocks, and PEP 8 recommends using 4 spaces per indentation level.
 **Details:** Consistent indentation is crucial for readability and avoiding syntax errors.
+
 **Example:** 
+
 def my_function():
     if true:
         print('Hello  world!')
@@ -209,14 +211,18 @@ def my_function():
 **Line length**
 **Definition:** Limit all lines to a maximum of 79 characters.
 **Details:** Breaking long lines improves readability and prevents horizontal scrolling.
+
 **Example:** 
+
 def my_function():
     print('This is an example of a long line that should be broken into multiple lines for better readability')
 
 **Naming conventions**
 **Definition:** Use descriptive names for variables, functions, classes, and modules.
 **Details:** Descriptive names enhance code clarity and make it self-documenting.
+
 **Example:** 
+
 variable_name = "value" 
 
 def function_name():
@@ -228,7 +234,9 @@ ClassName:
 **Whitespace**
 **Definition:** Use whitespace to improve readability, but avoid extraneous whitespace.
 **Details:** Proper use of whitespace around operators, after commas, and before and after functions improves code readability.
+
 **Example:** 
+
 def my_function(param1, param2):
     return param1 + param2
 
@@ -236,19 +244,171 @@ def my_function(param1, param2):
 **Comments**
 **Definition:** Use comments to explain code and provide context, but keep them concise and relevant.
 **Details:** Comments should be used judiciously to clarify complex logic or assumptions, not to state the obvious.
+
 **Example:** 
+
 '#' This function adds two numbers 
 def add(a,d):
     return a + b
 
 ## Object-oriented programming (OOP) in Python
 
+Did you know that Object-Oriented Programming (OOP) is a programming paradigm that can make your code more modular, reusable, and easier to maintain? Many of the most popular software applications are built using OOP principles.
 
+### What is Object-Orientated Programming (OOP)?
 
+Object-Oriented Programming (OOP) is a programming paradigm that uses objects and classes to structure software. Objects are instances of classes, which can contain both data (attributes) and methods (functions). OOP focuses on encapsulating data and behaviour within objects, promoting modularity and reusability. 
 
+**Four pillars of OOP**
+1. Encapsulation
+2. Abstraction
+3. Inheritence
+4. Polymorphism
 
+### Encapsulisation
 
+**Definition:** Encapsulation bundles data (variables) and methods (functions) that operate on the data into a single unit (class). It restricts direct access to some parts of the object to maintain control and prevent accidental interference.
 
+**Example:** A BankAccount class with private variables balance and methods deposit() and withdraw():
+
+class BankAccount:
+    def __init__(self):
+        self.__balance = 0  # Private variable
+    
+    def deposit(self, amount):
+        self.__balance += amount
+
+    def withdraw(self, amount):
+        if amount <= self.__balance:
+            self.__balance -= amount
+        else:
+            print("Insufficient funds")
+
+    def get_balance(self):
+        return self.__balance
+
+account = BankAccount()
+account.deposit(100)
+print(account.get_balance())  # Output: 100
+
+### Abstraction
+
+**Definition:**  Abstraction hides complex details and shows only the essential features of an object. It simplifies usage by providing a clear interface.
+
+**Example:** A Car class with a simple interface to start() and drive(), hiding the internal details:
+
+class Car:
+    def start(self):
+        print("Car engine started")
+
+    def drive(self):
+        print("Car is driving")
+        
+my_car = Car()
+my_car.start()  # Output: Car engine started
+my_car.drive()  # Output: Car is driving
+
+### Inheritence
+
+**Definition:** Inheritance allows a class (child) to inherit properties and methods from another class (parent). It promotes code reuse.
+
+**Example:** A Dog class inherits from a Animal class:
+
+class Animal:
+    def eat(self):
+        print("This animal eats food")
+
+class Dog(Animal):  # Dog inherits from Animal
+    def bark(self):
+        print("Woof!")
+
+dog = Dog()
+dog.eat()  # Output: This animal eats food
+dog.bark()  # Output: Woof!
+
+### Polymorphism
+
+**Definition:**  Polymorphism allows methods to have different implementations based on the object calling them. It means "many forms."
+
+**Example:** A draw() method works differently for Circle and Rectangle classes:
+
+class Shape:
+    def draw(self):
+        pass
+
+class Circle(Shape):
+    def draw(self):
+        print("Drawing a Circle")
+
+class Rectangle(Shape):
+    def draw(self):
+        print("Drawing a Rectangle")
+
+shapes = [Circle(), Rectangle()]
+for shape in shapes:
+    shape.draw()
+    
+    # Output:
+    # Drawing a Circle
+    # Drawing a Rectangle
+
+### Design patterns and their benefits
+
+**Design Patterns** are typical solutions to common problems in software design. They represent best practices used by experienced developers to solve specific problems in a structured and efficient manner.
+
+Example: **The singleton design pattern**
+
+Singleton is one of the simplest and most commonly used design patterns. It ensures that a class has only one instance and provides a global point of access to it.
+
+**Key Features**
+1. Single Instance: Ensures only one instance of the class is created.
+2. Global Access: Provides a way to access the single instance from anywhere in the code.
+3. Controlled Instantiation: Restricts direct creation of objects from the class.
+
+class Singleton:
+    _instance = None  # Class-level variable to hold the single instance
+
+    def __new__(cls, *args, **kwargs):
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)  # Create the instance
+        return cls._instance
+
+# Usage
+singleton1 = Singleton()
+singleton2 = Singleton()
+
+print(singleton1 is singleton2)  # Output: True (both refer to the same instance)
+
+**Real world example: Logger**
+
+class Logger:
+    _instance = None
+
+    def __new__(cls, *args, **kwargs):
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+            cls._instance.logs = []  # Initialize storage for logs
+        return cls._instance
+
+    def log(self, message):
+        self.logs.append(message)
+
+    def show_logs(self):
+        return self.logs
+
+# Usage
+logger1 = Logger()
+logger2 = Logger()
+
+logger1.log("App started")
+logger2.log("An error occurred")
+
+print(logger1.show_logs())  # Output: ['App started', 'An error occurred']
+print(logger1 is logger2)   # Output: True (same instance)
+
+*Usefulness for data engineers*
+
+*The Singleton pattern is particularly useful for managing resources such as database connections, configuration settings, or logging instances in data engineering projects. Ensuring a single instance of these resources prevents conflicts and reduces overhead.*
 
 
 
