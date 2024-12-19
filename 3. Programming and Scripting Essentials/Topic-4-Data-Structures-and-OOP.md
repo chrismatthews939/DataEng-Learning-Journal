@@ -528,6 +528,21 @@ logging.info(f"Result: {result}")
 
 ## Lecture Notes
 
+Python Practical Work
+
+**Membership Operator**
+Tests to see whether a value is present.
+
+x = ["apple", "banana"]
+print("banana" in x) # returns True
+
+print("pineapple" not in x) # returns True
+
+### Agile Manifesto
+
+Establish core principals for software development. 
+
+
 
 ## Topic 4 Reflections
 
