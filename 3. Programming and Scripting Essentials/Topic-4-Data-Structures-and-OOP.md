@@ -577,11 +577,13 @@ Using the blueprint (class), you can build cars. Each car (object) can have diff
 
 Code Example:
 
-# Create objects (instances) of the class
+Create objects (instances) of the class
+    
     car1 = Car("Red", "Sedan")
     car2 = Car("Blue", "SUV")
 
-# Use the objects
+Use the objects
+    
     print(car1.color)  # Output: Red
     print(car2.model)  # Output: SUV
     car1.drive()       # Output: The car is driving!
