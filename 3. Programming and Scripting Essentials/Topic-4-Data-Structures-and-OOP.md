@@ -159,26 +159,95 @@ Python, as a versatile and powerful programming language, offers a variety of ad
 
 **Use Cases:** OrderedDicts are beneficial when the order of items is important, such as in LRU (Least Recently Used) caches.
 
-**Example:** from collections import namedtuple Point = namedtuple('Point', ['x','y']) p = Point(1,2)
+**Example:** from collections import OrderedDict od = OrderedDict() od['a'] = 1 od['b'] =2
 
-from collections import OrderedDict
+## Data serialisation and coding conventions
 
-print("This is a Dict:\n")
-d = {}
-d['a'] = 1
-d['b'] = 2
-d['c'] = 3
-d['d'] = 4
+Data Serialisation is the process of converting data structures or objects into a format that can be stored or transmitted and then reconstructed later. Common formats for serialisation include JSON, XML, and binary formats.
 
-for key, value in d.items():
-    print(key, value)
+![Data Serialisation](https://hazelcast.com/wp-content/uploads/2024/01/glossary-serialization-1.svg)
 
-print("\nThis is an Ordered Dict:\n")
-od = OrderedDict()
-od['a'] = 1
-od['b'] = 2
-od['c'] = 3
-od['d'] = 4
+### Benefits of data Serialisation
+
+- **Data persistence:** Serialisation allows you to save the state of an object to a file or database, enabling long-term storage
+- **Data exchange:** Serialisation enables data to be easily shared between different systems, platforms, or applications
+- **Performance:** Serialised data can be efficiently transmitted over networks, reducing bandwidth usage and improving communication speed
+
+### Serialisation Guide
+
+**JSON (JavaScript Object Notation)**
+**Definition:** JSON is a lightweight data interchange format that is easy for humans to read and write and easy for machines to parse and generate.
+**Use Cases:** JSON is commonly used for web APIs, configuration files, and data exchange between different programming languages.
+**Example:** python import json data = {'name': 'Alice', 'age': 25} json_str = json.dumps(data)
+
+**Pickle**
+**Definition:** Pickle is a Python-specific binary serialisation format that can serialise and deserialise Python objects.
+**Use Cases:** Pickle is used for saving complex Python objects, such as models in machine learning, to disk.
+**Example:** import pickle data = {'name': 'Alice', 'age': 25} with open('data.pkl', 'wb') as f: pickle.dump(data, f)
+
+**XML (eXtensible Markup Language)**
+**Definition:** XML is a markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable.
+**Use Cases:** XML is used for configuration files, data interchange between systems, and web services.
+**Example:** import xml.etree.ElementTree as ET data = ET.Element('data') name = ET.SubElement(data, 'name') name.text = 'Alice'
+
+### Why coding conventitions matter
+
+1. **Readability:** Consistent coding style makes code easier to read and understand, reducing the learning curve for new developers
+
+2. **Maintainability:** Following conventions helps maintain a uniform codebase, making it easier to manage and update over time
+
+3. **Collaboration:** Standardised code ensures that team members can easily collaborate, review, and contribute to projects
+
+**Indentation**
+**Definition:** Python uses indentation to define code blocks, and PEP 8 recommends using 4 spaces per indentation level.
+**Details:** Consistent indentation is crucial for readability and avoiding syntax errors.
+**Example:** 
+def my_function():
+    if true:
+        print('Hello  world!')
+
+**Line length**
+**Definition:** Limit all lines to a maximum of 79 characters.
+**Details:** Breaking long lines improves readability and prevents horizontal scrolling.
+**Example:** 
+def my_function():
+    print('This is an example of a long line that should be broken into multiple lines for better readability')
+
+**Naming conventions**
+**Definition:** Use descriptive names for variables, functions, classes, and modules.
+**Details:** Descriptive names enhance code clarity and make it self-documenting.
+**Example:** 
+variable_name = "value" 
+
+def function_name():
+    pass class
+
+ClassName:
+    pass
+
+**Whitespace**
+**Definition:** Use whitespace to improve readability, but avoid extraneous whitespace.
+**Details:** Proper use of whitespace around operators, after commas, and before and after functions improves code readability.
+**Example:** 
+def my_function(param1, param2):
+    return param1 + param2
+
+
+**Comments**
+**Definition:** Use comments to explain code and provide context, but keep them concise and relevant.
+**Details:** Comments should be used judiciously to clarify complex logic or assumptions, not to state the obvious.
+**Example:** 
+'#' This function adds two numbers 
+def add(a,d):
+    return a + b
+
+## Object-oriented programming (OOP) in Python
+
+
+
+
+
+
 
 
 
