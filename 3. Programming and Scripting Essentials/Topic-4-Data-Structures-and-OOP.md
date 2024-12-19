@@ -546,6 +546,7 @@ Establish core principals for software development.
 Think of a class as a blueprint or template, while an object is the actual thing created using that blueprint. Here’s a beginner-friendly explanation:
 
 1. **Class**
+
 A class is a definition or design.
 It describes what an object will look like and what it can do but doesn’t create anything tangible on its own.
 It contains properties (data) and methods (actions or behaviors).
@@ -557,7 +558,7 @@ Imagine a blueprint for building a car. It defines:
 
 Code Example:
 
-    class Car:
+     class Car:
         def __init__(self, color, model):
              self.color = color  # Property
              self.model = model  # Property
