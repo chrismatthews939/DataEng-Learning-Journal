@@ -694,6 +694,8 @@ Will output to a nice HTML report
 
 Another library for data profiling. Rather than iterate with pandas and look at the data. Sweetviz does it all in one go in a few lines of code.
 
+Profile report does some cool stuff like all the words with the relative size of the data.
+
 *Juypter notebook file in this folder for profilereport*
 
 ### Pandas
