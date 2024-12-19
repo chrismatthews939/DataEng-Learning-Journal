@@ -138,28 +138,42 @@ Python, as a versatile and powerful programming language, offers a variety of ad
 
 **Use Cases:** Sets are useful for membership testing, eliminating duplicate entries, and performing mathematical set operations like union, intersection, and difference.
 
-**Example:** unique_numbers = {1,2,3,4}
+**Example:** 
+
+unique_numbers = {1,2,3,4}
 
 ### Frozen Sets
 **Definition:** A frozenset is an immutable version of a set, meaning its elements cannot be changed after creation.
 
 **Use Cases:** Frozensets are used in situations where a set's immutability is required, such as keys in dictionaries.
 
-**Example:** frozen_unique_numbers = frozenset([1,2,3,4])
+**Example:** 
+
+frozen_unique_numbers = frozenset([1,2,3,4])
 
 ### Named Tuples
 **Definition:** Named tuples are an extension of the regular tuple that allows you to name the elements, improving code readability.
 
 **Use Cases:** Named tuples are ideal for cases where you need tuples but also want to access elements by name rather than index.
 
-**Example:** from collections import namedtuple Point = namedtuple('Point', ['x','y']) p = Point(1,2)
+**Example:** 
+
+from collections import namedtuple 
+
+Point = namedtuple('Point', ['x','y']) p = Point(1,2)
 
 ### OrderedDict
 **Definition:** An OrderedDict is a dictionary that maintains the order of items based on insertion order.
 
 **Use Cases:** OrderedDicts are beneficial when the order of items is important, such as in LRU (Least Recently Used) caches.
 
-**Example:** from collections import OrderedDict od = OrderedDict() od['a'] = 1 od['b'] =2
+**Example:** 
+
+from collections import OrderedDict 
+
+od = OrderedDict() 
+od['a'] = 1 
+od['b'] =2
 
 ## Data serialisation and coding conventions
 
@@ -178,17 +192,36 @@ Data Serialisation is the process of converting data structures or objects into 
 **JSON (JavaScript Object Notation)**
 **Definition:** JSON is a lightweight data interchange format that is easy for humans to read and write and easy for machines to parse and generate.
 **Use Cases:** JSON is commonly used for web APIs, configuration files, and data exchange between different programming languages.
-**Example:** python import json data = {'name': 'Alice', 'age': 25} json_str = json.dumps(data)
+**Example:** 
+
+python import json 
+
+data = {'name': 'Alice', 'age': 25} 
+
+json_str = json.dumps(data)
 
 **Pickle**
 **Definition:** Pickle is a Python-specific binary serialisation format that can serialise and deserialise Python objects.
 **Use Cases:** Pickle is used for saving complex Python objects, such as models in machine learning, to disk.
-**Example:** import pickle data = {'name': 'Alice', 'age': 25} with open('data.pkl', 'wb') as f: pickle.dump(data, f)
+**Example:** 
+
+import pickle 
+
+data = {'name': 'Alice', 'age': 25} 
+
+with open('data.pkl', 'wb') as f: pickle.dump(data, f)
 
 **XML (eXtensible Markup Language)**
 **Definition:** XML is a markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable.
 **Use Cases:** XML is used for configuration files, data interchange between systems, and web services.
-**Example:** import xml.etree.ElementTree as ET data = ET.Element('data') name = ET.SubElement(data, 'name') name.text = 'Alice'
+**Example:** 
+
+import xml.etree.ElementTree as ET 
+
+data = ET.Element('data') 
+
+name = ET.SubElement(data, 'name') 
+name.text = 'Alice'
 
 ### Why coding conventitions matter
 
@@ -347,7 +380,6 @@ class Rectangle(Shape):
 shapes = [Circle(), Rectangle()]
 for shape in shapes:
     shape.draw()
-    
     # Output:
     # Drawing a Circle
     # Drawing a Rectangle
@@ -409,12 +441,6 @@ print(logger1 is logger2)   # Output: True (same instance)
 *Usefulness for data engineers*
 
 *The Singleton pattern is particularly useful for managing resources such as database connections, configuration settings, or logging instances in data engineering projects. Ensuring a single instance of these resources prevents conflicts and reduces overhead.*
-
-
-
-
-
-
 
 
 
