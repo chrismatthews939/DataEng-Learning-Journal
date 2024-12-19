@@ -442,6 +442,90 @@ print(logger1 is logger2)   # Output: True (same instance)
 
 *The Singleton pattern is particularly useful for managing resources such as database connections, configuration settings, or logging instances in data engineering projects. Ensuring a single instance of these resources prevents conflicts and reduces overhead.*
 
+## Apply Task - Debugging Code
+
+The importance of debugging
+
+In the realm of programming, debugging is an essential and inevitable process. It’s the detective work of the coding world, where programmers become investigators, sifting through lines of code to find and fix issues. Debugging is an important process for the following reasons:
+
+1. Error detection: Debugging helps identify syntax errors, runtime errors, and logical errors in your code
+
+2. Code quality: Regular debugging improves the overall quality of your code by ensuring it functions as expected
+
+3. Learning and understanding: Debugging aids in understanding how your code works, helping you learn from mistakes and improve your coding skills
+
+4. Performance optimisation: It helps in identifying performance bottlenecks and optimising your code for better efficiency.
+
+### Fundamentals of debugging in Python
+
+Debugging involves identifying, isolating, and fixing issues or bugs in a program. In Python, there are several tools and techniques at our disposal to make this process more efficient and effective. 
+
+**Print statements**
+
+**Definition:** Using print statements to output the values of variables and program flow at different points in your code.
+
+**Details:** Print statements are a simple and quick way to track the flow of execution and the state of variables.
+
+**Example:**
+
+def add(a,b):
+    print(f"Adding {a} and {b}")
+    return a + b
+
+result add(3,4)
+print(f"Result: {result}")
+
+**Python Debugger**
+
+**Definition:** The Python Debugger (pdb) is a powerful interactive debugging tool that allows you to pause execution and inspect the state of your program.
+
+**Details:** pdb provides commands to step through code, inspect variables, and evaluate expressions, making it a versatile tool for in-depth debugging.
+
+**Example:**
+
+import pdb
+
+def add(a,b):
+    pdb.set_trace()
+    return a + b
+
+result = add(3,4)
+
+**Exception Handling**
+
+**Definition:** Using try-except blocks to catch and handle exceptions gracefully, preventing your program from crashing.
+
+**Details:** Exception handling allows you to manage and respond to errors in a controlled manner, improving the robustness of your code.
+
+**Example:**
+
+try:
+    result = 10 / 0
+except ZeroDivisionError as e:
+    print(f"Error occured: {e}")
+
+**Logging**
+
+**Definition:** Using the logging module to record messages about your program’s execution, which can be saved to a file for later analysis.
+
+**Details:** Logging provides a more flexible and scalable way to monitor your program compared to print statements, especially for larger applications.
+
+**Example:**
+
+import logging
+
+logging.basicConfig(level=logging.INFO)
+
+def add(a,b):
+    logging.info(f"Adding {a} and {b}")
+    return a + b
+
+result = add(3,4)
+logging.info(f"Result: {result}")
+
+![Python debugging]
+
+
 
 
 ## Lecture Notes
