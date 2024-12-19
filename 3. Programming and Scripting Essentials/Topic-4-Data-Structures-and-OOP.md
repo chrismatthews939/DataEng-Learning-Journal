@@ -542,7 +542,177 @@ print("pineapple" not in x) # returns True
 
 Establish core principals for software development. 
 
+### Difference Between a Class, Object and Methods
+Think of a class as a blueprint or template, while an object is the actual thing created using that blueprint. Here’s a beginner-friendly explanation:
 
+1. **Class**
+A class is a definition or design.
+It describes what an object will look like and what it can do but doesn’t create anything tangible on its own.
+It contains properties (data) and methods (actions or behaviors).
+
+Example: The Blueprint
+Imagine a blueprint for building a car. It defines:
+- What the car will look like (color, model, number of wheels, etc.).
+- What the car can do (drive, honk, brake, etc.).
+
+Code Example:
+
+class Car:
+    def __init__(self, color, model):
+        self.color = color  # Property
+        self.model = model  # Property
+
+    def drive(self):  # Method
+        print("The car is driving!")
+At this stage, the class Car is just a concept or a design—it doesn’t create any actual cars yet.
+
+2. **Object**
+An object is a specific instance of a class.
+It is created from the class and represents a real thing that you can use or interact with.
+Each object has its own unique data but follows the structure defined by the class.
+
+Example: The Actual Car
+Using the blueprint (class), you can build cars. Each car (object) can have different properties but shares the same basic design.
+
+Code Example:
+
+# Create objects (instances) of the class
+car1 = Car("Red", "Sedan")
+car2 = Car("Blue", "SUV")
+
+# Use the objects
+print(car1.color)  # Output: Red
+print(car2.model)  # Output: SUV
+car1.drive()       # Output: The car is driving!
+
+car1 is one car (object) with color "Red" and model "Sedan."
+car2 is another car (object) with color "Blue" and model "SUV."
+
+**Summary**
+**Class**: The blueprint or template. It defines the structure (properties) and behaviors (methods) but doesn’t create anything.
+**Object**: A specific instance created from the class. It is the real thing you can use, with unique data but the same structure and behaviors as defined by the class.
+
+**Analogy**:
+**Class**: Recipe for making a cake.
+**Object**: The actual cake made using that recipe. You can bake multiple cakes (objects) with different flavors (properties) using the same recipe (class).
+
+3. **Methods**
+A function inside a class that defines actions or behaviors for objects.
+
+class Car:
+    def __init__(self, color, model):
+        self.color = color  # Property
+        self.model = model  # Property
+
+    def drive(self):  # Method
+        print(f"The {self.color} {self.model} is driving!")
+
+    def honk(self):  # Method
+        print("Beep beep!")
+
+*Here the class describes the properties of the car and the methods are what the car can do*
+
+### Self
+
+In Python, self is a special keyword used in class methods to refer to the current instance (object) of the class. It allows each object to access its own properties and methods.
+
+**Key Points**:
+Represents the Current Object: When a method is called on an object, self refers to the specific object that invoked the method.
+Required for Instance Methods: You must include self as the first parameter in instance methods so Python knows which object to work with.
+Automatically Passed: You don’t need to pass self explicitly when calling a method—it’s done automatically by Python.
+How self Works (Example)
+Here’s a simple class to demonstrate self:
+
+Code Example:
+
+class Dog:
+    def __init__(self, name, breed):
+        self.name = name    # Set the object's 'name' property
+        self.breed = breed  # Set the object's 'breed' property
+
+    def bark(self):
+        print(f"{self.name} says Woof!")
+
+    def info(self):
+        print(f"{self.name} is a {self.breed}")
+
+**Explanation**:
+self.name: Refers to the name property of the specific object.
+self.breed: Refers to the breed property of the specific object.
+Methods (bark, info) use self to access and manipulate the object’s data.
+
+Using self in Objects
+Now, let’s create two Dog objects and see how self works differently for each:
+
+dog1 = Dog("Buddy", "Golden Retriever")
+dog2 = Dog("Luna", "Poodle")
+
+'#' Call methods on the objects
+dog1.bark()  # Output: Buddy says Woof!
+dog2.info()  # Output: Luna is a Poodle
+
+What Happens:
+When dog1.bark() is called:
+Python automatically passes dog1 as self to the bark() method.
+Inside the method, self.name refers to "Buddy".
+
+When dog2.info() is called:
+Python automatically passes dog2 as self to the info() method.
+Inside the method, self.name refers to "Luna" and self.breed refers to "Poodle".
+
+**Why Is self Important?**
+
+- Object-Specific Data: Without self, methods wouldn't know which object's data to use.
+
+- Clear Code: It’s explicitly clear which properties or methods belong to the object.
+Consistency: Python uses self to automatically link method calls to the correct object.
+
+**Analogy**:
+Imagine you’re in a class of students, and everyone gets a unique ID.
+When you raise your hand to answer, the teacher (method) knows it’s you (the current object) based on your ID (self).
+Without self, the teacher wouldn’t know who is interacting!
+
+**Data Visualisation Cheat Sheet**
+https://www.datacamp.com/cheat-sheet/data-viz-cheat-sheet
+
+**Data Quality Cheat Sheet**
+https://www.datacamp.com/cheat-sheet/data-quality-dimensions-cheat-sheet
+
+### Data Profiling
+
+Tools to show you everything about the data in one go. Good place to start on a dataset
+
+### Sweetviz
+
+Library for data profiling. Rather than iterate with pandas and look at the data. Sweetviz does it all in one go in a few lines of code.
+
+Will output to a nice HTML report
+
+*Juypter notebook file in this folder for sweetviz*
+
+### ProfileReport
+
+Another library for data profiling. Rather than iterate with pandas and look at the data. Sweetviz does it all in one go in a few lines of code.
+
+*Juypter notebook file in this folder for profilereport*
+
+### Pandas
+
+Pandas is a standard library for looking at data in python.
+
+It's bascially SQL in python.
+
+It uses dataframes. A dataframe is a table (rows and columns)
+
+**df.describe** shows details around the dataframe
+
+**df.isna** shows empty rows
 
 ## Topic 4 Reflections
+Use more Agile manifesto princpals in the DP work I'm doing
+
+Start doing data profilling on our DPs
+
+Should try sweetviz outputs
+
 
