@@ -560,19 +560,62 @@ print(re.match(pattern, "ab"))       # Does not match: only 1 'ab'
 
 ### Summary of Quantifiers
 Quantifier	Description	Example
-*	0 or more	a*b matches b, ab, aaab
-+	1 or more	a+b matches ab, aaab
-?	0 or 1	a?b matches b, ab
-{n}	Exactly n times	a{3}b matches aaab
-{n,}	At least n times	a{2,}b matches aab, aaaab
-{n,m}	Between n and m times inclusive	a{2,4}b matches aab, aaaab
+- *	0 or more	a*b matches b, ab, aaab
+- +	1 or more	a+b matches ab, aaab
+- ?	0 or 1	a?b matches b, ab
+- {n}	Exactly n times	a{3}b matches aaab
+- {n,}	At least n times	a{2,}b matches aab, aaaab
+- {n,m}	Between n and m times inclusive	a{2,4}b matches aab, aaaab
 
+### Using the OR operator
+
+1. Using **|** to Match One of Several Options
+The | operator allows you to specify multiple patterns, and it matches any one of them.
+
+```python
+import re
+
+# Match either "cat" or "dog"
+pattern = r"cat|dog"
+
+# Examples
+print(re.match(pattern, "cat"))     # Matches: "cat"
+print(re.match(pattern, "dog"))     # Matches: "dog"
+print(re.match(pattern, "cow"))     # Does not match: neither "cat" nor "dog"
+```
+2. Using **|** with Groups
+You can group parts of a pattern with parentheses () and use the | operator inside the group.
+
+```python
+import re
+
+# Match either "batman" or "superman"
+pattern = r"(batman|superman)"
+
+# Examples
+print(re.match(pattern, "batman"))    # Matches: "batman"
+print(re.match(pattern, "superman"))  # Matches: "superman"
+print(re.match(pattern, "spiderman")) # Does not match: not "batman" or "superman"
+```
+
+3. Using **|** in a Complex Pattern
+The | operator can be part of a larger pattern.
+
+```python
+import re
+
+# Match strings that start with "hello" followed by either "world" or "there"
+pattern = r"hello (world|there)"
+
+# Examples
+print(re.match(pattern, "hello world"))  # Matches: "hello world"
+print(re.match(pattern, "hello there"))  # Matches: "hello there"
+print(re.match(pattern, "hello friend")) # Does not match: not "world" or "there"
+```
 
 ### Practice Regex with this tool
 
 https://regex101.com/
-
-
 
 ## Lecture Notes
 
