@@ -330,6 +330,247 @@ print(grouped_data)
 
 ## Combining DataFrames in Pandas: Merge, Join, and Concat
 
+### Three ways to combine DataFrames
+
+### Method 1 - Using merge() fr SQL-like Join
+The merge() function allows you to combine DataFrames in a manner similar to SQL joins. It is highly flexible and supports inner, outer, left, and right joins.
+
+Parameters:
+
+left and right: The DataFrames you want to merge
+on, left_on, right_on: The keys to merge on. These could be column names or arrays with a length equal to the DataFrame lengths
+
+Example: Inner Join
+
+An inner join returns only the records that have matching keys in both DataFrames.
+```python
+merged_inner = pd.merge(df_temp, df_prec, on='Date')
+```
+
+### Method 2 - Using join() for Simpler Joins
+
+The **join()** method is easier to use than merge() and combines DataFrames based on indices by default. However, you can specify keys using the on parameter.
+
+Example: Left Join on Indices
+
+Let's join **df_temp** and **df_prec** based on their indices.
+
+```python
+joined_left = df_temp.join(df_prec, lsuffix= '_temp', rsuffix='_prec', how='left')
+```
+In this example, we use the join() method to perform a left join, keeping all rows from df_temp and appending columns from df_prec. The lsuffix and rsuffix add suffixes to overlapping column names.
+
+The join() operation differs from merge() primarily in that it joins on indices by default rather than requiring you to specify columns. The operation we performed kept all rows from the temperature DataFrame (df_temp) and aligned them with the matching indices in the precipitation DataFrame (df_prec).
+
+### Method 3 - Using concat() for Direct Concatenation
+
+The **concat()** function combines DataFrames along a particular axis, either row-wise (axis=0) or column-wise (axis=1), without needing any keys.
+
+Let's check out our other DataFrame called df_wind with wind speed data:
+
+```python
+concatenated = pd.concat([df_temp, df_wind], ignore_index=True)
+```
+
+Unlike **merge()** and **join()** which combine DataFrames based on keys or indices, **concat()** simply stitches them together along a specified axis. We used it to append the wind speed DataFrame (df_wind) to the temperature DataFrame (df_temp) in a row-wise fashion, effectively extending the dataset without the need for common identifiers like keys or indices.
+
+### Full Code Example Merge
+
+```python
+import pandas as pd
+
+# Load two sample DataFrames
+
+df1 = pd.read_csv('dataset1.csv')
+
+df2 = pd.read_csv('dataset2.csv')
+
+merged_data = pd.merge(df1, df2, on='common_column')
+
+print(merged_data)
+```
+
+### Full Code Example Join
+
+```python
+joined_data = df1.join(df2.set_index('key_column'), on='common_column')
+print(joined_data)
+```
+
+## Regular expressions
+
+### Basic Regex concepts
+
+First up: Using Regex for a simple character pattern search
+
+The simplest form of Regular Expressions is a sequence of characters. For example, the Regex pattern "abc" will match any string that contains "abc" in that exact order.
+
+```python
+import re
+
+text = "abcdef"
+print(re.findall("abc", text))
+# output: ['abc']
+```
+
+**Regex for matching**
+
+Here is an example of matching patterns of text with Regex. 
+
+```python
+import re
+
+# Matches any string that starts with 'My'
+print(re.findall(r'^My', 'My story'))
+
+# Matches any string that ends with 'tale'
+print(re.findall(r'tale$', 'fairy tale'))
+
+# exact match (starts and ends with "exact match")
+print(re.findall(r'^exact match$', 'exact match'))
+
+# matches any string with "text" in it 
+print(re.findall(r'text', 'This is text'))
+```
+
+**Quantifiers in Regex**
+
+Quantifiers in Regex define how many instances of a character, group, or character class must be present in the input for a match to be found. They include symbols like * (zero or more), + (one or more), and ? (zero or one).
+
+1. **(Zero or More Matches)**
+The * quantifier matches 0 or more occurrences of the preceding character or group.
+
+```python
+import re
+
+# Match zero or more "a"s followed by "b"
+pattern = r"a*b"
+
+# Examples
+print(re.match(pattern, "b"))       # Matches: "b" (zero 'a's)
+print(re.match(pattern, "ab"))      # Matches: "ab" (one 'a')
+print(re.match(pattern, "aaab"))    # Matches: "aaab" (three 'a's)
+```
+
+2. **+ (One or More Matches)**
+The **+** quantifier matches 1 or more occurrences of the preceding character or group.
+
+```python
+import re
+
+# Match one or more "a"s followed by "b"
+pattern = r"a+b"
+
+# Examples
+print(re.match(pattern, "b"))       # Does not match: needs at least one 'a'
+print(re.match(pattern, "ab"))      # Matches: "ab" (one 'a')
+print(re.match(pattern, "aaab"))    # Matches: "aaab" (three 'a's)
+```
+
+3. **? (Zero or One Match)**
+The **?** quantifier matches 0 or 1 occurrence of the preceding character or group.
+
+```python
+import re
+
+# Match zero or one "a" followed by "b"
+pattern = r"a?b"
+
+# Examples
+print(re.match(pattern, "b"))       # Matches: "b" (zero 'a's)
+print(re.match(pattern, "ab"))      # Matches: "ab" (one 'a')
+print(re.match(pattern, "aab"))     # Does not match: more than one 'a'
+```
+
+4. **{n} (Exact Number of Matches)**
+The **{n}** quantifier matches exactly n occurrences of the preceding character or group.
+
+```python
+import re
+
+# Match exactly 3 "a"s followed by "b"
+pattern = r"a{3}b"
+
+# Examples
+print(re.match(pattern, "aaab"))    # Matches: "aaab" (exactly 3 'a's)
+print(re.match(pattern, "ab"))      # Does not match: only 1 'a'
+print(re.match(pattern, "aaaab"))   # Does not match: more than 3 'a's
+```
+
+5. **{n,} (At Least n Matches)**
+The {n,} quantifier matches at least n occurrences of the preceding character or group.
+
+```python
+import re
+
+# Match at least 2 "a"s followed by "b"
+pattern = r"a{2,}b"
+
+# Examples
+print(re.match(pattern, "aab"))     # Matches: "aab" (2 'a's)
+print(re.match(pattern, "aaaab"))   # Matches: "aaaab" (4 'a's)
+print(re.match(pattern, "ab"))      # Does not match: fewer than 2 'a's
+```
+
+6. **{n,m} (Range of Matches)**
+The **{n,m}** quantifier matches between n and m occurrences (inclusive) of the preceding character or group.
+
+```python
+import re
+
+# Match between 2 and 4 "a"s followed by "b"
+pattern = r"a{2,4}b"
+
+# Examples
+print(re.match(pattern, "aab"))     # Matches: "aab" (2 'a's)
+print(re.match(pattern, "aaaab"))   # Matches: "aaaab" (4 'a's)
+print(re.match(pattern, "aaaaab"))  # Does not match: more than 4 'a's
+print(re.match(pattern, "ab"))      # Does not match: fewer than 2 'a's
+```
+
+7. .* **(Any Number of Any Character)**
+The .* quantifier matches 0 or more of any character (except newline unless re.DOTALL is used).
+
+```python
+import re
+
+# Match any string ending with "b"
+pattern = r".*b"
+
+# Examples
+print(re.match(pattern, "hello worldb"))   # Matches: "hello worldb"
+print(re.match(pattern, "b"))             # Matches: "b" (zero characters before 'b')
+print(re.match(pattern, "abc"))           # Does not match: does not end with 'b'
+```
+
+8. **Combining Quantifiers**
+You can combine quantifiers with groups and other characters.
+
+```python
+import re
+
+# Match strings with 2 or more "ab" groups
+pattern = r"(ab){2,}"
+
+# Examples
+print(re.match(pattern, "abab"))     # Matches: "abab" (2 'ab' groups)
+print(re.match(pattern, "ababab"))   # Matches: "ababab" (3 'ab' groups)
+print(re.match(pattern, "ab"))       # Does not match: only 1 'ab'
+```
+
+### Summary of Quantifiers
+Quantifier	Description	Example
+*	0 or more	a*b matches b, ab, aaab
++	1 or more	a+b matches ab, aaab
+?	0 or 1	a?b matches b, ab
+{n}	Exactly n times	a{3}b matches aaab
+{n,}	At least n times	a{2,}b matches aab, aaaab
+{n,m}	Between n and m times inclusive	a{2,4}b matches aab, aaaab
+
+
+### Practice Regex with this tool
+
+https://regex101.com/
 
 
 
