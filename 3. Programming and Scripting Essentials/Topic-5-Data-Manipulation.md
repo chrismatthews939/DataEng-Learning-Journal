@@ -296,34 +296,20 @@ aggregated_multi = grouped_multi['Age'].mean()
 
 ```python
 import pandas as pd
-
 import numpy as np
 
-
-
 # Create a sample sales dataset
-
 data = {
-
     'Date': pd.date_range(start='2022-01-01', periods=100, freq='D'),
-
     'Category': np.random.choice(['Electronics', 'Clothing', 'Books'], 100),
-
     'Sales': np.random.randint(100, 1000, 100),
-
     'Price': np.random.uniform(10, 100, 100)
-
 }
 
 df = pd.DataFrame(data)
 
-
-
 # Grouping and aggregating
-
 grouped_data = df.groupby('Category').agg({'Sales': 'sum', 'Price': 'mean'})
-
-
 
 print(grouped_data)
 ```
@@ -617,8 +603,6 @@ print(re.match(pattern, "hello friend")) # Does not match: not "world" or "there
 
 https://regex101.com/
 
-## Lecture Notes
-
-
-
 ## Topic 5 Reflections
+
+Be careful with data manipulation that you don't change customer info. If you change an email address you might send personal information to the wrong person
