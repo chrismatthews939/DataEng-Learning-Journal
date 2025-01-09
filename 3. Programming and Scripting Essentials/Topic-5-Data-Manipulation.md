@@ -603,6 +603,8 @@ print(re.match(pattern, "hello friend")) # Does not match: not "world" or "there
 
 https://regex101.com/
 
+**Google collab Pandas practice file 'L5DE M3T5 Data_Manipulation.ipyng'**
+
 ## Topic 5 Reflections
 
 Be careful with data manipulation that you don't change customer info. If you change an email address you might send personal information to the wrong person
