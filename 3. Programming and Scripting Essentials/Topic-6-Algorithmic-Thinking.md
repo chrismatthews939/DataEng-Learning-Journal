@@ -166,6 +166,58 @@ Moreover, it aids in the efficient tracking of bugs and facilitates smoother upd
 
 ## Constructing efficient algorithms
 
+### Understanding algorithm design
+
+Algorithms are step-by-step instructions for solving specific tasks. Just like an architect considers materials, load-bearing structures, and aesthetics, we consider factors like time complexity, space efficiency, and correctness.
+
+**Algorithm design**
+
+1. Time complexity
+2. Space efficiency
+3. Optimising resource usage
+
+### Problem-solving strategies
+
+**Divide and conquer**
+
+Imagine breaking a big problem into smaller, manageable pieces. Divide and conquer algorithms recursively solve subproblems and combine their solutions. Examples include Merge Sort, Quick Sort, and binary search.
+
+**Dynamic programming**
+
+Imagine a painter covering a canvas with intricate patterns. Dynamic programming breaks complex problems into overlapping subproblems. We store solutions to subproblems and build up to the final solution. Examples include the Fibonacci sequence and solving shortest path problems.
+
+**Greedy Algorithms**
+
+Imagine a squirrel collecting nuts for winter. Greedy algorithms make locally optimal choices at each step. They don’t always guarantee the best global solution but work well for certain problems. An example is Dijkstra’s algorithm for finding the shortest path.
+
+### Real-world application of problem-solving strategies
+
+**Routing Algorithms (GPS Navigation):**
+
+- GPS devices find the shortest route from point A to point B.
+- They use graph algorithms (like Dijkstra’s) to optimise travel time.
+
+**Data Compression (ZIP Files):**
+
+- Compression algorithms reduce file size while preserving data.
+- ZIP files use techniques like Huffman coding.
+
+**Network Routing (Internet Traffic):**
+
+- Imagine directing traffic on a busy highway
+- Routing algorithms manage data packets efficiently across networks
+- BGP (Border Gateway Protocol) is an example
+
+## Advanced algorithmic techniques
+
+
+
+
+
+
+
+
+
 
 
 
