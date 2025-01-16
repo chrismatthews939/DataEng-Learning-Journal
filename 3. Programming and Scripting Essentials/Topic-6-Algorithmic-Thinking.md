@@ -208,32 +208,135 @@ Imagine a squirrel collecting nuts for winter. Greedy algorithms make locally op
 - Routing algorithms manage data packets efficiently across networks
 - BGP (Border Gateway Protocol) is an example
 
-## Advanced algorithmic techniques
+## Advanced Algorithmic Techniques
 
 ### An introduction to graph algorithms
 
 Graphs are powerful tools used to model complex systems. They are like interconnected cities on a map. In this section, we will delve into advanced graph algorithms that help us navigate these ‘cities’ efficiently. 
 
-**Shortest path algorithms**
+### Shortest path algorithms
 
 These algorithms help us find the most efficient path between two nodes in a graph. 
 
 They are like GPS systems guiding a traveller to their destination. 
 
-'''python
+![shortest path algorithm](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Shortest_path_with_direct_weights.svg/1200px-Shortest_path_with_direct_weights.svg.png)
+```
 In graph theory, the shortest path problem is the problem of finding a path between two vertices (or nodes) in a graph such that the sum of the weights of its constituent edges is minimised. 
 
 Algorithms like Dijkstra’s and Bellman-Ford help you discover the most efficient path.
 
 Dijkstra’s algorithm explores neighbouring cities in order of increasing distance, ensuring you reach your destination with minimal travel time.
 
-Bellman-Ford handles negative edge weights and detects negative cycles.*
-'''
+Bellman-Ford handles negative edge weights and detects negative cycles.
+```
+
+### Cycle detection algorithms
+
+These algorithms help us identify cycles in a graph, preventing us from going in circles. 
+
+In computer science, cycle detection or cycle finding is the algorithmic problem of finding a cycle in a sequence of iterated function values.
+
+![cycle detection algorithm](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Functional_graph.svg/330px-Functional_graph.svg.png)
+
+```
+In the graph above, so-called cycles may appear, for example around {4}, or between {1}, {6} and {3}. 
+
+Detecting cycles may be helpful as a way of discovering infinite loops in certain types of computer programs. 
+
+For example, in Excel, circular references could cause problems in your workbooks. Excel uses cycle detection to manage this.
+```
+
+### Network flow algorithms
+
+These algorithms help us optimise the flow in a network while respecting capacity constraints. 
+
+They are like traffic control systems optimising the flow of vehicles on the road. 
+
+![Network flow algorithms](https://media.geeksforgeeks.org/wp-content/cdn-uploads/ford_fulkerson2.png)
 
 
+### String algorithms
 
+Strings are sequences of characters that can be likened to musical notes in a song. In this section, we will explore advanced string algorithms that help us find patterns and harmonies within these ‘notes’.
 
+**Pattern matching algorithms**
 
+These algorithms help us locate patterns within a longer text. 
+
+- Algorithms like **Knuth-Morris-Pratt (KMP)** and **Boyer-Moore** efficiently locate patterns within a longer text
+- KMP avoids unnecessary character comparisons by using a prefix function
+- Boyer-Moore skips ahead based on mismatched characters
+
+*They are like a reader searching for a specific word in a book.*
+
+**Substring search algorithms**
+
+These algorithms help us quickly identify matching substrings. 
+
+- Algorithms like Rabin-Karp use hashing to quickly identify matching substrings.
+- Rabin-Karp slides a window over the text, hashing each substring and comparing it to the target hash
+
+*They are like a music enthusiast searching for a specific phrase in a song’s lyrics.*
+
+**Substring compression algorithms**
+
+These algorithms help us reduce the space needed to store strings while preserving data (like DNA sequences or text documents).
+
+- Compression algorithms reduce the space needed while preserving data
+- Techniques like Run-Length Encoding (RLE) replace repeated characters with a count.
+
+*They are like a librarian archiving books in a compact yet accessible manner.*
+
+```
+Modern software applications typically use pre-existing libraries for pattern matching algorithms like Knuth-Morris-Pratt (KMP) and Boyer-Moore, avoiding the need to reinvent the wheel. These algorithms are integral to various tools and systems for efficient text searching.
+Examples of software packages that use string searching and pattern matching algorithms include: Text Editors and IDEs, Databases, Search Engines, Bioinformatics software (e.g. for DNA sequence analysis).
+File Search Utilities: Unix tools like grep, Compilers, Text Processing Libraries: Regular expression libraries in Python and Java.
+Version Control Systems: Tools like Git, Security Systems: Intrusion detection and antivirus software, NLP Libraries like SpaCy and NLTK.
+String searching and pattern matching algorithms are embedded in lots of widely used libraries, ensuring efficient text searching and pattern matching across various applications.
+```
+
+### Advanced Data Structures
+
+Data structures are foundational elements in computer science, much like Lego blocks in a construction set. In this section, we will explore more complex structures that provide efficient ways to organise and manipulate data.  These are as follows:
+
+**Heaps (Priority queues)**
+
+Heaps help us maintain a partially ordered structure, are useful for tasks like scheduling. 
+
+- **Min-heaps** ensure the smallest element is at the top, useful for scheduling tasks
+- **Max-heaps** prioritise the largest element, helpful for finding top-k elements.
+
+These are a fairly abstract concept, but you can think of them as a 'black box' where you can add elements and trust that they will come back to you in the right order.
+
+**Tries (Prefix trees)**
+
+Tries help us store words in a tree-like structure for efficient word lookup. 
+
+- Each level represents a character, allowing fast word lookup
+- Tries power autocomplete features and spell-checkers
+
+They are like a dictionary organised in a way that allows fast word search. 
+
+**Segment Trees (Interval trees)**
+
+Segment trees help us handle range queries efficiently. 
+
+- Segment trees handle range queries efficiently
+- They divide data into segments, allowing quick calculations (e.g., finding maximum or sum) within specific intervals
+- Segment trees are essential for handling dynamic data
+
+They are like a timeline tracking events such as temperature changes over time.
+
+### Real-life applications
+
+Understanding these advanced algorithmic techniques is not just an academic exercise. They have real-world applications that impact our daily lives:
+
+- **Social networks (Graph algorithms):** Social networking platforms like Facebook and LinkedIn use graph algorithms to suggest friends and recommend job opportunities based on mutual connections.
+
+- **Search engines (String algorithms):** Search engines like Google use string algorithms to find relevant web pages based on search queries. Efficient indexing and searching of web content rely heavily on these algorithms.
+
+- **Database indexing (Advanced data structures):** Database systems use advanced data structures for efficient indexing. This allows quick retrieval of data, enhancing the performance of database operations.
 
 
 
