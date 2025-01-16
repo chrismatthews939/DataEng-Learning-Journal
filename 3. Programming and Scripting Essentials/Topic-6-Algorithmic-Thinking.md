@@ -210,7 +210,25 @@ Imagine a squirrel collecting nuts for winter. Greedy algorithms make locally op
 
 ## Advanced algorithmic techniques
 
+### An introduction to graph algorithms
 
+Graphs are powerful tools used to model complex systems. They are like interconnected cities on a map. In this section, we will delve into advanced graph algorithms that help us navigate these ‘cities’ efficiently. 
+
+**Shortest path algorithms**
+
+These algorithms help us find the most efficient path between two nodes in a graph. 
+
+They are like GPS systems guiding a traveller to their destination. 
+
+'''python
+In graph theory, the shortest path problem is the problem of finding a path between two vertices (or nodes) in a graph such that the sum of the weights of its constituent edges is minimised. 
+
+Algorithms like Dijkstra’s and Bellman-Ford help you discover the most efficient path.
+
+Dijkstra’s algorithm explores neighbouring cities in order of increasing distance, ensuring you reach your destination with minimal travel time.
+
+Bellman-Ford handles negative edge weights and detects negative cycles.*
+'''
 
 
 
