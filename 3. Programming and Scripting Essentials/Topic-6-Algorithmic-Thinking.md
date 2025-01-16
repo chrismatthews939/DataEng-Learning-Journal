@@ -338,13 +338,78 @@ Understanding these advanced algorithmic techniques is not just an academic exer
 
 - **Database indexing (Advanced data structures):** Database systems use advanced data structures for efficient indexing. This allows quick retrieval of data, enhancing the performance of database operations.
 
-
-
-
-
-
 ## Lecture notes
 
+Pandas keeps the data in memory when using dataframes, so ensure you do filtering before joining etc to optimise.
+
+### PRegEx (Python library)
+
+Easier to understand version of RegEx (regular expressions)
+
+Free online course 
+https://regexone.com/
+
+For understanding regex
+https://regex101.com/
+
+**black box algorithm**
+
+You cannot see what's going on under the hood**
+
+**translucent algorithm**
+
+You can see the stages of the algorithm
+
+**What is programming**
+
+1. Algorithmic thinking
+2. Knowledge of programming language syntax
+
+To be able to turn pseudocode into actual code
+
+**Example Flowchart to show pseudocode algorithm**
+
+![example algorithm flowchart](https://i.ytimg.com/vi/vOEN65nm4YU/hqdefault.jpg)
+
+### Components of algorithms
+
+1. Data structures
+2. Instructions
+3. Conditional expressions
+4. Control structures (act of decisions)
+5. Modules
+
+### Example Algorithms for adding positive integers from 1 - 10
+
+```python
+# Example 1 - loop
+def sum_integers(n):
+    total = 0 
+    for i in range(0, n + 1):
+        total += i  
+    return total  
+
+print(sum_integers(10)) # output 55
+```
+
+```python
+# Example 2 - more efficient mathmatical formula
+def sum_integers(n):
+   return n * (n + 1) // 2 ## // means keep ints not floats
+
+print(sum_integers(10)) # output 55
+```
+
+### Big O Notation
+
+Way of describing how efficient an algorithm is as data size grows
+
+![Comparing sorting algorithms](https://miro.medium.com/v2/resize:fit:1400/1*_6cmimlqmNzG4Qj2sTI8Cw.png)
+
+![Big O Complexity Chart]([https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyUS8DLiuMrkgaveMttFJCODvw3g0A6mAKFA&s](https://media.geeksforgeeks.org/wp-content/cdn-uploads/mypic.png))
+
 ## Topic 6 Reflections
+
+Spend more time drafing problems in pseudocode before getting into the code. Might be a good thing for documentation as well
 
 
