@@ -4,7 +4,7 @@
 
 ### Big O Notation Practice
 
-L5DE M3T6 Jupyter Notebook in Google Collab for Big O Notation
+'L5DE M3T6' Jupyter Notebook in Google Collab for Big O Notation
 
 ### Parallel Programming
 
@@ -69,7 +69,63 @@ Threads are lightweight because they rely on the main program's memory space rat
 
 ### Parallel Programming Practice
 
-Parallel Programming Jupyter Notebook in Google Collab 
+'Parallel Programming' Jupyter Notebook in Google Collab 
 
+### Distributed computing 
 
+Uses multiple processors possibly at different locations
+
+![Distributed computing](https://www.techtarget.com/rms/onlineimages/the_distributed_computing_process-f_mobile.png)
+
+### Spark Programming Practice
+
+'Spark' Programming Jupyter Notebook in Google Collab 
+
+## Apache Spark: A Beginner's Guide
+
+Apache Spark is an open-source distributed computing system designed for big data processing and analytics. It uses in-memory computation to speed up data processing tasks and supports multiple languages like Python, Java, Scala, and SQL, making it highly versatile.
+
+### Why Use Apache Spark?
+- **Speed**: Processes data up to 100x faster than traditional systems like Hadoop due to in-memory computation.
+- **Ease of Use**: Offers APIs for developers in popular programming languages.
+- **Scalability**: Efficiently handles large-scale data across clusters of machines.
+- **Versatility**: Supports batch processing, real-time streaming, machine learning, and graph processing.
+
+### Limitations
+- **Resource Intensive**: Requires substantial memory and compute resources.
+- **Complexity**: Learning curve for beginners due to its distributed nature and ecosystem.
+- **Cost**: Running Spark at scale on large clusters can be expensive.
+
+### Common Use Cases
+- **Data Analytics**: Processing and analyzing massive datasets for business intelligence.
+- **Real-Time Streaming**: Handling live data streams for tasks like fraud detection or real-time dashboards.
+- **Machine Learning**: Building scalable machine learning models with its MLlib library.
+- **ETL Pipelines**: Extracting, transforming, and loading (ETL) data for data warehouses.
+
+## Spark SQL: A Beginner's Guide
+
+Spark SQL is a module of Apache Spark that allows users to query structured data using SQL (Structured Query Language). It integrates seamlessly with Spark's other modules and can process data from various sources like JSON, Parquet, Hive, and JDBC databases.
+
+### Why Use Spark SQL?
+- **Unified API**: Combines SQL queries with Spark's other APIs for advanced analytics.
+- **Performance**: Uses Spark's distributed engine for faster query execution on large datasets.
+- **Compatibility**: Works with existing BI tools and supports standard SQL syntax.
+- **Data Source Flexibility**: Reads and writes data from diverse sources, including cloud storage, databases, and distributed file systems.
+
+### When to Use Spark SQL Over MySQL
+- **Large-Scale Data**: Spark SQL is better suited for analyzing terabytes or petabytes of data, whereas MySQL struggles with such volumes.
+- **Distributed Processing**: If the workload requires parallel processing across multiple nodes, Spark SQL is the ideal choice.
+- **Complex Workflows**: When combining SQL with advanced data processing tasks like machine learning, Spark SQL offers seamless integration.
+- **Batch and Streaming Data**: Use Spark SQL for scenarios involving both static and real-time data.
+
+### Limitations
+- **Resource Heavy**: Requires significant hardware resources compared to MySQL.
+- **Higher Setup Complexity**: Setting up and maintaining a Spark cluster can be challenging.
+- **Not Ideal for Small Data**: For small datasets and simple queries, MySQL or similar databases are more efficient.
+
+### Common Use Cases
+- **Big Data Analytics**: Querying massive datasets stored in distributed systems like Hadoop or cloud storage.
+- **Data Lakes**: Providing SQL capabilities on top of semi-structured and unstructured data.
+- **ETL Pipelines**: Transforming and querying large-scale data before moving it into data warehouses.
+- **Real-Time Analytics**: Running SQL queries on streaming data for real-time insights.
 
