@@ -174,4 +174,10 @@ Spark SQL is a module of Apache Spark that allows users to query structured data
 **Link for SQL in Spark training notebook**
 https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fcolab.research.google.com%2Fdrive%2F1fa2G3YuXx3Isqyby5kFETqmWotFwtqlH&data=05%7C02%7Cchristopher.matthews%40ee.co.uk%7C632bf4016f524ff94c1408dd3bc694bd%7Ca7f356889c004d5eba4129f146377ab0%7C0%7C0%7C638732446255387705%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=UuRltfSGKrE9G9oxF%2BNYAvDmLEifKSEw%2BJOrfU5rz%2FM%3D&reserved=0
 
+## E-Learning
 
+## Paralell Programming
+
+The asyncio library allows for concurrent code execution using the async/await syntax. It handles asynchronous operations, enabling programs to perform multiple tasks simultaneously without waiting for each to complete sequentially. This is particularly useful for I/O-bound and network code. 
+
+## Performance and deployment considerations
