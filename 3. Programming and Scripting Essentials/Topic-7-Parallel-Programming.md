@@ -102,7 +102,45 @@ Apache Spark is an open-source distributed computing system designed for big dat
 - **Machine Learning**: Building scalable machine learning models with its MLlib library.
 - **ETL Pipelines**: Extracting, transforming, and loading (ETL) data for data warehouses.
 
+### Understanding `map` vs `flatMap` in Apache Spark
+
+Both `map` and `flatMap` are transformation operations in Apache Spark that apply a function to each element of an RDD (Resilient Distributed Dataset). While they seem similar, they behave differently in terms of the output structure.
+
+### `map`
+The `map` transformation applies a function to each element of an RDD and returns a new RDD where **each input element corresponds to exactly one output element**.
+
+#### Example:
+If you have a list of numbers `[1, 2, 3]` and apply `map` to multiply each number by 2, you get `[2, 4, 6]`.
+
+```python
+data = [1, 2, 3]
+rdd = spark.sparkContext.parallelize(data)
+mapped_rdd = rdd.map(lambda x: x * 2)  # Output: [2, 4, 6]
+```
+
+## Spark Broadcast Variables
+
+### What Are They?
+Broadcast variables in Apache Spark are a way to share data with all the worker nodes in your cluster without sending it repeatedly. Imagine you have a small list, like a table of country codes and their names, that every task needs to use. Instead of sending this list every time a task runs, Spark can send it once and store it on each worker node. This makes your program faster and more efficient.
+
+*Bascially like caching*
+
+### Why Use Broadcast Variables?
+1. **Efficiency**: Avoids sending the same data multiple times with each task, reducing network overhead.
+2. **Speed**: Accessing broadcast data is faster since it is stored locally on the worker nodes.
+
+### Limitations
+- Broadcast variables are **read-only**, meaning you cannot modify their value once they are broadcast.
+- The size of the data that can be broadcast depends on the cluster's memory; broadcasting very large data can lead to memory issues.
+
+### Common Use Cases
+1. Distributing small to medium-sized lookup tables to worker nodes for joins or filtering.
+2. Sharing configuration data or constants across all tasks.
+3. Improving performance when the same data is used repeatedly in transformations.
+
 ## Spark SQL: A Beginner's Guide
+
+*MySQL needs a database and schema. Spark is more flexible*
 
 Spark SQL is a module of Apache Spark that allows users to query structured data using SQL (Structured Query Language). It integrates seamlessly with Spark's other modules and can process data from various sources like JSON, Parquet, Hive, and JDBC databases.
 
@@ -128,4 +166,12 @@ Spark SQL is a module of Apache Spark that allows users to query structured data
 - **Data Lakes**: Providing SQL capabilities on top of semi-structured and unstructured data.
 - **ETL Pipelines**: Transforming and querying large-scale data before moving it into data warehouses.
 - **Real-Time Analytics**: Running SQL queries on streaming data for real-time insights.
+
+
+![Sparksql vs Mysql](https://i.sstatic.net/NkrUy.png)
+
+
+**Link for SQL in Spark training notebook**
+https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fcolab.research.google.com%2Fdrive%2F1fa2G3YuXx3Isqyby5kFETqmWotFwtqlH&data=05%7C02%7Cchristopher.matthews%40ee.co.uk%7C632bf4016f524ff94c1408dd3bc694bd%7Ca7f356889c004d5eba4129f146377ab0%7C0%7C0%7C638732446255387705%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=UuRltfSGKrE9G9oxF%2BNYAvDmLEifKSEw%2BJOrfU5rz%2FM%3D&reserved=0
+
 
