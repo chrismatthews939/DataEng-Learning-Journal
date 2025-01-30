@@ -140,11 +140,7 @@ This method provides a balance between real-time processing and the efficiency o
 
 **Batching example**
 
-```
-Data is received continuously from a source (e.g., financial transactions).
-Every second, the data collected in that second is grouped into a microbatch.
-Each microbatch is processed and analysed immediately, enabling near real-time insights.
-```
+`Data is received continuously from a source (e.g., financial transactions). Every second, the data collected in that second is grouped into a microbatch. Each microbatch is processed and analysed immediately, enabling near real-time insights.`
 
 ### Windowing
 
