@@ -508,6 +508,10 @@ kubectl get services
 
 ### Practice Notebook L5DE_M3_t9.ipynb in Google Collab
 
+## Reflections
+
+Use Lazy classifier in python for a quick ML model 
+
 
 
 
