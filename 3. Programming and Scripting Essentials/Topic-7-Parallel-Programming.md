@@ -181,3 +181,46 @@ https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fcolab.research
 The asyncio library allows for concurrent code execution using the async/await syntax. It handles asynchronous operations, enabling programs to perform multiple tasks simultaneously without waiting for each to complete sequentially. This is particularly useful for I/O-bound and network code. 
 
 ## Performance and deployment considerations
+
+**Data Locality**
+
+- Ensuring that data is located close to the processing units can reduce communication overhead and improve performance. 
+
+- This is particularly important in distributed computing, where data transfer across network nodes can become a bottleneck. 
+
+- Techniques such as data partitioning and replication can help optimise data locality.
+
+
+**Load Balancing**
+
+- Proper load balancing ensures that all processors or nodes are utilised effectively, preventing some from being overburdened while others remain idle. 
+
+- Dynamic load balancing techniques can adjust the distribution of tasks in real-time based on the current workload, leading to more efficient execution.
+
+## Apache Spark
+
+Apache Spark is a powerful open-source distributed computing framework that provides an easy-to-use interface for parallel processing. Spark's in-memory processing capabilities make it significantly faster than traditional disk-based systems like Hadoop MapReduce.
+
+**Key benefits of Spark**
+
+1. **Speed**: Spark processes data in memory, reducing the latency associated with disk I/O operations. This makes it suitable for real-time data processing tasks.
+2. **Ease of Use**: Spark’s API supports multiple languages, including Python, making it accessible to a broad range of developers.
+3. **Flexibility**: Spark can handle various data processing tasks, from batch processing to interactive querying and streaming analytics.
+4. **Scalability**: Spark can scale from a single server to thousands of nodes, making it suitable for both small and large-scale applications.
+
+**Similar Platforms to Spark**
+
+1. **Apache Flink**
+  - **Strengths**: Flink excels in real-time stream processing and offers low-latency processing capabilities. It is designed for applications that require continuous processing of data streams.
+  - **Use Cases**: Flink is ideal for applications like real-time analytics, event detection, and online machine learning.
+2. **Dask**
+  - **Strengths**: Dask is a flexible library for parallel computing in Python, designed to scale computations from a single machine to a cluster. It integrates seamlessly with existing Python libraries like NumPy and Pandas.
+  - **Use Cases**: Dask is well-suited for data science workflows, allowing data scientists to leverage parallel processing without changing their existing codebases significantly.
+3. **Apache Storm**
+  - **Strengths**: Storm is a distributed real-time computation system that processes data streams with low latency. It is known for its robustness and ability to handle high-throughput data streams.
+  - **Use Cases**: Storm is used for real-time analytics, continuous computation, and distributed RPC (remote procedure call).
+
+*A final tip - when choosing a platform consider the following...*
+- For sub-10-millisecond-latencies - Flink is the best choice This is Flink's target use-case.
+- For half-second-or-longer latencies - Spark's the best choice - it is better documented, easier, larger community, and more convenient.
+- For anything between 10ms and 500ms latencies -- you may want to try both and spend the time to evaluate them.
