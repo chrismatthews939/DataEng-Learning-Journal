@@ -191,44 +191,30 @@ Scenario
 
 An organisation experiences a ransomware attack that affects 100 servers. Each server has a replacement cost of £5,000, and the downtime costs the company £10,000 per hour in lost business. The average downtime per server due to the attack is 8 hours.
 
-Description
-
-Amount
-
-Number of Servers Affected
-
-100
-
-Replacement Cost per Server
-
-£5,000
-
-Total Replacement Cost
-
-£500,000
-
-Downtime Cost per Hour
-
-£10,000
-
-Average Downtime per Server
-
-8 hours
-
-Total Downtime Cost per Server
-
-£80,000
-
-Total Financial Impact
-
-£8,500,000
-
-
+| **Description**         | **Amount**    |
+|----------------------|-----------------------------|
+| Number of Servers Affected    | 100 |
+| Replacement Cost per Server     | £5,000 |
+| Total Replacement Cost | £500,000 |
+| Downtime Cost per Hour | £10,000  |
+| Average Downtime per Server   | 8 hours |
+| Total Downtime Cost per Server  | £80,000 |
+| **Total Financial Impact**  | **£8,500,000**  |
 
   
 # Lecture
 
 
+
+
+
+# Reflections
+
+What data security meansures do we have in place
+
+IAM
+Encryption
+Interval VPC
 
 
 
