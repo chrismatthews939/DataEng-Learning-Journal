@@ -346,13 +346,245 @@ Key practices for secure full-stack systems:
 - **Secure coding practices:** Ensure that secure coding guidelines are followed to prevent common vulnerabilities such as SQL injection, XSS, etc.
 - **Regular security audits:** Conduct comprehensive audits to identify and rectify security flaws within the system.
 - **Frequent updates:** Keep all components updated to protect against known vulnerabilities.
-
-
-
-
-
   
 # Lecture
+
+**Authentication**
+verifying who someone is
+
+**Authorization**
+Dictating what someone can do
+
+**Service**
+Special software interface that enables access to a particular functionality
+
+**Service account**
+A special account with escalated privileges. Like a backstage pass at a festival
+
+**Open Design**
+Hiding methods of design does not secure your system
+
+#### Practical Security Principals
+
+**Secure Communication:**
+Ensure data transmitted is encrypted and authenticated 
+
+**Secure configuration:**
+Setting up system components follow best practices
+
+**Anti-patterns:**
+Common but flawed approaches. 
+- Example: Hardcoding API keys in Git repo or something
+
+#### Key Secure Networking Protocols 
+
+**SSL/TLS** - Secure sockets layer/transport layer security
+- Cryptographic protocol designed to provide secure communication over a computer network
+- Protects data during transmission
+- Vunerable to "man in the middle" attacks where unautorised parties can intercept traffic
+
+![SSL Handshake](https://www.clickssl.net/wp-content/uploads/2020/10/ssl-handshake-explained.jpg)
+
+**Downgrade attacks**
+Forces a connection to use older less secure versions making them vunerable
+To mitigate you can force use of the latest version
+
+**VPN** - Stop people ease dropping e.g. PPTP, L2TP, OpenVPN, IPsec
+
+![VPN](https://blog-api.hidemyacc.com/posts/content/images/ex0inb4v54benl4ojuhqwgmwhnra8uows7thd8k3sgjj5nhjtnvirvhbubweeigrr4mt.png)
+
+## Understanding VPNs
+
+### What is a VPN?
+
+A **VPN (Virtual Private Network)** is a service that creates a secure, encrypted connection between your device (like your computer or smartphone) and the internet. It acts like a private tunnel for your online activities, keeping your data safe from prying eyes.
+
+### How Does a VPN Work?
+
+1. **Establishing a Secure Connection:**  
+   When you activate a VPN, your device connects to a VPN server. This connection forms a private "tunnel" that your data travels through.
+
+2. **Encryption:**  
+   The VPN encrypts your data, which means it scrambles your information so that anyone who intercepts it (like hackers or your internet service provider) cannot read it.
+
+3. **Data Transmission Through a Tunnel:**  
+   Your internet traffic (websites you visit, emails you send, etc.) travels through this secure tunnel to the VPN server. Because the data is encrypted, it stays private and secure.
+
+4. **IP Address Masking:**  
+   After passing through the VPN server, your data goes out onto the internet. The websites you visit see the IP address of the VPN server, not your real IP address. This helps keep your location and identity hidden.
+
+### Why Use a VPN?
+
+- **Enhanced Security:**  
+  Using a VPN, especially on public Wi-Fi networks (like in cafés or airports), helps protect your sensitive information from hackers.
+
+- **Increased Privacy:**  
+  By masking your IP address and encrypting your data, a VPN makes it much harder for websites and online services to track your activities.
+
+- **Access to Restricted Content:**  
+  VPNs allow you to appear as if you're browsing from a different location. This can help you access websites or streaming services that might be restricted or censored in your area.
+
+### Summary
+
+A VPN is a valuable tool that safeguards your online privacy and security by:
+- Creating a secure, encrypted tunnel for your data.
+- Hiding your real IP address and location.
+- Helping you bypass content restrictions.
+
+Whether you're looking to protect your personal information on public Wi-Fi or simply want to browse the internet with more privacy, a VPN is a practical solution for maintaining online security.
+
+## SSH Tunnelling Explained
+
+SSH tunnelling is a technique that uses the SSH (Secure Shell) protocol to create an encrypted "tunnel" between your computer and a remote server. This tunnel securely transports data across an insecure network, such as the internet, protecting it from eavesdropping or tampering.
+
+### Why Use SSH Tunnelling?
+
+- **Security:** All data passing through the tunnel is encrypted, which helps protect sensitive information.
+- **Bypassing Restrictions:** It can help you bypass firewalls or network restrictions by routing traffic through a secure connection.
+- **Remote Access:** It allows you to access services on a remote server securely, as if they were on your local machine.
+
+### How Does SSH Tunnelling Work?
+
+1. **Establish an SSH Connection:** You begin by connecting to a remote server using the SSH protocol.
+2. **Create an Encrypted Tunnel:** Once connected, SSH establishes an encrypted pathway (the tunnel) between your local machine and the remote server.
+3. **Forward Data:** Data sent from your local machine is securely "forwarded" through the tunnel to the remote server, and vice versa.
+
+### Types of SSH Tunnelling
+
+There are three common types of SSH tunnelling:
+
+#### 1. Local Port Forwarding
+
+- **Description:** Redirects traffic from a port on your local machine to a specified remote address and port.
+- **Use Case:** Accessing a web server running on a remote machine as if it were running locally.
+
+#### 2. Remote Port Forwarding
+
+- **Description:** Forwards traffic from a port on the remote server to a port on your local machine.
+- **Use Case:** Allowing someone on the remote server to access a service running on your local machine.
+
+#### 3. Dynamic Port Forwarding
+
+- **Description:** Sets up a SOCKS proxy that dynamically forwards traffic to any destination.
+- **Use Case:** Securely browsing the internet by routing your web traffic through the SSH server.
+
+---
+
+**RDP** - Remote Desktop Protocol
+**SNMP** - Simple Network Management Protocol
+**SSH** - Secure shell. Command line
+
+**HTTPS** Hypertext transfer protocol secure
+Comines HTTP with SSL/TLS to provide encrypted transmission of data
+
+### APIs
+
+Rest API - Set of rules that allow things to communicate
+
+![Rest API](https://images.ctfassets.net/vwq10xzbe6iz/5sBH4Agl614xM7exeLsTo7/9e84dce01735f155911e611c42c9793f/rest-api.png)
+
+## What is an API?
+
+API stands for Application Programming Interface. It acts as a bridge that allows different software applications to communicate with each other.
+
+Think of an API like a waiter in a restaurant:
+- You (the user) request food from the menu (send a request to the API).
+- The waiter (API) takes your order to the kitchen (the system/server).
+- The kitchen prepares the food (processes the request).
+- The waiter brings the food back to you (returns the response).
+
+**Why Are APIs Important?**
+
+APIs allow developers to:
+- Access services and data from other applications.
+- Automate processes.
+- Integrate different systems easily.
+
+**Types of APIs**
+
+There are several types of APIs:
+- **REST (Representational State Transfer)** - Uses HTTP requests (GET, POST, PUT, DELETE) to interact with data.
+- **SOAP (Simple Object Access Protocol)** - Uses XML messaging for communication.
+- **GraphQL** - Allows clients to request only the specific data they need.
+- **WebSockets** - Enables real-time, two-way communication.
+
+**How Does an API Work?**
+
+APIs usually follow a request-response cycle:
+- The client (a web app, mobile app, or another system) sends a request.
+- The API processes the request and communicates with the server.
+- The server sends back a response (data or an action confirmation).
+
+--- 
+
+### General best practices
+
+- Regularly update software and libraries
+- Use strong unqiue certificates and keep private keys secure
+- Monitor for anomolies
+
+# OWASP Top 5 Vulnerabilities
+
+The **Open Web Application Security Project (OWASP)** publishes a list of the most critical security risks for web applications. Here are the top five vulnerabilities explained in simple terms:
+
+### 1. Broken Access Control
+**What it is:**
+- Users can access parts of a website they shouldn’t, like admin panels or other users’ data.
+
+**Example:**
+- A normal user can visit `example.com/admin` and access admin controls without permission.
+
+**How to prevent:**
+- Enforce proper user roles and permissions.
+- Restrict direct access to sensitive resources.
+
+### 2. Cryptographic Failures
+**What it is:**
+- Sensitive data (passwords, credit card numbers) is not properly encrypted, making it easy for hackers to steal.
+
+**Example:**
+- A website stores passwords in plain text instead of hashing them.
+
+**How to prevent:**
+- Use strong encryption (e.g., AES for data, bcrypt for passwords).
+- Avoid exposing sensitive data in URLs or logs.
+
+### 3. Injection Attacks
+**What it is:**
+- Hackers insert malicious code into a website’s database or commands by tricking input fields.
+
+**Example:**
+- Entering `'; DROP TABLE users; --` into a login form deletes the user database (SQL Injection).
+
+**How to prevent:**
+- Use parameterized queries and prepared statements.
+- Sanitize and validate user inputs.
+
+### 4. Insecure Design
+**What it is:**
+- The application itself is poorly designed, making it vulnerable to attacks.
+
+**Example:**
+- A website allows unlimited password guesses without locking the account (brute force attack).
+
+**How to prevent:**
+- Follow secure coding principles.
+- Implement security from the start, not as an afterthought.
+
+### 5. Security Misconfiguration
+**What it is:**
+- Default settings, exposed error messages, or unnecessary features that create security risks.
+
+**Example:**
+- A website shows detailed error messages that reveal database information.
+
+**How to prevent:**
+- Disable unnecessary features and services.
+- Keep software and frameworks updated.
+- Hide detailed error messages from users.
+
+### Conclusion
+Understanding and fixing these vulnerabilities can greatly improve web security. Always validate input, secure user access, and follow best security practices!
 
 
 ---
