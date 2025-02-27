@@ -286,13 +286,6 @@ A suggested continuous improvement process is as follows:
 4. **Feedback Loop:** Create a feedback loop where findings from each incident feed into the planning and implementation of preventive measures.
 5. **Regular Updates:** Regularly update the incident response plan and preventive measures to reflect new insights and changes in the environment.
 
-
-
-
----
-
-## Lecture
-
 ---
 
 ## Reflections
