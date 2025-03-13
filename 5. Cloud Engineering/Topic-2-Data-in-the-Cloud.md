@@ -211,7 +211,24 @@ When considering the adoption of the CQRS pattern, it's crucial to thoroughly do
 
 ---
 
-## Lecture notes
+## Evolution of containerisation and orchestration
+
+- 'Works on My Machine' Problem
+- Docker, introduced in 2013, revolutionised the software development process by providing a standardised way to package applications with their dependencies, ensuring consistency across environments.
+- Rise of DevOps practices
+- As applications grew in complexity, managing containers manually became impractical, leading to the development of orchestration tools.
+- Kubernetes, originally developed by Google and released as an open-source project in 2014, addressed this challenge by automating the deployment, scaling, and management of containerised applications.
+- Serverless computing emerged as another paradigm shift, allowing developers to focus solely on writing code without worrying about the underlying infrastructure.
+
+## The key skill of visual modelling for container design
+
+![taxonomy in docker](https://learn.microsoft.com/en-us/dotnet/architecture/microservices/container-docker-introduction/media/docker-containers-images-registries/taxonomy-of-docker-terms-and-concepts.png)
+
+
+
+---
+
+# Lecture notes
 
 ## Introduction to Containers (Computing)
 
