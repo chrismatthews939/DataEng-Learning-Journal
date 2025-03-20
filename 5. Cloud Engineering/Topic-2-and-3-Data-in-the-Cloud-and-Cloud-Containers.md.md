@@ -385,6 +385,198 @@ Docker containers are lightweight and efficient compared to virtual machines, ma
 
 ---
 
+# Deploying a Simple Python Application: Docker, Kubernetes, and Serverless
+
+## Introduction
+Deploying a Python application can be done in several ways. We'll explore three modern approaches:
+1. **Docker** – Containerization for consistent deployment.
+2. **Kubernetes** – Orchestrating multiple containers at scale.
+3. **Serverless** – Deploying without managing infrastructure.
+
+Each technology has unique benefits depending on the application's needs.
+
+## 1. Deploying with Docker
+
+### What is Docker?
+Docker, launched in 2013, is a platform that packages applications into lightweight containers, ensuring they run consistently across different environments.
+
+### Setting Up Docker
+Install [Docker](https://www.docker.com/) and create a simple Python app.
+
+#### **Step 1: Create a Python App**
+Create `app.py`:
+
+```python
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Hello, Docker!"
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
+```
+
+#### **Step 2: Create a Dockerfile**
+Create `Dockerfile` to define the container:
+
+```dockerfile
+FROM python:3.9
+WORKDIR /app
+COPY . /app
+RUN pip install flask
+CMD ["python", "app.py"]
+```
+
+#### **Step 3: Build and Run the Container**
+```sh
+docker build -t python-app .
+docker run -d -p 5000:5000 python-app
+```
+Visit `http://localhost:5000` in your browser.
+
+---
+
+## 2. Deploying with Kubernetes
+
+### What is Kubernetes?
+Kubernetes, created by Google in 2014, is a container orchestration platform that automates deployment, scaling, and management.
+
+Kubernetes, often abbreviated as **K8s**, is an **open-source container orchestration platform**. It was originally developed by **Google** based on their internal system **Borg** and later released as an open-source project in 2014.
+
+### Why Kubernetes?
+Before Kubernetes, running multiple containers required complex manual management. Kubernetes automates:
+
+- **Deployment**: Easily launch and scale applications.
+- **Load balancing**: Distributes traffic to prevent overload.
+- **Self-healing**: Restarts failed containers automatically.
+- **Service discovery**: Ensures services can find and communicate with each other.
+
+### Basic Kubernetes Components
+
+| **Component** | **Description** |
+|--------------|---------------|
+| **Pod** | The smallest unit, containing one or more containers. |
+| **Node** | A machine (virtual or physical) running Kubernetes worker processes. |
+| **Cluster** | A group of connected nodes. |
+| **Deployment** | Manages the lifecycle of pods, ensuring desired state. |
+| **Service** | Exposes applications to the network. |
+
+**The sustainability impact**
+
+Kubernetes' ability to auto-scale and self-heal applications contributes to efficient resource utilisation.
+
+By adjusting the number of running instances based on demand, it reduces unnecessary energy consumption and supports net-zero objectives.
+
+### Setting Up Kubernetes Deployment
+#### **Step 1: Create a Deployment File**
+Create `deployment.yaml`:
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: python-app
+  template:
+    metadata:
+      labels:
+        app: python-app
+    spec:
+      containers:
+      - name: python-app
+        image: python-app:latest
+        ports:
+        - containerPort: 5000
+```
+
+#### **Step 2: Apply Deployment**
+```sh
+kubectl apply -f deployment.yaml
+```
+
+#### **Step 3: Expose the Service**
+```sh
+kubectl expose deployment python-app --type=LoadBalancer --port=5000
+```
+Check the assigned external IP and visit `http://<EXTERNAL-IP>:5000`.
+
+---
+
+## 3. Deploying Serverless with AWS Lambda
+
+### What is Serverless?
+Serverless computing, pioneered by AWS Lambda in 2014, allows developers to deploy functions without managing servers.
+
+**Serverless computing** lets developers run applications without managing infrastructure. It emerged as a cloud-native approach to reduce operational complexity.
+
+### Why Serverless?
+With traditional servers or Kubernetes, developers must:
+- Manage infrastructure.
+- Scale resources manually or automatically.
+
+Serverless removes this burden by:
+- **Auto-scaling**: No need to manage instances.
+- **Pay-as-you-go**: Costs only for execution time.
+- **Event-driven execution**: Runs functions only when triggered.
+
+### Popular Serverless Platforms
+- **AWS Lambda** (Amazon Web Services)
+- **Google Cloud Functions**
+- **Azure Functions** (Microsoft)
+- **OpenFaaS** (Open-source alternative)
+
+**Sustainability impact**
+
+Serverless deployments inherently promote efficient resource usage by consuming resources only when functions are executed.
+
+This efficiency reduces energy consumption and supports sustainability goals.
+
+### Setting Up AWS Lambda Deployment
+#### **Step 1: Create a Python Handler**
+Create `lambda_function.py`:
+
+```python
+def lambda_handler(event, context):
+    return {
+        'statusCode': 200,
+        'body': 'Hello, Serverless!'
+    }
+```
+
+#### **Step 2: Package and Deploy with AWS CLI**
+```sh
+zip function.zip lambda_function.py
+aws lambda create-function --function-name python-app \
+    --runtime python3.9 --role <IAM_ROLE> \
+    --handler lambda_function.lambda_handler \
+    --zip-file fileb://function.zip
+```
+
+Invoke the function:
+```sh
+aws lambda invoke --function-name python-app response.json
+cat response.json
+```
+
+---
+
+## Conclusion
+Each deployment method serves different needs:
+- **Docker**: Simple and consistent deployment.
+- **Kubernetes**: Best for scaling and managing multiple containers.
+- **Serverless**: Ideal for event-driven applications with no infrastructure management.
+
+Choose the approach that best fits your project!
+
+---
+
 # Lecture notes
 
 ## Introduction to Containers (Computing)
