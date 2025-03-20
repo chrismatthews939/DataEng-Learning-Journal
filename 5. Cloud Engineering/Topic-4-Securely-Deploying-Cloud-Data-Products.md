@@ -295,5 +295,452 @@ Steps for working with cloud logs and remediating problems include:
 
 For instance, if logs reveal that a database connection is frequently timing out, the team can investigate the cause—perhaps due to network issues or resource constraints—and implement a solution, such as increasing connection limits or optimising queries.
 
+### Example Case Study for HR Dashboard
 
+In summary, deploying a secure HR dashboard in a banking environment involves overcoming significant challenges related to data security, regulatory compliance, and operational efficiency.
+
+**Key takeaway:** By leveraging CI/CD pipelines, secure data integration, API security, and robust monitoring practices, the bank was able to enhance security, improve operational efficiency, and ensure high reliability.
+
+Remember, the key takeaway from this case study is the importance of integrating security at every stage of deployment to protect sensitive data and maintain compliance, ultimately leading to a successful and secure deployment.
+
+---
+
+# Lecture Notes
+
+## Setting Up and Running Availability Tests
+
+### Introduction
+Availability testing ensures that a service or application is accessible and operational. This is critical for maintaining uptime and reliability.
+
+#### Why Availability Testing?
+- Detects downtime early.
+- Improves user experience by minimizing outages.
+- Helps in monitoring service-level agreements (SLAs).
+
+### Basic Concepts
+Before running availability tests, let's understand key terms:
+
+| **Term** | **Definition** |
+|----------|--------------|
+| **Uptime** | The percentage of time a service is operational. |
+| **Endpoint** | A URL or API that is tested for availability. |
+| **Ping Test** | A basic test that checks if a server is reachable. |
+| **HTTP Status Code** | A response code indicating success (200), error (500), etc. |
+| **Monitoring Tool** | Software that automates availability tests (e.g., Pingdom, Prometheus, Grafana). |
+
+### Example: Running a Simple Ping Test
+The `ping` command is a quick way to check if a server is reachable.
+
+```sh
+ping -c 4 example.com
+```
+
+#### Expected Output:
+```
+64 bytes from 93.184.216.34: icmp_seq=1 ttl=56 time=12.3 ms
+64 bytes from 93.184.216.34: icmp_seq=2 ttl=56 time=11.8 ms
+```
+
+This confirms that `example.com` is online and responsive.
+
+## Example: HTTP Availability Test with `curl`
+A more advanced test is checking an HTTP endpoint.
+
+```sh
+curl -I https://example.com
+```
+
+#### Expected Output:
+```
+HTTP/2 200 
+server: nginx
+content-type: text/html
+```
+
+If the status code is `200`, the website is available.
+
+### Automating Availability Tests
+To continuously monitor availability, use a script.
+
+#### Example: Bash Script for Periodic Checks
+```sh
+#!/bin/bash
+URL="https://example.com"
+STATUS=$(curl -o /dev/null -s -w "%{http_code}" $URL)
+if [ "$STATUS" -ne 200 ]; then
+  echo "ALERT: $URL is down!"
+else
+  echo "$URL is up and running."
+fi
+```
+
+- Saves the HTTP status code.
+- Alerts if the site is down.
+- Can be scheduled using `cron`.
+
+#### Setting Up a Cron Job (Linux/Mac)
+Run `crontab -e` and add:
+```sh
+*/5 * * * * /path/to/script.sh >> /var/log/availability.log 2>&1
+```
+This runs the script every 5 minutes.
+
+### Using a Cloud-Based Monitoring Tool
+Instead of writing custom scripts, services like Pingdom, UptimeRobot, and AWS CloudWatch offer automated monitoring with alerts.
+
+#### Example: Setting Up an AWS CloudWatch Alarm
+1. Open AWS Console → CloudWatch.
+2. Create a new alarm.
+3. Select `HTTP response code` as the metric.
+4. Set a threshold (e.g., alert if `!= 200` for 5 minutes).
+5. Add an SNS topic to send alerts via email/SMS.
+
+### Conclusion
+Availability testing is essential for ensuring a reliable service. Start with basic `ping` and `curl` tests, automate checks with scripts, and use cloud-based tools for enterprise-level monitoring.
+
+---
+
+## Introduction to DevSecOps
+
+### What is DevSecOps?
+
+**DevSecOps** stands for **Development, Security, and Operations**. It is an approach that integrates security practices into the DevOps workflow. Instead of handling security as a separate phase at the end of development, DevSecOps ensures security is considered from the start, throughout the development and deployment lifecycle.
+
+### Why is DevSecOps Important?
+
+- **Proactive Security**: Identifies vulnerabilities early in the development cycle.
+- **Faster Development**: Reduces security-related delays by automating security checks.
+- **Compliance & Risk Management**: Ensures adherence to security standards and regulations.
+
+### Key Principles of DevSecOps
+
+1. **Security as Code** - Security policies and checks are integrated into the CI/CD pipeline.
+2. **Automation** - Automated security scans, code analysis, and vulnerability assessments.
+3. **Shift Left** - Security is moved earlier into the development process to detect issues sooner.
+4. **Continuous Monitoring** - Real-time tracking of application security during runtime.
+5. **Collaboration** - Developers, security teams, and operations teams work together.
+
+### DevSecOps Workflow
+
+A typical DevSecOps pipeline integrates security at various stages:
+
+```
+  +-----------+    +------------+    +------------+    +------------+
+  |   Code    | -> |  Build     | -> |  Test      | -> |  Deploy    |
+  |  Writing  |    |  & Compile |    |  Security  |    |  & Monitor |
+  +-----------+    +------------+    +------------+    +------------+
+          |                |                |                |
+          v                v                v                v
+      Code Analysis    Dependency Scans   Security Tests   Runtime Security
+```
+
+### Common DevSecOps Tools
+
+| **Category**            | **Tools**                     |
+|-------------------------|------------------------------|
+| **Static Code Analysis** | SonarQube, Checkmarx          |
+| **Dependency Scanning**  | OWASP Dependency-Check, Snyk |
+| **Container Security**   | Trivy, Clair, Anchore        |
+| **Infrastructure as Code Security** | Terraform Sentinel, Checkov |
+| **Runtime Security**    | Falco, AppArmor              |
+| **Compliance & Monitoring** | AWS Security Hub, Azure Security Center |
+
+### Example: Security in a CI/CD Pipeline
+
+A basic `GitHub Actions` pipeline integrating security scans:
+
+```yaml
+name: DevSecOps Pipeline
+on: [push]
+jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      
+      - name: Run SAST (Static Application Security Testing)
+        uses: AppThreat/sast-scan-action@v3
+        with:
+          output: reports/
+      
+      - name: Run Dependency Scanning
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
+      - name: Run Container Security Scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: 'my-app:latest'
+```
+
+### Benefits of DevSecOps
+
+✅ Reduces security vulnerabilities early in development.
+✅ Automates security processes, reducing human error.
+✅ Increases compliance with security standards.
+✅ Enhances collaboration between development, security, and operations teams.
+
+### Conclusion
+
+DevSecOps is an essential approach for modern software development, ensuring security is built into every stage of the software lifecycle. By integrating security tools, automation, and best practices, organizations can develop secure and reliable applications efficiently.
+
+---
+
+🚀 *Start integrating security in your DevOps workflow today!*
+
+---
+
+## Understanding CI/CD Pipelines
+
+### Introduction
+
+A **CI/CD (Continuous Integration/Continuous Deployment) pipeline** is a series of automated steps used to build, test, and deploy software efficiently. It ensures that new code changes are integrated smoothly and deployed safely to production.
+
+### Why Use a CI/CD Pipeline?
+- **Automation**: Reduces manual errors and increases efficiency.
+- **Faster Releases**: Speeds up software development and deployment.
+- **Reliability**: Ensures code is tested before deployment.
+
+### Key Elements of a CI/CD Pipeline
+A typical CI/CD pipeline consists of the following stages:
+
+| **Stage** | **Description** |
+|----------|--------------|
+| **Source** | The process starts when code is pushed to a repository (e.g., GitHub, GitLab). |
+| **Build** | The source code is compiled and dependencies are installed. |
+| **Test** | Automated tests (unit, integration, security) are executed. |
+| **Artifact Storage** | Built files are stored for deployment. |
+| **Deployment** | The tested code is deployed to staging or production. |
+| **Monitoring** | Observability tools track performance and errors. |
+
+### Example CI/CD Pipeline Workflow
+```
+Developer -> Git Push -> CI/CD Pipeline -> Build -> Test -> Deploy -> Monitor
+```
+
+### Example CI/CD Pipeline using GitHub Actions
+Here’s a simple CI/CD workflow written in YAML:
+
+```yaml
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Run tests
+        run: npm test
+      
+      - name: Deploy to Production
+        if: success()
+        run: echo "Deploying application..."
+```
+
+### Conclusion
+Understanding CI/CD pipelines is crucial for modern software development. Automating builds, testing, and deployments ensures that software is delivered efficiently and reliably.
+
+---
+
+## Checkmarx Integration with Azure DevOps
+
+### Introduction
+Checkmarx is a security tool that helps developers find and fix vulnerabilities in their code. Integrating Checkmarx with Azure DevOps allows for automated security scans during the development lifecycle.
+
+### Why Integrate Checkmarx with Azure DevOps?
+- **Automate security scans** in CI/CD pipelines.
+- **Identify vulnerabilities** before deployment.
+- **Improve code security** through actionable insights.
+
+### Prerequisites
+Before starting, ensure you have:
+1. **An Azure DevOps account**
+2. **Access to Checkmarx SaaS or On-Premises**
+3. **Administrator permissions** in Azure DevOps
+
+### Steps to Integrate Checkmarx with Azure DevOps
+
+#### 1. Install Checkmarx Extension in Azure DevOps
+- Navigate to [Azure DevOps Marketplace](https://marketplace.visualstudio.com/)
+- Search for "Checkmarx"
+- Click **Install** and select your Azure DevOps organization
+
+#### 2. Configure Checkmarx Service Connection
+1. Go to **Project Settings** in Azure DevOps.
+2. Select **Service connections** > **New service connection**.
+3. Choose **Checkmarx**.
+4. Enter Checkmarx server details:
+   - Server URL (e.g., `https://your-checkmarx-server.com`)
+   - Username & password or API Key.
+5. Click **Verify connection** and then **Save**.
+
+#### 3. Add Checkmarx to an Azure DevOps Pipeline
+#### Example: YAML Pipeline Configuration
+Create or modify your pipeline YAML file to include Checkmarx.
+
+```yaml
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: Checkmarx@8
+  inputs:
+    CxServer: 'CheckmarxServiceConnection'
+    projectName: 'MySecureProject'
+    fullScanCycle: 10
+    vulnerabilityThresholdEnabled: true
+    failPipelineOnPolicyViolation: true
+```
+
+### 4. Run the Pipeline and Review Scan Results
+- Commit your changes and push them to Azure DevOps.
+- Navigate to **Pipelines** > **Runs** to monitor the scan.
+- Review vulnerabilities in the **Checkmarx Security Report**.
+
+### Conclusion
+Integrating Checkmarx with Azure DevOps enhances security by automating vulnerability scanning. With this setup, developers can detect and fix security issues early in the development lifecycle.
+
+---
+
+## Veracode Integration with Azure DevOps
+
+### Introduction
+Veracode is a cloud-based security platform that helps developers scan and analyze their code for vulnerabilities. Integrating Veracode with Azure DevOps allows automated security scans within the CI/CD pipeline to ensure secure code deployment.
+
+### Why Integrate Veracode with Azure DevOps?
+- **Automated Security Scans**: Detect vulnerabilities before deployment.
+- **Shift Left Security**: Catch issues early in development.
+- **Compliance**: Ensure code meets security standards.
+
+### Prerequisites
+Before starting, ensure you have:
+- An **Azure DevOps** account with access to a project.
+- A **Veracode account** with API credentials.
+- Admin permissions in **Azure DevOps** to configure pipelines.
+
+### Step 1: Install Veracode Extension in Azure DevOps
+1. Go to [Azure DevOps Marketplace](https://marketplace.visualstudio.com/).
+2. Search for **Veracode Static Analysis**.
+3. Click **Get it free** and install it for your organization.
+
+### Step 2: Configure Veracode API Credentials
+1. Log in to your **Veracode account**.
+2. Navigate to **API Credentials** under user settings.
+3. Generate an API key and secret.
+4. In Azure DevOps, go to **Project Settings > Service Connections**.
+5. Click **New Service Connection** > Select **Veracode API Service**.
+6. Enter the API ID and secret, then save.
+
+### Step 3: Add Veracode Scan to an Azure DevOps Pipeline
+Modify your **azure-pipelines.yml** file to include a Veracode security scan:
+
+```yaml
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.x'
+    addToPath: true
+
+- task: Veracode@1
+  inputs:
+    veracodeService: 'Veracode-Connection' # Name of the service connection
+    appProfile: 'MyApplication' # Name of the Veracode app profile
+    version: '$(Build.BuildId)' # Unique build identifier
+    filepath: '$(Build.ArtifactStagingDirectory)/myapp.zip' # Path to compiled code
+    vid: '$(VERACODE_API_ID)' # Veracode API ID (stored as a variable)
+    vkey: '$(VERACODE_API_KEY)' # Veracode API Key (stored as a variable)
+```
+
+### Step 4: Store API Credentials Securely
+1. Navigate to **Azure DevOps > Pipelines > Library**.
+2. Create a **new variable group**.
+3. Add **VERACODE_API_ID** and **VERACODE_API_KEY** as secrets.
+4. Reference these variables in the pipeline YAML file as shown above.
+
+### Step 5: Run the Pipeline
+1. Commit and push changes to your repository.
+2. Go to **Azure DevOps > Pipelines**.
+3. Run the pipeline and check the Veracode scan results.
+
+### Step 6: Review Results
+- Navigate to **Veracode Platform**.
+- Check for any **security vulnerabilities**.
+- Fix issues and rerun the pipeline.
+
+### Conclusion
+By integrating Veracode with Azure DevOps, you ensure that security is a core part of your CI/CD pipeline. Automating security scans helps developers find and fix vulnerabilities early, leading to more secure applications.
+
+---
+
+## Introduction to Azure Security Center
+
+### What is Azure Security Center?
+Azure Security Center (ASC) is a cloud security management tool that helps protect Azure, on-premises, and multi-cloud environments. It provides:
+
+- **Threat Protection**: Detects and responds to security threats in real time.
+- **Security Posture Management**: Assesses and improves your security configurations.
+- **Compliance Monitoring**: Helps meet industry standards and regulations.
+
+### Why Use Azure Security Center?
+Azure Security Center provides:
+
+- **Visibility**: Monitors security across cloud and on-premises resources.
+- **Automation**: Uses AI to detect and respond to threats.
+- **Integration**: Works with Azure Defender for extended threat protection.
+
+### Key Features
+
+| Feature | Description |
+|---------|-------------|
+| **Secure Score** | A security metric that helps identify vulnerabilities. |
+| **Recommendations** | Provides guidance to improve security configurations. |
+| **Threat Protection** | Uses AI to detect and mitigate cyber threats. |
+| **Compliance Management** | Assists with regulatory compliance (e.g., ISO 27001, PCI DSS). |
+
+### How Azure Security Center Works
+1. **Enable Security Center**: Activate ASC from the Azure Portal.
+2. **Assess Security Posture**: View secure score and recommendations.
+3. **Monitor & Detect Threats**: Use AI-driven alerts and analytics.
+4. **Remediate Issues**: Follow security recommendations.
+
+### Getting Started with Azure Security Center
+
+#### Step 1: Enable Security Center
+1. Sign in to the [Azure Portal](https://portal.azure.com).
+2. Search for **Security Center** in the search bar.
+3. Click **Enable Security Center**.
+
+#### Step 2: Review Secure Score
+- Navigate to **Secure Score** to see security posture.
+- Follow recommendations to improve security.
+
+#### Step 3: Enable Azure Defender (Optional)
+- Go to **Azure Defender** in Security Center.
+- Enable protection for Virtual Machines, Storage, and more.
+
+### Conclusion
+Azure Security Center is a powerful tool for monitoring and securing cloud resources. By using ASC, organizations can improve security, detect threats, and maintain compliance with industry standards.
+
+---
 
