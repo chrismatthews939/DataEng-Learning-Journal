@@ -1,4 +1,4 @@
-# Topic 5 Migrations, archiving, monitoring and disaster recovery - 27/03/2025
+# Topic 5 - Migrations, archiving, monitoring and disaster recovery - 27/03/2025
 
 # Crisis management - Case Study
 ## A cyber security scenario: 'Disaster Looms!'
@@ -96,7 +96,7 @@ Archiving is the process of securely storing historical data that is not activel
 - **Access Management:** Control who can access archived data, implementing strict authentication and authorisation mechanisms.
 - **Disaster Recovery Integration:** Include archived data in disaster recovery plans to ensure it can be restored if needed.
 
-**Challenges in Archiving::
+**Challenges in Archiving:**
 
 - **Data Growth:** Managing the increasing volume of data requires scalable archiving solutions.
 - **Format Obsolescence:** Ensuring that data remains readable despite changes in technology and file formats.
@@ -141,8 +141,8 @@ Disaster Recovery (DR) policies outline the procedures and processes that an org
 1. **Risk Assessment:** Identify potential threats and vulnerabilities that could impact operations.
 2. **Business Impact Analysis (BIA):** Evaluate the potential consequences of disruptions on critical business functions.
 3. **Recovery Objectives:**
-  - **Recovery Time Objective (RTO):** The maximum acceptable length of time that a system can be down.
-  - **Recovery Point Objective (RPO):** The maximum acceptable amount of data loss measured in time.
+    - **Recovery Time Objective (RTO):** The maximum acceptable length of time that a system can be down.
+    - **Recovery Point Objective (RPO):** The maximum acceptable amount of data loss measured in time.
 4. **DR Plan Development:** Create detailed plans outlining recovery strategies, roles and responsibilities, communication protocols, and resource requirements.
 5. **Data Backup Strategies:** Implement regular backups, ensuring that data can be restored from recent points.
 6. **Testing and Drills:** Conduct regular tests and simulations to validate the effectiveness of DR plans.
@@ -168,5 +168,11 @@ Disaster Recovery (DR) policies outline the procedures and processes that an org
 - **Resource Constraints:** Allocating sufficient resources for DR planning and execution.
 - **Changing Environments:** Adapting DR plans to evolving technology landscapes and business processes.
 - **Communication Barriers:** Ensuring clear communication during crises, especially across different teams and locations.
+
+## Writing and deploying a cloud-native monitoring service in Python
+
+Building a custom monitoring service allows for tailored observability of specific applications or systems.
+
+Using Python, a versatile and widely used programming language, you can create a cloud-native monitoring application that collects metrics, processes data, and integrates with monitoring platforms.
 
 
