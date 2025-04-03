@@ -268,3 +268,5 @@ df_grouped.write.csv("/mnt/data/processed_sales.csv", header=True)
 Databricks simplifies big data processing and analytics. By leveraging its capabilities, businesses can efficiently analyze their data, gain insights, and make informed decisions.
 
 ---
+
+
