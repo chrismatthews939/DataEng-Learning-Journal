@@ -26,29 +26,22 @@ Data engineers rely on stable and scalable infrastructure to process and store l
 ---
 
 ### Strengths of IaC
-#### 1. **Automation & Speed**
+1. **Automation & Speed**
    - Reduces manual effort by automatically provisioning resources.
    - Example: Deploying a new database server in minutes instead of hours.
-
-### 2. **Version Control**
+2. **Version Control**
    - Changes to infrastructure can be tracked using tools like Git, ensuring accountability and rollback capability.
-
-#### 3. **Cost Optimization**
+3. **Cost Optimization**
    - Automating shutdown and scaling can reduce cloud expenses.
-
-#### 4. **Scalability & Flexibility**
+4. **Scalability & Flexibility**
    - Easily adjust resources based on demand, e.g., adding more servers during high traffic.
 
----
-
 ### Weaknesses of IaC
-#### 1. **Learning Curve**
+1. **Learning Curve**
    - Requires knowledge of configuration languages (like Terraform, CloudFormation, or Ansible).
-
-#### 2. **Complex Debugging**
+2. **Complex Debugging**
    - Errors in scripts can be hard to troubleshoot.
-
-#### 3. **Security Risks**
+3. **Security Risks**
    - Misconfigured automation scripts can accidentally expose sensitive data.
 
 ---
