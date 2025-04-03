@@ -605,7 +605,6 @@ Imagine you're making a pizza. There are two ways to do it:
 ### 🚀 Final Thoughts
 IaC automation saves time, reduces human error, and ensures consistent environments. Start small, experiment, and soon you’ll be managing infrastructure like a pro! 🎉
 
-
-
 ---
+
 
