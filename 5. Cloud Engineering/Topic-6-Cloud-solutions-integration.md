@@ -330,6 +330,16 @@ Hybrid cloud integration allows businesses to combine on-premises and cloud-base
    - Apply Role-Based Access Control (RBAC) in Power BI.
    - Use Azure Active Directory for authentication.
 
+#### Benefits:
+1. **Unified Insights**: 
+   - The bank gains a comprehensive view of global operations without physically moving data across borders.
+2. **Improved Decision-Making**:
+   - Real-time analytics enable faster responses to market changes and customer needs.
+3. **Cost Efficiency**:
+   - Leveraging existing on-premises infrastructure while utilising cloud capabilities reduces costs.
+4. **Compliance**:
+   - The solution adheres to regulatory requirements by keeping sensitive data within local jurisdictions.
+
 By following these steps, organizations can seamlessly integrate their hybrid cloud infrastructure with Power BI, ensuring efficient and secure data-driven decision-making.
 
 ---
@@ -337,5 +347,25 @@ This guide provides a beginner-friendly overview of Power BI and Power Query, th
 
 ---
 
+## The importance of caching
 
+### Importance of Caching in Power Query
+Caching is crucial in Power Query because:
+
+1. **Improves Performance**: Instead of reloading data from the source every time, cached data speeds up transformations.
+2. **Reduces Load on Data Sources**: Frequent queries to databases or APIs can be expensive; caching helps minimize redundant requests.
+3. **Enhances User Experience**: Faster previews and interactions while transforming data.
+
+#### Types of Caching in Power Query:
+- **Step-Level Caching**: Power Query temporarily stores intermediate results to speed up development.
+- **Query Folding**: Pushes transformations to the data source to optimize performance.
+- **Dataflow Caching**: When using Power BI Dataflows, data is stored in Azure to reduce processing time.
+
+#### How Does Caching Impact Sustainability?
+Caching can contribute to sustainability in several ways:
+- **Energy Efficiency**: By reducing the number of database queries, caching helps reduce the computational resources required to process requests. This leads to a lower carbon footprint from the data center's energy consumption.
+- **Reduced Network Traffic**: When cached data is used, there is less data transferred over networks, which can save on bandwidth and reduce the environmental impact associated with data transmission.
+- **Fewer Data Center Resources**: Fewer queries to the data source mean less server processing is required. This can lead to a reduction in the resources needed to run the system, such as CPU and memory, indirectly supporting environmental sustainability.
+
+---
 
