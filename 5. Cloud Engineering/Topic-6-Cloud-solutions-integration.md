@@ -495,3 +495,117 @@ Caching can contribute to sustainability in several ways:
 
 ---
 
+ # Lecture notes
+
+## 🚀 Automating Infrastructure as Code (IaC) 
+
+### 🏗️ What is IaC?
+Infrastructure as Code (IaC) is the practice of managing and provisioning computing infrastructure through machine-readable scripts instead of manual processes. It helps make infrastructure:
+
+✅ Consistent  
+✅ Repeatable  
+✅ Scalable  
+
+---
+
+### 🧠 Declarative vs. Imperative Approaches – Cooking Analogy 🍳
+Imagine you're making a pizza. There are two ways to do it:
+
+#### 🍕 **Declarative ("What" to make)**
+- You order a Margherita pizza at a restaurant.
+- You don’t care how the chef makes it, just that it arrives as expected.
+- Similarly, in IaC, you define the **desired state** (e.g., "I need 3 servers running with these configurations"), and the system ensures that state is met.
+
+✅ Example tools: Terraform, CloudFormation, Pulumi (when using a declarative approach)
+
+#### 🏗️ **Imperative ("How" to make it)**
+- You personally follow a step-by-step recipe to make a pizza.
+- You specify **each step** (e.g., "preheat the oven, roll the dough, add toppings, bake for 15 minutes").
+- In IaC, you write scripts to **manually execute steps** to create infrastructure (e.g., "first create a virtual machine, then install software, then configure networking").
+
+✅ Example tools: Ansible, Chef, Puppet, Pulumi (when using an imperative approach)
+
+---
+
+### ⚙️ Methods of Automating IaC
+
+#### 1️⃣ **Scripts (Basic Automation)** 📝
+- Simple shell scripts (e.g., Bash, Python, PowerShell) automate basic infrastructure tasks.
+- Example:
+  
+  ```bash
+  # Bash script to create an AWS EC2 instance
+  aws ec2 run-instances --image-id ami-12345678 --count 1 --instance-type t2.micro
+  ```
+
+#### 2️⃣ **Configuration Management** 🔧
+- Tools like **Ansible, Chef, Puppet, and SaltStack** configure existing infrastructure.
+- Great for installing software and managing configurations.
+- Example (Ansible YAML playbook to install Apache):
+  
+  ```yaml
+  - name: Install Apache
+    hosts: webservers
+    tasks:
+      - name: Install Apache package
+        apt:
+          name: apache2
+          state: present
+  ```
+
+#### 3️⃣ **Orchestration & Provisioning** 🏗️
+- **Terraform & CloudFormation** automate full infrastructure creation.
+- They declare the final state, and the tool figures out the steps.
+- Example (Terraform to create an AWS EC2 instance):
+  
+  ```hcl
+  resource "aws_instance" "example" {
+    ami           = "ami-12345678"
+    instance_type = "t2.micro"
+  }
+  ```
+
+#### 4️⃣ **Containerization & Kubernetes** 🚢
+- **Docker** packages applications into containers.
+- **Kubernetes** automates deployment & scaling of containers.
+- Example (Kubernetes YAML to deploy a web app):
+  
+  ```yaml
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: my-app
+  spec:
+    replicas: 3
+    selector:
+      matchLabels:
+        app: my-app
+    template:
+      metadata:
+        labels:
+          app: my-app
+      spec:
+        containers:
+          - name: my-app
+            image: my-app-image:latest
+  ```
+
+---
+
+### 🎯 Choosing the Right Approach
+| Situation | Best Approach |
+|-----------|--------------|
+| **You need to install/configure software on existing servers** | Configuration Management (Ansible, Chef, Puppet) |
+| **You need to provision full cloud infrastructure** | Orchestration (Terraform, CloudFormation) |
+| **You need to automate small tasks** | Scripts (Bash, Python) |
+| **You need to manage containerized applications** | Kubernetes & Docker |
+
+---
+
+### 🚀 Final Thoughts
+IaC automation saves time, reduces human error, and ensures consistent environments. Start small, experiment, and soon you’ll be managing infrastructure like a pro! 🎉
+
+
+
+---
+
