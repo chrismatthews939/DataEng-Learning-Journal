@@ -607,4 +607,59 @@ IaC automation saves time, reduces human error, and ensures consistent environme
 
 ---
 
+## Runbook
+
+### What is a Runbook?
+A **runbook** is a document that provides step-by-step instructions for completing a task or resolving an issue. It is commonly used in IT operations, DevOps, and system administration to standardize procedures and ensure consistency.
+
+### Why Use a Runbook?
+- Reduces errors by providing clear instructions.
+- Speeds up issue resolution.
+- Helps new team members quickly understand procedures.
+- Ensures consistency in recurring tasks.
+
+### Types of Runbooks
+1. **Manual Runbook** - Requires human execution of each step.
+2. **Automated Runbook** - Uses scripts or tools to perform tasks automatically.
+3. **Hybrid Runbook** - A combination of manual and automated steps.
+
+### Best Practices for Writing a Runbook
+- Use clear and concise language.
+- Include commands in code blocks.
+- Add troubleshooting tips for common issues.
+- Update regularly to reflect system changes.
+
+### Conclusion
+Runbooks are essential for maintaining system reliability and efficiency. By documenting procedures, teams can reduce downtime and improve response times during incidents.
+
+---
+
+## Integrating Source Control into Cloud Infrastructure as Code (IaC)
+
+### Introduction
+Integrating source control into Infrastructure as Code (IaC) is essential for managing cloud infrastructure efficiently. Source control helps track changes, collaborate with teams, and maintain a history of configurations. This guide explains the benefits and common methods for integrating source control with IaC.
+
+### Benefits of Source Control in IaC
+
+### 1. **Version Control**
+- Tracks changes over time
+- Allows rollback to previous configurations
+- Ensures consistency across environments
+
+### 2. **Collaboration**
+- Enables multiple engineers to work on the same infrastructure codebase
+- Provides visibility into changes via pull requests and code reviews
+
+### 3. **Automation & CI/CD Integration**
+- Facilitates automated testing of infrastructure changes
+- Allows continuous deployment of infrastructure updates
+
+### 4. **Security & Compliance**
+- Maintains an audit trail of all changes
+- Helps enforce security policies through code reviews and approvals
+
+### Conclusion
+Integrating source control into cloud IaC ensures better collaboration, security, and automation. Using Git-based workflows, GitOps practices, and CI/CD pipelines enables efficient infrastructure management. By following these best practices, teams can deploy cloud infrastructure with confidence and maintain a robust version-controlled environment.
+
+---
 
