@@ -195,7 +195,142 @@ Continuous monitoring is essential for maintaining the reliability, performance,
 
 ---
 
-## Hackathon development focus
+# Lecture
+
+## Introduction to Kusto Query Language (KQL)
+
+### What is KQL?
+
+**Kusto Query Language (KQL)** is a powerful query language used to read and analyze large volumes of structured, semi-structured, and unstructured data. It's primarily used in **Azure Data Explorer** and **Azure Monitor**, including **Log Analytics** and **Application Insights**.
+
+KQL is optimized for high-performance querying and is commonly used to explore telemetry data, logs, and monitoring metrics in cloud applications.
+
+---
+
+### Basic Concepts
+
+- **Tables**: Data in Kusto is organized in tables (like SQL).
+- **Columns**: Each table has columns with typed data.
+- **Records**: Each row in the table is a record.
+
+---
+
+### Basic Syntax
+
+KQL is **case-sensitive** and follows a **pipe-based** syntax, where each command feeds into the next using `|`.
+
+#### 1. Viewing Data
+
+```kusto
+TableName
+```
+
+Returns all data from `TableName`.
+
+---
+
+#### 2. Filtering
+
+```kusto
+TableName
+| where ColumnName == "value"
+```
+
+Filters rows where `ColumnName` equals `"value"`.
+
+---
+
+#### 3. Selecting Specific Columns
+
+```kusto
+TableName
+| project Column1, Column2
+```
+
+Returns only `Column1` and `Column2`.
+
+---
+
+#### 4. Sorting
+
+```kusto
+TableName
+| sort by Column1 desc
+```
+
+Sorts the results by `Column1` in descending order.
+
+---
+
+#### 5. Counting Rows
+
+```kusto
+TableName
+| count
+```
+
+Returns the total number of rows in the table.
+
+---
+
+#### 6. Aggregation
+
+```kusto
+TableName
+| summarize TotalCount = count() by ColumnGroup
+```
+
+Groups the data by `ColumnGroup` and counts how many rows are in each group.
+
+---
+
+#### 7. Time Filtering (common in logs)
+
+```kusto
+TableName
+| where Timestamp > ago(1h)
+```
+
+Filters rows where `Timestamp` is within the last hour.
+
+---
+
+#### 8. Combining Clauses
+
+```kusto
+TableName
+| where ColumnA == "example"
+| project ColumnB, ColumnC
+| summarize Total = count() by ColumnB
+| sort by Total desc
+```
+
+A full example combining filtering, projection, aggregation, and sorting.
+
+---
+
+### Notes
+
+- Comments use `//` for single-line comments.
+- Strings are in double quotes `"like this"`.
+- Date/time functions like `ago()`, `now()` are common for filtering logs.
+
+---
+
+### Where is KQL Used?
+
+- **Azure Log Analytics** (monitoring and diagnostics)
+- **Azure Application Insights** (application performance)
+- **Microsoft Sentinel** (security log analysis)
+- **Azure Data Explorer** (big data analytics)
+
+---
+
+### Learn More
+
+Official documentation: [https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/)
+
+
 
 
 
