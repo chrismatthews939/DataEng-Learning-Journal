@@ -783,6 +783,67 @@ If a customer entry is missing a phone number or email address, the data is **in
 
 ✅ **Tip for beginners**: These reports are like checkups for your data. They help you find and fix problems *before* you use the data for analysis, reporting, or machine learning.
 
+# Lecture
+
+Notebooks for EDA saved in this module folder
+
+# Train-Test Split Concept in EDA
+
+## What is Train-Test Split?
+
+In data science and machine learning, the **Train-Test Split** is a technique used to evaluate how well your model will perform on unseen data. It involves dividing your dataset into two main subsets:
+
+1. **Training Set**: The portion of the data used to train the model. The model "learns" from this data.
+2. **Test Set**: The portion of the data used to evaluate the model's performance. This data is kept unseen during the training process.
+
+The **Train-Test Split** is important because it ensures that the model generalizes well to new, unseen data, rather than just memorizing (overfitting) the training data.
+
+## Why is it Important?
+
+- **Avoid Overfitting**: Training a model on the entire dataset can lead to overfitting, where the model memorizes the data rather than learning to generalize. The test set helps assess the model's ability to make predictions on new data.
+- **Evaluation**: It helps assess how well the model is likely to perform on real-world data.
+- **Data Leakage Prevention**: Ensuring that data used in training does not leak into the testing set is crucial to avoid biased evaluation.
+
+## How to Perform Train-Test Split?
+
+Typically, the data is randomly split into 70-80% for training and the remaining 20-30% for testing.
+
+### Simple Example: 
+
+Let’s look at a simple example using the Python library **scikit-learn**.
+
+### Example Code: Train-Test Split with Python
+
+```python
+# Importing necessary libraries
+import pandas as pd
+from sklearn.model_selection import train_test_split
+
+# Create a simple DataFrame
+data = {
+    'Feature1': [1, 2, 3, 4, 5, 6],
+    'Feature2': [10, 20, 30, 40, 50, 60],
+    'Target': [0, 1, 0, 1, 0, 1]
+}
+
+# Create a DataFrame using the data dictionary
+df = pd.DataFrame(data)
+
+# Separate the features (X) and target (y)
+X = df[['Feature1', 'Feature2']]  # X is the input data (features)
+y = df['Target']  # y is the target data (output)
+
+# Train-Test Split: 80% for training, 20% for testing
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Display the results
+print("Training Features (X_train):\n", X_train)
+print("\nTesting Features (X_test):\n", X_test)
+print("\nTraining Target (y_train):\n", y_train)
+print("\nTesting Target (y_test):\n", y_test)
+```
+
+
 
 
 
