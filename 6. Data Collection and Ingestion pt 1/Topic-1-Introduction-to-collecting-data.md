@@ -267,7 +267,215 @@ print(df)
 
 ---
 
-You’re now ready to clean messy real-world datasets like a pro! 🧼🐍🎉
+# 🤖 Automating Data Cleaning Checks in Python 
+
+Manually cleaning data is time-consuming, error-prone, and hard to repeat. **Automation** helps you:
+- Save time ⏱️
+- Avoid human error 🚫
+- Reproduce cleaning steps across multiple datasets 🔁
+- Ensure data quality at scale ✅
+
+In this guide, you'll learn **why automation matters** and how to build **basic automated checks** using Python and `pandas`.
+
+---
+
+## 📦 Setup
+
+```python
+# Import libraries
+import pandas as pd
+import re
+```
+
+---
+
+## 🧪 Sample Data
+
+```python
+data = {
+    'Name': ['Alice', 'Bob', '', 'David', 'Eve'],
+    'Age': [25, 30, -1, 22, None],
+    'Email': ['alice@example.com', 'invalid-email', 'carol@example.com', None, 'eve@example.com'],
+    'Salary': [50000, 54000, None, -20000, 60000]
+}
+
+df = pd.DataFrame(data)
+print(df)
+```
+
+---
+
+## 🤔 Why Automate Data Checks?
+
+Manual:
+
+```python
+# You spot a missing or invalid value manually
+print(df['Age'])
+```
+
+Problem:
+- You may **miss issues** if there are thousands of rows.
+- You **can't reuse** this check on new data automatically.
+
+---
+
+## ✅ Automated Checks You Can Build
+
+---
+
+### 1. Check for Missing Values
+
+```python
+# Automatically print any column with missing data
+def check_missing_values(df):
+    missing = df.isnull().sum()
+    print("Missing Values:")
+    print(missing[missing > 0])
+
+check_missing_values(df)
+```
+
+---
+
+### 2. Check for Negative or Invalid Numbers
+
+```python
+# Flag any rows where age or salary are negative
+def check_negative_values(df):
+    print("Negative Age:")
+    print(df[df['Age'] < 0])
+    
+    print("Negative Salary:")
+    print(df[df['Salary'] < 0])
+
+check_negative_values(df)
+```
+
+---
+
+### 3. Validate Email Format with Regex
+
+```python
+# Flag invalid email addresses
+def check_email_format(df):
+    pattern = r'^\S+@\S+\.\S+$'
+    invalid_emails = df[~df['Email'].fillna('').str.match(pattern)]
+    print("Invalid Emails:")
+    print(invalid_emails)
+
+check_email_format(df)
+```
+
+---
+
+### 4. Check for Empty Strings
+
+```python
+# Find rows where Name is an empty string
+def check_empty_strings(df):
+    print("Empty Strings in Name:")
+    print(df[df['Name'].str.strip() == ''])
+
+check_empty_strings(df)
+```
+
+---
+
+## 🔁 Combine All Checks in a Single Audit Function
+
+```python
+def run_data_quality_checks(df):
+    print("Running Data Quality Audit...\n")
+    check_missing_values(df)
+    print("\n---\n")
+    check_negative_values(df)
+    print("\n---\n")
+    check_email_format(df)
+    print("\n---\n")
+    check_empty_strings(df)
+    print("\nAudit Complete ✅")
+
+run_data_quality_checks(df)
+```
+
+---
+
+## 🧠 Why Automate?
+
+- You can run the same checks on new data daily, weekly, etc.
+- You can **log errors to a file** or send alerts.
+- You reduce mistakes and save hours of work.
+- You can build pipelines that clean and validate as soon as data arrives.
+
+---
+
+## 💡 Beginner Tips
+
+- Keep each check in its own function for clarity.
+- Start with checks like missing values, types, formats, and duplicates.
+- Use `assert` statements for strict checks in production pipelines.
+- Use a framework like **Great Expectations** or **Pandas-Profiling** for advanced automation (once you're ready).
+
+---
+
+## 🧼 Example Output
+
+```
+Running Data Quality Audit...
+
+Missing Values:
+Age       1
+Salary    1
+dtype: int64
+
+---
+
+Negative Age:
+   Name  Age             Email  Salary
+2       -1  carol@example.com     NaN
+Negative Salary:
+    Name   Age  Email  Salary
+3  David  22.0   None  -20000.0
+
+---
+
+Invalid Emails:
+   Name   Age             Email  Salary
+1   Bob  30.0    invalid-email  54000.0
+3 David  22.0              None -20000.0
+
+---
+
+Empty Strings in Name:
+  Name  Age             Email  Salary
+2       -1  carol@example.com     NaN
+
+Audit Complete ✅
+```
+
+---
+
+## 🏁 Wrap-Up
+
+Automating your data quality checks:
+- Saves time and scales with your project.
+- Ensures consistent validation.
+- Helps you catch problems **before** they impact analysis or machine learning models.
+
+You’re now ready to level up from manual cleaning to automated data sanity checks! 🚀
+
+---
+
+## 🛠️ Next Steps (Optional)
+
+- Add logging to file
+- Raise exceptions or send alerts when critical errors occur
+- Try more advanced tools like:
+  - `great_expectations`
+  - `pandera`
+  - `pandas_profiling`
+
 
 
 
