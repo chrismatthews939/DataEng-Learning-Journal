@@ -183,5 +183,55 @@ The Lambda Architecture is a design pattern that combines batch and real-time pr
 - May introduce latency due to batch processing.
 - Requires more infrastructure and resources than simpler architectures.
 
+### Kappa Architecture
+
+The Kappa Architecture is a simplification of the Lambda Architecture that uses a single, real-time processing pipeline for both real-time and historical data. It leverages stream processing and retains an immutable log of all data.
+
+#### The Kappa Architecture is ideal for:
+- Use cases that primarily require real-time data processing.
+- Simplifying data architecture by eliminating batch processing.
+- Leveraging the power and flexibility of stream processing frameworks.
+- Enabling faster data processing and analysis.
+
+#### A Kappa Architecture includes the following components:
+- Message queue or log to capture all data (Kafka, Kinesis).
+- Stream processing engine to process and serve data (Spark Streaming, Flink).
+- Serving layer to store and expose processed data (Cassandra, HBase).
+
+#### Tools for Kappa Architecture include the following:
+- Open-source: Apache Kafka, Apache Flink, Apache Druid.
+- Cloud-agnostic: Confluent Platform, Materialise.
+
+#### Pros
+- Simpler architecture than Lambda (no separate batch and speed layers).
+- Enables faster data processing and analysis.
+- Leverages the power and flexibility of stream processing.
+- Supports time-travel and reprocessing of historical data.
+
+#### Cons
+- Requires more upfront planning and design.
+- May be more resource-intensive than batch processing for large historical datasets.
+- Relies heavily on the performance and reliability of the message queue and stream processing engine.
+- May require specialised skills and tools for stream processing.
+
+### A comparison summary
+
+Here is a summary of the key differences between Lambda and Kappa architecture:
+
+| Criteria    | Lambda            |Kappa           |
+|-------------|----------------------------------|----------------------------------|
+| Processing paradigm  | Batch & Streaming  |Streaming  |
+| Re-processing paradigm  | Every Batch Cycle  |Only when code changes |
+| Resource consumption  | Function = Query (All data)  |Incremental algorithms, running on deltas  |
+| Reliability | Batch is reliable, Streaming is approximate  |Streaming with consistency
+(exactly once)|
+
+| Criteria    | Lambda            |Kappa           |
+|-------------|----------------------------------|----------------------------------|
+| Processing paradigm  | Batch & Streaming  |Streaming  |
+| Re-processing paradigm  | Every Batch Cycle  |Only when code changes |
+| Resource consumption  | Function = Query (All data)  |Incremental algorithms, running on deltas  |
+| Reliability | Batch is reliable, Streaming is approximate  |Streaming with consistency
+(exactly once)|
 
 
