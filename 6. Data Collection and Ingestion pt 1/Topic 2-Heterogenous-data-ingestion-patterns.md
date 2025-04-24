@@ -328,3 +328,176 @@ These services each play a critical role in building modern data solutions. Here
 
 Understanding these tools is essential for anyone working with cloud-based data solutions.
 
+# Lecture notes
+
+## Understanding ETL, ELT, and Reverse ETL
+
+If you're new to data engineering or analytics, the terms **ETL**, **ELT**, and **Reverse ETL** can seem a bit confusing. This guide will explain what each one means in simple terms, how they work, and when you'd use them.
+
+---
+
+### 📦 ETL: Extract, Transform, Load
+
+#### What is ETL?
+
+**ETL** stands for **Extract, Transform, Load**. It's a process used to move data from one or more sources into a centralized storage system like a **data warehouse**.
+
+#### How it works:
+
+1. **Extract**: Pull data from different sources (like databases, APIs, CSV files, etc.)
+2. **Transform**: Clean, format, and organize the data (e.g., remove duplicates, convert formats, calculate new fields).
+3. **Load**: Put the cleaned data into a **data warehouse** (like Snowflake, BigQuery, or Redshift).
+
+#### Example Use Case:
+
+A retail company wants to analyze its sales data. They extract data from their POS systems, clean and format it (e.g., standardize dates, calculate total sales), and then load it into a data warehouse where analysts can run reports.
+
+---
+
+## ⚙️ ELT: Extract, Load, Transform
+
+#### What is ELT?
+
+**ELT** is a newer approach that stands for **Extract, Load, Transform**. It's similar to ETL but the order of operations is different.
+
+#### How it works:
+
+1. **Extract**: Pull data from source systems.
+2. **Load**: Load the raw data directly into the data warehouse.
+3. **Transform**: Use the processing power of the data warehouse to clean and organize the data.
+
+#### Example Use Case:
+
+A tech company collects user interaction data from its app. Instead of cleaning it first, they load all the raw data into BigQuery and then write SQL scripts to transform it inside the warehouse for different teams to use.
+
+#### Why use ELT?
+
+- Faster to implement for large datasets.
+- Modern data warehouses are optimized for fast, scalable transformations.
+
+---
+
+### 🔄 Reverse ETL: Data Out of the Warehouse
+
+#### What is Reverse ETL?
+
+**Reverse ETL** is the process of moving data **from the data warehouse back into operational tools** (like CRMs, marketing platforms, support tools).
+
+#### How it works:
+
+1. Select and format the data in the warehouse.
+2. Push that data to external tools (e.g., Salesforce, HubSpot, Zendesk).
+3. Teams can use the data in their daily workflows.
+
+#### Example Use Case:
+
+A marketing team wants to run personalized email campaigns. Reverse ETL is used to send customer segments from the data warehouse to their email platform so they can trigger campaigns based on recent activity.
+
+---
+
+### 🧠 Summary Table
+
+| Process       | Order                  | Best For                                      |
+|---------------|------------------------|-----------------------------------------------|
+| **ETL**       | Extract → Transform → Load | Smaller datasets, legacy systems, strict cleaning before storing |
+| **ELT**       | Extract → Load → Transform | Big data, modern warehouses, flexible transformation |
+| **Reverse ETL** | Warehouse → Tools       | Operational use of analytics (e.g., sales, marketing) |
+
+---
+
+### Final Thoughts
+
+- **ETL** and **ELT** help you get data **into** your data warehouse.
+- **Reverse ETL** helps you get data **out** of your warehouse and into tools people use every day.
+- Together, they make data both **centralized** and **actionable**.
+
+---
+
+## Introduction to Data Cataloguing
+
+Data cataloguing is like creating a well-organized library, but instead of books, you're organizing **data**. It's a way to keep track of what data you have, where it lives, what it's about, and how it can be used.
+
+---
+
+### 📘 What is a Data Catalog?
+
+A **data catalog** is a tool or system that helps you:
+
+- **Find data** easily
+- **Understand** what the data means
+- **Trust** the data by showing where it came from and how it has changed
+- **Use** the data more effectively
+
+Think of it like an online store for data. Just like you can search for shoes by brand, size, and price, you can search for data by topic, date, owner, or format.
+
+---
+
+### 🔍 Why is Data Cataloguing Important?
+
+As organizations collect more and more data, it can become overwhelming to manage. Without a data catalog, people often:
+
+- Don't know what data exists
+- Waste time looking for it
+- Recreate data that already exists
+- Use outdated or incorrect data
+
+With a catalog, you:
+
+- Save time
+- Improve accuracy
+- Increase collaboration
+- Make better decisions
+
+---
+
+### 🧩 What Does a Data Catalog Contain?
+
+A good data catalog includes:
+
+- **Metadata**: Data about the data (e.g., title, description, who owns it, when it was created)
+- **Data lineage**: Shows where the data came from and how it’s been transformed
+- **Data classifications**: Labels to show sensitivity (e.g., confidential, public)
+- **Tags and keywords**: Help with searching
+- **Usage statistics**: How often it’s used and by whom
+- **Comments and ratings**: Feedback from users
+
+---
+
+### 🛠️ How is Data Cataloguing Done?
+
+Here’s a simplified process:
+
+1. **Inventory**: Scan all your systems to find where data lives.
+2. **Ingest metadata**: Pull in information about the data automatically.
+3. **Enrich**: Add extra info manually (like descriptions or tags).
+4. **Organize**: Group and label the data to make it easier to find.
+5. **Maintain**: Keep it up to date as data changes.
+
+Some popular tools for data cataloguing are:
+
+- **Alation**
+- **Collibra**
+- **Google Data Catalog**
+- **Microsoft Purview**
+- **Apache Atlas**
+
+---
+
+### 📚 Real-World Example
+
+Imagine you're working at a hospital. You might have data on:
+
+- Patients
+- Doctors
+- Appointments
+- Lab results
+
+A data catalog could help you quickly find the "Appointment history for 2024," understand what fields are included, who collected it, and whether you're allowed to use it for research.
+
+---
+
+### ✅ Summary
+
+Data cataloguing helps make data **discoverable**, **understandable**, and **usable**. It’s essential for anyone working with large or complex data environments, and it's the first step toward data-driven decision making.
+
+---
