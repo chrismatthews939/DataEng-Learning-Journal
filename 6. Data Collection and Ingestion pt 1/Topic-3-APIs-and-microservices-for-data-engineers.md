@@ -272,23 +272,23 @@ Serverless architecture helps **reduce idle infrastructure**, a common source of
 
 ---
 
-1. **Choose a Serverless Platform**
+#### 1. **Choose a Serverless Platform**
 - Select a serverless platform (e.g., AWS Lambda, Azure Functions, Google Cloud Functions).
 - These platforms automatically manage server provisioning, scaling, and resource allocation.
 
-2. **Define the microservice**
+#### 2. **Define the microservice**
 - Identify the specific functionality of your ingestion microservice.
 - Keep it focused and independent (single responsibility).
 
-3. **Event-driven architecture**
+#### 3. **Event-driven architecture**
 - Design your microservice to be event-driven.
 - Trigger the microservice based on events (e.g., file upload, API request).
 
-4. **Data Ingestion**
+#### 4. **Data Ingestion**
 - Ingest data from various sources (files, APIs, databases).
 - Process the data (e.g., transform, validate, clean).
 
-5. **Net-Zero Benefits**
+#### 5. **Net-Zero Benefits**
 - Optimise resource usage:
   - Use serverless functions that automatically scale based on workload.
    -Leverage ephemeral instances that spin up and shut down as needed.
@@ -301,25 +301,25 @@ Serverless architecture helps **reduce idle infrastructure**, a common source of
   - Serverless platforms manage infrastructure efficiently.
   - Reduced energy consumption due to automatic scaling and resource allocation.
 
-6. **Implement security measures**
+#### 6. **Implement security measures**
 - Secure data transmission (HTTPS, encryption).
 - Implement access controls (IAM roles, permissions).
 - Monitor and audit your microservice for security vulnerabilities.
 
-7. **Testing and monitoring**
+#### 7. **Testing and monitoring**
 - Write unit tests for your microservice.
 - Monitor performance, errors, and resource usage.
 - Set up logging and alerts.
 
-8. **Deployment and continuous integration**
+#### 8. **Deployment and continuous integration**
 - Deploy your microservice to the chosen serverless platform.
 - Set up CI/CD pipelines for automated deployment and updates.
 
-9. **Documentation**
+#### 9. **Documentation**
 - Document your microservice’s functionality, endpoints, and usage.
 - Include information on how to contribute or extend the microservice.
 
-10. **Net-Zero Pledge**
+#### 10. **Net-Zero Pledge**
 - Commit to net-zero emissions by offsetting any remaining carbon footprint.
 - Consider using renewable energy sources for your serverless infrastructure.
 
