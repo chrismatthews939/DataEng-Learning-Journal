@@ -491,6 +491,171 @@ AWS App Mesh only works within the AWS cloud, for example. Other service mesh op
 
 ---
 
+## Understanding API Keys: 
+
+### What is an API?
+
+An **API** (Application Programming Interface) is a set of rules that allows one software application to talk to another. For example, a weather app on your phone might use an API to get current weather data from a remote weather service.
+
+Think of an API as a waiter in a restaurant. You (the app) tell the waiter (the API) what you want, and the waiter brings back the information (like weather data) from the kitchen (the server).
+
+---
+
+### What is an API Key?
+
+An **API key** is like a unique password or ID used when accessing an API. It helps the API provider:
+
+- Identify **who** is using the API.
+- **Control** how the API is used (for example, limit how many requests someone can make).
+- **Protect** the API from abuse or unauthorized access.
+
+API keys are usually a long string of letters and numbers, something like:
+
+---
+
+`An API key is issued by an API provider and given to a registered API consumer, who includes it with each request. The API server then checks the API key to validate the consumer’s identity before returning the requested data.
+API keys are not as effective as other forms of API authentication, such as OAuth and JWT, but they still play an important role in helping API producers monitor usage while keeping sensitive data secure.`
+
+---
+
+## Understanding Different Types of API Keys
+
+If you're just getting started with programming or using APIs (Application Programming Interfaces), you might have come across the term **API key**. An API key is a code that identifies and authenticates an application or user making a request to an API. Think of it like a password for software talking to other software.
+
+There are a few different **types of API keys**, depending on how they're used and what kind of access they grant. Here's a simple breakdown:
+
+---
+
+### 🔑 1. Public API Keys
+
+- **Purpose**: Identify the application making the request.
+- **Security**: Not secure by themselves — can be exposed in frontend code.
+- **Usage**: Often used with open or limited-access APIs, like Google Maps or YouTube.
+- **Example Use Case**: Embedding a map on a website.
+
+📌 *Tip*: These should not be used for anything sensitive because they can be seen by users.
+
+---
+
+### 🔐 2. Private API Keys (Secret Keys)
+
+- **Purpose**: Authenticate the application or user securely.
+- **Security**: Must be kept secret — never expose in frontend code.
+- **Usage**: Used in server-to-server communication, or when making changes to user data or databases.
+- **Example Use Case**: Accessing a payment gateway (like Stripe) from a backend server.
+
+📌 *Tip*: Store these in environment variables or secure storage.
+
+---
+
+### 👤 3. User API Keys (or Access Tokens)
+
+- **Purpose**: Identify and authorize a specific user.
+- **Security**: Should be kept secret — often short-lived and used with OAuth.
+- **Usage**: Used when a user logs in and gives your app permission to access their data.
+- **Example Use Case**: A user authorizing your app to access their Google Drive files.
+
+📌 *Tip*: Usually expires after a time and needs refreshing.
+
+---
+
+### 🧪 4. Test or Sandbox API Keys
+
+- **Purpose**: Used for development and testing.
+- **Security**: Safer to use during development — often isolated from live data.
+- **Usage**: Used in staging environments or during app development.
+- **Example Use Case**: Testing payment processing without real transactions.
+
+📌 *Tip*: These usually have limited or no access to production data.
+
+---
+
+### 🧭 5. Admin or Master API Keys
+
+- **Purpose**: Full access to all features and data in the API.
+- **Security**: Extremely sensitive — should never be shared or exposed.
+- **Usage**: Used by administrators or internal tools only.
+- **Example Use Case**: Managing users, settings, or critical backend features.
+
+📌 *Tip*: Use with extreme caution and only in secure environments.
+
+---
+
+### Summary Table
+
+| Type                 | Use Case                          | Keep Secret? | Common Location       |
+|----------------------|-----------------------------------|--------------|------------------------|
+| Public API Key       | Identify app for public APIs      | ❌           | Frontend code          |
+| Private API Key      | Authenticate app securely         | ✅           | Backend/server         |
+| User API Key/Token   | Authenticate specific user        | ✅           | Server or secure client|
+| Test/Sandbox Key     | Development and testing           | ✅           | Dev environment        |
+| Admin/Master Key     | Full system access                | ✅✅✅        | Internal systems only  |
+
+---
+
+### 🛡️ Best Practices for Using API Keys
+
+#### 1. **Keep It Secret, Keep It Safe**
+- **Never share your API keys publicly.**
+- Avoid uploading them to GitHub or other version control systems.
+- Use a `.gitignore` file to exclude files that contain your API keys.
+
+#### 2. **Use Environment Variables**
+- Store API keys in **environment variables** instead of hardcoding them in your code.
+- Example in `.env` file:
+- Load it in code using a library like `dotenv` (Node.js) or `os.environ` (Python).
+
+#### 3. **Restrict the Key's Permissions**
+- Only allow the key to do exactly what it needs—nothing more.
+- Use **scopes** or **roles** provided by the API provider to limit access.
+
+#### 4. **Use IP or Domain Restrictions**
+- If possible, limit the usage of the API key to specific IP addresses or domains.
+- This prevents unauthorized users from using your key even if it's leaked.
+
+#### 5. **Regenerate If Compromised**
+- If you think your API key has been exposed, **revoke or regenerate it immediately**.
+- Update your application with the new key.
+
+#### 6. **Don’t Log Sensitive Keys**
+- Avoid printing or logging your API keys in the console or log files.
+- Logs can be shared or stored insecurely without realizing it.
+
+#### 7. **Use Separate Keys for Different Environments**
+- Have different keys for **development**, **testing**, and **production**.
+- This reduces risk if a key is accidentally exposed during testing.
+
+#### 8. **Rotate Keys Regularly**
+- Periodically **rotate** (change) your keys to minimize the impact of a potential leak.
+- Update your applications with the new key after rotation.
+
+---
+
+### 📌 Summary
+
+| Best Practice                  | Why It's Important                           |
+|-------------------------------|----------------------------------------------|
+| Don't hardcode keys           | Prevents accidental leaks                    |
+| Use environment variables     | Keeps code clean and safe                    |
+| Limit permissions             | Reduces damage if compromised                |
+| Set IP/domain restrictions    | Adds an extra security layer                 |
+| Revoke compromised keys       | Stops unauthorized access                    |
+| Avoid logging keys            | Prevents leaks in logs                       |
+| Use separate environment keys | Limits exposure per environment             |
+| Rotate keys regularly         | Maintains long-term security                 |
+
+---
+
+### ✅ Final Tips
+
+- Think of your API key like a **house key**. Keep it private, secure, and under your control.
+- Follow these practices from the start—it’s easier than fixing a breach later.
+
+---
+
+# Lecture Notes
+
+
 
 
 
