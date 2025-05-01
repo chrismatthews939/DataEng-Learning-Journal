@@ -655,6 +655,143 @@ There are a few different **types of API keys**, depending on how they're used a
 
 # Lecture Notes
 
+## What is a REST API?
+
+**REST** stands for **Representational State Transfer**. A REST API is a type of API that follows a specific set of rules so systems can communicate over the internet, usually using HTTP.
+
+In simple terms, a **REST API** allows different applications or systems to communicate with each other by sending and receiving data over the web.
+
+---
+
+## How REST APIs Work
+
+REST APIs usually communicate using **HTTP** methods, which you already use when browsing the web:
+
+- `GET` – Retrieve data
+- `POST` – Send new data
+- `PUT` – Update existing data
+- `DELETE` – Remove data
+
+Each operation is done using a **URL (Uniform Resource Locator)**, just like a web address.
+
+### Example:
+If you had a REST API for books, it might look like this:
+
+- `GET /books` → Get a list of all books
+- `GET /books/1` → Get the book with ID 1
+- `POST /books` → Add a new book
+- `PUT /books/1` → Update the book with ID 1
+- `DELETE /books/1` → Delete the book with ID
+
+`It's the same as CRUD commands in SQL but the API way of doing the same thing`
+
+---
+
+## Guide to HTTP Status Codes
+
+When you visit a website or use an app that talks to a server, that server sends back something called an **HTTP status code**. These codes are like short messages that tell you what happened with your request.
+
+### What Is an HTTP Status Code?
+
+An HTTP status code is a 3-digit number that the server sends back to your browser or app when you make a request (like loading a webpage, submitting a form, or accessing an API).
+
+They are grouped by their first digit:
+
+- **1xx**: Informational — "I'm working on it."
+- **2xx**: Success — "It worked!"
+- **3xx**: Redirection — "Go somewhere else."
+- **4xx**: Client Error — "You messed up."
+- **5xx**: Server Error — "I (the server) messed up."
+
+---
+
+### Common HTTP Status Codes (Explained Simply)
+
+#### ✅ 2xx – Success
+
+- **200 OK**  
+  Everything worked! The request was successful and the response has the data you asked for.
+
+- **201 Created**  
+  Something new was created (like when you sign up or submit a form that adds data).
+
+---
+
+#### 🔀 3xx – Redirection
+
+- **301 Moved Permanently**  
+  The thing you're looking for has a new permanent address.
+
+- **302 Found (Temporary Redirect)**  
+  The thing you're looking for is somewhere else for now.
+
+---
+
+#### ❌ 4xx – Client Errors
+
+- **400 Bad Request**  
+  The server didn’t understand what you asked for (maybe a missing field or bad syntax).
+
+- **401 Unauthorized**  
+  You need to log in or provide a valid API key/token.
+
+- **403 Forbidden**  
+  You're not allowed to access this, even if you are logged in.
+
+- **404 Not Found**  
+  The thing you're looking for doesn’t exist on the server.
+
+---
+
+#### 💥 5xx – Server Errors
+
+- **500 Internal Server Error**  
+  Something went wrong on the server. It’s not your fault.
+
+- **502 Bad Gateway**  
+  The server was acting as a gateway and got a bad response from another server.
+
+- **503 Service Unavailable**  
+  The server is overloaded or down for maintenance. Try again later.
+
+---
+
+### How They Are Used
+
+When you write or test web applications, these codes help you understand what’s going on:
+
+- A `200` means everything is fine.
+- A `404` means the URL might be wrong.
+- A `500` means the server has a bug or problem.
+
+Even tools like web browsers or APIs use these codes to react accordingly (e.g., show a "Page Not Found" message when they see a `404`).
+
+---
+
+### Summary Table
+
+| Code | Meaning                 | Category     |
+|------|--------------------------|--------------|
+| 200  | OK                       | Success      |
+| 201  | Created                  | Success      |
+| 301  | Moved Permanently        | Redirection  |
+| 302  | Found (Temporary)        | Redirection  |
+| 400  | Bad Request              | Client Error |
+| 401  | Unauthorized             | Client Error |
+| 403  | Forbidden                | Client Error |
+| 404  | Not Found                | Client Error |
+| 500  | Internal Server Error    | Server Error |
+| 502  | Bad Gateway              | Server Error |
+| 503  | Service Unavailable      | Server Error |
+
+---
+
+### Final Tip
+
+These codes are like traffic signals for the web. Understanding them makes it easier to debug problems or improve how your site or app behaves for users.
+
+---
+
 
 
 
