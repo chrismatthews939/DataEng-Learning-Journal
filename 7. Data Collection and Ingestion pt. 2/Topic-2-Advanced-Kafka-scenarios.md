@@ -1184,4 +1184,173 @@ Here are some of the widely used SASL authentication mechanisms:
 
 ---
 
+# Troubleshooting Common Kafka Errors
+
+Apache Kafka is a popular distributed event streaming platform used for building real-time data pipelines and streaming apps. When working with Kafka, you may encounter various errors. This guide explains some common Kafka errors, their symptoms, causes, and how to resolve them, tailored for beginners.
+
+---
+
+## 1. Kafka Broker Not Available
+
+**Issue:**  
+Clients (producers or consumers) cannot connect to Kafka brokers.
+
+**Symptoms:**  
+- Connection timeout errors.  
+- Errors like `Failed to connect to broker`.  
+- No response from Kafka when sending or fetching messages.
+
+**Causes:**  
+- Kafka brokers are down or not running.  
+- Network issues (firewalls, wrong IP/hostname).  
+- Incorrect broker address or port configuration on client side.
+
+**Solutions:**  
+- Verify Kafka brokers are running. Restart if needed.  
+- Check network connectivity between client and broker machines.  
+- Ensure the client configuration points to the correct broker addresses and ports.  
+- Check firewall settings to allow traffic on Kafka ports (default 9092).
+
+---
+
+## 2. Topic Not Found / Unknown Topic or Partition
+
+**Issue:**  
+Client tries to read from or write to a topic that does not exist.
+
+**Symptoms:**  
+- Errors like `UnknownTopicOrPartitionException`.  
+- Messages fail to send or fetch with topic-related errors.
+
+**Causes:**  
+- The topic was never created.  
+- Topic was deleted or expired (if auto-deletion is enabled).  
+- Typo in the topic name.
+
+**Solutions:**  
+- Create the missing topic manually or enable automatic topic creation if suitable.  
+- Verify the topic name in the client matches exactly the intended topic.  
+- Check topic retention policies to avoid unexpected deletion.
+
+---
+
+## 3. Leader Not Available for Partition
+
+**Issue:**  
+Kafka client cannot find the leader broker for a partition to send or receive data.
+
+**Symptoms:**  
+- Errors like `LeaderNotAvailableException`.  
+- Client retries indefinitely or gets timeout errors.
+
+**Causes:**  
+- Kafka brokers are restarting or rebalancing.  
+- Network partition or broker failure causing leader election delays.  
+- Topic partitions have no leader assigned temporarily.
+
+**Solutions:**  
+- Wait for Kafka to complete leader election (usually quick).  
+- Check broker logs for failures and fix issues causing broker crashes.  
+- Ensure cluster health and connectivity between brokers.
+
+---
+
+## 4. Offset Out of Range
+
+**Issue:**  
+Consumer tries to read messages from an offset that no longer exists in the topic partition.
+
+**Symptoms:**  
+- Errors like `OffsetOutOfRangeException`.  
+- Consumer cannot fetch messages and may stop processing.
+
+**Causes:**  
+- Consumer offset is too old; messages have been deleted due to retention policies.  
+- Manual offset commits or resets set an invalid offset.  
+- Topic data retention period is too short.
+
+**Solutions:**  
+- Reset consumer offsets to a valid value (earliest or latest).  
+- Increase topic retention time if old data is required.  
+- Monitor and manage consumer offset commits carefully.
+
+---
+
+## 5. Authentication / Authorization Failures
+
+**Issue:**  
+Client cannot authenticate or is not authorized to access Kafka resources.
+
+**Symptoms:**  
+- Errors like `SaslAuthenticationException`, `AuthorizationException`.  
+- Access denied messages when producing or consuming.
+
+**Causes:**  
+- Incorrect security configurations (SASL, SSL).  
+- Missing or wrong credentials (usernames, passwords, certificates).  
+- Kafka ACLs (Access Control Lists) not properly configured.
+
+**Solutions:**  
+- Verify and update client security settings to match Kafka broker requirements.  
+- Ensure correct credentials are used and valid certificates are installed.  
+- Review and configure Kafka ACLs to grant necessary permissions.
+
+---
+
+## 6. High Latency or Slow Performance
+
+**Issue:**  
+Kafka operations take much longer than expected.
+
+**Symptoms:**  
+- Delays in message delivery or consumption.  
+- High CPU, memory, or network usage on brokers or clients.
+
+**Causes:**  
+- Network congestion or insufficient bandwidth.  
+- Under-provisioned Kafka cluster (too few brokers or partitions).  
+- Improper configuration of producers/consumers (batch sizes, linger times).  
+- Disk I/O bottlenecks on brokers.
+
+**Solutions:**  
+- Monitor and optimize network and hardware resources.  
+- Scale Kafka cluster horizontally by adding more brokers and partitions.  
+- Tune producer/consumer configuration for batching and compression.  
+- Check disk usage and improve storage performance.
+
+---
+
+## 7. Disk Full or Log Segment Deletion Issues
+
+**Issue:**  
+Kafka broker disk space runs out or log segments cannot be deleted properly.
+
+**Symptoms:**  
+- Broker stops accepting writes.  
+- Errors about disk full or log cleanup failures in broker logs.
+
+**Causes:**  
+- Insufficient disk capacity allocated to Kafka data directories.  
+- Log retention policies not configured properly, causing accumulation of old data.  
+- Log cleanup thread failing or stuck.
+
+**Solutions:**  
+- Increase disk capacity or add storage.  
+- Adjust log retention settings to delete older data sooner.  
+- Check and fix any errors in broker logs related to cleanup.  
+- Restart brokers if log cleanup thread is stuck.
+
+---
+
+## Summary Tips for Kafka Troubleshooting
+
+- Always check Kafka broker and client logs for detailed error messages.  
+- Verify network connectivity and firewall settings.  
+- Confirm correct configurations (broker addresses, security, topic names).  
+- Monitor Kafka cluster health using tools like Kafka Manager, Prometheus, or Confluent Control Center.  
+- Understand Kafka concepts such as brokers, topics, partitions, offsets, and leaders.  
+- Use Kafka documentation and community forums for help.
+
+---
+
 
