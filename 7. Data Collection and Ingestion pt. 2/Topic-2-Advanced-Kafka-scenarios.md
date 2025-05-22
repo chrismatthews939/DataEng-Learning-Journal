@@ -943,6 +943,245 @@ FTA is useful for complex systems where multiple factors combine to cause a prob
 
 ---
 
+# Storytelling and Communication in Data Engineering
 
+## Introduction
+
+Data engineering is all about building systems that collect, store, and prepare data so it can be used effectively. But having the data isn’t enough — to create real value, you need to communicate what the data means and tell a story with it.
+
+This guide will help beginners understand **why** storytelling and communication matter in data engineering and **how** to do it well.
+
+---
+
+## What is Storytelling in Data Engineering?
+
+Storytelling in data engineering means **using data to convey a clear, meaningful message**. Instead of just presenting raw numbers or complex pipelines, you explain the insights and value behind the data in a way that others can understand and act on.
+
+For example, a data engineer might:
+
+- Show how data flows from different sources into a central system.
+- Explain why certain data transformations are necessary.
+- Highlight trends or anomalies detected in the data.
+
+---
+
+## Why Storytelling and Communication Matter
+
+- **Bridge the gap between technical and non-technical people:** Not everyone understands complex data structures or code. Good storytelling helps business teams, managers, and stakeholders grasp what’s happening and why it matters.
+- **Drive better decisions:** Clear communication of data insights leads to smarter, faster business decisions.
+- **Build trust:** When you explain your work transparently and understandably, others trust the data and your processes.
+- **Collaborate effectively:** Data projects involve many people — engineers, analysts, product teams. Good communication keeps everyone aligned.
+
+---
+
+## Key Elements of Storytelling in Data Engineering
+
+1. **Know Your Audience**  
+   Tailor your message to the listener. A technical team might want details on data pipelines; business teams want insights and impact.
+
+2. **Simplify Complex Ideas**  
+   Use simple language, analogies, and visuals. Avoid jargon unless your audience is technical.
+
+3. **Focus on the Why**  
+   Explain why the data matters. What question are you answering? What problem are you solving?
+
+4. **Use Data Visualizations**  
+   Charts, graphs, and diagrams make it easier to understand data flows and trends.
+
+5. **Tell a Clear, Logical Story**  
+   Structure your explanation like a story — with a beginning (context), middle (process/analysis), and end (insights/recommendations).
+
+---
+
+## Tips for Effective Communication in Data Engineering
+
+- **Document everything clearly**: Write clear comments, README files, and reports.
+- **Use diagrams**: Flowcharts for data pipelines, ER diagrams for database structures.
+- **Present regularly**: Share updates with stakeholders in simple terms.
+- **Listen and adapt**: Ask for feedback and adjust how you communicate.
+- **Practice empathy**: Put yourself in the listener’s shoes.
+
+---
+
+## Example: Storytelling in Action
+
+Imagine you built a system that collects sales data from multiple stores.
+
+**Bad communication:**  
+“We have a pipeline that extracts data from Store A and B databases, transforms it, and loads it into the warehouse.”
+
+**Good storytelling:**  
+“Our system gathers daily sales data from all stores to provide a single source of truth. This helps the marketing team track which stores are performing best and adjust campaigns quickly. Here’s a simple diagram showing how data moves from each store to our warehouse and how we clean it for analysis.”
+
+---
+
+## Summary
+
+Storytelling and communication in data engineering help turn complex technical work into meaningful insights that everyone can understand. By focusing on your audience, simplifying ideas, and clearly explaining the purpose and impact of your data work, you make data engineering a powerful tool for decision-making and collaboration.
+
+---
+
+# Additional Resources
+
+- [Storytelling with Data](https://www.storytellingwithdata.com/)
+- [Data Visualization Guide](https://datavizcatalogue.com/)
+- [The Data Engineering Cookbook](https://github.com/andkret/Cookbook)
+
+--
+
+# Lecture
+
+# Introduction to Red Panda and User Access Control
+
+## What is Red Panda?
+
+Red Panda is a modern, high-performance streaming data platform designed as a drop-in replacement for Apache Kafka. It helps manage and process real-time data streams efficiently. Unlike traditional Kafka, Red Panda is built to be simpler to deploy, faster, and more resource-friendly.
+
+At its core, Red Panda allows applications to publish, subscribe, and process streams of records in real-time. These capabilities are useful for a wide range of applications including data pipelines, event sourcing, messaging, and more.
+
+## What is User Access Control?
+
+User Access Control is the process of managing who can access what resources in a system. It involves:
+
+- **Authentication**: Verifying the identity of a user (e.g., username and password).
+- **Authorization**: Granting permissions to users based on their roles or specific policies to access certain data or perform certain actions.
+
+For systems like Red Panda, user access control is crucial to ensure that only authorized users can publish or consume data streams, preventing unauthorized access or data leaks.
+
+## How Red Panda Handles User Access Control
+
+Red Panda supports user access control by providing:
+
+### 1. Authentication
+
+Red Panda can authenticate users using different mechanisms, such as:
+
+- **SASL (Simple Authentication and Security Layer)**: Supports various authentication protocols like SCRAM (Salted Challenge Response Authentication Mechanism) to verify user credentials securely.
+- **TLS (Transport Layer Security) Client Certificates**: Users authenticate by presenting valid certificates.
+
+### 2. Authorization
+
+Once authenticated, Red Panda controls what each user is allowed to do using Access Control Lists (ACLs). ACLs define permissions for:
+
+- **Topics**: The data streams in Red Panda.
+- **Actions**: Whether a user can produce (write) or consume (read) data from a topic.
+
+### Example Use Case
+
+Imagine a company with multiple teams using Red Panda to process data:
+
+- The **Marketing** team should only read data from the `customer_feedback` topic.
+- The **Engineering** team should be able to write to the `system_logs` topic.
+- Admins should have full access to all topics.
+
+Using Red Panda's ACLs, an administrator can:
+
+- Create users for each team.
+- Assign read-only permissions on `customer_feedback` to Marketing users.
+- Assign write permissions on `system_logs` to Engineering users.
+- Grant full permissions to admin users.
+
+## Why Use Red Panda for Access Control?
+
+- **Simplicity**: Red Panda is designed to be easy to configure and manage compared to Kafka.
+- **Performance**: It handles access control efficiently without slowing down the data streams.
+- **Security**: Supports modern authentication and authorization standards to secure data access.
+
+## Summary
+
+- Red Panda is a streaming platform similar to Kafka but simpler and faster.
+- User access control in Red Panda involves authenticating users and authorizing their actions via ACLs.
+- This control ensures users only access data they are permitted to, enhancing security.
+- Red Panda’s support for SASL, TLS, and ACLs makes it suitable for secure, multi-tenant environments.
+
+---
+
+# Overview of SASL Mechanisms
+
+## What is SASL?
+
+**SASL** stands for **Simple Authentication and Security Layer**. It is a framework used to add authentication support to connection-based protocols. Instead of designing a new authentication method for every protocol, SASL provides a standard way to integrate different authentication mechanisms.
+
+---
+
+## Why Use SASL?
+
+- To separate authentication from application protocols (like SMTP, IMAP, LDAP).
+- To support multiple authentication methods without changing the core protocol.
+- To provide a way to negotiate security features such as encryption or integrity protection.
+
+---
+
+## Key Concepts
+
+- **Mechanism:** A specific way of authenticating (e.g., username/password, tokens).
+- **Client:** The entity trying to authenticate.
+- **Server:** The entity verifying the client's identity.
+- **Challenge/Response:** SASL often works by the server sending a challenge and the client responding appropriately.
+
+---
+
+## Common SASL Mechanisms
+
+Here are some of the widely used SASL authentication mechanisms:
+
+### 1. PLAIN
+
+- **How it works:** The client sends the username and password in plain text.
+- **Security:** Not secure on its own; should be used only with encrypted connections (e.g., TLS).
+- **Use case:** Simple authentication when the connection is already encrypted.
+
+### 2. LOGIN
+
+- Similar to PLAIN, but sends username and password separately.
+- Also requires a secure channel.
+
+### 3. CRAM-MD5
+
+- Uses a challenge-response mechanism with a shared secret.
+- The server sends a challenge, the client replies with a hashed response combining the password and challenge.
+- Password is never sent directly.
+- Better security than PLAIN but considered somewhat outdated.
+
+### 4. DIGEST-MD5
+
+- More secure challenge-response mechanism.
+- Supports integrity protection and optional encryption.
+- Was widely used but now mostly replaced by better mechanisms.
+
+### 5. GSSAPI (Kerberos)
+
+- Uses Kerberos tickets for authentication.
+- Supports strong authentication and security features.
+- Common in enterprise environments.
+
+---
+
+## How SASL Works (Simplified Flow)
+
+1. **Client connects to server.**
+2. **Server announces supported SASL mechanisms.**
+3. **Client selects one mechanism and starts authentication.**
+4. **Client and server exchange messages (challenges and responses) according to the mechanism rules.**
+5. **Server verifies credentials.**
+6. **Authentication succeeds or fails.**
+
+---
+
+## Summary
+
+- SASL is a flexible framework to handle authentication in network protocols.
+- It supports many mechanisms, from simple username/password to strong cryptographic methods.
+- Always prefer mechanisms that protect credentials and use encryption.
+- Often combined with TLS to secure the whole connection.
+
+---
+
+## Further Reading
+
+- [RFC 4422 - The SASL Framework](https://tools.ietf.org/html/rfc4422)
+- [Wikipedia - Simple Authentication and Security Layer](https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer)
+
+---
 
 
