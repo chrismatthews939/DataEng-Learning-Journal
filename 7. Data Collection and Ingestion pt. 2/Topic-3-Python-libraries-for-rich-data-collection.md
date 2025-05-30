@@ -554,7 +554,7 @@ Ensuring that all required fields are present and correctly formatted is crucial
 
 Here is the Schema Definition they would need for this task:
 
-```json
+```avro
 {
 
  "namespace": "com.socialmedia",
