@@ -338,5 +338,289 @@ Combining Kafka, Python, and Avro gives you:
 - Easy development (Python),
 - Reliable and efficient data for
 
---
+---
+
+# Introduction to Schema Registries 
+
+## What is a Schema Registry?
+
+A **Schema Registry** is a centralized service that manages and stores schemas for data. A **schema** defines the structure of data — what fields it contains, their data types, and how the data is organized.
+
+Imagine you have multiple applications or services that exchange data, for example, messages or events. To make sure everyone understands the data in the same way, you use schemas. A Schema Registry helps keep these schemas organized, versioned, and easily accessible.
+
+---
+
+## Why Use a Schema Registry?
+
+- **Consistency:** Ensures all producers and consumers of data agree on the format.
+- **Compatibility:** Helps manage changes to schemas over time without breaking existing consumers.
+- **Centralization:** One place to manage all data schemas, avoiding duplication and confusion.
+- **Validation:** Data can be validated against the schema before sending or after receiving.
+
+---
+
+## Key Concepts
+
+- **Schema:** A definition of the data structure (e.g., a JSON object with specific fields).
+- **Subject:** The name or identifier for a schema, usually related to a topic or data stream.
+- **Version:** Each schema can have multiple versions as it evolves.
+- **Compatibility:** Rules that control how schema changes affect consumers (e.g., backward compatibility).
+
+---
+
+## How Does It Work?
+
+1. **Producer registers a schema** with the Schema Registry before sending data.
+2. The **Schema Registry stores the schema** and assigns it an ID.
+3. When the producer sends data, it includes the schema ID.
+4. The **consumer fetches the schema** from the registry using the ID to deserialize and understand the data.
+
+---
+
+## Example Scenario
+
+- You have a data stream of user information.
+- The schema defines fields like `userId` (integer), `name` (string), and `email` (string).
+- Your producer registers this schema.
+- Later, you want to add a `phoneNumber` field.
+- You update the schema and register a new version.
+- The Schema Registry helps ensure consumers that understand the old schema can still read the data (if compatibility rules are set correctly).
+
+---
+
+## Common Schema Formats
+
+- **Avro:** A compact binary format, often used with Kafka.
+- **JSON Schema:** Defines the structure of JSON data.
+- **Protobuf (Protocol Buffers):** A language-neutral, platform-neutral format.
+
+---
+
+## Basic Terms to Remember
+
+| Term            | Meaning                                      |
+|-----------------|----------------------------------------------|
+| Schema          | Structure or blueprint of data               |
+| Schema Registry | Service to manage and store schemas           |
+| Subject         | The logical name for a schema (like a topic) |
+| Version         | Incremental updates to a schema                |
+| Compatibility   | Rules for how schemas can evolve               |
+
+---
+
+## Getting Started Tips
+
+- Start by defining your data schema clearly.
+- Use the Schema Registry API or UI to register your schemas.
+- Make sure producers and consumers use the schema IDs from the registry.
+- Set compatibility rules to avoid breaking changes.
+- Test schema evolution with different versions before deploying.
+
+---
+
+## Summary
+
+A Schema Registry is essential for systems that handle large volumes of data across different applications. It ensures that everyone "speaks the same language" when producing or consuming data, making systems more robust and easier to maintain.
+
+---
+
+# Introduction to Scrapy for Web Data Collection
+
+Scrapy is a powerful and popular Python library used for **web scraping** — that is, extracting data from websites automatically. If you want to collect data from web pages, Scrapy helps you do this efficiently by handling the downloading, parsing, and storing of information.
+
+---
+
+## What is Scrapy?
+
+- **Scrapy** is an open-source framework written in Python.
+- It is designed specifically for **web crawling** and **web scraping**.
+- Scrapy lets you write small programs called **spiders** that visit websites, extract data, and save it in formats like CSV, JSON, or databases.
+
+---
+
+## Why use Scrapy?
+
+- Handles complex websites with many pages.
+- Manages requests efficiently (faster scraping).
+- Built-in support for handling sessions, cookies, and logging in.
+- Allows you to follow links automatically to scrape entire websites.
+- Supports exporting data in multiple formats.
+- Has a large community and many plugins/extensions.
+
+---
+
+## Basic Concepts
+
+- **Spider:** A class where you define how to scrape a website (which pages to visit, what data to extract).
+- **Selector:** A tool to extract data from HTML or XML using XPath or CSS selectors.
+- **Item:** A Python dictionary-like object where scraped data is stored.
+- **Pipeline:** Processes scraped data before saving (e.g., cleaning, validation).
+
+---
+
+## How to install Scrapy
+
+To install Scrapy, run this command in your terminal or command prompt:
+
+```bash
+pip install scrapy
+```
+
+### Creating a simple Scrapy project
+
+Writing your first spider
+Here's an example spider that scrapes quotes from http://quotes.toscrape.com, a website designed for scraping practice.
+
+```python
+import scrapy
+
+class QuotesSpider(scrapy.Spider):
+    name = "quotes"
+    start_urls = [
+        'http://quotes.toscrape.com/page/1/',
+    ]
+
+    def parse(self, response):
+        # Extract each quote on the page
+        for quote in response.css('div.quote'):
+            yield {
+                'text': quote.css('span.text::text').get(),
+                'author': quote.css('small.author::text').get(),
+                'tags': quote.css('div.tags a.tag::text').getall(),
+            }
+
+        # Follow pagination link (next page)
+        next_page = response.css('li.next a::attr(href)').get()
+        if next_page is not None:
+            yield response.follow(next_page, self.parse)
+
+```
+
+### Running the spider
+
+Run the spider from your terminal:
+
+```bash
+scrapy crawl quotes -o quotes.json
+```
+
+- crawl quotes runs the spider named "quotes".
+
+- **-o quotes.json** saves the output data to a JSON file.
+
+#### What happens in the example?
+
+The spider starts at the first page of quotes.
+
+The parse method extracts text, author, and tags from each quote.
+
+It follows the "next page" link and repeats until no more pages exist.
+
+Data is saved to quotes.json.
+
+### Summary
+
+Scrapy is a powerful Python tool to scrape data from websites.
+
+You write spiders that tell Scrapy what to scrape and where to go next.
+
+Scrapy handles crawling, downloading, and parsing automatically.
+
+Output data can be saved in various formats.
+
+---
+
+# Implementing data validation and processing with Schema registeries
+
+Ingesting data from various sources can lead to inconsistencies and errors. Implementing data validation ensures that the data conforms to expected formats and values before processing. Schema Registries not only store schemas but can also enforce data validation rules, rejecting data that doesn't match the schema.
+
+The validation process:
+
+In data engineering, ensuring the accuracy and consistency of data is paramount. The validation process plays a crucial role in maintaining data integrity by enforcing strict rules and standards. This section outlines the key steps involved in validating data before it enters the processing pipeline.
+
+These steps are as follows:
+
+1. Define strict schemas: Include data types, required fields, default values, and allowed ranges or patterns.
+2. Configure compatibility modes: Set the registry to enforce certain compatibility modes, preventing incompatible schema changes.
+3. Implement validation in producers: Producers validate data against the schema before sending. Errors are caught early, reducing downstream issues.
+
+### Use case application
+
+Validating user registration data...
+
+Imagine a social media platform collects user registration data.
+
+Ensuring that all required fields are present and correctly formatted is crucial for account creation.
+
+Here is the Schema Definition they would need for this task:
+
+```json
+{
+
+ "namespace": "com.socialmedia",
+
+ "type": "record",
+
+ "name": "UserRegistration",
+
+ "fields": [
+
+  {"name": "user_id", "type": "string"},
+
+  {"name": "email", "type": "string", "logicalType": "email"},
+
+  {"name": "password", "type": "string", "minLength": 8},
+
+  {"name": "age", "type": "int", "minimum": 13}
+
+ ]
+
+}
+```
+
+### Implementing logical types and constraints
+
+While Avro doesn't natively support all validation constraints, you can extend schemas or use additional validation logic in your application.
+
+Custom validation example
+
+- Email format: Use regular expressions to validate email addresses.
+- Password strength: Check for minimum length and character requirements.
+- Age restrictions: Enforce minimum age policies.
+- Integrating validation with confluent-kafka-python
+
+Modify the producer code to include validation logic before sending data.
+
+Example:
+
+```python
+def validate_user_data(user_data):
+
+  if not re.match(r"[^@]+@[^@]+\.[^@]+", user_data['email']):
+
+      raise ValueError("Invalid email format")
+
+  if len(user_data['password']) < 8:
+
+      raise ValueError("Password must be at least 8 characters long")
+
+  if user_data['age'] < 13:
+
+      raise ValueError("User must be at least 13 years old")
+
+  return True
+
+try:
+
+  validate_user_data(user_data)
+
+  producer.produce(topic='user_registrations', value=user_data)
+
+except ValueError as e:
+
+  log.error(f"Validation error: {e}")
+```
+
+---
+
 
