@@ -15,9 +15,362 @@ In modern data-driven organisations, data ingestion pipelines are critical compo
 **Dashboards** visualise performance
 
 ## Industry-standard monitoring tools
-GPT Prometheus
-GPT Grafana
-GPT explain how to use both of these to monitor Kafa 
+
+## Introduction to Prometheus 
+
+**Prometheus** is an **open-source monitoring and alerting toolkit** originally developed at SoundCloud. It's now part of the Cloud Native Computing Foundation (CNCF), just like Kubernetes.
+
+Prometheus is designed for **recording real-time metrics** in a time series database, with **powerful queries and alerts**. It’s widely used to monitor servers, containers, databases, applications, and even custom systems.
+
+---
+
+## Key Concepts
+
+Here are some essential concepts to understand Prometheus:
+
+### 1. **Metrics and Time Series**
+- A **metric** is a numeric value about a system (e.g., CPU usage, memory used).
+- A **time series** is a sequence of metric values, recorded over time.
+
+Example:
+```
+http_requests_total{method="GET", handler="/api"} 12345
+```
+
+- This says: the metric `http_requests_total` counted 12,345 GET requests to `/api`.
+
+### 2. **Pull-Based Model**
+- Prometheus **pulls data** from targets at regular intervals (instead of targets pushing data).
+- These targets expose an HTTP endpoint (usually `/metrics`) that Prometheus scrapes.
+
+### 3. **Prometheus Server**
+- The core of the system. It collects metrics, stores them, and allows querying.
+
+### 4. **Exporters**
+- Exporters are small programs that **expose metrics in a Prometheus-friendly format**.
+- Example: `node_exporter` exposes OS-level metrics like CPU, memory, and disk usage.
+
+### 5. **PromQL**
+- Prometheus Query Language (PromQL) is used to **query and filter metrics**.
+- Example: To get the rate of HTTP requests:
+```
+rate(http_requests_total[5m])
+```
+
+### 6. **Alerting**
+- Prometheus supports **alerts based on metrics**.
+- Alerts are sent to an **Alertmanager**, which can notify you via email, Slack, PagerDuty, etc.
+
+---
+
+## How Prometheus Works
+
+Here’s a simplified flow:
+
+1. Prometheus server is configured with a list of **targets** to monitor.
+2. It **scrapes metrics** from the targets periodically (every 15 seconds by default).
+3. The metrics are **stored locally** in a time-series database.
+4. You can **query the data** using PromQL through:
+   - The **Prometheus UI**
+   - **Grafana dashboards** (for beautiful visualization)
+5. Alerts are evaluated and sent to **Alertmanager** if necessary.
+
+---
+
+## Example Use Case
+
+Let's say you want to monitor a web server:
+
+- You install an **exporter** (like `node_exporter`) on the server.
+- Prometheus scrapes metrics from it every 15s.
+- You view a **dashboard in Grafana** showing CPU usage, memory, and HTTP requests.
+- You set up an **alert** if CPU usage goes above 90% for 5 minutes.
+
+---
+
+## Why Use Prometheus?
+
+- 🆓 **Free and open-source**
+- 🧩 **Works well with Kubernetes**
+- 🧠 **Powerful query language (PromQL)**
+- 📦 **Many ready-to-use exporters**
+- 📊 **Integrates easily with Grafana**
+- 📣 **Built-in alerting system**
+
+---
+
+## Getting Started (High-Level Steps)
+
+1. **Install Prometheus**: Download or use Docker.
+2. **Configure targets** in the `prometheus.yml` file.
+3. **Run Prometheus** and access the web UI at `http://localhost:9090`.
+4. **Install an exporter** like `node_exporter` to collect system metrics.
+5. **Set up Grafana** to visualize metrics (optional but recommended).
+6. **Add alerts** to get notified when things go wrong.
+
+---
+
+## Resources
+
+- [Official Website](https://prometheus.io/)
+- [Getting Started Guide](https://prometheus.io/docs/introduction/first_steps/)
+- [Awesome Prometheus](https://github.com/roaldnefs/awesome-prometheus) - curated list of tools and resources
+
+---
+
+## Summary
+
+Prometheus is a **powerful yet approachable monitoring system** for everyone from hobbyists to large-scale production environments. With its **pull model**, **rich query language**, and **flexible alerting**, it’s a great choice for modern infrastructure monitoring.
+
+---
+
+## Grafana
+
+**Grafana** is an open-source **monitoring and data visualization tool**. It allows you to **explore, visualize, and analyze** data from a variety of sources in real-time using **customizable dashboards**. Grafana is commonly used to monitor the health, performance, and trends of IT systems, servers, applications, and other infrastructure components.
+
+---
+
+## Why Use Grafana?
+
+- **Real-time monitoring**: See your data as it changes.
+- **Beautiful dashboards**: Build interactive, customizable visualizations like graphs, charts, and heatmaps.
+- **Multiple data sources**: Connect to a wide range of databases and monitoring tools (e.g., Prometheus, InfluxDB, MySQL, Elasticsearch, etc.).
+- **Alerting**: Set up alerts to notify you when something goes wrong.
+- **Open-source and extensible**: Free to use and has a large community with lots of plugins.
+
+---
+
+## Key Concepts
+
+### 1. **Dashboard**
+A dashboard is a collection of **panels** (graphs, charts, etc.) that visually display data. You can have multiple dashboards for different systems or views.
+
+### 2. **Panel**
+A panel is a single visualization in a dashboard. For example, a line graph showing CPU usage over time.
+
+### 3. **Data Source**
+Grafana pulls data from **external systems** called data sources. Examples include:
+- **Prometheus** – for metrics monitoring
+- **InfluxDB** – time-series database
+- **Elasticsearch** – search and analytics engine
+- **MySQL/PostgreSQL** – relational databases
+
+### 4. **Query**
+Each panel uses a **query** to fetch data from the data source. Grafana provides a query editor tailored for each data source type.
+
+### 5. **Alerts**
+You can set **alert rules** for any panel. If the data meets a certain condition (like CPU > 90%), Grafana can **send a notification** via email, Slack, or other channels.
+
+---
+
+## How Grafana Works (Basic Flow)
+
+1. **Connect** a data source (like Prometheus or InfluxDB).
+2. **Create a dashboard** to organize your views.
+3. **Add panels** to display different metrics.
+4. **Write queries** to fetch the data you want to display.
+5. **Customize** the visualizations (colors, axes, time ranges, etc.).
+6. **Set alerts** (optional) to be notified when values go out of range.
+
+---
+
+## Typical Use Cases
+
+- Monitoring server performance (CPU, memory, disk usage)
+- Visualizing application metrics (request rates, errors)
+- Tracking website traffic or API calls
+- Observing IoT sensor data
+- Business intelligence dashboards
+
+---
+
+## Getting Started
+
+1. **Install Grafana**:
+   - On Linux/macOS/Windows
+   - Using Docker
+   - As a hosted service via [Grafana Cloud](https://grafana.com/products/cloud/)
+
+2. **Access Grafana UI**:
+   - Open a web browser and go to `http://localhost:3000` (default)
+   - Login with default credentials: `admin` / `admin` (you’ll be asked to change it)
+
+3. **Add your first data source**
+   - Go to **Configuration > Data Sources**
+   - Select and configure your database or monitoring tool
+
+4. **Create your first dashboard**
+   - Go to **+ > Dashboard**
+   - Add a panel and start visualizing data!
+
+---
+
+## Summary
+
+Grafana is a powerful tool that helps you:
+- Connect to various data sources
+- Visualize your metrics in real-time
+- Create dashboards and alerts
+- Make informed decisions based on your system’s data
+
+It’s widely used in DevOps, system administration, and business analytics due to its flexibility and ease of use.
+
+---
+
+## Additional Resources
+
+- [Grafana Official Website](https://grafana.com/)
+- [Grafana Documentation](https://grafana.com/docs/)
+- [Grafana Labs YouTube Channel](https://www.youtube.com/c/Grafana)
+
+---
+
+# 📊 Beginner's Guide to Monitoring Kafka with Prometheus & Grafana
+
+This guide walks you through setting up monitoring for **Apache Kafka** using **Prometheus** and **Grafana**.
+
+---
+
+## 📦 Prerequisites
+
+Make sure you have these installed:
+
+- Docker & Docker Compose
+- Basic knowledge of Docker
+- Kafka running locally (we’ll use a Docker image for Kafka)
+- Some free disk space
+
+---
+
+## 🔧 Step 1: Set Up Kafka with JMX Exporter
+
+Kafka doesn’t expose metrics in Prometheus format by default. We use the **JMX Exporter** to make Kafka metrics available.
+
+### Create `docker-compose.yml`
+
+```yaml
+version: '3'
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.3.0
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+
+  kafka:
+    image: confluentinc/cp-kafka:7.3.0
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_JMX_PORT: 9999
+      KAFKA_JMX_HOSTNAME: localhost
+    ports:
+      - "9092:9092"
+      - "9999:9999" # Port for JMX
+
+  kafka-jmx-exporter:
+    image: prom/jmx-exporter
+    ports:
+      - "7071:7071" # Prometheus will scrape from here
+    volumes:
+      - ./kafka-jmx-config.yaml:/config.yaml
+    command:
+      - 7071
+      - /config.yaml
+```
+
+### Create kafka-jmx-config.yaml
+
+This tells the exporter what to collect.
+
+```yaml
+startDelaySeconds: 0
+hostPort: localhost:9999
+lowercaseOutputName: true
+lowercaseOutputLabelNames: true
+rules:
+  - pattern: "kafka.server<type=(.+), name=(.+)><>(Count|Value)"
+    name: kafka_$1_$2
+    type: GAUGE
+    labels:
+      instance: kafka1
+```
+
+
+## 🔧 Step 2: Set Up Prometheus
+
+### Create prometheus.yml
+```yaml
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'kafka'
+    static_configs:
+      - targets: ['kafka-jmx-exporter:7071']
+```
+
+### Add Prometheus to docker-compose.yml
+
+Below the Kafka service, add:
+
+```yaml
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    ports:
+      - "9090:9090" # Access Prometheus UI
+```
+
+## 🔧 Step 3: Add Grafana to Visualize Metrics
+
+### Add Grafana to docker-compose.yml
+
+```yaml
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+```
+
+## 🔧Step 4: Start Everything
+
+### Run the stack with:
+```bash
+docker-compose up -d
+```
+
+## 🔧Step 5: Configure Grafana Dashboard
+
+### Add Prometheus as a Data Source:
+
+In Grafana, go to Settings > Data Sources
+Click Add data source
+Choose Prometheus
+Set URL to: http://prometheus:9090
+Click Save & Test
+
+### Import a Kafka Dashboard:
+
+Go to + > Import
+Use dashboard ID: 7589 or search for "Kafka"
+Choose Prometheus as data source
+Click Import
+
+You’ll now see charts with metrics like:
+
+Messages In/Out
+
+Under-replicated partitions
+
+Request latency
+
+---
 
 ## Forecasting techniques for data ingestion
 
