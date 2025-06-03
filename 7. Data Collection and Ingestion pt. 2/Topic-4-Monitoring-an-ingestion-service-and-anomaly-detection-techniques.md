@@ -1,6 +1,6 @@
 # Topic 4 - Monitoring an ingestion service and anomaly detection techniques 02/06/2025
 
-## The importance of monitoring in data engineering
+# The importance of monitoring in data engineering
 
 In modern data-driven organisations, data ingestion pipelines are critical components that must operate reliably and efficiently. Monitoring these pipelines is essential to:
 
@@ -225,6 +225,8 @@ It’s widely used in DevOps, system administration, and business analytics due 
 
 ---
 
+
+
 ## 📊 Beginner's Guide to Monitoring Kafka with Prometheus & Grafana
 
 This guide walks you through setting up monitoring for **Apache Kafka** using **Prometheus** and **Grafana**.
@@ -372,7 +374,7 @@ Request latency
 
 ---
 
-## Forecasting techniques for data ingestion
+# Forecasting techniques for data ingestion
 
 One of the key challenges faced by data engineers is predicting future system behaviour to ensure that resources are allocated efficiently and potential issues are mitigated before they escalate. Forecasting is a critical component in managing data ingestion services. By predicting future system behaviour, you can plan capacity, prevent overloads, and optimise costs.
 
@@ -895,7 +897,163 @@ Your implementation steps would be as follows:
 **Prophet:**
 -	A forecasting tool by Facebook that can model and detect anomalies in time series data.
 
-GPT Implementing anomaly detection with Python using Isolation Forest and Seasonal-Hybrid ESD to detect anomalies in data streams.
+---
+
+# Anomaly Detection Using Isolation Forest and Seasonal-Hybrid ESD in Python
+
+This guide will walk you through the basics of implementing anomaly detection in data streams using two popular methods:
+
+- **Isolation Forest** (a machine learning based method)
+- **Seasonal-Hybrid ESD (S-H-ESD)** (a statistical method for seasonal time series)
+
+---
+
+## 1. Isolation Forest
+
+### What is Isolation Forest?
+
+Isolation Forest is a machine learning algorithm that isolates anomalies instead of profiling normal data points. It builds random trees that isolate observations; anomalies are isolated faster because they are few and different.
+
+---
+
+### Step-by-Step Implementation of Isolation Forest in Python
+
+#### 1. Install required packages
+
+```bash
+pip install scikit-learn numpy pandas matplotlib
+```
+
+```python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.ensemble import IsolationForest
+
+# Generate sample data: normal data with some anomalies
+np.random.seed(42)
+normal_data = 0.3 * np.random.randn(100, 1)
+anomalies = np.array([[3], [3.5], [4]])
+data = np.vstack([normal_data, anomalies])
+df = pd.DataFrame(data, columns=['value'])
+
+# Plot the data
+plt.figure(figsize=(10, 4))
+plt.plot(df.index, df['value'], marker='o', linestyle='-', label='Data')
+plt.title('Sample Data with Anomalies')
+plt.xlabel('Index')
+plt.ylabel('Value')
+plt.show()
+
+# Fit Isolation Forest
+iso_forest = IsolationForest(contamination=0.05, random_state=42)
+df['anomaly'] = iso_forest.fit_predict(df[['value']])
+
+# -1 means anomaly, 1 means normal
+df['anomaly'] = df['anomaly'].map({1: 0, -1: 1})
+
+# Plot anomalies
+plt.figure(figsize=(10, 4))
+plt.plot(df.index, df['value'], label='Value')
+plt.scatter(df.index[df['anomaly'] == 1], df['value'][df['anomaly'] == 1], color='red', label='Anomaly')
+plt.legend()
+plt.title('Isolation Forest Anomaly Detection')
+plt.show()
+```
+
+## 2. Seasonal-Hybrid ESD (S-H-ESD)
+
+What is Seasonal-Hybrid ESD?
+S-H-ESD is a statistical method designed for detecting anomalies in time series data with seasonality (e.g., daily, weekly patterns). It combines Seasonal decomposition and Extreme Studentized Deviate (ESD) test.
+
+Step-by-Step Implementation of S-H-ESD in Python
+**1. Install required packages**
+
+```bash
+pip install numpy pandas matplotlib statsmodels
+```
+
+**2. Example Code**
+```python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from statsmodels.tsa.seasonal import seasonal_decompose
+from scipy.stats import t
+
+# Generate sample seasonal data
+np.random.seed(42)
+period = 24
+time = np.arange(0, 4 * period)
+seasonal_pattern = 10 + np.sin(2 * np.pi * time / period)
+noise = np.random.normal(0, 0.5, size=len(time))
+data = seasonal_pattern + noise
+
+# Inject anomalies
+data[30] += 6
+data[50] -= 7
+
+df = pd.DataFrame({'value': data}, index=pd.date_range(start='2023-01-01', periods=len(data), freq='H'))
+
+# Decompose time series
+result = seasonal_decompose(df['value'], model='additive', period=period)
+residual = result.resid.dropna()
+
+# Function to perform Generalized ESD Test for anomalies
+def generalized_esd_test(data, max_anomalies=10, alpha=0.05):
+    data = data.copy()
+    anomalies = []
+    for i in range(max_anomalies):
+        n = len(data)
+        mean = np.mean(data)
+        std = np.std(data, ddof=1)
+        if std == 0:
+            break
+        deviations = abs(data - mean)
+        max_deviation = deviations.max()
+        max_index = deviations.argmax()
+
+        lam = ((n - i - 1) * t.ppf(1 - alpha / (2 * (n - i)), n - i - 2)) / \
+              np.sqrt((n - i - 2 + t.ppf(1 - alpha / (2 * (n - i)), n - i - 2)**2) * (n - i))
+
+        test_stat = max_deviation / std
+
+        if test_stat > lam:
+            anomalies.append(data.index[max_index])
+            data = data.drop(data.index[max_index])
+        else:
+            break
+    return anomalies
+
+anomalies = generalized_esd_test(residual)
+
+# Plot results
+plt.figure(figsize=(12, 6))
+plt.plot(df.index, df['value'], label='Value')
+plt.plot(result.trend.index, result.trend, label='Trend')
+plt.plot(result.seasonal.index, result.seasonal, label='Seasonal')
+plt.scatter(anomalies, df.loc[anomalies]['value'], color='red', label='Anomalies', zorder=5)
+plt.legend()
+plt.title('Seasonal-Hybrid ESD Anomaly Detection')
+plt.show()
+```
+
+### Additional Tips for Beginners
+
+- Understand your data: Is it seasonal? Streaming? Noisy?
+- Start with simple visualizations to spot anomalies manually.
+- Tune parameters (e.g., contamination for Isolation Forest).
+- For real streaming data, consider incremental or online versions of these methods.
+
+Summary
+Method	Best for	Key Idea	Python Libraries
+Isolation Forest	General anomaly detection, non-seasonal data	Isolates anomalies via random trees	scikit-learn
+Seasonal-Hybrid ESD	Time series with strong seasonality	Decompose + statistical test on residuals	statsmodels, scipy
+
+
+
+
+---
 
 ## Integration with Incident Management Systems
 
