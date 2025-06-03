@@ -1045,13 +1045,12 @@ plt.show()
 - Tune parameters (e.g., contamination for Isolation Forest).
 - For real streaming data, consider incremental or online versions of these methods.
 
-Summary
-Method	Best for	Key Idea	Python Libraries
-Isolation Forest	General anomaly detection, non-seasonal data	Isolates anomalies via random trees	scikit-learn
-Seasonal-Hybrid ESD	Time series with strong seasonality	Decompose + statistical test on residuals	statsmodels, scipy
+### Summary
 
-
-
+| **Method**         | **Best for**             | **Key Idea** | **Python Libraries**  |
+|-----------------|----------------------------------------------|--------|---------|
+| Isolation Forest  | General anomaly detection, non-seasonal data  |  Isolates anomalies via random trees  | scikit-learn |
+| Seasonal-Hybrid ESD | Time series with strong seasonality |  Decompose + statistical test on residuals	statsmodels  | scipy | 
 
 ---
 
@@ -1072,7 +1071,148 @@ Incident management systems play a vital role in helping organisations respond t
 -	**Automated response:** Trigger automated actions or workflows.
 -	**Incident tracking:** Log incidents for analysis and improvement.
 
-GPT Integrating Prometheus Alertmanager with incident management. Step by step guide
+---
+
+## Integrating Prometheus Alertmanager with Incident Management: A Beginner's Step-by-Step Guide
+
+This guide is designed for complete beginners who want to integrate **Prometheus Alertmanager** with an incident management system. By the end, you'll understand how to send alerts from Prometheus to an incident management tool like PagerDuty, Opsgenie, or any other system.
+
+---
+
+### What is Prometheus Alertmanager?
+
+Prometheus Alertmanager is a tool that handles alerts sent by Prometheus server. It manages alert notifications, grouping, inhibition, and routing them to various communication channels like email, Slack, or incident management tools.
+
+---
+
+### What is Incident Management?
+
+Incident management is the process of detecting, reporting, and resolving incidents (issues) in IT systems. Tools like PagerDuty, Opsgenie, and VictorOps help automate alerting, on-call scheduling, and escalation to reduce downtime.
+
+---
+
+### Why Integrate Alertmanager with Incident Management?
+
+- **Automatic alert routing** to the right on-call person or team.
+- **Alert deduplication** and grouping.
+- **Escalations** if alerts are not acknowledged.
+- **Better incident tracking** and faster resolution.
+
+---
+
+### Prerequisites
+
+- Basic understanding of Prometheus.
+- Prometheus and Alertmanager installed.
+- Access to an incident management tool (PagerDuty, Opsgenie, etc.) with API credentials.
+- A working Linux environment or cloud server.
+- Access to your configuration files.
+
+---
+
+### Step 1: Install and Configure Prometheus
+
+If you don’t have Prometheus installed, here’s a quick setup:
+
+1. Download Prometheus:  
+   ```bash
+   wget https://github.com/prometheus/prometheus/releases/download/v2.46.0/prometheus-2.46.0.linux-amd64.tar.gz
+   tar xvf prometheus-2.46.0.linux-amd64.tar.gz
+   cd prometheus-2.46.0.linux-amd64
+```
+
+### Step 2: Install and Configure Alertmanager
+
+1. Download Alertmanager:
+
+```bash
+wget https://github.com/prometheus/alertmanager/releases/download/v0.25.0/alertmanager-0.25.0.linux-amd64.tar.gz
+tar xvf alertmanager-0.25.0.linux-amd64.tar.gz
+cd alertmanager-0.25.0.linux-amd64
+```
+
+2. Create a basic alertmanager.yml configuration file:
+``` yaml
+global:
+  resolve_timeout: 5m
+
+route:
+  receiver: 'default'
+
+receivers:
+- name: 'default'
+```
+
+3. Start Alertmanager:
+```bash
+./alertmanager --config.file=alertmanager.yml
+```
+
+### Step 3: Configure Alertmanager to Send Alerts to Incident Management
+Let’s configure Alertmanager to send alerts to PagerDuty as an example. Other tools have similar configs.
+
+1. Get PagerDuty Integration Key from your PagerDuty dashboard (usually called Integration Key or API Key).
+
+2. Edit alertmanager.yml to include PagerDuty receiver:
+
+```yaml
+global:
+  resolve_timeout: 5m
+
+route:
+  receiver: 'pagerduty'
+
+receivers:
+- name: 'pagerduty'
+  pagerduty_configs:
+  - routing_key: 'YOUR_PAGERDUTY_INTEGRATION_KEY'
+    severity: '{{ if eq .CommonLabels.severity "critical" }}critical{{ else }}warning{{ end }}'
+```
+
+3. Configure Prometheus to send alerts to Alertmanager by editing prometheus.yml:
+```yaml
+alerting:
+  alertmanagers:
+  - static_configs:
+    - targets:
+      - localhost:9093  # Alertmanager address
+
+rule_files:
+  - "alert.rules.yml"
+```
+
+4. Create a sample alert rule file alert.rules.yml:
+```yaml
+groups:
+- name: example
+  rules:
+  - alert: InstanceDown
+    expr: up == 0
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      summary: "Instance {{ $labels.instance }} down"
+      description: "{{ $labels.instance }} of job {{ $labels.job }} has been down for more than 1 minute."
+```
+
+5. Restart Prometheus and Alertmanager to apply changes.
+
+### Step 4: Test the Integration
+
+1. Stop a monitored service or simulate the alert condition (for example, stop a service monitored by Prometheus).
+2. Wait for Prometheus to detect the alert and send it to Alertmanager.
+3. Alertmanager forwards the alert to PagerDuty.
+4. Check PagerDuty to see if the alert appears.
+
+### Additional Tips
+
+- Use Alertmanager inhibition rules to suppress alerts if another alert is firing.
+- Group related alerts to reduce noise.
+- Use multiple receivers and routing to target different teams.
+- Monitor Alertmanager and Prometheus logs for troubleshooting.
+
+---
 
 ### Real-world application
 
