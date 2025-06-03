@@ -147,3 +147,125 @@ Data ingestion pipelines can encounter several common issues that impact their p
 **Symptoms**
 -	Consumers fall behind the latest messages.
 -	Increased message processing delays.
+
+**Causes**
+- Insufficient consumer resources.
+- Slow processing logic.
+- Network congestion.
+
+**Solutions**
+- Scale consumer instances.
+- Optimise processing code.
+- Enhance network bandwidth.
+
+#### Message Loss
+
+**Symptoms**
+- Missing data in downstream systems.
+- Inconsistent data processing results.
+
+**Causes**
+- Incorrect producer configurations.
+- Insufficient replication.
+- Data retention policies.
+
+**Solutions**
+- Configure appropriate acknowledgments (acks=all).
+- Increase replication factor.
+- Adjust retention settings.
+
+#### Broker failures
+
+**Symptoms**
+- Unavailable partitions.
+- Errors in producers and consumers.
+
+**Causes**
+- Hardware failures.
+- Configuration errors.
+- Resource exhaustion.
+
+**Solutions**
+- Implement redundancy.
+- Use automatic broker recovery.
+- Monitor resource utilisation.
+
+#### Security Breaches
+
+**Symptoms**
+- Unauthorised access to data.
+- Suspicious activities in logs.
+
+**Causes**
+- Weak authentication.
+- Misconfigured access controls.
+- Vulnerabilities in the system.
+
+**Solutions**
+- Implement robust security measures (SSL, SASL, ACLs).
+- Regularly audit security configurations.
+- Apply patches and updates promptly.
+
+---
+
+### Real-world applications
+
+**Data loss in a logistics company...**
+
+A logistics company experiences data loss in their tracking system, leading to misplaced shipments.
+
+**Analysis:**
+
+1. **Issue:**
+- Messages are lost due to incorrect producer settings (acks=1).
+
+2. **Resolution:**
+- Update producer configuration to use acks=all.
+- Increase replication factor for critical topics.
+
+---
+
+**Scaling challenges in a social media platform...**
+
+A social media platform struggles to handle increased data ingestion during peak times, resulting in slow content updates.
+
+**Analysis:**
+
+1. **Issue:**
+- Consumer lag due to insufficient processing capacity.
+
+2. **Resolution:**
+- Implement auto-scaling for consumer applications.
+- Optimise processing logic using asynchronous operations.
+
+---
+
+### Best practices for addressing ingestion issues
+
+Implementing best practices is essential for preventing and mitigating ingestion issues. This section will cover strategies like implementing redundancy, optimising configurations, regular monitoring, documentation and automation, and conducting regular audits. These practices will help you build resilient data pipelines capable of handling diverse challenges.
+
+
+**Implement redundancy:**
+- Use multiple brokers and replication to prevent single points of failure.
+
+**Optimise configurations:**
+- Tune Kafka settings based on workload and performance testing.
+
+**Regular monitoring:**
+- Continuously monitor system metrics to detect issues early.
+
+**Document and automate:**
+- Maintain documentation of configurations and automate deployments for consistency.
+
+**Conduct regular audits:**
+- Review security settings, resource allocations, and system performance periodically.
+
+### Cloud environment considerations
+
+Managing data ingestion pipelines in cloud environments comes with its own set of considerations. Leveraging cloud services' features and understanding their limitations will enable you to optimise your data ingestion processes in the cloud.
+
+The following are best practice techniques:
+
+- **Resource management:** Utilise cloud services' auto-scaling features. Monitor costs associated with resource usage.
+- **Network dependencies:** Be aware of network latency and bandwidth limitations in cloud environments.
+- **Service integrations:** Leverage managed services for Kafka (e.g., AWS MSK, Azure Event Hubs) when appropriate.
