@@ -225,7 +225,7 @@ It’s widely used in DevOps, system administration, and business analytics due 
 
 ---
 
-# 📊 Beginner's Guide to Monitoring Kafka with Prometheus & Grafana
+## 📊 Beginner's Guide to Monitoring Kafka with Prometheus & Grafana
 
 This guide walks you through setting up monitoring for **Apache Kafka** using **Prometheus** and **Grafana**.
 
@@ -393,10 +393,461 @@ Time series forecasting involves analysing historical data to predict future val
 
 `A stationary time series is a time series whose statistical properties, such as mean, variance, and autocorrelation, do not change over time. In other words, the value of a stationary time series is not dependent on the time at which it is observed.`
 
-GPT ARIMA
-GPT SARIMAX
-GPT how to forecast and implement ARIMA and SARIMAX in python with an example. Include using the Augmented Dickey-Fuller test to check if the time series is stationary and auto-ARIMA to auto select the best parameters.
-GPT how to apply differencing to achieve stationality
+---
+
+## ARIMA for Time Series Forecasting
+
+**ARIMA** stands for **AutoRegressive Integrated Moving Average**. It is a popular statistical method used for **forecasting** future values in a **time series**—a sequence of data points collected or recorded at regular time intervals (e.g., daily stock prices, monthly sales, yearly rainfall).
+
+ARIMA is powerful because it models both the **trend** and **patterns** in the data. It works best with **univariate** time series (a single variable over time).
+
+---
+
+### Components of ARIMA
+
+The ARIMA model has three main parts, represented as ARIMA(**p**, **d**, **q**):
+
+- **AR (AutoRegressive)** – The relationship between a value and its past values.
+- **I (Integrated)** – How many times the data has been differenced to make it stationary (i.e., stable over time).
+- **MA (Moving Average)** – The relationship between a value and past forecast errors.
+
+### 1. AutoRegressive (AR, parameter `p`)
+This part uses **lagged values** of the series itself. For example:
+> Tomorrow's temperature might depend on the temperatures of the last few days.
+
+If `p = 2`, the model uses the two previous observations to predict the next one.
+
+### 2. Integrated (I, parameter `d`)
+Real-world data often has trends or patterns. "Integrated" means we **difference** the data (subtract the previous value from the current one) to make it **stationary**.
+
+If `d = 1`, the model uses the **first difference** of the series:
+> `y_t' = y_t - y_(t-1)`
+
+### 3. Moving Average (MA, parameter `q`)
+This part models the **error** of the prediction as a combination of past errors.
+
+If `q = 1`, it means the model uses the error from one step ago to help make the current prediction.
+
+---
+
+### Summary of ARIMA(p, d, q)
+
+| Component | Description                             |
+|-----------|-----------------------------------------|
+| p         | Number of lag observations (AR part)    |
+| d         | Degree of differencing (I part)         |
+| q         | Size of moving average window (MA part) |
+
+---
+
+### Example: ARIMA(1, 1, 1)
+
+This means:
+- Use 1 lag (yesterday’s value) → AR(1)
+- Difference the data once to remove trend → I(1)
+- Use 1 lag of forecast error → MA(1)
+
+---
+
+### Steps to Use ARIMA
+
+1. **Visualize the data** – Plot the time series to understand trends and seasonality.
+2. **Make the data stationary** – Use differencing if needed.
+3. **Identify p, d, q** – Use plots like ACF and PACF, or automated tools (like `auto_arima` in Python).
+4. **Fit the model** – Use statistical software or libraries (like `statsmodels` in Python).
+5. **Validate** – Check residuals (errors) to ensure they look like white noise.
+6. **Forecast** – Predict future values using the trained ARIMA model.
+
+---
+
+### Simple Python Example (Optional)
+
+```python
+from statsmodels.tsa.arima.model import ARIMA
+import pandas as pd
+
+# Example data: Monthly sales
+data = pd.read_csv("sales.csv", index_col="Month", parse_dates=True)
+
+# Fit ARIMA model
+model = ARIMA(data, order=(1, 1, 1))
+model_fit = model.fit()
+
+# Forecast next 5 steps
+forecast = model_fit.forecast(steps=5)
+print(forecast)
+```
+
+### When to Use ARIMA
+✅ Good for non-seasonal data
+✅ When there’s a trend but no strong repeating seasonal pattern
+✅ Univariate forecasting (one variable over time)
+
+### Limitations
+❌ Not ideal for seasonal data (use SARIMA instead)
+❌ Assumes linearity
+❌ Can struggle with complex patterns or multiple variables
+
+---
+
+# Introduction to SARIMAX for Time Series Forecasting
+
+If you're new to time series forecasting, **SARIMAX** might sound like a complex concept — but don't worry! This guide breaks it down step-by-step in a beginner-friendly way.
+
+---
+
+**SARIMAX** stands for:
+
+**S**easonal  
+**A**uto**R**egressive  
+**I**ntegrated  
+**M**oving **A**verage  
+with e**X**ogenous variables
+
+It's a powerful statistical model used to forecast time series data that may have:
+
+- **Trends** (increasing or decreasing patterns)
+- **Seasonality** (repeating patterns over time, like sales going up every December)
+- **External factors** (e.g., holidays, marketing campaigns)
+
+---
+
+## 🧠 Breaking Down SARIMAX
+
+### 1. **AR (AutoRegressive)**
+This means the model uses **past values** to predict the current value.
+
+Example:  
+> Tomorrow’s value depends on values from the last few days.
+
+### 2. **I (Integrated)**
+This part helps deal with **trends** by using **differences** between observations.
+
+Example:  
+> Instead of using actual sales numbers, use the change in sales from day to day.
+
+### 3. **MA (Moving Average)**
+This uses **past forecast errors** to predict current values.
+
+Example:  
+> If the model was too high yesterday, maybe it adjusts down today.
+
+### 4. **Seasonal Component (S)**
+Adds the same AR, I, and MA ideas — but for **seasonal patterns**.
+
+Example:  
+> Weekly, monthly, or yearly cycles — like more ice cream sales every summer.
+
+### 5. **X (Exogenous Variables)**
+These are **external influences** that may affect your forecast.
+
+Example:  
+> Promotions, holidays, or weather data added to improve the forecast.
+
+---
+
+## ⚙️ SARIMAX Parameters
+
+SARIMAX has **two main sets** of parameters:
+
+### Non-Seasonal Parameters (p, d, q)
+- `p` = AR terms (how many past values to include)
+- `d` = I terms (how many times to difference the data)
+- `q` = MA terms (how many past errors to include)
+
+### Seasonal Parameters (P, D, Q, s)
+- `P` = Seasonal AR terms
+- `D` = Seasonal differencing
+- `Q` = Seasonal MA terms
+- `s` = Season length (e.g., 12 for monthly data with yearly seasonality)
+
+### Exogenous Variables (optional)
+- `exog` = Extra inputs that help the model
+
+---
+
+## 📦 Example in Python (using `statsmodels`)
+
+```python
+from statsmodels.tsa.statespace.sarimax import SARIMAX
+
+# Your time series data
+y = [your time series here]
+
+# Optional exogenous variable(s)
+exog = [your external data here]  # Can be None if not using
+
+# Fit the model
+model = SARIMAX(y, 
+                exog=exog, 
+                order=(p, d, q), 
+                seasonal_order=(P, D, Q, s))
+
+results = model.fit()
+
+# Make predictions
+forecast = results.forecast(steps=10, exog=exog_future)
+```
+
+### ✅ When to Use SARIMAX
+Use SARIMAX if your data has:
+
+- Trend and/or seasonality
+- Past behavior that affects the future
+- External factors influencing the outcome
+
+### 📚 Final Tips
+
+- Start simple: try basic ARIMA first before adding seasonal or exogenous parts.
+- Use plots (like autocorrelation) to decide on parameters.
+- Use statsmodels in Python — it's beginner-friendly with solid documentation.
+
+---
+
+## Time Series Forecasting with ARIMA and SARIMAX in Python
+
+This guide will walk you through the process of forecasting time series data using ARIMA and SARIMAX models in Python. We'll cover:
+
+- Checking for stationarity with the **Augmented Dickey-Fuller (ADF) test**
+- Automatically selecting the best ARIMA parameters using **auto-ARIMA**
+- Implementing **ARIMA** and **SARIMAX** models
+- Making predictions and visualizing results
+
+---
+
+### Step 1: Setup Python Environment
+
+Make sure you have the following libraries installed. If not, you can install them via pip:
+
+```bash
+pip install pandas numpy matplotlib statsmodels pmdarima
+```
+
+### Step 2: Import Libraries and Load Data
+
+We'll use a sample time series dataset for demonstration.
+
+```python
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+from statsmodels.tsa.stattools import adfuller
+from statsmodels.tsa.statespace.sarimax import SARIMAX
+import pmdarima as pm  # for auto-ARIMA
+
+# Create date range
+date_rng = pd.date_range(start='2010-01-01', end='2013-12-31', freq='M')
+
+# Create synthetic time series data
+np.random.seed(42)
+data = 10 + 0.5 * np.arange(len(date_rng)) + 5 * np.sin(2 * np.pi * date_rng.month / 12) + np.random.normal(0, 1, len(date_rng))
+
+# Create DataFrame
+df = pd.DataFrame(data, index=date_rng, columns=['value'])
+
+# Plot the data
+df.plot(title='Synthetic Time Series Data', figsize=(10, 6))
+plt.show()
+
+```
+
+### Step 3: Check for Stationarity with Augmented Dickey-Fuller (ADF) Test
+
+Stationarity means the statistical properties of the series do not change over time. ARIMA models require stationarity.
+
+```python
+def adf_test(timeseries):
+    print('Results of Augmented Dickey-Fuller Test:')
+    result = adfuller(timeseries)
+    print(f'ADF Statistic: {result[0]:.4f}')
+    print(f'p-value: {result[1]:.4f}')
+    for key, value in result[4].items():
+        print(f'Critical Value ({key}): {value:.4f}')
+    
+    if result[1] <= 0.05:
+        print("Strong evidence against the null hypothesis, reject the null hypothesis. The series is stationary.")
+    else:
+        print("Weak evidence against the null hypothesis, time series has a unit root, indicating it is non-stationary.")
+
+# Run ADF test on original data
+adf_test(df['value'])
+```
+
+**Interpretation:**
+
+If p-value **> 0.05** → data is non-stationary → apply differencing.
+
+If p-value **≤ 0.05** → data is stationary → proceed.
+
+### Step 4: Make the Series Stationary (if needed)
+
+If the series is non-stationary, apply differencing:
+
+```python
+df_diff = df['value'].diff().dropna()
+
+# Plot differenced data
+df_diff.plot(title='Differenced Time Series', figsize=(10, 6))
+plt.show()
+
+# Run ADF test again
+adf_test(df_diff)
+```
+
+### Step 5: Use auto-ARIMA to Select Best Parameters
+
+Instead of guessing ARIMA orders (p, d, q), use pmdarima.auto_arima to find the best model automatically.
+
+```python
+# auto_arima to find best params; seasonal=True because data has seasonality
+auto_model = pm.auto_arima(df['value'], seasonal=True, m=12,  # m=12 for monthly seasonality
+                           trace=True, error_action='ignore', suppress_warnings=True)
+
+print(auto_model.summary())
+```
+
+**The output shows the best (p, d, q) and seasonal (P, D, Q, m) parameters.**
+
+### Step 6: Fit the ARIMA / SARIMAX Model
+
+Using parameters from auto_arima, fit the model with SARIMAX:
+
+```python
+# Extract parameters from auto_model
+order = auto_model.order
+seasonal_order = auto_model.seasonal_order
+
+# Fit SARIMAX model
+model = SARIMAX(df['value'], order=order, seasonal_order=seasonal_order)
+model_fit = model.fit(disp=False)
+
+print(model_fit.summary())
+```
+
+### Step 7: Make Forecasts
+
+Let's forecast the next 12 months:
+
+```python
+forecast_steps = 12
+forecast = model_fit.get_forecast(steps=forecast_steps)
+forecast_index = pd.date_range(start=df.index[-1] + pd.offsets.MonthBegin(), periods=forecast_steps, freq='M')
+forecast_series = pd.Series(forecast.predicted_mean, index=forecast_index)
+
+# Plot historical and forecast
+plt.figure(figsize=(12,6))
+plt.plot(df['value'], label='Observed')
+plt.plot(forecast_series, label='Forecast', color='red')
+plt.fill_between(forecast_series.index, 
+                 forecast.conf_int().iloc[:, 0], 
+                 forecast.conf_int().iloc[:, 1], 
+                 color='pink', alpha=0.3)
+plt.title('ARIMA/SARIMAX Forecast')
+plt.legend()
+plt.show()
+```
+
+### Summary
+
+- ADF test helps check if your data is stationary.
+- Differencing is used to make data stationary.
+- auto-ARIMA automates finding the best ARIMA parameters.
+- SARIMAX allows fitting seasonal and non-seasonal ARIMA models.
+- You can then forecast future points and visualize results.
+
+---
+
+## Introduction to Differencing for Achieving Stationarity
+
+When working with time series data, a common requirement for many statistical models is that the data be **stationary**. Stationarity means that the statistical properties of the time series, such as mean and variance, do not change over time.
+
+However, many real-world time series are **non-stationary**, showing trends, seasonality, or other patterns that change over time. To use models that assume stationarity (like ARIMA), we often need to **transform** the data to make it stationary.
+
+One simple and common technique to achieve stationarity is **differencing**.
+
+---
+
+### What is Differencing?
+
+Differencing is a method of transforming a time series by subtracting the previous observation from the current observation. This helps remove trends or seasonality that cause non-stationarity.
+
+Mathematically, the first difference of a time series \( Y_t \) is:
+
+\[
+Y_t' = Y_t - Y_{t-1}
+\]
+
+Where:  
+- \( Y_t \) is the value at time \( t \)  
+- \( Y_{t-1} \) is the value at the previous time step \( t-1 \)  
+- \( Y_t' \) is the differenced value at time \( t \)
+
+---
+
+### Why does Differencing Help?
+
+- **Removes Trend:** If your data has a trend (e.g., increasing sales over time), differencing removes this by focusing on changes between consecutive points rather than absolute values.
+- **Stabilizes Mean:** By removing trend and seasonality, differencing can help stabilize the mean over time.
+- **Makes Data Stationary:** Many models require stationary data, and differencing helps meet this assumption.
+
+---
+
+### How to Apply Differencing (Step-by-Step)
+
+1. **Visualize the Original Series:**  
+   Plot your time series data to see if it has any obvious trend or seasonal patterns.
+
+2. **Calculate the Difference:**  
+   Compute the difference between consecutive observations. This can be done by subtracting each value by the previous one.
+
+3. **Plot the Differenced Series:**  
+   After differencing, plot the new series to check if the trend has been removed and the series looks more stationary.
+
+4. **Test for Stationarity:**  
+   Use statistical tests like the **Augmented Dickey-Fuller (ADF) test** to confirm if the differenced series is stationary.
+
+---
+
+### Example in Python
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+from statsmodels.tsa.stattools import adfuller
+
+# Example time series data
+data = [100, 105, 110, 120, 130, 150, 170, 200]
+
+# Convert to pandas Series
+series = pd.Series(data)
+
+# Plot original series
+plt.plot(series)
+plt.title("Original Series")
+plt.show()
+
+# Apply first differencing
+diff_series = series.diff().dropna()
+
+# Plot differenced series
+plt.plot(diff_series)
+plt.title("Differenced Series")
+plt.show()
+
+# Perform ADF test
+result = adfuller(diff_series)
+print(f'ADF Statistic: {result[0]}')
+print(f'p-value: {result[1]}')
+```
+
+### Additional Notes
+
+- Sometimes, one round of differencing is not enough. You may need to difference the series twice (second differencing).
+- For seasonal data, seasonal differencing (subtracting the value from the same season in the previous cycle) can also be used.
+- Over-differencing can lead to loss of important information, so always check for stationarity after differencing.
+
+---
 
 ### Real-world application
 
