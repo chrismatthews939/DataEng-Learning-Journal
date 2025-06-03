@@ -142,7 +142,7 @@ Your implementation steps would be as follows:
 ### Common ingestion issues in Kafka and Cloud environments
 Data ingestion pipelines can encounter several common issues that impact their performance and reliability. In this section, we'll delve into problems like consumer lag and latency, broker failures, message loss, and security breaches. Understanding the symptoms, causes, and solutions for these issues will help you maintain a robust data ingestion system.
 
-#### Consumer lag and latency
+### Consumer lag and latency
 
 **Symptoms**
 -	Consumers fall behind the latest messages.
@@ -158,7 +158,7 @@ Data ingestion pipelines can encounter several common issues that impact their p
 - Optimise processing code.
 - Enhance network bandwidth.
 
-#### Message Loss
+### Message Loss
 
 **Symptoms**
 - Missing data in downstream systems.
@@ -174,7 +174,7 @@ Data ingestion pipelines can encounter several common issues that impact their p
 - Increase replication factor.
 - Adjust retention settings.
 
-#### Broker failures
+### Broker failures
 
 **Symptoms**
 - Unavailable partitions.
@@ -190,7 +190,7 @@ Data ingestion pipelines can encounter several common issues that impact their p
 - Use automatic broker recovery.
 - Monitor resource utilisation.
 
-#### Security Breaches
+### Security Breaches
 
 **Symptoms**
 - Unauthorised access to data.
