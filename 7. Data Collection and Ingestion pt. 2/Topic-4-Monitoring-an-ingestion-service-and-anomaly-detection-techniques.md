@@ -269,3 +269,31 @@ The following are best practice techniques:
 - **Resource management:** Utilise cloud services' auto-scaling features. Monitor costs associated with resource usage.
 - **Network dependencies:** Be aware of network latency and bandwidth limitations in cloud environments.
 - **Service integrations:** Leverage managed services for Kafka (e.g., AWS MSK, Azure Event Hubs) when appropriate.
+
+## Exploring other anomaly detection methods
+
+### Deep learning models
+
+**LSTM Networks (Long Short-Term Memory):**
+
+- Capable of learning long-term dependencies in time series data.
+- Useful for complex patterns and sequences.
+
+**Autoencoders**
+
+- Neural networks trained to reconstruct input data.
+- Anomalies are detected when reconstruction error exceeds a threshold.
+
+**Clustering techniques**
+
+- **DBSCAN (Density-Based Spatial Clustering of Applications with Noise):** Identifies clusters and treats outliers as anomalies.
+
+**Implementing advanced monitoring solutions**
+
+- **Elastic Stack (ELK):**
+  - **Elasticsearch:** Search and analytics engine.
+  - **Logstash:** Data processing pipeline.
+  - **Kibana:** Visualisation tool.
+
+`Be careful with Machine Learning auto anomoly detection. It's good but you'll need to ensure you don't brake data privicy or introduce bias`
+
