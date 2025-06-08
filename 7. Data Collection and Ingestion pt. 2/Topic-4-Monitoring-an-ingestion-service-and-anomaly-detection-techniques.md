@@ -1,4 +1,4 @@
-# Topic 4 - Monitoring an ingestion service and anomaly detection techniques 02/06/2025
+# Topic 4 - Monitoring an ingestion service and anomaly detection techniques 05/06/2025
 
 # The importance of monitoring in data engineering
 
