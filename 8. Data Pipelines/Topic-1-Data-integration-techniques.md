@@ -415,3 +415,44 @@ Supporting all of this is a final layer: monitoring and observability. Pipelines
 ---
 
 # Data quality and governance in integration
+
+### Why does quality and governance matter?
+
+Imagine building the perfect pipeline: it’s real-time, scalable, and fully automated. But there’s a catch - the data flowing through it is wrong.
+
+- Product prices are outdated.
+- Customer addresses are malformed.
+- Duplicate transactions skew revenue.
+
+`A data pipeline is only as valuable as the data it carries. That’s why quality and governance are not optional extras - they’re structural requirements.`
+
+## Understanding data quality in the pipeline
+
+Data quality refers to how fit data is for use. In a pipeline, this translates into several key attributes, as illustrated below:
+
+![Data Quality](https://www.ovaledge.com/hubfs/FI_What%20is%20Data%20Quality_V2.png)
+
+### Risks in integrated pipelines
+
+Integration introduces new quality risks, especially when dealing with multiple, decentralised sources:
+
+- Conflicting data types or schemas
+- Uncoordinated changes in source systems
+- Latency mismatches (e.g., batch source merged with a real-time stream)
+- Missing context - e.g., incomplete joins or truncated fields
+- Schema drift, where upstream changes break downstream expectations
+
+### Governance mechanisms in pipelines
+
+So how do we protect our data pipelines? Governance introduces rules, controls, and visibility into how data is collected, transformed, and used. In modern pipelines, governance is often automated and embedded into the process. Key mechanisms include the following:
+
+- **Schema validation:** Enforcing structure at each pipeline stage
+- **Lineage tracking:** Understanding where each piece of data came from and how it changed
+- **Auditing and logging:** Recording what data moved, when, and how
+- **Access controls:** Managing who can see or modify data at different stages
+- **Quality checks:** Using tools like Great Expectations to assert expectations on incoming or transformed data
+
+Think Like an Air Traffic Control System – you can have fast planes (streaming engines), efficient airports (data stores), and reliable routes (orchestration tools). But without oversight, you risk mid-air collisions or planes going off-course.
+
+**Governance** is your radar system - making sure data gets where it needs to go, safely and correctly.
+
