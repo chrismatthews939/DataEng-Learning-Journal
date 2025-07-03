@@ -567,6 +567,12 @@ Choosing between on-premise and cloud environments for Docker and Kubernetes dep
 
 ---
 
+# Lecture
+
+Best practice for python
+Start by writing in a notebook
+Next change to a .py python file so it can be executed 
+use py lint as a tool that runs over your code and shows you how to improve it - gives it a score out of 100% and gives you recommendations on how to improve it 
 
 
 
