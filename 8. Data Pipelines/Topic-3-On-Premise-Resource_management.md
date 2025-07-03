@@ -1,4 +1,4 @@
-# Topic 3 On-Premise Resource Management
+# Topic 3 On-Premise Resource Management - 03/07/2025
 
 # Setting Up On-Premise Infrastructure for Data Workloads
 
