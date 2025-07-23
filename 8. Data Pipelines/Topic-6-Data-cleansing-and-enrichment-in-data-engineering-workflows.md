@@ -20,3 +20,27 @@
 
 # Standardisation, deduplication, and validation techniques
 
+- **Text formatting:** Convert names and addresses into a consistent case (e.g., “John Doe” instead of “john DOE” or “JOHN doe”).
+
+- **Date formats:** Align dates to a universal format like ISO 8601 (YYYY-MM-DD) to avoid confusion between “03/07/2023” and “07/03/2023.”
+
+- **Units of measurement:** Convert between miles and kilometres, or pounds and kilograms, to unify reporting.
+
+- **Category normalisation:** Convert “St.” to “Street” and “Rd.” to “Road” so they can be grouped correctly in geographic analysis.
+
+- **Data Type Validation:** This ensures that the data entered matches the defined type for the field (e.g., string, integer, date). If a grade is expected to be a number, entering “Year 3” would fail this check. However, note that type alone isn't enough to guarantee correctness.
+
+- **Data Range Validation:** This checks whether a value falls within acceptable boundaries. For example, if school grades must be between 1 and 12, a value of 13 (even though it’s a valid number) should be rejected.
+
+- **Data Constraint Validation:** This applies more specific rules, like content or format constraints. Using the same school grades example, values must be whole numbers - so 11.5 would fail. Constraints can also include character length (e.g., usernames must be 3–15 characters).
+
+- **Data Consistency Validation:** Here, the system ensures that the data makes sense in relation to other fields. A classic example: a shipping date should not be earlier than the production date. While both dates might be in the correct format, the relationship between them is invalid.
+
+- **Code Structure Validation:** This ensures that data follows the expected structure or schema. For instance, a JSON object might follow a schema with required keys - if those keys are missing or misplaced, the structure fails validation. On websites, a page might appear structurally correct but still display inaccurate or misleading content.
+
+- **Code Validation (System-Level):** This is often built into applications and includes automated checks based on all of the above - for instance, ensuring that text fields do not allow invalid characters, or that multiple types of validation (like data type and range) are triggered together. However, system-level validation can miss edge cases if poorly designed - like allowing multiple data types in a field or failing to enforce strict boundaries.
+
+
+# Tools for data cleansing
+
+
