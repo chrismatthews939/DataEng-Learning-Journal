@@ -194,6 +194,26 @@ Together, these tools help you build trustworthy, reliable, and scalable data pi
 
 ---
 
+# Fixing Pipelines
+
+**Step 1 - Detect the Error Quickly**
+Use monitoring dashboards, automated alerts, or scheduled data validation tests to catch problems as early as possible. The sooner you’re aware of an issue, the less damage it causes downstream.
+
+
+**Step 2 - Isolate the Failing Component**
+Don’t try to inspect the entire pipeline at once. Narrow your focus. Is the problem in ingestion, transformation, or loading? Start by reviewing recent changes, log files, or error messages to pinpoint where the failure occurred.
+
+
+**Step 3 - Diagnose the Root Cause**
+Ask yourself: what specifically is going wrong? Is it a null value breaking a join? A missing file? A slow query? Use tools like data sampling, schema comparison, and dry runs to gather evidence. Avoid making assumptions - confirm the problem with data.
+
+
+**Step 4 - Resolve the Issue Thoughtfully**
+Once you’ve diagnosed the root cause, make a targeted fix. This might involve adjusting transformation logic, handling nulls more gracefully, or reverting a recent change. Where possible, write a test that would have caught the issue - so you’re protecting against it in the future.
+
+
+**Step 5 - Document and Reflect**
+Don’t just fix it and forget it. Add comments to your code, update runbooks or team documentation, and let your team know what happened. These small steps help prevent the same issue from catching someone else by surprise.
 
 
 
