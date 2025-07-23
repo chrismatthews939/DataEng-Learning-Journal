@@ -45,6 +45,8 @@
 
 **OpenRefine: powerful data wrangling for tabular data**
 
+![Open Refine](https://upload.wikimedia.org/wikipedia/commons/e/e0/OpenRefine_logo_color.png)
+
 OpenRefine (formerly Google Refine) is a free, open-source tool that runs locally in your browser. It’s designed for cleaning and transforming messy data.
 
 Key features:
