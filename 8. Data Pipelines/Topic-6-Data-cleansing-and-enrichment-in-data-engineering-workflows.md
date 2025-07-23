@@ -57,6 +57,8 @@ Key features:
 
 **Trifacta (now part of Google Cloud DataPrep)**
 
+![Trifacta](https://images.icon-icons.com/2699/PNG/512/trifacta_logo_icon_168438.png)
+
 Trifacta is a cloud-based, intelligent data wrangling tool. It’s designed to work with large-scale, semi-structured, or unstructured datasets and is often used as part of modern data pipeline workflows.
 
 Key features:
@@ -82,4 +84,71 @@ Key features:
 - You need full control over logic, performance, and deployment
 
 # Techniques for enhancing data
+
+**Internal enrichment:** This involves using other data your organisation already owns to fill in gaps or add context.
+
+**External enrichment:** Sometimes, valuable context exists outside your systems - in public datasets, paid APIs, or partner feeds.
+
+**Derived enrichment:** Not all enrichment is about joining data. Sometimes it’s about computing new fields from existing ones. Such as creating age from DOB.
+
+# Integrating external data sources for enrichment
+
+**Common external data sources include:**
+
+- **Public datasets** (e.g. census data, weather history, geospatial information)
+- **Open APIs** (e.g. Google Maps, OpenWeather, Twitter)
+- **Commercial data providers** (e.g. credit risk data, industry benchmarks)
+- **Partner datasets** (e.g. airline alliances sharing flight metrics)
+
+---
+
+**APIs** (Application Programming Interfaces) provide real-time or batch access to remote datasets.
+
+You can use RESTful APIs to pull in weather, currency, or traffic data and combine it with your internal records.
+
+**Benefits:** Flexible, up-to-date, scalable
+
+**Challenges:** Rate limits, authentication, changing schemas
+
+**Example:** Enriching hotel bookings with current weather by calling OpenWeather’s API for each check-in location and date.
+
+---
+
+**Static File Ingestion**
+
+Sometimes data is provided as downloadable files (CSV, JSON, XML). These are often used for periodic updates from government agencies, research institutions, or partners.
+
+**Benefits:** Easy to store and version
+
+**Challenges:** May become outdated quickly, needs regular refresh
+
+**Example:** Importing monthly regional unemployment rates from a government portal to correlate with store sales.
+
+---
+
+**Streaming Data**
+
+In some cases, external data is received continuously, such as news headlines or stock prices.
+
+**Benefits:** Real-time insights
+
+**Challenges:** Requires stream processing architecture, error handling, and latency controls
+
+**Example:** A financial analytics dashboard integrates a real-time news feed to flag sentiment shifts for listed companies.
+
+---
+
+### Risks, licensing, and ethics
+
+External data comes with its own risks and ethical considerations.
+
+Not all external data is free or open for use. Before using an external source, always consider:
+
+**Licensing:** Some APIs are free for limited use but charge for higher volumes
+
+**Privacy:** Ensure the data doesn’t violate GDPR or other privacy laws
+
+**Bias and reliability:** Check for missing regions, outdated information, or biased representations
+
+
 
