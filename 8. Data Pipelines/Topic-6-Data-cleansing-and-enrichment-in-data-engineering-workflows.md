@@ -43,4 +43,14 @@
 
 # Tools for data cleansing
 
+**OpenRefine: powerful data wrangling for tabular data**
+
+OpenRefine (formerly Google Refine) is a free, open-source tool that runs locally in your browser. It’s designed for cleaning and transforming messy data.
+
+Key features:
+1. **Faceting:** Helps you group and filter values in a column - great for spotting variants like “UK,” “U.K.,” and “United Kingdom.”
+2. **Clustering:** Uses algorithms to find and group similar strings - helpful for deduplication and typo correction.
+3. **Transformations:** Offers powerful text functions and regular expressions to clean up fields (e.g., removing extra whitespace, formatting dates).
+4. **Undo/Redo history:** Every step is logged, making changes reversible and auditable.
+
 
