@@ -150,5 +150,5 @@ Not all external data is free or open for use. Before using an external source, 
 
 **Bias and reliability:** Check for missing regions, outdated information, or biased representations
 
-
+---
 
