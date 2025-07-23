@@ -55,4 +55,31 @@ Key features:
 3. **Transformations:** Offers powerful text functions and regular expressions to clean up fields (e.g., removing extra whitespace, formatting dates).
 4. **Undo/Redo history:** Every step is logged, making changes reversible and auditable.
 
+**Trifacta (now part of Google Cloud DataPrep)**
+
+Trifacta is a cloud-based, intelligent data wrangling tool. It’s designed to work with large-scale, semi-structured, or unstructured datasets and is often used as part of modern data pipeline workflows.
+
+Key features:
+1. **Intelligent suggestions:** As you click a field, Trifacta suggests transformations based on detected patterns (e.g., splitting names, fixing dates).
+2. **Wrangling recipes:** Every transformation becomes part of a repeatable recipe you can reuse or export to Python/Spark.
+3. **Interactive profiling:** Visual summaries of column quality, data types, and outliers.
+4. **Integration:** Connects with cloud storage and pipeline platforms, including BigQuery, AWS, and Databricks.
+
+### Tools vs. code: when to use what
+
+**Use cleansing tools when:**
+
+- You need rapid cleanup of small-to-medium datasets
+- Team members aren’t comfortable with code
+- You want to visually explore issues and patterns
+- You need transparency and repeatability with minimal setup
+
+**Use custom code when:**
+
+- You’re working with large-scale or automated pipelines
+- Cleansing steps are too complex or specific for tool GUIs
+- You need integration with other systems (e.g., APIs, databases)
+- You need full control over logic, performance, and deployment
+
+# Techniques for enhancing data
 
