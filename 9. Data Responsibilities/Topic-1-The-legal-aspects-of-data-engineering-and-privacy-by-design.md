@@ -173,4 +173,124 @@ Organisations that fail to comply with GDPR and DPA can face:
 
 `In 2019, British Airways faced a massive GDPR fine of £20 million after a data breach exposed over 400,000 customer records. The breach was traced to a weakly secured booking website that allowed attackers to redirect users to a fraudulent page.`
 
+---
 
+# Legal obligations for data engineers
+
+## Obligation 1: Secure system design
+
+### Explanation
+
+Secure system design involves encryption, user authentication, and controlled access.
+
+Engineers use encryption protocols like SSL/TLS for data transfer, ensuring that sensitive information like test results cannot be intercepted.
+
+Firewalls and intrusion detection systems prevent unauthorised access to medical records.
+
+### Example
+
+A hospital encrypts patient data before transmitting it to an external lab for diagnostic analysis.
+
+Authentication measures ensure that only authorised personnel, like doctors, can access test results.
+
+---
+
+## Obligation 2: Documentation and accountability
+
+### Explanation
+
+Documentation includes maintaining logs of data access, processing activities, and breach reports.
+
+This ensures accountability, as organisations can track who accessed patient records, when, and for what purpose.
+
+### Example
+
+A hospital keeps detailed logs of every staff member who views or edits patient files, helping track suspicious activity and meet GDPR’s accountability requirements.
+
+---
+
+## Obligation 3: Stakeholder communication
+
+### Explanation
+
+Data engineers must clearly communicate compliance measures and security protocols to stakeholders.
+
+This might involve employee training sessions, policy updates, or breach notifications.
+
+### Example
+
+After a minor breach involving patient scheduling software, the hospital informed affected patients and outlined steps taken to resolve the issue.
+
+Regular updates helped maintain trust and transparency.
+
+---
+
+# The consequences of non-compliance with data protection
+
+## Case study: Marriot International data breach
+
+In 2018, Marriott International disclosed a data breach that impacted approximately 500 million customers. Sensitive data, including names, passport numbers, and credit card details, was exposed.
+
+### Challenges
+
+- Weak encryption protocols allowed hackers to access customer data.
+- Inadequate breach detection delayed response times by months.
+
+### Consequences
+
+- Marriott faced a £18.4 million fine under GDPR.
+- Reputational damage resulted in customer attrition, with significant losses in bookings
+- The company had to invest heavily in system upgrades and compliance measures.
+
+### Outcome
+
+- Marriott improved its encryption standards and adopted real-time monitoring tools to prevent future breaches.
+- While costly, these changes restored some customer trust over time.
+
+---
+
+## Consequence 1: Financial penalties
+
+### Explanation
+
+Under GDPR, organisations can be fined up to €20 million or 4% of their global annual turnover, whichever is higher.
+
+These penalties are designed to ensure businesses prioritise compliance.
+
+### Example
+
+In 2020, British Airways was fined £20 million for failing to secure customer data, impacting over 400,000 customers.
+
+---
+
+## Consequence 2: Reputational damage
+
+### Explanation
+
+Reputational damage occurs when customers lose faith in an organisation's ability to protect their data.
+
+This can lead to customer attrition, reduced sales, and difficulty in attracting new clients.
+
+### Example
+
+The 2017 Equifax breach exposed the personal data of 147 million people.
+
+Following the breach, the company’s stock dropped by 30%, and it faced lawsuits and public criticism.
+
+---
+
+## Consequence 3: Operational disruption
+
+### Explanation
+
+Non-compliance can lead to investigations, audits, and the need to overhaul processes and systems.
+
+This diverts resources from normal operations and increases downtime.
+
+### Example
+
+After a major breach, a healthcare provider had to halt operations for three days while its IT systems were audited and restored, leading to cancelled appointments and delayed treatments.
+
+---
+
+# Understanding privacy-by-design
