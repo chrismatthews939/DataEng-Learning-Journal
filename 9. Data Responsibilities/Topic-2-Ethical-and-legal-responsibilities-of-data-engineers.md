@@ -199,8 +199,122 @@ Due to public backlash and concerns about bias, the LAPD eventually scaled back 
 
 ---
 
-By keeping these principles in mind, data engineers can help create systems that not only work efficiently but also respect human values and rights.
+# Anonymising Data While Preserving Utility
+
+## Introduction
+
+As a beginner data engineer, one of the important challenges you will face is handling data ethically. A common ethical dilemma arises when you need to **anonymise data** — that is, protect individuals' privacy by removing or disguising personal information — but still want to keep the data useful for analysis or machine learning. Balancing privacy and data utility is tricky because the more you anonymise, the more you might reduce the usefulness of the data.
+
+This document explains the key ethical concerns, common anonymisation methods, how they work, and an example scenario.
 
 ---
+
+## The Ethical Dilemma: Privacy vs Utility
+
+- **Privacy:** People’s data contains sensitive information (like names, addresses, health details) that must be protected to prevent misuse or harm.
+- **Utility:** Data engineers and analysts want to use the data to gain insights, improve services, or build models.
+- **The Challenge:** Strong anonymisation techniques protect privacy but often reduce the quality or detail of the data, making it less useful.
+- **Ethical responsibility:** You must find a balance where individuals’ privacy is respected without making the data useless.
+
+---
+
+## Common Methods for Anonymising Data
+
+### 1. **Data Masking (Pseudonymisation)**
+
+- **How it works:** Replace real identifiers (e.g., names, IDs) with fake ones or random values.
+- **Example:** Replace “John Smith” with “User1234.”
+- **Effect:** Protects direct identifiers but may still reveal information through indirect patterns.
+- **Utility impact:** Keeps most of the data structure intact, so analyses can still run, but some linking to real people is lost.
+
+---
+
+### 2. **Generalisation**
+
+- **How it works:** Replace specific values with broader categories.
+- **Example:** Replace age 27 with age range “20-30” or replace an exact address with a city name.
+- **Effect:** Reduces the chance of re-identification by hiding exact details.
+- **Utility impact:** Less precise data but still usable for group-level insights.
+
+---
+
+### 3. **Suppression**
+
+- **How it works:** Remove or hide certain data fields entirely.
+- **Example:** Remove the “Social Security Number” column completely.
+- **Effect:** Eliminates risk from those fields but can reduce the data’s usefulness.
+- **Utility impact:** Useful fields may be lost, reducing what you can learn.
+
+---
+
+### 4. **Noise Addition**
+
+- **How it works:** Add random “noise” or small errors to numeric data.
+- **Example:** Adjust a salary of $50,000 by adding or subtracting a random amount within $500.
+- **Effect:** Makes exact values uncertain, protecting privacy.
+- **Utility impact:** Analysis remains mostly valid if noise is small, but exact values are obscured.
+
+---
+
+### 5. **k-Anonymity**
+
+- **How it works:** Ensure that each record is indistinguishable from at least k-1 others based on identifying attributes.
+- **Example:** If k=5, any combination of quasi-identifiers (like age range + ZIP code) must appear in at least 5 records.
+- **Effect:** Makes it difficult to identify any single individual.
+- **Utility impact:** Often requires generalisation or suppression, reducing detail.
+
+---
+
+### 6. **Differential Privacy**
+
+- **How it works:** Adds carefully calibrated noise to query results or datasets to mathematically guarantee privacy.
+- **Effect:** Provides strong privacy assurances even against attackers with external knowledge.
+- **Utility impact:** Balances noise to preserve overall data patterns while hiding individual contributions.
+
+---
+
+## Example Scenario: Anonymising Hospital Data for Research
+
+Imagine you have patient records with these fields:
+
+| Patient ID | Name       | Age | ZIP Code | Diagnosis     | Treatment Cost |
+|------------|------------|-----|----------|---------------|----------------|
+| 12345      | John Smith | 27  | 12345    | Flu           | $500           |
+| 12346      | Jane Doe   | 29  | 12345    | Diabetes      | $15,000        |
+
+**Goal:** Share data with researchers without revealing identities but keep it useful for studying treatment costs by age group and location.
+
+### Step 1: Mask direct identifiers
+- Replace `Name` and `Patient ID` with random codes.
+
+### Step 2: Generalise quasi-identifiers
+- Change `Age` to age ranges (e.g., 20-30).
+- Change `ZIP Code` to a broader region or first 3 digits only.
+
+### Step 3: Consider noise addition
+- Add a small random amount to `Treatment Cost` to avoid revealing exact figures.
+
+### Resulting anonymised data:
+
+| Patient Code | Age Range | Region | Diagnosis | Treatment Cost (approx.) |
+|--------------|-----------|--------|-----------|-------------------------|
+| A001         | 20-30     | 123**  | Flu       | $480                    |
+| A002         | 20-30     | 123**  | Diabetes  | $15,200                 |
+
+This protects patient privacy but still allows researchers to study cost patterns by age and region.
+
+---
+
+## Summary
+
+- Ethical data engineering requires protecting individuals’ privacy **and** keeping data useful.
+- Common anonymisation methods include **masking, generalisation, suppression, noise addition, k-anonymity, and differential privacy**.
+- Each method balances privacy and utility differently; often, a combination is used.
+- Always consider the risk of re-identification and the purpose of data use.
+- Proper anonymisation helps maintain trust and comply with legal regulations.
+
+---
+
+
 
 
