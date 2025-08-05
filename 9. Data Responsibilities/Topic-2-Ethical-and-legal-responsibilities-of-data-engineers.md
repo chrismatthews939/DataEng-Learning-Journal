@@ -78,4 +78,129 @@ As a data engineer, your decisions shape the data infrastructure that powers AI 
 
 ---
 
+# So, how are data engineers expected to meet their legal obligations? Hospital Example
+
+## Obligation 1: Secure system design
+
+Hospitals must create systems that prioritise the security of patient records at every stage, from collection to storage.
+
+### Explanation
+
+Secure system design involves encryption, user authentication, and controlled access.
+
+Engineers use encryption protocols like SSL/TLS for data transfer, ensuring that sensitive information like test results cannot be intercepted.
+
+Firewalls and intrusion detection systems prevent unauthorised access to medical records.
+
+### Example 
+
+A hospital encrypts patient data before transmitting it to an external lab for diagnostic analysis.
+
+Authentication measures ensure that only authorised personnel, like doctors, can access test results.
+
+---
+
+## Obligation 2: Documentation and accountability
+
+Accurate records ensure hospitals can demonstrate compliance during audits and investigations.
+
+### Explanation
+
+Documentation includes maintaining logs of data access, processing activities, and breach reports.
+
+This ensures accountability, as organisations can track who accessed patient records, when, and for what purpose.
+
+### Example 
+
+A hospital keeps detailed logs of every staff member who views or edits patient files, helping track suspicious activity and meet GDPR’s accountability requirements.
+
+---
+
+## Obligation 3: Stakeholder communication
+
+Effective communication ensures that hospital staff, regulatory bodies, and patients understand compliance efforts.
+
+### Explanation
+
+Data engineers must clearly communicate compliance measures and security protocols to stakeholders.
+
+This might involve employee training sessions, policy updates, or breach notifications.
+
+### Example 
+
+After a minor breach involving patient scheduling software, the hospital informed affected patients and outlined steps taken to resolve the issue.
+
+Regular updates helped maintain trust and transparency.
+
+---
+
+# Ethical Dilemmas for Data Engineers: 
+
+As a data engineer, you work with vast amounts of data, building systems that collect, process, and store information. While this role is technical, it comes with important ethical responsibilities. Ethical dilemmas arise when decisions about data use impact people’s privacy, safety, or fairness.
+
+Understanding these dilemmas and how to resolve them is crucial for responsible data engineering.
+
+---
+
+## What Are Ethical Dilemmas?
+
+An **ethical dilemma** happens when there are conflicting values or principles, and no option is perfectly right or wrong. For data engineers, this often means balancing things like:
+
+- **Privacy vs. utility:** How much personal data should be used to improve services without invading privacy?
+- **Fairness vs. efficiency:** How to avoid biases in data or algorithms that might unfairly harm certain groups?
+- **Safety vs. autonomy:** How should automated systems make decisions that affect human lives?
+
+---
+
+## Common Ethical Challenges for Data Engineers
+
+- **Data privacy:** Ensuring personal data is protected and used only for agreed purposes.
+- **Bias and fairness:** Preventing algorithms from discriminating against individuals or groups.
+- **Transparency:** Making sure decisions made by data systems can be understood and audited.
+- **Accountability:** Taking responsibility for mistakes or harmful outcomes caused by data systems.
+
+---
+
+## Real Case Studies
+
+### 1. Driverless Cars: Passenger Safety vs. Pedestrian Harm
+
+**Challenge:**  
+Driverless cars rely on AI to make split-second decisions in emergencies. A classic ethical dilemma is when a crash is unavoidable. Should the car prioritize the safety of its passengers or pedestrians who might be hit?
+
+**Solution:**  
+Manufacturers and ethicists debate programming cars with ethical frameworks — such as minimizing overall harm or prioritizing passenger safety. Some propose clear guidelines or laws that define acceptable behavior, while others suggest transparency about how decisions are made.
+
+**Outcome:**  
+The debate is ongoing. Different companies adopt different ethical priorities, and regulators are working on standards. The challenge is ensuring public trust while balancing complex moral decisions made by machines.
+
+---
+
+### 2. LAPD’s AI Predicting Crime Areas
+
+**Challenge:**  
+The Los Angeles Police Department used AI tools to predict "high-risk" areas for crimes to allocate resources. However, the data fed into the system reflected existing biases in policing (over-policing certain neighborhoods), potentially reinforcing discrimination against minority communities.
+
+**Solution:**  
+Critics called for greater transparency, audits of the algorithms, and the inclusion of fairness metrics. Some advocated for limiting the use of such predictive policing tools or combining them with community input to avoid unfair targeting.
+
+**Outcome:**  
+Due to public backlash and concerns about bias, the LAPD eventually scaled back the use of predictive policing tools. This case highlighted the need for fairness, accountability, and transparency in AI and data systems.
+
+---
+
+## Key Takeaways for Data Engineers
+
+- Ethical dilemmas rarely have perfect solutions; thoughtful consideration and dialogue are essential.
+- Always prioritize **transparency**, **fairness**, and **privacy** in your work.
+- Understand the broader social impact of the data systems you build.
+- Work collaboratively with ethicists, legal experts, and affected communities.
+- Stay informed about regulations and best practices in data ethics.
+
+---
+
+By keeping these principles in mind, data engineers can help create systems that not only work efficiently but also respect human values and rights.
+
+---
+
 
