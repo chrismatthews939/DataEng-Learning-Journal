@@ -163,3 +163,96 @@ A successful framework begins with clearly defined roles, ensuring accountabilit
 
 ---
 
+# Principles of Data Stewardship 
+
+## 1. What Is Data Stewardship?
+
+Data stewardship is the practice of **responsibly managing, protecting, and improving the quality of data** throughout its lifecycle.  
+Think of it as being the caretaker of a valuable library — except the "books" are datasets, and your role is to ensure they are accurate, secure, and used ethically.
+
+While **data engineering** focuses on building the systems to store, move, and process data, **data stewardship** ensures that the data inside those systems is **trustworthy, compliant, and fit for purpose**.
+
+---
+
+## 2. Core Principles
+
+### 2.1 Data Ownership & Accountability
+- Every dataset should have a clearly identified **data owner** (person or team) who is responsible for its correctness and use.
+- As a steward, you may not “own” the data, but you ensure it’s managed according to agreed standards.
+- Accountability helps prevent the “no one’s in charge” problem.
+
+---
+
+### 2.2 Data Quality
+- Data should be **accurate**, **complete**, **consistent**, and **timely**.
+- This includes:
+  - Removing duplicates
+  - Ensuring formats are consistent (e.g., date formats)
+  - Avoiding missing or incorrect values
+- **Why it matters:** Poor-quality data can cause bad business decisions, faulty analytics, and system errors.
+
+---
+
+### 2.3 Data Security & Privacy
+- Protect data from unauthorized access, loss, or corruption.
+- Follow security best practices:
+  - Encryption at rest and in transit
+  - Access controls (role-based permissions)
+- **Privacy laws** (e.g., GDPR, CCPA) require special handling of personal information — know what applies to your organization.
+
+---
+
+### 2.4 Data Lineage & Traceability
+- **Data lineage** is a record of where the data came from, how it moved, and how it changed over time.
+- This helps:
+  - Debug issues in data pipelines
+  - Prove compliance with regulations
+  - Build trust in data by making it transparent
+
+---
+
+### 2.5 Data Lifecycle Management
+- Data goes through stages: **creation → storage → usage → archival → deletion**.
+- Stewardship ensures:
+  - Old or unused data is archived or deleted to reduce risk and storage costs.
+  - Active data remains accessible and relevant.
+- Prevents “data hoarding,” which can lead to security and compliance issues.
+
+---
+
+### 2.6 Compliance & Ethics
+- Understand and apply relevant laws, regulations, and organizational policies.
+- Ethical stewardship means:
+  - Avoiding misuse of data
+  - Being transparent about data usage
+  - Respecting user consent and privacy
+
+---
+
+### 2.7 Collaboration & Communication
+- Data stewardship is not a solo activity — it involves **coordinating with business users, data engineers, analysts, and legal teams**.
+- You act as a bridge between technical systems and business needs, ensuring everyone agrees on definitions, rules, and responsibilities.
+
+---
+
+## 3. Why It Matters for a Data Engineer
+
+Even if your main job is building pipelines or databases:
+- **Bad data in = bad results out** — stewardship ensures you’re working with clean, reliable data.
+- Data engineers are often the first to notice data problems and can flag them early.
+- Knowing stewardship principles helps you design systems that are easier to govern, audit, and maintain.
+
+---
+
+## 4. Key Takeaways
+
+- **Data stewardship** = caring for data so it’s accurate, secure, and responsibly used.
+- It’s about **quality, security, compliance, and collaboration**.
+- As a data engineer, understanding stewardship helps you build systems that people can trust.
+
+---
+
+**Pro Tip:** Good data stewardship is like good kitchen hygiene — if you keep things clean, organized, and clearly labeled from the start, everything runs smoother and you avoid unpleasant surprises later.
+
+---
+
