@@ -252,7 +252,95 @@ Even if your main job is building pipelines or databases:
 
 ---
 
+# Understanding Data Stewardship 
+
+If you’re just starting your journey as a data engineer, you might already know that data is like the “raw material” of any data-driven organization. But **data stewardship** is what ensures that raw material is trustworthy, well-maintained, and fit for use. Think of it like the role of a careful librarian — not just storing books, but making sure they’re accurate, organized, and easy to find.
+
+---
+
+## What is Data Stewardship?
+**Data stewardship** is the practice of managing and overseeing an organization’s data assets to ensure they are **accurate**, **consistent**, **secure**, and **usable** for everyone who needs them. It’s a responsibility that often involves working closely with data owners, analysts, and engineers to keep data in good shape over its entire lifecycle.
+
+---
+
+## Why Does It Matter?
+Without proper stewardship, data can:
+- Become inconsistent across different systems.
+- Contain errors or missing values.
+- Lose its meaning due to poor documentation.
+- End up being used in ways that break privacy or compliance rules.
+
+This can lead to **bad business decisions**, **compliance violations**, or **loss of trust** in the data.
+
+---
+
+## Key Responsibilities of a Data Steward
+1. **Defining Data Standards**
+   - Establish clear definitions, formats, and rules for how data should be stored and used.
+   - Example: Deciding that all dates must follow the `YYYY-MM-DD` format.
+
+2. **Maintaining Data Quality**
+   - Regularly check for errors, duplicates, or incomplete data.
+   - Collaborate with data engineers to fix issues at the source.
+
+3. **Ensuring Data Integrity**
+   - Keep data consistent and accurate across systems.
+   - Monitor for unintended changes or corruption.
+
+4. **Documenting Data**
+   - Create and maintain **data dictionaries** and **metadata** so everyone knows what each data element means.
+   - Example: Explaining that the “Customer_ID” field is a unique identifier assigned to each registered customer.
+
+5. **Supporting Compliance and Security**
+   - Ensure that sensitive data (e.g., personal information) is handled according to privacy regulations like GDPR or HIPAA.
+   - Control who can access what data.
+
+6. **Facilitating Communication**
+   - Act as a bridge between technical teams (data engineers, architects) and business teams (analysts, managers) to ensure everyone understands the data.
+
+---
+
+## How It Supports Data Quality and Integrity
+- **Quality**: By enforcing standards, cleaning up issues, and validating inputs, data stewards ensure that data is correct and complete.
+- **Integrity**: By monitoring changes and syncing data across systems, they protect against accidental or malicious alterations.
+
+Think of data stewardship as **quality control plus ongoing maintenance** for your data ecosystem.
+
+---
+
+## The Data Engineer’s Connection to Stewardship
+As a data engineer, you will often:
+- Build pipelines that align with data standards.
+- Implement validation checks defined by data stewards.
+- Collaborate to ensure that metadata and documentation stay up-to-date.
+- Support processes for correcting bad data at its source.
+
+While data stewards focus on **policy, quality, and governance**, data engineers focus on **building and maintaining the technical infrastructure** to make those policies possible.
+
+---
+
+## In Summary
+Data stewardship ensures that:
+- Data is **accurate**, **consistent**, and **trusted**.
+- The organization can make reliable, data-driven decisions.
+- Legal, ethical, and security standards are upheld.
+
+Without it, even the most advanced data engineering pipelines would just move poor-quality data faster — and as the saying goes, **“garbage in, garbage out.”**
+
+---
+
 **Pro Tip:** Good data stewardship is like good kitchen hygiene — if you keep things clean, organized, and clearly labeled from the start, everything runs smoother and you avoid unpleasant surprises later.
 
 ---
+
+# Evaluating Strategies for Effective Data Stewardship
+
+1. GOVERNANCE STRUCTURES
+
+COMMUNICATION AND COLLABORATION
+
+Education and training
+
+PERFORMANCE MANAGEMENT AND FEEDBACK
+For example, an e-commerce company assigns regional data stewards to monitor customer feedback, ensuring each region aligns with global privacy policies like GDPR (Eryurek and Gilad, 2021).
 
