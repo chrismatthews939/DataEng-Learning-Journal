@@ -1,4 +1,4 @@
-# Topic 3 - Data governance and data stewardship 14/08/2025
+# Topic 3 - Data Governance and Data Stewardship 14/08/2025
 
 # Identifying roles and responsibilities in data governance
 
@@ -391,29 +391,29 @@ Data stewardship is the management and oversight of an organization’s data ass
 
 When deciding how to implement or improve stewardship, consider these evaluation criteria:
 
-### a. **Organizational Fit**
-- Does the strategy align with the company’s size, culture, and technical stack?
-- Are roles (data owners, stewards, custodians) clearly defined?
+1. **Organizational Fit**
+    - Does the strategy align with the company’s size, culture, and technical stack?
+    - Are roles (data owners, stewards, custodians) clearly defined?
 
-### b. **Scalability**
-- Can the approach handle increased data volume and variety?
-- Will tools and processes still work as the company grows?
+2. **Scalability**
+    - Can the approach handle increased data volume and variety?
+    - Will tools and processes still work as the company grows?
 
-### c. **Automation Potential**
-- Are there opportunities to automate quality checks, lineage tracking, and reporting?
-- Does automation reduce human error without sacrificing oversight?
+3. **Automation Potential**
+    - Are there opportunities to automate quality checks, lineage tracking, and reporting?
+    - Does automation reduce human error without sacrificing oversight?
 
-### d. **Compliance Coverage**
-- Does the strategy meet all applicable regulatory requirements?
-- Is there a regular audit process?
+4. **Compliance Coverage**
+    - Does the strategy meet all applicable regulatory requirements?
+    - Is there a regular audit process?
 
-### e. **Stakeholder Engagement**
-- Are business teams, compliance officers, and engineers involved?
-- Is feedback from data users collected and acted upon?
+5. **Stakeholder Engagement**
+    - Are business teams, compliance officers, and engineers involved?
+    - Is feedback from data users collected and acted upon?
 
-### f. **Cost-Benefit Analysis**
-- Does the value of improved data outweigh the investment in tools and processes?
-- Are open-source or low-cost options viable without losing quality?
+6. **Cost-Benefit Analysis**
+    - Does the value of improved data outweigh the investment in tools and processes?
+    - Are open-source or low-cost options viable without losing quality?
 
 ---
 
