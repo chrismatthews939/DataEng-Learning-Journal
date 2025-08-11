@@ -127,5 +127,39 @@ For example, a manufacturing company might audit supplier data annually to ensur
 
 ---
 
-# Synthesising data governance frameworks
+# Synthesising Data Governance Frameworks
+
+1. **Define roles and responsibilities:** The organisation appointed a Chief Data Officer (CDO) to oversee data governance initiatives and established data stewards at each hospital to ensure local compliance.
+
+2. **Develop policies:** Data classification, access controls, and retention policies were standardised across all facilities.
+
+3. **Implement technology:** A centralised data catalogue was created, enabling secure access and reducing duplication of patient records.
+
+4. **Measure performance:** Quarterly audits and dashboards tracked compliance, data quality, and operational efficiency.
+
+---
+
+## Roles and responsibilities
+
+A successful framework begins with clearly defined roles, ensuring accountability and consistency, including:
+
+1. **Data Owners:** Responsible for the accuracy, quality, and security of specific datasets. For instance, a sales manager overseeing CRM data ensures it aligns with reporting needs.
+
+2. **Data Stewards:** Enforce policies and procedures to maintain data quality and compliance at the operational level. For example, a healthcare data steward ensures that patient records are complete and compliant with HIPAA.
+
+3. **Governance Committees:** Provide strategic oversight, ensuring alignment between data governance and organisational goals. These committees include representatives from IT, compliance, and business units (Eryurek & Gilad, 2021).
+
+---
+
+### Synthesising the Framework
+
+1. **Assess Organisational Needs:** Identify key pain points and priorities, such as regulatory compliance or improved reporting accuracy. For example, a government agency prioritises data security due to its reliance on citizen information systems.
+
+2. **Define Objectives and Scope:** Determine the framework's goals, such as improving data quality or streamlining access. Define the scope, whether organisation-wide or departmental. For example, a telecom company focuses its initial governance efforts on customer data to enhance billing accuracy.
+
+3. **Design and Implement:** Establish roles, policies, and technology tools to address identified needs. For example, a logistics company implements role-based access controls to prevent unauthorised access to shipment data.
+
+4. **Measure and Refine:** Use metrics like data quality scores and compliance audit results to evaluate performance and make adjustments. For example, a pharmaceutical company updates its governance framework annually based on new FDA regulations.
+
+---
 
