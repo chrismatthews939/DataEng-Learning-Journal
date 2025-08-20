@@ -175,3 +175,65 @@ For example, a financial services firm might use AWS KMS to encrypt transaction 
 
 # Identifying Risks and Communicating Risks to Stakeholders
 
+## Case study example - Risk communication in a manufacturing firm
+
+A manufacturing firm experienced a cybersecurity incident that affected its production data.
+
+The breach impacted multiple departments, including IT, operations, and compliance, but communication breakdowns and delayed resolution exacerbated the situation.
+
+**The challenges they faced included the following:**
+
+- **Poor Stakeholder Identification:** IT resolved the breach without notifying the compliance team, leading to regulatory risks.
+- **Inconsistent Communication:** Different departments received fragmented and conflicting information.
+- **Delayed Action:** Decision-makers lacked a clear understanding of the breach's scope, delaying containment efforts.
+
+To address these issues they took the following steps:
+
+1. **Stakeholder Mapping:** The firm created a stakeholder map identifying key individuals and departments responsible for responding to risks.
+2. **Communication Protocols:** Standardised protocols for incident reporting and cross-departmental updates were established.
+3. **Regular Risk Briefings:** Weekly meetings were introduced to keep all stakeholders informed about potential risks and incidents.
+
+The outcomes:
+
+The organisation reduced response times by 30%, improved compliance reporting, and strengthened collaboration across teams (King & Schwarzenbach, 2020).
+
+---
+
+## Effective risk communication strategies
+
+**Stakeholder map**
+
+Identifying stakeholders of risks begins with creating a stakeholder map. This map outlines individuals or teams responsible for various aspects of risk management, such as IT teams for technical issues, compliance officers for regulatory risks, and executives for strategic decisions. For example, in a healthcare organisation, stakeholders might include data stewards, IT administrators, and compliance officers ensuring HIPAA compliance.
+
+
+**Communication protocols**
+
+Effective communication protocols are crucial for ensuring that all relevant stakeholders are informed promptly.
+
+These protocols should include standardised formats for incident reports, escalation paths, and channels for regular updates.
+
+For example, using a centralised ticketing system can streamline communication and ensure accountability.
+
+
+**Tailoring communication**
+
+Tailoring communication to the audience is another essential aspect of risk communication.
+
+Technical details might be necessary for IT teams, while high-level summaries are more appropriate for executives.
+
+For instance, an IT team may receive detailed logs of a security breach, while senior leadership might be provided with an executive summary highlighting potential business impacts.
+
+
+**Feedback loops**
+
+Finally, feedback loops ensure that communication remains a two-way process.
+
+Encouraging stakeholders to provide input and share concerns fosters collaboration and continuous improvement.
+
+For example, conducting post-incident reviews allows teams to identify communication gaps and refine protocols (Eryurek & Gilad, 2021).
+
+---
+
+
+# Techniques for Assessing and Reporting Data-Related Risks
+
