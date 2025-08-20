@@ -288,40 +288,67 @@ Finally, real-time monitoring tools provide continuous visibility into risk metr
 
 # Synthesising Comprehensive Risk Reports
 
-Case study example
-
-Building a comprehensive risk report in a financial services company
+## Case study example - Building a comprehensive risk report in a financial services company
 
 A multinational financial services company struggled with fragmented risk reporting processes that hindered regulatory compliance and decision-making.
 
-
 A multinational financial services company struggling with fragmented risk reporting
 
-The challenges they faced included the following:
+**The challenges they faced included the following:**
 
-•
-Data Silos: Risk data was scattered across multiple departments, leading to incomplete reports.
+- **Data Silos:** Risk data was scattered across multiple departments, leading to incomplete reports.
+- **Inaccessible Reports:** Reports were too technical for non-specialist stakeholders.
+- **Lack of Actionable Insights:** Reports lacked clear recommendations, reducing their utility for decision-making.
 
-•
-Inaccessible Reports: Reports were too technical for non-specialist stakeholders.
+**To address these issues they took the following steps:**
 
-•
-Lack of Actionable Insights: Reports lacked clear recommendations, reducing their utility for decision-making.
+1. **Centralised Data Framework:** The company implemented a data governance framework to consolidate risk data from multiple departments.
+2. **Executive Summaries:** Each report included an overview of key risks, their impacts, and recommended actions.
+3. **Visualisation Tools:** Risk heatmaps and dashboards were used to make data accessible to non-technical audiences.
+4. **Collaborative Input:** Input was gathered from IT, compliance, and operations teams to create holistic reports.
 
-To address these issues they took the following steps:
-
-1
-Centralised Data Framework: The company implemented a data governance framework to consolidate risk data from multiple departments.
-
-2
-Executive Summaries: Each report included an overview of key risks, their impacts, and recommended actions.
-
-3
-Visualisation Tools: Risk heatmaps and dashboards were used to make data accessible to non-technical audiences.
-
-4
-Collaborative Input: Input was gathered from IT, compliance, and operations teams to create holistic reports.
-
-The outcomes:
+**The outcomes:**
 
 The organisation improved its audit readiness by 50%, reduced reporting time by 30%, and enhanced decision-making by providing actionable recommendations (King & Schwarzenbach, 2020; Reis & Housley, 2022).
+
+---
+
+## Crafting Comprehensive Risk Reports: Key Components and Best Practices
+
+**Standardised report structure**
+
+Standardised Report Structure: A standardised format ensures consistency across departments. According to Data Governance:
+
+The Definitive Guide (Eryurek & Gilad, 2021), risk reports should include:
+
+**Executive Summary:** A concise overview of risks, their impacts, and recommended actions.
+
+**Risk Analysis:** Detailed insights into risk likelihood, impact, and contributing factors.
+
+**Recommendations:** Specific, actionable steps with timelines and assigned responsibilities.
+
+
+**Data consolidation**
+
+Centralising risk data from disparate systems is crucial for accuracy and completeness.
+
+Fundamentals of Data Engineering (Reis & Housley, 2022) emphasises the role of robust data governance frameworks in breaking down silos and ensuring consistent reporting.
+
+**Visualisation tools**
+
+Visualisation makes reports more accessible to diverse stakeholders. Managing Data Quality (King & Schwarzenbach, 2020) highlights the use of heatmaps and dashboards to prioritise risks and communicate trends effectively.
+
+**Cross-departmental collaboration**
+
+Synthesising insights from IT, compliance, and operations teams ensures that reports capture a holistic view of organisational risks.
+
+**Data Mesh:** Delivering Data-Driven Value at Scale (Dehghani, 2022) underscores the importance of decentralising data ownership while maintaining governance standards.
+
+**Actionable insights**
+
+Reports must go beyond identifying risks to include clear mitigation strategies and timelines.
+
+Driving Data Projects (Haskell, 2024) provides strategies for transforming raw data into actionable recommendations tailored to organisational priorities.
+
+---
+
