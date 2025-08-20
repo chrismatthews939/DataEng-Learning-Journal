@@ -237,3 +237,91 @@ For example, conducting post-incident reviews allows teams to identify communica
 
 # Techniques for Assessing and Reporting Data-Related Risks
 
+## Case study example - Assessing and reporting risks in a healthcare organisation
+
+A healthcare organisation handling millions of patient records
+
+A healthcare organisation handling millions of patient records faced challenges related to data breaches and compliance reporting.
+
+The organisation lacked a robust risk assessment framework, leading to fragmented risk identification and reporting processes.
+
+The challenges they faced included the following:
+
+- **Reactive Risk Management:** Risks were identified only after incidents occurred, leaving the organisation vulnerable.
+- **Inconsistent Reporting:** Risk reports varied across departments, making it difficult to track trends.
+- **Regulatory Non-Compliance:** Delayed reporting resulted in fines and reputational damage.
+
+To address these issues they took the following steps:
+
+1. **Comprehensive Risk Assessments:** The organisation implemented regular assessments using tools like risk heatmaps and vulnerability scanners.
+2. **Standardised Reporting Templates:** All departments adopted a uniform template for risk documentation and escalation.
+3. **Automated Risk Monitoring:** Real-time dashboards were created to provide visibility into risk metrics and incidents.
+
+The outcomes:
+
+The organisation reduced data breaches by 40%, improved audit readiness, and established a culture of proactive risk management (King & Schwarzenbach, 2020).
+
+---
+
+## Techniques for Assessing and Reporting Data-Related Risks
+
+**Risk heatmaps**
+
+Assessing data-related risks begins with implementing risk heatmaps, which visually represent the likelihood and impact of potential risks. These tools allow organisations to prioritise risks, focusing resources on high-impact areas. For example, a financial institution might use a heatmap to identify risks related to payment processing systems.
+
+
+**Vulnerability assessments**
+
+Vulnerability assessments are another critical technique. These assessments identify weaknesses in systems, such as outdated software or inadequate access controls. For instance, an e-commerce company might use vulnerability scanners to detect unsecured endpoints that could expose customer data.
+
+
+**Risk reporting**
+
+Effective risk reporting involves using standardised templates that ensure consistency across departments. These templates should include details like risk descriptions, potential impacts, mitigation strategies, and escalation paths. For example, a compliance officer might document a potential GDPR violation and outline steps to address it.
+
+
+**Real-time monitoring**
+
+Finally, real-time monitoring tools provide continuous visibility into risk metrics. These tools alert teams to potential issues, enabling timely intervention. For example, a healthcare provider might use a real-time dashboard to monitor unauthorised access attempts to patient records (Eryurek & Gilad, 2021).
+
+---
+
+# Synthesising Comprehensive Risk Reports
+
+Case study example
+
+Building a comprehensive risk report in a financial services company
+
+A multinational financial services company struggled with fragmented risk reporting processes that hindered regulatory compliance and decision-making.
+
+
+A multinational financial services company struggling with fragmented risk reporting
+
+The challenges they faced included the following:
+
+•
+Data Silos: Risk data was scattered across multiple departments, leading to incomplete reports.
+
+•
+Inaccessible Reports: Reports were too technical for non-specialist stakeholders.
+
+•
+Lack of Actionable Insights: Reports lacked clear recommendations, reducing their utility for decision-making.
+
+To address these issues they took the following steps:
+
+1
+Centralised Data Framework: The company implemented a data governance framework to consolidate risk data from multiple departments.
+
+2
+Executive Summaries: Each report included an overview of key risks, their impacts, and recommended actions.
+
+3
+Visualisation Tools: Risk heatmaps and dashboards were used to make data accessible to non-technical audiences.
+
+4
+Collaborative Input: Input was gathered from IT, compliance, and operations teams to create holistic reports.
+
+The outcomes:
+
+The organisation improved its audit readiness by 50%, reduced reporting time by 30%, and enhanced decision-making by providing actionable recommendations (King & Schwarzenbach, 2020; Reis & Housley, 2022).
