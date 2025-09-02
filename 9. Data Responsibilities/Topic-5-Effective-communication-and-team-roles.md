@@ -157,17 +157,53 @@ For example, conducting post-incident reviews allowed teams to identify communic
 
 ---
 
-# Defining and Allocating Responsibilities with Data Teams
-
-![RACI Matrix](https://t2informatik.de/en/wp-content/uploads/sites/2/2021/05/raci-matrix-t2informatik.jpg)
-
-
-
-
-
-
 ## Outcomes  
 
 - Faster project delivery due to fewer misunderstandings.  
 - Improved collaboration between team members.  
 - Marketing campaigns achieved a **20% higher customer engagement rate**.  
+
+---
+
+# Defining and Allocating Responsibilities with Data Teams
+
+## Framework 1: RACI Matrix
+
+The RACI matrix (Responsible, Accountable, Consulted, Informed) is a tool for clarifying roles and responsibilities within a team:
+
+- **Responsible:** The person doing the work.
+- **Accountable:** The person ensuring the task is completed.
+- **Consulted:** Stakeholders who provide input.
+- **Informed:** People who need updates on progress.
+
+![RACI Matrix](https://t2informatik.de/en/wp-content/uploads/sites/2/2021/05/raci-matrix-t2informatik.jpg)
+
+## Framework 2: Task prioritisation framework
+
+This framework prioritises tasks based on urgency and impact as follows:
+
+1. High Urgency, High Impact: Address immediately.
+2. High Urgency, Low Impact: Handle next but monitor resource usage
+3. Low Urgency, High Impact: Plan for future action.
+4. Low Urgency, Low Impact: Delegate or deprioritise.
+
+**Practical application**
+
+A data governance specialist might prioritise addressing GDPR compliance breaches (high urgency, high impact) over formatting a routine report (low urgency, low impact).
+
+**The benefits:**
+
+- Prevents team members from being overwhelmed.
+- Aligns tasks with organisational priorities.
+
+---
+
+## Framework 3: Agile workflows
+
+Agile workflows, such as sprint planning and daily stand-ups, ensure that responsibilities are regularly reviewed and adapted to project needs:
+
+1. **Sprint Planning:** Assign tasks for short, focused periods (e.g., two weeks).
+2. **Daily Stand-Ups:** Team members update progress and raise blockers.
+3. **Retrospectives:** Reflect on what worked well and identify areas for improvement.
+
+
