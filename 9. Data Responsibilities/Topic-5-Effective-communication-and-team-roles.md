@@ -35,4 +35,56 @@ Ultimately, the successful implementation of the analytics tools achieved a 15% 
 
 ---
 
+![Stakeholder Mapping](https://media.nngroup.com/media/editor/2021/03/30/power-interest-matrix.png)
+
+---
+
+# Techniques for Clear and Effective Communication
+
+## Case study example
+
+Communication challenges in a financial data project
+
+A bank, SecureFinance, started a project to predict which customers might not repay their loans on time.
+
+The project team had some great findings, but they struggled to explain them clearly.
+
+This led to confusion and missed opportunities.
+
+The challenges they faced included the following:
+
+1. **Complicated Reports:** The project team shared reports full of technical terms and statistics, which confused the managers who didn’t have technical backgrounds.
+2. **No Visuals:** Instead of charts or graphs, they used large tables of numbers, making it hard for stakeholders to see the main ideas.
+3. **Infrequent Updates:** The team only provided updates every three months, leaving stakeholders unsure about progress.
+
+So, how did this company address these issues?
+
+The steps taken:
+
+1. **Simplified Reports:** The team created summaries for non-technical managers and kept the detailed technical information for data scientists
+2. **Added Visuals:** They used simple charts to show the key patterns and results.
+3. **Frequent Updates:** They started sharing updates every month, so everyone felt informed and included.
+
+The results:
+
+Managers were able to understand the results and make better decisions.
+
+As a result, stakeholders were more engaged and trusted the project team.
+
+Consequently, the project was completed faster because there were fewer misunderstandings.
+
+---
+
+# Approaches to Building and Maintaining Stakeholder Relationships
+
+| Approach              | Strengths                                | Challenges                                      | Evidence of effectiveness                                                                 |
+|-----------------------|------------------------------------------|-------------------------------------------------|-------------------------------------------------------------------------------------------|
+| Stakeholder Mapping   | Provides clear structure and prioritisation. | Time-intensive and requires regular updates.    | Ensured compliance in a healthcare project, reducing risks by 25%.                         |
+| Tailored Communication| Increases clarity and understanding.     | Risks oversimplification of technical insights. | Boosted engagement by 30% in financial projects (King & Schwarzenback, 2020).             |
+| Communication timing  | Builds trust through consistent updates. | May lead to information fatigue.                | Improved satisfaction by 40% in retail analytics projects (Haskell, 2024).                 |
+| Feedback mechanisms   | Fosters collaboration and stakeholder buy-in. | Needs clear tracking to avoid disengagement.   | Reduced complaints by 50% in logistics projects (King & Schwarzenbach, 2020).              |
+
+
+---
+
 
