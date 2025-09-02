@@ -112,8 +112,53 @@ For instance, an IT team may receive detailed logs of a security breach, while s
 
 Finally, feedback loops ensure that communication remains a two-way process. Encouraging stakeholders to provide input and share concerns fosters collaboration and continuous improvement.
 
-For example, conducting post-incident reviews allows teams to identify communication gaps and refine protocols (Eryurek & Gilad, 2021).
+---
+
+# Understanding the Roles within Data Teams
+
+## Case Study Example  
+
+## Roles in a Data Team for E-Commerce Analytics  
+
+### 'ShopSmart': Our Fictitious E-Commerce Company  
+
+**ShopSmart**, an e-commerce company, set up a data team to improve customer personalisation and optimise marketing campaigns.  
+
+The team included **data engineers, data analysts, a data scientist, and a project manager**.  
+
+Here’s how the team worked and the challenges they faced:  
 
 ---
 
+## Key Roles in the Team  
 
+- **Data Engineers**: Built and maintained the data pipelines that collected customer browsing and purchase data.  
+- **Data Analysts**: Interpreted customer behaviour data and shared insights with the marketing team.  
+- **Data Scientist**: Created predictive models to identify which customers were likely to respond to marketing offers.  
+- **Project Manager**: Coordinated the team, ensuring tasks were completed on time and aligned with business goals.  
+
+---
+
+## Challenges Faced  
+
+- **Lack of Role Clarity**: The marketing team often approached analysts with technical requests meant for engineers.  
+- **Siloed Communication**: Engineers and analysts rarely collaborated, causing delays in pipeline adjustments.  
+- **Overlap of Responsibilities**: Analysts and the data scientist occasionally worked on the same tasks, leading to duplication of effort.  
+
+---
+
+## Steps Taken to Address Issues  
+
+1. **Clear Role Definitions**: Each team member’s responsibilities were documented and communicated to all stakeholders.  
+2. **Regular Team Meetings**: Weekly meetings improved collaboration and allowed team members to resolve dependencies early.  
+3. **Shared Knowledge Platform**: The team used a collaboration tool to document workflows and share updates.  
+
+For example, conducting post-incident reviews allowed teams to identify communication gaps and refine protocols *(Eryurek & Gilad, 2021)*.  
+
+---
+
+## Outcomes  
+
+- Faster project delivery due to fewer misunderstandings.  
+- Improved collaboration between team members.  
+- Marketing campaigns achieved a **20% higher customer engagement rate**.  
