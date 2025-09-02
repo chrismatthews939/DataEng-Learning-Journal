@@ -84,6 +84,35 @@ Consequently, the project was completed faster because there were fewer misunder
 | Communication timing  | Builds trust through consistent updates. | May lead to information fatigue.                | Improved satisfaction by 40% in retail analytics projects (Haskell, 2024).                 |
 | Feedback mechanisms   | Fosters collaboration and stakeholder buy-in. | Needs clear tracking to avoid disengagement.   | Reduced complaints by 50% in logistics projects (King & Schwarzenbach, 2020).              |
 
+---
+
+# Identifying Risks and Communicating Risks to Stakeholders
+
+## Effective Risk Communication Strategies
+
+### Stakeholder map
+
+Identifying stakeholders of risks begins with creating a stakeholder map. This map outlines individuals or teams responsible for various aspects of risk management, such as IT teams for technical issues, compliance officers for regulatory risks, and executives for strategic decisions. 
+
+For example, in a healthcare organisation, stakeholders might include data stewards, IT administrators, and compliance officers ensuring HIPAA compliance.
+
+### Communication protocols
+
+Effective communication protocols are crucial for ensuring that all relevant stakeholders are informed promptly. These protocols should include standardised formats for incident reports, escalation paths, and channels for regular updates.
+
+For example, using a centralised ticketing system can streamline communication and ensure accountability.
+
+### Tailoring communication
+
+Tailoring communication to the audience is another essential aspect of risk communication. Technical details might be necessary for IT teams, while high-level summaries are more appropriate for executives.
+
+For instance, an IT team may receive detailed logs of a security breach, while senior leadership might be provided with an executive summary highlighting potential business impacts.
+
+### Feedback loops
+
+Finally, feedback loops ensure that communication remains a two-way process. Encouraging stakeholders to provide input and share concerns fosters collaboration and continuous improvement.
+
+For example, conducting post-incident reviews allows teams to identify communication gaps and refine protocols (Eryurek & Gilad, 2021).
 
 ---
 
