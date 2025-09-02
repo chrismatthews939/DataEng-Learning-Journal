@@ -157,6 +157,15 @@ For example, conducting post-incident reviews allowed teams to identify communic
 
 ---
 
+# Defining and Allocating Responsibilities with Data Teams
+
+![RACI Matrix](https://t2informatik.de/en/wp-content/uploads/sites/2/2021/05/raci-matrix-t2informatik.jpg)
+
+
+
+
+
+
 ## Outcomes  
 
 - Faster project delivery due to fewer misunderstandings.  
