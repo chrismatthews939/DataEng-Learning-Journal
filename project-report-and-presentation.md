@@ -99,5 +99,36 @@ https://skillsengland.education.gov.uk/apprenticeship-standards/st1386
 
 "From this ..." is directly from the KSB list
 
+Can leave them in and delete before submitting so I can track the ones included 
+
+`From this I showed my progress in dealing with data quality issues such as completeness (K4) and standardising the ETL process for cleaner data (S6) `
+
+## Presentation
+
+- Summerise, don't duplicate
+- Show confidence and clarity
+- Communicate professionally
+
+### Slide Design Tips
+
+- Simple is stronger
+- Show confidence and clarity
+- Communicate professionally
+- Avoid big paragraphs
+- Visuals better than text
+- **Mutually Exclusive / Content Exhaustive (MECE)** 
+
+### Structure
+
+1. Introduction
+2. Problem/Context
+3. Solution/Approach
+4. Results
+5. Reflection
+6. Conclusion
+
+
+
+
 
 
