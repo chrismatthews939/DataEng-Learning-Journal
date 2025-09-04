@@ -44,3 +44,51 @@ Common question types:
 - **Reflection:** “What would you do differently?”
 - **Strategy:** Use STAR (Situation, Task, Action, Result) or simply answer directly and link back to your evidence.
 
+---
+
+# Lecture 
+
+## Choosing a project
+
+- Clear scope
+- Real data challenge
+- demonstrates KSBs
+- Business relevant
+
+### KSBs and themes to hit are here. (EPA tab - Project evaluation section)
+
+https://skillsengland.education.gov.uk/apprenticeship-standards/st1386
+
+- Does my project involve multiple souces or formats
+- Can it be explained easily
+- Will it evidence KSBs
+- Will it produce measurable outcomes
+
+## Report Structure
+
+3,500 words
+
+- Executive summary
+- Objectives and scope
+- methodology
+- Implementation
+- Results
+- Evaluation
+- Reflection
+
+## Writing
+
+- Too vague ("it worked well")
+- Too technical (hard to follow)
+- Too long winded (buried evidence)
+
+1. **Clarity** - plain English, short sentences
+2. **Conciseness** - say more with less
+3. **Evidence** - include metrics and outcomes. Someone said it was better
+4. **Reflection** - show how I've improved whilst being on the course
+
+
+
+
+
+
