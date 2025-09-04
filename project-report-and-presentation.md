@@ -85,10 +85,19 @@ https://skillsengland.education.gov.uk/apprenticeship-standards/st1386
 1. **Clarity** - plain English, short sentences
 2. **Conciseness** - say more with less
 3. **Evidence** - include metrics and outcomes. Someone said it was better
-4. **Reflection** - show how I've improved whilst being on the course
+4. **Reflection** - show how I've improved whilst being on the course. **Use the KSBs** aand rewrite them
 
 
+### Bad example
 
+`I used SQL and Python to do some transformations. This helped me clean the data, and I think it worked well. The project used good tools and I was happy with the result.`
+
+
+### Good example
+
+`I standardised source formatting, enriched NULL values and removed duplicates. As a result the data passed our quality control benchmarks and stakeholder bug tickets have dropped by 80%. From this I showed my progress in dealing with data quality issues such as completeness and standardising the ETL process for cleaner data`
+
+"From this ..." is directly from the KSB list
 
 
 
