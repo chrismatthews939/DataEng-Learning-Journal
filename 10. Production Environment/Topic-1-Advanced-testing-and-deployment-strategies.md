@@ -83,3 +83,52 @@ It’s best to write these in collaboration with stakeholders and document them 
 
 # Lesson 2: Stress Testing and Performance Tuning
 
+`“You don’t know how strong your system is… until it breaks.”`
+
+---
+
+## What is Load Testing vs. Stress Testing?
+
+Load testing and stress testing are two sides of the same coin - both explore how your pipeline behaves under pressure, but from different angles:
+
+### Load Testing
+
+Load Testing checks how the system handles expected conditions. For example, simulating the average daily volume of data processed or the number of concurrent users accessing a dashboard.
+
+### Stress Testing
+
+Stress Testing goes beyond expectations, deliberately overwhelming the system to discover breaking points, recovery behaviour, and weak spots in infrastructure.
+
+### Key Performance Metrics to Track
+
+Interpreting test results means knowing which metrics to watch. Common ones include:
+
+- **Throughput:** How much data is processed per second or per job? A drop here may indicate a bottleneck.
+- **Latency:** How long does it take to complete a task or load a dashboard? High latency can signal inefficient queries or under-provisioned infrastructure.
+- **CPU and Memory Usage:** Spikes may reveal inefficient transformations or resource-starved components.
+- **Error Rates:** Even minor error rates under stress might lead to data loss or broken pipelines during peak events.
+
+---
+
+### Bottleneck Detection: Where Things Go Wrong
+
+Bottlenecks can appear at any stage in the pipeline:
+
+- **Data Ingestion:** API rate limits or slow file parsing.
+- **Transformation:** Poorly optimised joins, sorting, or aggregations.
+- **Storage:** Slow reads/writes to the database.
+- **Output:** Heavy dashboards or inefficient visualisation queries.
+
+Use profiling tools or logging (e.g., Spark UI, SQL query plans, resource monitors) to trace delays. Focus your investigation on the slowest part of the pipeline - fixing that can lead to big performance gains.
+
+---
+
+# Tuning for Performance
+
+Once the bottlenecks are known, tuning can begin. Techniques include:
+
+- **Parallelisation:** Break tasks into smaller pieces that run in parallel (e.g., multi-threaded file reads, distributed Spark jobs).
+- **Caching:** Save repeated computations, especially for static reference data.
+- **Query Optimisation:** Use indexes, avoid full-table scans, simplify joins.
+- **Infrastructure Scaling:** Vertical scaling: Give more CPU/memory to key components. Horizontal scaling: Add more nodes or workers.
+
