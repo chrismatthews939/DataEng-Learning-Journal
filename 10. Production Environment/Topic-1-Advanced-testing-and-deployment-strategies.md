@@ -123,7 +123,7 @@ Use profiling tools or logging (e.g., Spark UI, SQL query plans, resource monito
 
 ---
 
-# Tuning for Performance
+### Tuning for Performance
 
 Once the bottlenecks are known, tuning can begin. Techniques include:
 
@@ -131,4 +131,80 @@ Once the bottlenecks are known, tuning can begin. Techniques include:
 - **Caching:** Save repeated computations, especially for static reference data.
 - **Query Optimisation:** Use indexes, avoid full-table scans, simplify joins.
 - **Infrastructure Scaling:** Vertical scaling: Give more CPU/memory to key components. Horizontal scaling: Add more nodes or workers.
+
+---
+
+# Lesson 3: Deployment Strategies for Data Pipelines
+
+Deployments can be risky. A new feature or change to a data pipeline might seem small, but a single misstep could result in broken dashboards, delayed reports, or even data loss. That’s why smart deployment strategies are essential - they reduce risk, protect uptime, and give teams the control they need to innovate safely. In this lesson, we’ll explore techniques like blue-green, canary, and zero-downtime deployment - plus the tools that help automate it all.
+
+---
+
+### Blue-Green Deployment
+
+- **Blue:** The current, stable production version.
+- **Green:** The new version being prepared for release.
+
+Blue-Green deployment ensures seamless transitions between application versions. Instead of updating a live environment directly, you prepare the new version in a separate environment and reroute user traffic only when it's ready. This dramatically reduces downtime and provides an easy way to roll back if something goes wrong.
+
+---
+
+### Canary Deployment
+
+Rather than releasing to all users at once, canary deployment starts small - typically to 5–10% of users or data. This staged approach helps teams catch errors early, before they become widespread.
+
+---
+
+### Zero-Downtime Deployments
+
+Zero-downtime techniques aim to avoid any service interruption. This may involve:
+
+- Updating systems behind load balancers.
+- Using rolling updates to change components one at a time.
+- Running shadow traffic through the new system to test quietly in the background.
+
+---
+
+### Feature Toggles and Controlled Releases
+
+Sometimes you want to deploy code changes without making new features visible right away. That’s where feature toggles come in. They allow you to turn features on or off without additional deployments. This technique supports gradual rollout, A/B testing, and rapid rollback.
+
+This is especially important for real-time systems like fraud detection pipelines, where any pause could affect user experience or financial outcomes. These types of deployments require robust automation, monitoring, and failover mechanisms to implement.
+
+---
+
+## Rollbacks vs. Roll-Forwards
+
+No deployment is risk-free. When something goes wrong, you need a plan:
+
+- **Rollback:** Revert to the previous known-good version.
+- **Roll-Forward:** Deploy a new version that fixes the problem
+
+Rollback is faster and safer in the short term.
+
+Roll-forward is useful when rollback isn’t possible (e.g. irreversible database changes).
+
+---
+
+## Deployment Automation Tools
+
+Manual deployment is error-prone. Most teams automate using tools like:
+
+- **GitHub Actions:**  For building and deploying code on merge or push.
+- **Ansible, Chef, or Puppet:** For provisioning infrastructure.
+- **Rsync + SSH:** For syncing files to servers in basic setups.
+
+These tools enable repeatable, reliable deployments - and often integrate with CI/CD pipelines to automatically run tests before any release.
+
+---
+
+
+
+
+
+
+
+
+
+
 
