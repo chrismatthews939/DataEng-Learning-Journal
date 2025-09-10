@@ -4,9 +4,13 @@
 
 `“It doesn’t matter how elegant your pipeline is if your users can’t use it, you’ve failed.”`
 
+---
+
 ## Why UAT Matters
 
 User Acceptance Testing is the final verification step before a data pipeline is declared “production ready.” It answers a crucial question: does the output meet the expectations and day-to-day needs of business users? While functional testing proves the pipeline behaves as intended from a technical perspective, UAT determines if that functionality translates into real-world value.
+
+---
 
 ## Defining Business Requirements
 
@@ -15,7 +19,6 @@ User Acceptance Testing is the final verification step before a data pipeline is
 - **Data Accuracy** “Customer gender must be correctly inferred from title in at least 98% of cases
 - **Output Timeliness** “Order-to-dashboard time should not exceed 15 minutes”
 - **Business Rule Application** “Inactive users (no login in 6 months) should be excluded from campaign eligibility”
-
 
 ### Engaging Real Users
 
@@ -33,6 +36,8 @@ Real users bring unique insights. They might notice:
 - The date formats don’t match what they need for Excel.
 - Certain metrics are missing context (e.g., “engagement score” without a definition).
 
+---
+
 ### Testing Business Scenarios
 
 Realistic UAT scenarios are essential. These should mirror the workflows users perform, not just generic technical tasks. Think of these as mini-stories that simulate a typical day in the life of the business. For example:
@@ -47,5 +52,34 @@ Realistic UAT scenarios are essential. These should mirror the workflows users p
 2. **Peak Usage Periods:** Monthly financial close, Black Friday sales
 3. **Edge Cases:** Empty records, malformed input, missing IDs
 
+---
 
+### Validating the User Experience
+
+Beyond business logic, UAT should check how the data is consumed. Is the pipeline output intuitive, clean, and easy to act on? This includes:
+
+- **Column Naming:** Are labels clear? (“Cust_ID” might be obvious to devs, not to users).
+- **Navigation:** Can users quickly find the info they need?
+- **Data Export:** Can users extract the data into formats they use (e.g., Excel, PDF)?
+- **Performance:** Does the dashboard load in under 5 seconds? Can reports be generated without lag?
+
+User experience (UX) is not fluff; it directly impacts efficiency. If the output slows down daily workflows or requires extra cleanup steps, it won’t be trusted or used. Even small improvements (like clearer dropdowns or consistent colour codes) can greatly enhance satisfaction.
+
+`Consider running a brief usability survey alongside UAT. Ask users to rate ease-of-use, clarity, and confidence in the data.`
+
+---
+
+### Setting Acceptance Criteria
+
+Finally, it’s critical to define what “success” looks like in measurable terms. Acceptance criteria remove ambiguity and reduce conflict at sign-off time. Each test case should have a pass/fail condition aligned with the original business requirement. Examples include:
+
+- “Pipeline must process 95% of incoming data within 15 minutes of arrival”
+- “Dashboard should display latest data without requiring a manual refresh”
+- “Exported reports must contain all fields specified in the agreed template”
+
+It’s best to write these in collaboration with stakeholders and document them in a shared UAT plan or spreadsheet. This ensures mutual understanding and creates a paper trail for auditing.
+
+---
+
+# Lesson 2: Stress Testing and Performance Tuning
 
