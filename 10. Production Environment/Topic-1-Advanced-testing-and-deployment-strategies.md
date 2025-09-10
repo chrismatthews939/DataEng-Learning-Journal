@@ -33,7 +33,19 @@ Real users bring unique insights. They might notice:
 - The date formats don’t match what they need for Excel.
 - Certain metrics are missing context (e.g., “engagement score” without a definition).
 
+### Testing Business Scenarios
 
+Realistic UAT scenarios are essential. These should mirror the workflows users perform, not just generic technical tasks. Think of these as mini-stories that simulate a typical day in the life of the business. For example:
+
+- A retail pipeline might simulate the end-of-day aggregation of all store transactions during a seasonal promotion.
+- A customer service team might want to test how complaints data appears during a product recall scenario.
+- A fraud detection pipeline could be tested using both common transactions and deliberately inserted anomalies.
+
+**Good UAT scenarios should include:**
+
+1. **Normal Operations:** Typical traffic, regular schedules
+2. **Peak Usage Periods:** Monthly financial close, Black Friday sales
+3. **Edge Cases:** Empty records, malformed input, missing IDs
 
 
 
