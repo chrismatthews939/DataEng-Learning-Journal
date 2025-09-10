@@ -198,13 +198,58 @@ These tools enable repeatable, reliable deployments - and often integrate with C
 
 ---
 
+# Lesson 4: Automating Deployments and Managing Risk
+
+`“If you have to ask, ‘Did it deploy?’, your system isn’t doing its job.”`
+
+Modern data teams can’t afford to treat deployment as a manual chore. Automating your pipeline not only saves time - it ensures quality, consistency, and resilience at scale. In this lesson, you’ll explore the infrastructure, safeguards, and team practices that support reliable automated deployment in real-world data engineering environments.
+
+---
+
+### The Infrastructure Behind Automation
+
+To move from manual to reliable automated deployment, you need more than just a CI/CD tool - you need an environment that supports continuous delivery. Key elements include:
+
+- **Containerisation (e.g. Docker):** Package pipeline components in isolated environments to run consistently anywhere.
+- **Infrastructure as Code (e.g. Terraform, Ansible):** Version-control your environments, not just your code.
+- **CI/CD Orchestration (e.g. GitHub Actions, GitLab CI):** Trigger tests, builds, and deployments automatically on code events.
+
+---
+
+### Quality Gates, Metrics & Safeguards
+
+What protects production from broken changes? Automated quality gates are your first defence. These may include:
+
+- **Schema validation:** Ensures structure of incoming or transformed data hasn't changed unexpectedly.
+- **Test coverage checks:** Require ≥90% coverage for all new pipeline functions.
+- **Performance thresholds:** For example, processing must remain under 10 minutes or below 80% memory usage.
+
+---
+
+### Monitoring and Alerting in Production
+
+Once deployed, monitoring ensures your system stays healthy. Effective monitoring includes:
+
+- **Pipeline Health Dashboards:** Job success/failure, run times, delays
+- **Data Quality Metrics:** Null values, duplicates, row counts, freshness
+- **System Metrics:** CPU/memory usage, disk I/O, queue depth
+
+**Tooling Suggestion:** Combine Prometheus or CloudWatch with Grafana dashboards and Slack alerts for live notifications.
+
+---
+
+### Operational Risk Management in Deployments
+
+Risk isn’t just technical - it’s operational. Effective teams prepare for failure with structure:
 
 
+Deployment Playbooks:
 
+Scheduled Releases:
 
+Stakeholder Coordination:
 
-
-
-
+Blameless Postmortems:
+Clear steps for deploying, verifying, and rolling back.
 
 
