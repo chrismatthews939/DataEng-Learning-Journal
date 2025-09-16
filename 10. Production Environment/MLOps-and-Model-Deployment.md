@@ -81,12 +81,35 @@ Two popular tools that help bring automation to the ML lifecycle are **MLflow** 
 
 # Deploying machine learning models
 
+`
+“A model in a notebook is just an idea. A model in production is a product.”`
 
+Before a model can be deployed, it must be prepared to run outside its original development environment. This process, called **packaging**, makes sure the model can operate reliably on different machines and platforms. Packaging might mean exporting the model into a standard format such as **ONNX** or **TensorFlow SavedModel**. For more complex systems, it often involves placing the model inside a container - for example, with **Docker** - along with all its dependencies. Benefits of containerisation include:
 
+- Consistency between development, testing, and production environments
+- Portability across cloud providers and local servers
+- Isolation from other system processes, reducing conflicts
 
+---
 
+## Deployment strategies
 
+Choosing how to deploy a model depends on the use case, performance needs, and update frequency. Some common strategies include:
 
+- **Embedded deployment** – the model is shipped within an application, ideal for offline or mobile environments.
+- **Model-as-a-Service** – the model is hosted remotely and accessed through an API, allowing frequent updates without changing the application itself.
+- **Blue-green deployments – two identical environments are maintained; one is live, one is idle. New models are deployed to the idle environment and swapped in only when validated.
+- **Canary releases** – a new model is given to a small percentage of users first, so its performance can be monitored before a wider rollout.
+
+---
+
+## Infrastructure for reliable serving
+
+The infrastructure you choose directly affects a model’s performance, scalability, and cost. Small-scale applications might work well on a single server or virtual machine. For high-traffic scenarios, orchestration systems like **Kubernetes** allow for scaling up resources automatically, balancing workloads, and providing resilience if something fails. Cloud providers also offer managed services such as **AWS SageMaker**, **Azure Machine Learning**, and **Google Vertex AI**, which take care of much of the operational complexity - ideal for teams who want to focus on models rather than infrastructure management.
+
+---
+
+# Monitoring and maintaining models in production
 
 
 
