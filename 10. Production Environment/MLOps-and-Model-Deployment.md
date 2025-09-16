@@ -65,3 +65,28 @@ MLOps isn’t a single tool or process. It’s a collection of practices and com
 
 ---
 
+# Automating the machine learning lifecycle
+
+![CI/CD](https://substackcdn.com/image/fetch/$s_!dgbK!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1f968b06-e00e-4e5e-8c8e-17150bea1054_3777x2859.png)
+
+## Model Registry 
+
+A model registry acts as a central hub where machine learning models are versioned, stored, and managed. It brings structure and control to model lifecycle management by clearly documenting which versions of a model are approved for production, which are under review, and which have been deprecated. Imagine a model registry as a digital warehouse. Each model stored inside has a label describing how it was trained, what data it used, and whether it's ready for deployment. When something goes wrong in production, engineers can quickly check the registry, identify the active version, and - if needed - roll back to a previous version that’s known to be stable. The registry becomes especially powerful in collaborative environments. It allows data scientists, ML engineers, and platform teams to share responsibility for models while maintaining visibility and control over their use.
+
+## Tools that support automation: MLflow and Kubeflow
+
+Two popular tools that help bring automation to the ML lifecycle are **MLflow** and **Kubeflow**. MLflow is lightweight and easy to integrate into Python-based workflows, making it a popular choice for small to mid-sized teams. It provides experiment tracking, model packaging, and registry features in a modular setup that works well across different environments. Kubeflow, on the other hand, is built for teams already using Kubernetes. It allows for scalable, production-grade machine learning workflows and supports complex orchestration of tasks like distributed training, hyperparameter tuning, and multi-step pipelines. It’s more infrastructure-heavy but offers excellent flexibility for organisations operating in cloud-native environments.
+
+---
+
+# Deploying machine learning models
+
+
+
+
+
+
+
+
+
+
