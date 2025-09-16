@@ -168,5 +168,31 @@ Once an issue is detected, there are several possible responses:
 
 # Managing and evolving deployed models
 
+Once a model is running in production, the job is not simply to keep it alive; it’s to ensure it stays relevant, accurate, and aligned with business goals. Over time, the world changes - data evolves, user behaviour shifts, regulations are updated, and new business priorities emerge. Without ongoing management, even the best-performing model will eventually lose its edge.
+
+Models are trained on historical data, but the real world doesn’t stand still. Over time, data drift and concept drift can erode performance. In some cases, retraining may be needed weekly or even daily; in others, updates may be less frequent but still essential. The right schedule depends on the business context, the volatility of your data, and the cost of retraining. Continuous training ensures that models:
+
+- Stay aligned with current data patterns
+- Adapt to new customer behaviour or market trends
+- Maintain performance on key business metrics
+
+## Ensuring data quality for retraining
+
+High-quality retraining data is the foundation for accurate models. If the new data is noisy, biased, or inconsistent, retraining can make performance worse, not better. Best practices include:
+
+- Validating input data for completeness and accuracy before retraining
+- Using feature engineering pipelines that are consistent across training and production
+- Checking for changes in schema or data definitions that could break the model
+
+## Best practices for long-term model management
+
+Successful organisations treat models as living products. This means:
+
+- Embedding monitoring, retraining, and versioning into standard operating procedures
+- Using A/B testing to compare new and old models before committing to full deployment
+- Documenting every model’s purpose, assumptions, and known limitations for future teams
+- Building governance processes to ensure compliance with evolving regulations
+
+---
 
 
