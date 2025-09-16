@@ -111,5 +111,62 @@ The infrastructure you choose directly affects a model’s performance, scalabil
 
 # Monitoring and maintaining models in production
 
+Once a machine learning model is deployed, it doesn’t just run forever at the same level of performance. Over time, the data it sees may drift from the data it was trained on, user behaviour may change, and external factors - like seasonality or market shifts - can alter its accuracy. Without careful monitoring, these changes can lead to silent model decay, where predictions become less reliable without anyone noticing.
+
+## What to Monitor
+
+- **Model performance** - tracking accuracy, precision, recall, or other relevant KPIs over time.
+- **Data drift** - identifying when the characteristics of incoming data deviate from the training data.
+- **Prediction distribution** - watching for changes in the spread or frequency of certain predictions that might indicate a bias or imbalance.
+- **Latency and throughput** - ensuring the model is serving predictions within required timeframes.
+
+---
+
+## Data Drift vs Concept Drift
+
+![Data Drift vs Concept Drift](https://www.deepchecks.com/wp-content/uploads/2025/06/post-data-drift-vs-concept-drift.jpg)
+
+### Data Drift
+
+In the top plot, the target variable is sales, split by sales channel: online (blue) and offline (red). Over time, the feature distribution - in this case, the proportion of sales from each channel - is gradually shifting.
+
+- **What’s changing:** The balance between online and offline sales is moving; online sales are becoming more common (blue proportion increasing), and offline sales are slightly decreasing.
+
+- **What’s not changing:** The relationship between the sales channel and sales outcome remains roughly the same. The model’s logic about how sales channel predicts sales hasn’t changed - only the input distribution has.
+
+**Impact:** If a model was trained on the old distribution, predictions could become less accurate if it wasn’t expecting the new proportion of online vs offline sales.
+
+### Concept Drift
+
+In the top plot here, the feature distribution (sales channel proportions) is stable over time - the mix of online and offline sales channels isn’t changing.
+
+- **What’s changing:** The relationship between sales channel and the target variable (sales) is evolving. At the start, offline sales (red) dominate, but over time, their sales numbers drop significantly. Online sales (blue) start small but eventually hold a larger proportion of sales activity relative to before.
+
+- **What’s not changing:** The mix of sales channels in the data - there are still roughly the same numbers of online and offline transactions.
+
+Even though the input data distribution hasn’t changed, the mapping between features and the target has shifted. The model’s original rules for predicting sales are now outdated because the business reality has changed. 
+
+---
+
+Data drift is one of the most common causes of performance degradation. It occurs when the statistical properties of input data change over time. There are different types:
+
+- **Covariate drift** - when the distribution of input features changes.
+- **Prior probability drift** - when the relative frequency of labels changes.
+- **Concept drift** - when the relationship between inputs and outputs changes.
+
+Detection methods might include comparing statistical summaries of current data with the training data or using secondary models trained to recognise distribution changes. The goal is to trigger an alert when drift is significant enough to require retraining.
+
+### Responding to model degradation
+
+Once an issue is detected, there are several possible responses:
+
+- **Retraining** - updating the model with new data to reflect the current environment.
+- **Rollback** - reverting to a previous, more reliable model version from the model registry.
+- **Parameter tuning** - making targeted adjustments without a full retrain.
+
+---
+
+# Managing and evolving deployed models
+
 
 
