@@ -104,6 +104,92 @@ Technical debt is not about being “bad” at engineering—it’s about **choi
 
 ---
 
+# Lehman's Laws for Tech Debt Evolution 
+
+When building software systems, teams often accumulate **technical debt** — shortcuts, quick fixes, or outdated decisions that make future changes harder. Over time, this debt “evolves” as the system grows. Manny Lehman, a computer scientist, studied how software changes over its lifetime and summarized his findings in what are now called **Lehman’s Laws of Software Evolution**.  
+
+As a data engineer, understanding these laws can help you see why systems become more complex, harder to change, and more costly to maintain if debt isn’t managed.
+
+---
+
+## 1. **Continuing Change**
+> *A system must continuously adapt, or it becomes less useful.*
+
+- Software that doesn’t change will eventually fail to meet new business needs or adapt to new environments.  
+- For data engineers, this means your pipelines, models, and data systems must evolve as new data sources, regulations, and technologies appear.  
+- **Connection to tech debt**: The longer you delay updates, the more “interest” your debt builds, because catching up later is harder.
+
+---
+
+## 2. **Increasing Complexity**
+> *As a system changes, its complexity increases unless work is done to reduce it.*
+
+- Every fix, feature, or patch adds layers of complexity.  
+- For data systems, that might mean more ETL steps, more scripts, or hard-to-follow workflows.  
+- **Connection to tech debt**: If you never refactor (clean up and simplify), the debt compounds, making the system fragile.
+
+---
+
+## 3. **Self-Regulation**
+> *Software evolution is a self-regulating process, with measures like workload and product quality showing trends over time.*
+
+- Teams can observe how their pace of delivery and error rates balance out naturally.  
+- **Connection to tech debt**: If debt gets too high, velocity slows down — the system “pushes back,” forcing you to deal with underlying issues.
+
+---
+
+## 4. **Conservation of Organizational Stability (Invariant Work Rate)**
+> *Over time, the average rate of development (useful work done) remains roughly constant.*
+
+- No matter how much management wants faster progress, teams usually stabilize at a natural pace.  
+- **Connection to tech debt**: Adding debt may give short-term speed boosts, but long-term delivery speed will flatten or even decline.
+
+---
+
+## 5. **Conservation of Familiarity**
+> *To successfully evolve a system, a team must keep its complexity within the limits of what people can understand.*
+
+- Humans can only keep so much in their heads. If a system grows beyond that, it becomes unmanageable.  
+- **Connection to tech debt**: Poor documentation, inconsistent naming, or hidden logic can overwhelm new engineers, slowing progress and creating risk.
+
+---
+
+## 6. **Continuing Growth**
+> *Software must keep growing to remain useful.*
+
+- Users demand new features, integrations, and performance improvements.  
+- **Connection to tech debt**: If you only patch and never invest in cleaning up, growth gets harder and harder until you can’t deliver new features at all.
+
+---
+
+## 7. **Declining Quality**
+> *Unless actively maintained, the quality of a system will appear to decline over time.*
+
+- External standards (like security, performance, compliance) keep rising, making unmaintained systems feel worse.  
+- **Connection to tech debt**: Without intentional quality work (tests, monitoring, refactoring), the system feels outdated and buggy even if nothing “breaks.”
+
+---
+
+## 8. **Feedback System**
+> *Software evolution is a multi-loop feedback system — changes trigger consequences, which loop back into future changes.*
+
+- Decisions you make today affect tomorrow’s complexity, cost, and risk.  
+- **Connection to tech debt**: Skipping best practices creates feedback loops where fixes cause more issues, which then require more fixes.
+
+---
+
+# Putting It All Together
+
+- **Lehman’s Laws describe why tech debt doesn’t stay still — it grows and evolves with your system.**  
+- For a beginner data engineer, the takeaway is this:
+  - **Always expect change.**
+  - **Refactor regularly to control complexity.**
+  - **Recognize that short-term shortcuts create long-term drag.**
+  - **Invest in documentation, testing, and maintainability early.**
+
+By respecting Lehman’s Laws, you can balance delivering new features with managing tech debt, ensuring your data systems remain reliable and adaptable.
+
+---
 
 # Software Maintenance 
 
