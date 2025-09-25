@@ -4,6 +4,8 @@
 
 # Understanding Technical Debt
 
+![Tech Debt](https://chrisfenning.com/wp-content/uploads/2023/06/technical-debt-1-600x530.png)
+
 As a beginner data engineer, you’ll often hear the term **technical debt**. It might sound complicated, but the concept is actually quite simple once you break it down. Let’s go through it step by step.
 
 ---
