@@ -46,3 +46,144 @@ Batch favours runtime distribution, queue wait, and freshness at deadlines (e.g.
 ---
 
 # Lesson 2 - Dashboards & Visualisation Tools
+
+## Start with the story
+
+Begin by choosing the audience. An on-call view answers “Are we breaching our promises right now, and where should I look first?” It needs short time windows, large headline cards, and clear red/amber/green states. A product/ops view answers “Are we on track this week, and what’s costing us?” It favours longer windows and trend lines. Now arrange the page so it reads top-to-bottom like a narrative. Put outcomes at the top: a small set of SLIs with their SLO context, such as p95 latency, error rate, and data freshness. In the middle, show explanations: signals that hint at causes, for example consumer lag for a stream or stage time for a batch job. At the bottom, show resources and dependencies - CPU, memory, I/O, and the health of things you rely on like your warehouse or message broker. This layout means a learner can glance at the top row to see if users are impacted, and then scan downwards to understand why.
+
+`Example: For a daily sales pipeline, the top row might show “Fresh by 09:00” and p95 runtime. The middle row shows queue depth and the slowest transformation stage. The bottom row shows warehouse concurrency and object-store error rate. One story, three layers. `
+
+### Outcome SLIs with SLO context
+
+**Indicators that explain change e.g.:**
+
+- Consumer lag
+- Queue depth
+- Transformation stage time
+- GC %
+- Cache hit rate
+- Top error types
+
+**Resources and dependencies**
+
+- CPU
+- Memory
+- I/O
+- Connections
+- Warehouse/query layer
+- Message broker
+- Object store
+
+`Tip: Keep units consistent and align time axes so comparisons are instant.`
+
+---
+
+![Visualisation](https://images.veryfront.com/imgproxy/q:75/w:1920/aHR0cHM6Ly9jZG4uY29kZXJzb2NpZXR5LmNvbS91cGxvYWRzL21ldHJpY3MtdHJhY2luZy1sb2dnaW5nLnBuZw==.webp)
+
+Think of your system as a play. Metrics are the applause meter - numbers over time that tell you if the audience is happy (latency, error rate, freshness, lag). Logs are the script - what was said and where it went wrong (messages, exceptions, validation failures). Traces are the stage map - who moved where and which scene dragged (spans across services). When all three share the same identifiers and time window, you can follow the story cleanly from symptom to cause.
+
+`Don’t build your dashboards to be “one and done”`
+
+Connect metrics from your cloud monitor or Prometheus, and keep labels simple and stable - service, environment, region. High-detail identifiers (such as user IDs) belong in logs and traces, not in time-series labels, or your panels will become slow and noisy. Add variables for service and environment and use them in all panel queries and titles. One dashboard can then serve many teams without being cloned and forgotten. Name things exactly as they are (“End-to-end latency p95 (min)”) and always include units. Add a small help note that defines each SLI and states its SLO, so new engineers know what “good” looks like.
+
+---
+
+## Tools
+
+**Grafana**
+
+Grafana is where you show the state of the world. Start with a single dashboard for one pipeline or service. At the top, place a few outcome cards-p95 latency, error rate, and freshness-with each card labelled in plain language and with units. Plot p50, p95, and p99 on the same graph so tail pain is visible. Add variables for service and env so the same dashboard works across contexts, and show the environment in the title to avoid mistakes. Use annotations for deploys so any jump in latency lines up with a visible event. Alerts should mirror your promises: red means the SLO is breached or the error budget is burning too fast-not just that a server spiked briefly.
+
+**Kibana**
+
+Kibana is where you figure out “what kind of failures started, and where?” Send your logs with clear fields-timestamp, service, environment, error type, and a trace or request ID. Create a saved view filtered to your service and environment. A simple layout works well: a small bar chart of errors by type over time, and a table of recent error messages with stack traces. The moment a Grafana panel turns red, this view lets you slice quickly-by dataset, by job name, by error type-until the pattern is obvious. 
+
+## Grafana vs Kibana: 
+
+As a new data engineer, you’ll often hear about **Grafana** and **Kibana** when working with monitoring, logging, and observability tools. Both are **data visualization and exploration platforms**, but they serve slightly different purposes and integrate with different ecosystems. Let’s break it down simply.
+
+---
+
+### What is Grafana?
+- **Purpose**: Grafana is a **general-purpose visualization and monitoring tool**.
+- **Use Cases**:
+  - Building real-time dashboards for system performance (CPU, memory, network).
+  - Monitoring infrastructure, applications, and services.
+  - Alerting when thresholds are crossed (e.g., disk usage > 90%).
+- **Data Sources**:
+  - Grafana can connect to **many types of databases** (Prometheus, InfluxDB, MySQL, PostgreSQL, AWS CloudWatch, and more).
+  - Think of it as a **universal dashboard layer** that sits on top of your data.
+- **Strengths**:
+  - Very flexible with multiple integrations.
+  - Great for time-series data (metrics that change over time).
+  - Strong alerting system and notification integrations (Slack, email, PagerDuty).
+
+---
+
+### What is Kibana?
+- **Purpose**: Kibana is a **visualization and exploration tool specifically built for Elasticsearch**.
+- **Use Cases**:
+  - Searching and analyzing **logs** (e.g., application logs, error logs, security logs).
+  - Creating dashboards based on log data stored in Elasticsearch.
+  - Running queries to troubleshoot errors (e.g., “Show all error messages in the last 10 minutes”).
+  - Security analytics (often used with the Elastic Security SIEM features).
+- **Data Sources**:
+  - Primarily works with **Elasticsearch**.
+  - It’s tightly coupled with the **Elastic Stack (ELK: Elasticsearch, Logstash, Kibana)**.
+- **Strengths**:
+  - Excellent for full-text search and log exploration.
+  - Deep integration with Elasticsearch features.
+  - Good for detecting issues, troubleshooting, and auditing events.
+
+---
+
+### Key Differences
+
+| Feature / Aspect      | Grafana                                                                 | Kibana                                                                 |
+|------------------------|-------------------------------------------------------------------------|------------------------------------------------------------------------|
+| **Primary Use**        | Monitoring, metrics visualization, alerting                            | Log exploration, search, and analytics                                |
+| **Ecosystem**          | Works with many data sources (Prometheus, InfluxDB, SQL, Cloud, etc.)  | Part of the Elastic Stack, tied to Elasticsearch                      |
+| **Data Focus**         | Time-series metrics (e.g., CPU, memory, request latency)               | Logs, text-based search, event data                                   |
+| **Alerting**           | Built-in, strong alerting and notifications                            | Limited alerting (better in Elastic’s paid tiers)                     |
+| **Flexibility**        | Multi-database, flexible dashboards                                    | Specialized in Elasticsearch data                                     |
+| **Best For**           | Performance monitoring, infrastructure dashboards                      | Log analytics, troubleshooting, security monitoring                   |
+
+---
+
+### Simple Analogy
+
+- **Grafana** is like a **universal dashboard builder**:  
+  It can pull performance stats and metrics from many different tools and show them together in one place. Perfect for real-time monitoring.
+
+- **Kibana** is like a **log search engine with charts**:  
+  It’s where you go when something breaks, and you need to search through your application or system logs to understand what happened.
+
+---
+
+### When to Use Which?
+
+- Use **Grafana** when:
+  - You need **real-time monitoring dashboards** across many systems.
+  - You want **alerts** to notify your team about performance issues.
+  - Your data comes from **multiple databases and monitoring systems**.
+
+- Use **Kibana** when:
+  - You’re working heavily with **Elasticsearch**.
+  - You need to **search, filter, and analyze logs** quickly.
+  - You’re doing **troubleshooting, root cause analysis, or security analysis**.
+
+---
+
+### Final Takeaway
+- **Grafana = Monitoring & Metrics Dashboards (multi-source, time-series focus).**  
+- **Kibana = Log Analysis & Search (tied to Elasticsearch).**
+
+As a data engineer:
+- Think of **Grafana** for “How are my systems performing right now?”  
+- Think of **Kibana** for “What happened in my system logs and why did it break?”  
+
+---
+
+# Lesson 3 - Analysing Performance Trends & Identifying Bottlenecks
+
+
