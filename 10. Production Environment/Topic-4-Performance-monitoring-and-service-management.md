@@ -208,3 +208,65 @@ Compute, or midstream, bottlenecks show saturated CPU, long GC, skewed partition
 
 Downstream bottlenecks appear when writes stall - warehouse concurrency is maxed, object store errors spike, or a rate limit kicks in. 
 
+---
+
+# Lesson 4 - Incident Response Essentials
+
+Incidents are about coordination under pressure. This lesson gives you a calm, repeatable rhythm: define what an incident is, assign clear roles, restore service first, and communicate in a way that lowers stress for everyone involved.
+
+An incident is any unplanned event that degrades service or data quality for users or downstream teams. By declaring early, you can downgrade the severity later. It’s best to keep a short, unambiguous scale tied to impact and urgency. For example:
+
+- **Sev1:** User-visible outage or critical data corruption;
+- **Sev2:** Partial degradation or missed, time-sensitive data;
+- **Sev3:** Have a check-in to discuss progress and align on goals.
+
+## Incident Responce Team Roles
+
+1. The **Incident Commander** (IC) owns decisions and keeps focus;
+
+2. **Resolvers** work the technical steps;
+
+3. A **Comms Lead** updates stakeholders;
+
+4. The **Scribe** captures a clean timeline.
+
+## Communication that lowers stress
+
+Communicate on a predictable cadence and in a predictable format. Good updates answer five things:
+
+**1. What changed**
+
+State the symptom in SLI terms with numbers and trend. Name the metric, its current value, and how far it moved from normal.
+Pattern: “p95 ingest latency ↑ from 6m to 18m (+12m) and still rising.”
+Batch example: “Freshness breached: dashboard is 35m late (target: by 09:00).”
+Streaming example: “Event-to-serve p95 is 3.2s (baseline 900ms).”
+
+**2. Where**
+
+Pinpoint the scope so the right people look in the right place. Include service/pipeline, environment, region, and (if known) the stage/component.
+Pattern: “Service orders-ingest in prod/eu-west-2, transform stage.”
+Tip: Use your canonical names (exact service ID, dataset, pool name) to avoid ambiguity.
+
+**3. Since when**
+
+Give a timestamp and any correlated change (deploy, feature flag, config). This anchors the timeline and speeds correlation.
+
+Pattern: “Since 10:05 BST, shortly after deploy #42 (feature flag adaptiveJoin=true).”
+
+`Tip: Always include timezone (or UTC) to avoid confusion across teams.`
+
+**4. Current impact**
+
+Describe the user-visible effect in plain language. Tie it to an SLO/SLA if applicable.
+Pattern: “Users see stale sales data; ‘fresh by 09:00’ SLO breached. Estimated affected reports: Sales Daily, Finance EOD.”
+Streaming variant: “Orders API is slower; 2% of calls exceed SLO. No errors, just elevated latency.”
+
+**5. Next step**
+
+Say exactly what will happen now, who owns it, the time-box, and when the next update will arrive.
+Pattern: “Mitigation: raise warehouse load-pool concurrency from 4→8 (owner: Priya), 10-minute time-box. Next update: 10:25 BST.”
+If rolling back: “Rollback deploy #42 in progress (owner: Alex), verify p95/lag for 10 minutes, update at 10:20.”
+
+---
+
+# Lesson 5 - Playbooks, Alerting & Real-Time Monitoring
