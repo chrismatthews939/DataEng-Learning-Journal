@@ -415,4 +415,36 @@ Having a post-incident review is an essential step, yet they are often difficult
 
 **Look at Post-incident review Template saved in repo**
 
+`Root Cause Analysis (RCA) isn’t a hunt for a single villain. Complex systems fail through combinations. Use lightweight tools that fit a 30–45 minute session:`
+
+#### Always start with the 5 Whys (shallow and many)
+
+Stop when answers turn into speculative opinions; switch branches instead of tunnelling deep.
+
+#### Create a cause map
+
+Start from the impact box (“Freshness missed 09:00 by 35m”), branch into contributing factors  (“warehouse queue saturated”, “deploy removed index”, “alert routed to wrong team”).
+
+#### Tag your evidence
+
+Mark each factor with the data that supports it (graph, log snippet, ticket). If there’s no evidence, it’s a hypothesis, not a factor.
+
+End by checking for systemic themes across recent incidents (e.g., “observability gaps during deploys”, “under-provisioned warehouse during morning peak”). These themes often deserve their own work item.
+
+---
+
+### Prevent
+
+(reduce likelihood): e.g., add an index; fix a skewed join; add schema validation pre-ingest.
+
+### Contain
+
+(reduce blast radius): e.g., automatic rollback on burn-rate breach; isolate load pool; circuit breaker on downstream.
+ 
+### Detect
+
+(reduce time to notice): e.g., deploy annotations; a freshness heartbeat; better alert routing.
+
+
+
 
