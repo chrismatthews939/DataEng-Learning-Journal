@@ -1,5 +1,12 @@
 # Key concepts and skills required for EPA
 
+# EPA Timeline
+
+Mid November submit final Portfolio
+Final course date is December 
+Project BCS are end point assesors 
+We select a project we have done to approve to be used for our EPA - CDP
+
 ## What is the End-Point Assessment (EPA)?
 
 The EPA is the final stage of the Level 5 Data Engineer apprenticeship. It’s your opportunity to demonstrate that you’ve developed the required Knowledge, Skills, and Behaviours (KSBs) to work independently and professionally as a Data Engineer. The EPA typically includes:
