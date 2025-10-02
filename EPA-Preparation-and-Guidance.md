@@ -2,10 +2,10 @@
 
 # EPA Timeline
 
-Mid November submit final Portfolio
-Final course date is December 
-Project BCS are end point assesors 
-We select a project we have done to approve to be used for our EPA - CDP
+- Mid November submit final Portfolio
+- Final course date is December
+- Project BCS are end point assesors
+- We select a project we have done to approve to be used for our EPA - CDP
 
 ## What is the End-Point Assessment (EPA)?
 
