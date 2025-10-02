@@ -270,3 +270,132 @@ If rolling back: “Rollback deploy #42 in progress (owner: Alex), verify p95/la
 ---
 
 # Lesson 5 - Playbooks, Alerting & Real-Time Monitoring
+
+When production misbehaves, you need steps you can actually run and alerts that wake people only for problems that matter. This lesson shows how to write playbooks that work under pressure, design SLO-aware alerts that reduce noise, and watch real-time health so you catch trouble early.
+
+## What is a playbook?
+
+A **playbook** is a short, scenario-specific checklist that anyone on-call can run to restore service safely under pressure. It turns a known failure mode (e.g., “Kafka consumer lag spike”) into a single, executable path: how to confirm it’s really happening, what to try first, when to stop, how to roll back, and how to verify that users are healthy again.
+
+## What a good playbook contains
+
+### Trigger
+
+The condition that tells you to use it (clear metric + threshold + time window).
+
+### Pre-checks
+
+Quick tests to confirm you’re solving the right problem.
+
+### First safe action
+
+Reversible, low-risk step to reduce impact fast.
+
+### Decision points
+
+Time-boxed branches: “if X improves, continue; if not, do Y / escalate.”
+
+### Rollback & exit
+
+How to undo changes and the criteria for stopping.
+
+### Verification
+
+SLI/SLO checks that prove recovery (e.g., “p95 < 10m for 10 min; lag < 5k”).
+
+### Context
+
+Owner/escalation, links to dashboards/logs/traces, date/version.
+
+---
+
+### Alerting that protects sleep and users
+
+Alerts are like promises in motion. Warning notifications are early indicators, like rising lag or queue depth, that aren’t yet harming users. Every page needs context you can act on: what fired, where (service, env, region), since when, a short suggested cause, and a runbook link. The runbook is a routine operational procedure (e.g., “rotate keys”, “restart service”) that gives you suggestions of what to do when there is an issue. Make sure you route by severity and time of day, and group similar alerts and deduplicate to prevent storms. Maintenance windows allow it so that scheduled work doesn’t interfere people. Periodically, it’s worth reviewing noisy alerts (perhaps monthly) - if an alert never changes a decision, demote or delete it. Before rolling out a new rule, test it against real history to see how often it would have paged.
+
+### Real-time monitoring that closes the loop
+
+Real-time health checks buy you minutes when things go wrong. **Heartbeats** can assert liveness from the data’s point of view (a tiny record each minute that must appear at the sink). You can also track **freshness** as “now minus newest good event time,” not ingestion time, so late data shows up as a real risk. You’ll also want to keep a **dead-letter queue** for bad messages and alert on growth, not existence. Add **lightweight synthetic probes** that exercise critical paths end-to-end: a tiny test write that you immediately read back. For streaming, watch **consumer lag** with a short and a long window so you can separate blips from sustained drift. Prefer simple **baseline + deviation** alerts to “clever” anomaly models - clarity beats mystery at 2am.
+
+## Terminology
+
+## Dead-Letter Queue (DLQ) 
+
+### What is a Dead-Letter Queue?
+A **Dead-Letter Queue (DLQ)** is a special type of message queue that stores messages that **could not be successfully processed**.  
+
+Imagine you have a system that passes messages (like tasks, events, or data records) from one service to another. Normally, these messages flow smoothly through the pipeline. But sometimes, a message is **badly formatted**, **missing important data**, or repeatedly **causes errors** during processing.  
+
+Instead of losing that message or blocking the entire system, the message is moved into a **dead-letter queue** for later inspection.
+
+---
+
+### Why Do We Need a DLQ?
+Without a DLQ:
+- A bad message could get retried endlessly, clogging the system.
+- You might lose messages completely without knowing why they failed.
+- Troubleshooting would be much harder since you wouldn't have access to the failing data.
+
+With a DLQ:
+- You **capture problem messages** instead of discarding them.
+- You can **analyze the root cause** of failures (e.g., wrong schema, missing fields, system bug).
+- You can **decide what to do**: fix and replay, or permanently discard.
+
+---
+
+### Common Scenarios That Lead to DLQ
+1. **Invalid data format**  
+   Example: A system expects a date in `YYYY-MM-DD` format, but receives `31/12/2025`.
+   
+2. **Missing required fields**  
+   Example: An order message arrives without a customer ID.
+
+3. **Message too large**  
+   Some queueing systems have size limits. Oversized messages go to DLQ.
+
+4. **Repeated processing failures**  
+   If a message fails multiple retry attempts, it gets redirected to DLQ.
+
+---
+
+### How DLQ Fits into a Data Pipeline
+- **Normal Queue**: Handles the flow of valid messages.
+- **Processor/Consumer**: Reads from the normal queue and processes messages.
+- **DLQ**: Collects messages that the processor cannot handle after a defined number of attempts.
+
+Think of it like an **"emergency inbox"** where all problematic messages are collected for human review or special processing.
+
+---
+
+### Best Practices for Using DLQs
+1. **Monitor the DLQ**  
+   Set up alerts so that if many messages suddenly end up in DLQ, you’re notified.
+
+2. **Log and Analyze**  
+   Use DLQ as a diagnostic tool. Each failed message tells you something about potential issues in upstream systems or data quality.
+
+3. **Plan a Replay Strategy**  
+   Sometimes you can fix the error (e.g., correct the data format) and then **reprocess** the message from DLQ.
+
+4. **Don’t Ignore It**  
+   DLQs are not just "trash bins." They are **critical debugging and recovery tools**.
+
+---
+
+### Simple Analogy
+Think of a **mail sorting center**:
+- Normal letters go through smoothly.
+- If a letter is **unreadable** or **missing an address**, it gets set aside in a special **“problem letters” box** (the DLQ).
+- Later, a worker reviews this box to figure out what went wrong: maybe look up the correct address, fix the mistake, or discard it.
+
+---
+
+### Key Takeaways
+- A DLQ is a **safety net** for bad or unprocessable messages.
+- It prevents **system failures** and **data loss**.
+- It helps with **debugging, monitoring, and recovery** in data pipelines.
+- Always treat the DLQ as an **important part of system health monitoring**.
+
+---
+
+
