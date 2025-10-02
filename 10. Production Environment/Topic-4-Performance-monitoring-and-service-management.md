@@ -186,4 +186,25 @@ As a data engineer:
 
 # Lesson 3 - Analysing Performance Trends & Identifying Bottlenecks
 
+`Establish what “normal” looks like`
+
+Keep Little’s Law in mind (items in system ≈ arrival rate × time in system): when arrival stays the same but time increases, the queue length must grow - so look for the step that slowed. Align time axes on your dashboard so these relationships are easy to see at a glance.
+
+https://en.wikipedia.org/wiki/Little%27s_law
+
+Identify the type of bottleneck
+
+## When it comes to bottlenecks, we can focus on three buckets:
+
+### Upstream 
+
+Upstream bottlenecks show up as idle consumers with growing wait times (slow source, network, or storage). 
+
+### Compute
+
+Compute, or midstream, bottlenecks show saturated CPU, long GC, skewed partitions, or expensive joins that inflate stage time. 
+
+### Downstream 
+
+Downstream bottlenecks appear when writes stall - warehouse concurrency is maxed, object store errors spike, or a rate limit kicks in. 
 
