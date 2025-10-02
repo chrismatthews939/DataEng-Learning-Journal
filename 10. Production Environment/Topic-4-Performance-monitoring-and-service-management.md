@@ -398,4 +398,21 @@ Think of a **mail sorting center**:
 
 ---
 
+# Lesson 6 - Post-Incident Learning, RCA & SLAs
+
+Incidents only create value if they change how the system behaves next time. This lesson shows how to run a short, blameless review, turn findings into trackable improvements, and set SLAs that sit comfortably inside the performance you already achieve.
+
+### Blameless, post-incident reviews that people want to attend
+
+Having a post-incident review is an essential step, yet they are often difficult to manage and end up becoming a “blame game”. To avoid this scenario, we can look at the following tips to help:
+
+- Hold the review soon - while context is fresh - but not in the heat of response.
+- Keep it short and consistent.
+- Start with the timeline: a clear sequence of facts pulled from dashboards, alerts, and the incident channel.
+- Follow with impact in user terms (SLO minutes burned, missed deadlines, customer tickets).
+- Then discuss what helped and what made it harder (e.g., missing deploy annotation, noisy alert, undocumented failover).
+- Make it blameless by treating actions as outcomes of system conditions - staffing, tools, processes - not personal failings.
+
+**Look at Post-incident review Template saved in repo**
+
 
