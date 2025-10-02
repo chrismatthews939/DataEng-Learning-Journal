@@ -78,6 +78,94 @@ Begin by choosing the audience. An on-call view answers “Are we breaching our 
 
 ---
 
+## Understanding SLIs and SLOs 
+
+If you’re just starting out as a data engineer, you’ll hear terms like **SLI** and **SLO** a lot. These come from the world of **Site Reliability Engineering (SRE)** but apply directly to data systems too. Let’s break them down simply.
+
+---
+
+### 1. What is an SLI?
+
+**SLI** stands for **Service Level Indicator**.  
+Think of it as a **measurement** of how well a system is doing.
+
+- It’s a **number or percentage** that tells you something about system performance.
+- Example (data pipeline):  
+  - *“How many data records successfully processed compared to how many were sent?”*  
+  - If 1,000 records were sent and 990 were processed correctly, then the SLI = 99%.
+
+You can think of SLIs as **speedometers or gauges** — they don’t set goals, they just measure what’s happening.
+
+---
+
+### 2. What is an SLO?
+
+**SLO** stands for **Service Level Objective**.  
+It’s a **target or goal** you set for an SLI.
+
+- Example (continuing from above):  
+  - You might say: *“Our pipeline should process at least 99.5% of records correctly over a month.”*  
+  - That’s your **objective**.
+
+SLOs are like the **rules you set** for how fast the car should be going or how much fuel efficiency you want. They define what “good enough” means.
+
+---
+
+### 3. How They Work Together
+
+- **SLI** = the measurement (e.g., 99% success rate).
+- **SLO** = the target (e.g., aim for 99.5% or higher success rate).
+
+If your SLIs show performance consistently below your SLOs, that’s a signal the system isn’t meeting expectations and needs attention.
+
+---
+
+### 4. Why They Matter for Data Engineers
+
+As a data engineer, your systems are pipelines that move and transform data. SLIs and SLOs help you:
+
+1. **Measure reliability**: Are your pipelines delivering data on time?  
+2. **Catch problems early**: If SLIs dip below SLOs, you know users might be affected.  
+3. **Prioritize work**: Not every failure is urgent, but missing an SLO consistently shows a real issue.  
+4. **Communicate clearly**: Instead of saying “the pipeline is slow sometimes,” you can say, *“We only met our freshness SLO 92% of the time this week instead of 99%.”*
+
+---
+
+### 5. Common SLIs for Data Systems
+
+Here are a few SLIs that data engineers often track:
+
+- **Freshness**: How recent is the data? (e.g., “data is no more than 1 hour old”)  
+- **Completeness**: Percentage of data successfully ingested.  
+- **Latency**: Time taken for data to move from source to destination.  
+- **Accuracy**: Percentage of records that match expected values after transformation.  
+
+Each of these can have an **SLO** defined. For example:  
+- *“Data must be no more than 1 hour old at least 99% of the time.”*
+
+---
+
+### 6. Quick Analogy
+
+Imagine you run a pizza delivery service:
+
+- **SLI** = the actual delivery time (e.g., 32 minutes).  
+- **SLO** = your promise to customers (e.g., “We deliver within 30 minutes 95% of the time”).  
+
+If deliveries often take 40 minutes, you’re **missing your SLO**, and customers won’t be happy. The same idea applies to data users waiting for fresh, accurate data.
+
+---
+
+### Summary
+
+- **SLI** = a **measurement** of system performance.  
+- **SLO** = the **target** you want that measurement to hit.  
+- Together, they help ensure your data systems are **reliable, trustworthy, and aligned with user needs**.  
+
+By defining and monitoring SLIs and SLOs, you move from “hoping things are fine” to **measuring, proving, and improving reliability**.
+
+---
+
 ![Visualisation](https://images.veryfront.com/imgproxy/q:75/w:1920/aHR0cHM6Ly9jZG4uY29kZXJzb2NpZXR5LmNvbS91cGxvYWRzL21ldHJpY3MtdHJhY2luZy1sb2dnaW5nLnBuZw==.webp)
 
 Think of your system as a play. Metrics are the applause meter - numbers over time that tell you if the audience is happy (latency, error rate, freshness, lag). Logs are the script - what was said and where it went wrong (messages, exceptions, validation failures). Traces are the stage map - who moved where and which scene dragged (spans across services). When all three share the same identifiers and time window, you can follow the story cleanly from symptom to cause.
