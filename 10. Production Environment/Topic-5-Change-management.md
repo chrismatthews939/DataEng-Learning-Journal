@@ -236,4 +236,41 @@ Documentation and change management turn “we changed something” into “we c
 
 ---
 
+## Risk, Compliance and Knowledge Transfer
+
+Write down risks and mitigations up front - both technical (e.g., latency spikes, data corruption) and business (e.g., regulatory exposure, reporting delays). This helps prioritise tests, comms and rollout strategy.
+
+Treat compliance as continuous: approvals, validation results and process adherence all belong in the record. Automated audit trails are ideal.
+
+Design documentation for knowledge transfer: include design intent, business context and runbooks so new team-mates are productive quickly.
+
+**use change request template in this repo**
+
+#### Impact Map (checklist)
+
+Dependencies, downstream reports, SLAs, data retention rules, privacy considerations, and required updates to documentation/training.
+
+#### Audit Evidence Log (table of links)
+
+PRs → builds → deploys → dashboards → validation reports → incident/defect tickets (if any) → final sign-off. Automate linking where you can.
+
+#### Comms Brief (audience-specific)
+
+- Engineers: technical deltas, migration steps, runbooks.
+- Business: changes to outputs, cut-over timing, data quality effects.
+
+#### Governance: approvals obtained, controls passed, audit location.
+
+---
+
+## Worked scenario - Shipping orders_v2 safely
+
+You’re renaming columns and altering types in orders_v2. Marketing dashboards and regulatory extracts depend on the old schema.
+
+- Draft a **change request** with business rationale, schema diff, consumer list and success metrics.
+- Plan **parallel writes** to both schemas; build a backfill if needed; define rollback to the old reader.
+- Run an **impact assessment** across BI and extract jobs; agree the comms and cut-over window.
+- Execute canary then full cut-over; monitor error rate, p95 for jobs, and reconciliation deltas; file validation results and approvals in the **audit log**.
+- Close with a short **post-change review** and update docs for downstream teams.
+
 
