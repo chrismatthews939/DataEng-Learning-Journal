@@ -184,4 +184,56 @@ Both work, but for **high availability**, you’d rather have **multiple kitchen
 
 ---
 
+# Lesson 3 - Documentation & Change Management that Scales
+
+Documentation and change management turn “we changed something” into “we can prove what changed, why, how it was validated, and how to reverse it.” Good practice delivers traceability, auditability and smoother handovers, and reduces incident risk as pipelines evolve.
+
+## What "good documentation" actually contains
+
+- **Defining documentation requirements**
+  
+    Start by defining documentation requirements: scope, tracking standards, impact assessment, approval flow, and compliance artefacts. This anchors effort to business and regulatory expectations.
+
+- **Documentation standards**
+
+    Adopt documentation standards and templates (change request, impact analysis, implementation record). Capture both the technical detail (schema deltas, transformations, configs) and the business impact (consumers affected, reporting timelines, privacy concerns). Consistency is what makes reviews fast and audits possible.
+
+- **Version control**
+
+    Put all of it in version control alongside code and config so history is complete and rollback is real. Track schema changes, transformation logic, configuration and dependencies, not just application code.
+
+- **Audit trail**
+
+    Create a searchable audit trail of approvals, deploy logs and validation results. Focusing on high-impact/regulatory changes first yields the biggest risk reduction. Automating capture where possible turns audits from one-off scrambles into continuous assurance.
+    
+    Schedule continuous review so docs stay true as pipelines evolve; treat it like maintenance for your knowledge base.
+
+![Change Mnagement](https://docs.aws.amazon.com/images/whitepapers/latest/establishing-your-cloud-foundation-on-aws/images/change-management-process.png)
+
+- **Understand the architecture**
+    
+    Map sources, transforms, dependencies and consumers so you can see blast radius. Keep lineage diagrams close to the change doc. 
+
+- **Assess impact**
+
+    Evaluate technical and business effects: performance, cost, data quality, compliance, downstream updates and release timing. Use dependency mapping to make risk visible. 
+
+- **Document the change request**
+ 
+    Record business justification, technical spec, resource needs and success criteria in a standard template. 
+
+- **Plan implementation**
+
+    Decide test strategy, rollout style (canary/parallel/staged), rollback procedures, stakeholder comms and the metrics you will check post-deploy.
+
+- **Execute & monitor**
+      
+    Implement, validate against success metrics and watch for unintended consequences; record results.
+
+- **Close with evidence**
+  
+    File the audit trail (approvals, logs, validations), capture risks discovered, and do a short retrospective to improve the next change.
+
+---
+
 
