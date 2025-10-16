@@ -784,4 +784,62 @@ Building data products is not just about technical skills. It requires careful a
 
 ---
 
-  
+# Case Study: Walmart's data-driven transformation in retail
+
+## Challenges
+
+**Inventory Management**
+
+Managing inventory across thousands of stores worldwide required a sophisticated data solution to prevent overstocking and stockouts.
+
+Variability in consumer demand necessitated an agile system for inventory forecasting.
+
+**E-Commerce Competition**
+
+The rise of digital retailing required Walmart to enhance its online presence to compete with e-commerce giants like Amazon.
+
+**Data Integration**
+
+Consolidating disparate data sources, including in-store sales, online transactions, and supply chain logistics, posed a major challenge.
+
+## Implementation
+
+**Advanced Data Analytics**
+
+Walmart deployed predictive analytics models to forecast product demand, optimising stock levels and minimising waste.
+
+**E-Commerce Enhancement**
+
+The company introduced the Spark Delivery Platform, a last-mile delivery solution that coordinates freelance drivers for same-day deliveries, reaching 93% of U.S. households.
+
+**AI Integration**
+
+Walmart implemented AI-powered recommendation systems to personalise customer shopping experiences and optimise product recommendations.
+
+## Successes
+
+**Operational Efficiency**
+
+Inventory optimisation led to a 16% reduction in stockouts, ensuring better product availability.
+
+**Enhanced Customer Experience**
+
+AI-driven recommendations contributed to a 10% increase in customer retention by delivering personalised shopping experiences.
+
+**Revenue Growth**
+
+The combination of improved inventory management and personalised marketing resulted in a 2.5% increase in overall revenue.
+
+## Lessons Learned
+
+**Data-Driven Decision Making**
+
+Investing in robust data analytics capabilities enhances decision-making and operational efficiency.
+
+**Customer-Centric Strategies**
+
+Personalisation fosters customer loyalty and improves user experience, reinforcing the importance of data-driven customer insights.
+
+**Agility in Implementation**
+
+Adapting to market changes through innovative solutions, such as the Spark delivery platform, highlights the importance of agility in retail strategies.
