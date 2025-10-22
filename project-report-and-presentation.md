@@ -127,7 +127,32 @@ Can leave them in and delete before submitting so I can track the ones included
 5. Reflection
 6. Conclusion
 
+## Notes
 
+EPA
+
+Once you're in Gateway it's up to me 
+13 weeks - 
+Professional discussion - 10 questions - learn about scaling etc and things I don't do
+2 on each theme (Portfolio pieces)
+Pipeline is one I can use for my project
+
+10 weeks to write report
+last three weeks is interview
+
+Module 9 is basically project
+
+27th December go into Gateway
+
+All KSBs demonstrated in one project
+
+https://skillsengland.education.gov.uk/apprenticeship-standards/st1386-v1-0
+
+In EPA tab it has the report structure
+
+I can use stuff from my portfolio exercises as these are not send to the assessors
+
+For a professional document (750 words) explaining how someone might demonstrate regulatory compliance in a data stewarding role give some industry best practice examples of security standards, ethics and procedures, actions and outcomes and governance applied 
 
 
 
