@@ -164,8 +164,58 @@ A **Weighted Scoring Model** assigns numerical values to features based on prede
 
 # Designing data products for scalability and high performance
 
+A data product must be designed to handle increasing volumes of data, users, and workloads without significant performance degradation. Scalability and high performance are essential for ensuring that the system can adapt to growing business needs, accommodate more complex queries, and maintain low latency. Designing for scalability requires efficient architecture, optimised data storage, and robust processing capabilities (Reis & Housley, 2022).
 
+# Key Considerations for Scalable and High-Performance Data Products
 
+To ensure data products remain efficient and responsive as they scale, it's essential to focus on scalability and high performance. This involves designing a scalable data architecture, optimising data storage and retrieval, implementing load balancing and horizontal scaling, and enhancing data processing efficiency. By addressing these key considerations, organisations can build robust data products that meet growing business demands and maintain high performance.
 
+---
 
+## 1. Scalable Data Architecture
+
+- Use distributed systems such as **Apache Hadoop**, **Amazon Redshift**, and **Google BigQuery** to process large datasets efficiently *(Marz & Warren, 2015)*.  
+- Implement **microservices architecture** to allow independent scaling of different system components *(Kimball & Ross, 2013)*.  
+- Use **serverless computing**, such as **AWS Lambda** or **Google Cloud Functions**, for dynamic resource allocation *(Reis & Housley, 2022)*.
+
+### Example Scenario
+
+> **Netflix** utilises **Apache Cassandra**, a distributed NoSQL database, to handle massive volumes of streaming data while maintaining high availability and low latency *(Marz & Warren, 2015)*.
+
+## 2. Optimised Data Storage and Retrieval
+
+- **Use columnar storage formats** like Parquet and ORC for fast analytics and query execution *(Davenport, 2020)*.  
+- **Apply data partitioning and indexing** to improve read and write performance *(Kimball & Ross, 2013)*.  
+- **Implement caching mechanisms** such as Redis and Memcached to reduce query load on primary databases *(Reis & Housley, 2022)*.
+
+### 3. Load Balancing and Horizontal Scaling
+
+- Implement **horizontal scaling** (adding more servers) instead of vertical scaling (adding resources to a single server) to distribute workloads efficiently *(Reis & Housley, 2022)*.
+- Use **load balancers** like **Nginx** or **AWS Elastic Load Balancer** to distribute traffic across multiple servers *(Kimball & Ross, 2013)*.
+- Design systems with **stateless components** to allow dynamic scaling based on demand *(Marz & Warren, 2015)*.
+
+### 4. Data Processing Efficiency
+
+- Use **batch processing** with **Apache Spark** for large-scale analytics and **stream processing** with **Apache Kafka** or **Apache Flink** for real-time data ingestion *(Reis & Housley, 2022)*.
+- **Optimise ETL (Extract, Transform, Load) pipelines** by minimising redundant computations *(Kimball & Ross, 2013)*.
+- Enable **query optimisation techniques** like **materialised views** and **query caching** to speed up analytics *(Marz & Warren, 2015)*.
+
+---
+
+### Challenges Identified
+
+- The system struggles with slow query performance when analysing historical purchase trends.
+- Increased user load causes performance bottlenecks during high-traffic periods.
+- High compute costs due to inefficient data processing strategies.
+
+### Implemented Solutions
+
+- Migrated to a distributed data warehouse using Google BigQuery to handle large-scale analytics.
+- Implemented data partitioning and indexing to improve query performance.
+- Introduced caching layers using Redis to serve frequently requested data quickly.
+- Scaled compute resources dynamically using Kubernetes-based auto-scaling.
+
+---
+
+# Techniques for ensuring data product resilience and reliability
 
