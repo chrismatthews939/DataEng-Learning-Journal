@@ -563,4 +563,94 @@ As the company expands its services, it must comply with GDPR, the UK Data Prote
 
 Data security and privacy are critical in designing data products, ensuring that confidential and personally identifiable information (PII) is protected from unauthorised access, breaches, and misuse. Organisations must balance security, compliance, and usability by implementing robust encryption, access controls, anonymisation, and secure data storage. Effective security measures not only help businesses meet regulatory requirements such as GDPR and the UK Data Protection Act 2018, but also build trust with customers and stakeholders (Reis & Housley, 2022).
 
+# Key Techniques for Ensuring Data Security and Privacy
+
+Ensuring data security and privacy is paramount in the design of data products. This involves implementing robust techniques such as encryption, role-based access control, data anonymisation, and breach detection. By adopting these practices, organizations can protect sensitive information, comply with regulatory requirements, and build trust with users.
+
+---
+
+## 1. Encryption and Secure Data Storage
+
+- **Encryption at rest** protects stored data by converting it into an unreadable format ([Davenport, 2020](#)).
+- **Encryption in transit** secures data as it moves between systems to prevent interception ([Kimball & Ross, 2013](#)).
+- **Tokenisation** replaces sensitive data with unique identifiers, reducing exposure risks.
+
+**Diagram:** *AES Encryption 101*  
+The image depicts plaintext `Hello` being encrypted into cipher text `@&$KQ#2a` using a secret key, and then decrypted back to plaintext `Hello` with the same key.
+
+**Key points about AES encryption:**
+- Uses multiple rounds of transposition, substitution, and mixing.
+- Comes in three varieties: AES-128, AES-192, AES-256.
+- Considered the industry standard for commercial and personal data security.  
+_Image source: [malware.news](https://malware.news)_
+
+**Example Scenario:**  
+A UK healthcare provider encrypts patient records using AES-256 encryption to comply with NHS Digital security guidelines and GDPR ([Reis & Housley, 2022](#)).
+
+---
+
+## 2. Role-Based Access Control (RBAC) and Least Privilege Principles
+
+- **RBAC** ensures that users only have access to the data and systems required for their role.
+- **Least privilege principles** prevent unnecessary data access, reducing the risk of insider threats.
+- **Multi-factor authentication (MFA)** adds an extra layer of security by requiring additional verification beyond passwords ([Marz & Warren, 2015](#)).
+
+**Example Scenario:**  
+A UK fintech company restricts access to customer financial data, allowing only authorised personnel to view sensitive account details, while customer service teams access anonymised records ([Davenport, 2020](#)).
+
+---
+
+## 3. Data Anonymisation and Pseudonymisation
+
+- **Anonymisation** removes or masks personally identifiable information so that data cannot be linked back to individuals ([Reis & Housley, 2022](#)).
+- **Pseudonymisation** replaces identifiable data with artificial identifiers, allowing processing while protecting user privacy.
+- **Data masking** dynamically obscures sensitive information in real-time analytics dashboards ([Kimball & Ross, 2013](#)).
+
+**Example Scenario:**  
+A UK-based online retailer applies pseudonymisation techniques when analysing customer purchase data, ensuring that marketing teams can gain insights without exposing personal details ([Davenport, 2020](#)).
+
+---
+
+## 4. Data Breach Detection and Prevention
+
+- **Intrusion detection systems (IDS)** monitor network traffic for malicious activity.
+- **Automated threat detection** uses AI to identify suspicious behaviours and potential data breaches.
+- **Regular penetration testing** helps organisations identify security weaknesses before they are exploited ([Reis & Housley, 2022](#)).
+
+**Example Scenario:**  
+A British bank integrates real-time anomaly detection into its transaction monitoring system, flagging suspicious activity and preventing unauthorised account access ([Kimball & Ross, 2013](#)).
+
+---
+
+## Case Study: Securing Customer Data in a UK Retail Loyalty Programme
+
+A UK retail chain operates a customer loyalty programme, collecting and storing data on purchase history, preferences, and location-based shopping habits. To comply with GDPR and the UK Data Protection Act 2018, the company must secure customer data while enabling personalised marketing and insights.
+
+### Challenges Identified
+
+| Challenge | Security and Privacy Concern |
+|-----------|-----------------------------|
+| Customer data is stored in plaintext | Violates encryption requirements |
+| Too many employees have access to full customer profiles | Increases insider threat risks |
+| No protection against cyber threats | Risk of data breaches and unauthorised access |
+| Customers cannot opt out of data collection | Non-compliance with GDPR consent requirements |
+
+### Solutions Implemented
+
+1. **Encrypted customer data storage** – AES-256 encryption applied to all personal data at rest and in transit.
+2. **Role-based access control (RBAC)** – Access to customer data is restricted based on job roles.
+3. **Automated fraud detection** – Machine learning-based system detects unusual access patterns.
+4. **Privacy control portal** – Customers can manage data preferences, opt out of tracking, and request data deletion.
+
+### Outcomes
+
+| Metric | Before Implementation | After Implementation | Target | Status |
+|--------|--------------------|-------------------|--------|--------|
+| Encrypted customer records | 20% | 100% | 100% | Achieved |
+| Employee access limited to necessary roles | No | Yes | Yes | Achieved |
+| Detected unauthorised access attempts | 30 per month | 3 per month | <6 per month | Achieved |
+| Customer opt-out requests processed | Manual, slow | Automated, instant | <24 hours | Achieved |
+
+**Summary:**  
+By integrating encryption, role-based access controls, and automated privacy management, the retailer ensured GDPR compliance, protected customer data, and reduced security threats.
 
