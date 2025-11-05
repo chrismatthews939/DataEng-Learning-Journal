@@ -194,3 +194,110 @@ Visualising the composition of a company's revenue streams.
 ---
 
 # Creating Interactive Visualisations and Dashboards
+
+Interactive visualisations allow users to engage with data dynamically, filtering, drilling down, and customising views to extract meaningful insights. Unlike static charts, interactive dashboards provide real-time updates, user-driven exploration, and multiple perspectives, making data more accessible, actionable, and engaging (Cairo, 2013).
+
+# Key Features of Interactive Visualisations
+
+Interactive visualisations are powerful tools that enhance data exploration and decision-making. By allowing users to dynamically filter, drill down, and customise views, these visualisations transform static data into actionable insights.
+
+This section explores key features that make interactive visualisations effective, including filtering capabilities, real-time updates, interactive elements, and customisable dashboards.
+
+---
+
+## 🧩 Key Features of Interactive Dashboards
+
+### 1. Filtering and Drill-Down Capabilities
+Users can filter data based on parameters such as time range, categories, or geographical regions (Few, 2012).  
+Drill-down features allow users to click on data points to reveal more granular insights.
+
+**Example:**
+> A sales dashboard allows managers to filter sales performance by region, product category, and time period, helping them pinpoint underperforming areas.
+
+---
+
+### 2. Real-Time Data Updates
+Dashboards can pull live data from databases and APIs, ensuring the latest information is always displayed.  
+Useful for financial trading, logistics tracking, and web analytics (Davenport, 2020).
+
+**Example:**
+> A retail stock dashboard shows real-time inventory levels, automatically updating when new stock arrives or products are sold.
+
+---
+
+### 3. Interactive Charts and Dynamic Elements
+Users can hover over charts to see tooltips with additional context.  
+Clickable elements allow for side-by-side comparisons and alternative views (Reis & Housley, 2022).
+
+**Example:**
+> A COVID-19 tracking dashboard provides interactive charts where users can click on different countries to view infection trends and vaccination rates.
+
+---
+
+### 4. Customisable Dashboards
+Users can personalise dashboards by selecting metrics, chart types, and layouts that suit their needs.  
+Ensures that different stakeholders see only the data relevant to their role (Kimball & Ross, 2013).
+
+**Example:**
+> A marketing analytics dashboard allows teams to customise views for social media performance, ad spend, and customer engagement metrics.
+
+---
+
+## 🛠️ Tools and Technologies for Interactive Data Visualisation
+
+To create effective interactive visualisations, it's essential to leverage the right tools and technologies. This section highlights some of the most popular and powerful tools available for building dynamic and engaging data visualisations.
+
+| Tool | Key Features | Use Case |
+|------|---------------|----------|
+| **Tableau** | Drag-and-drop interface, real-time dashboards, integrations with databases | Business intelligence, analytics reporting |
+| **Power BI** | Microsoft ecosystem integration, AI-powered analytics, interactive dashboards | Finance, sales reporting, enterprise analytics |
+| **D3.js** | Customisable JavaScript visualisations, advanced interactivity | Web-based data visualisation, interactive storytelling |
+| **Google Data Studio** | Free, cloud-based dashboards, seamless Google Analytics integration | Marketing performance tracking, web analytics |
+| **Plotly (Dash)** | Python-based interactive graphs, API integration | Scientific data visualisation, IoT dashboards |
+
+---
+
+## 💡 Example Scenario: Building an Interactive Customer Insights Dashboard
+
+An e-commerce company wants to create an interactive dashboard that provides insights into customer behaviour, sales trends, and product performance.
+
+Previously, sales reports were shared as static PDFs, making it difficult to explore data dynamically.
+
+---
+
+### 🔍 Challenges Identified
+
+| Challenge | Issue |
+|------------|-------|
+| Static reports lack interactivity | Users cannot filter data or view insights in real-time |
+| No ability to drill down into specific metrics | Requires manual analysis of spreadsheets |
+| Delayed reporting | Decisions are made based on outdated data |
+
+---
+
+### ✅ Implemented Solutions
+
+1. **Tableau-powered interactive dashboard** for real-time exploration of sales and customer data.  
+2. **Filters** for product categories, time periods, and customer segments, allowing deeper analysis.  
+3. **Dynamic charts and tooltips**, providing quick insights when hovering over data points.  
+4. **Automated daily data updates**, ensuring the dashboard always reflects the latest trends.
+
+---
+
+### 📈 The Outcome
+
+| Metric | Before Implementation | After Implementation | Target | Status |
+|--------|-----------------------|----------------------|---------|---------|
+| Time to generate reports | 4 hours | Instantly updated | Real-time | ✅ Achieved |
+| User engagement with data | 30% | 85% | Above 80% | ✅ Achieved |
+| Accuracy of business decisions | 65% | 92% | Above 90% | ✅ Achieved |
+
+---
+
+By adopting **interactive visualisations**, the company improved **data accessibility**, **efficiency**, and **decision-making**, enabling teams to explore insights in real time rather than relying on static reports.
+
+---
+
+# Tools and Technologies for Data Visualisation
+
+
