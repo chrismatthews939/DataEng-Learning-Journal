@@ -49,4 +49,148 @@ A financial dashboard displaying profit trends over time should use a **simple l
 
 ---
 
+# Example Visualisations
 
+The **Data Visualisation Catalogue** is a comprehensive resource that showcases a wide array of data visualisation techniques, each tailored to represent specific data insights effectively. Below are examples of various visualisation types, along with their typical use cases:
+
+---
+
+## Arc Diagram
+
+**Description:**  
+Displays relationships between entities using arcs, useful for visualising patterns in data sequences.
+
+**Example:**  
+Visualising repeated motifs in a DNA sequence.
+
+> A diagram showing three nodes connected by a horizontal line at the bottom, labeled *"Nodes."*  
+> Two green arcs above the line, labeled *"Arc-Links,"* connect the nodes.  
+> The first arc connects the first and second node, while the second larger arc connects the first and third node.  
+> *Diagram illustrating nodes and arc-links in a network.*
+
+---
+
+## Area Graph
+
+**Description:**  
+Depicts quantitative data graphically, with the area between the axis and the line filled in, illustrating volume.
+
+**Example:**  
+Showing the cumulative sales over a year.  
+[datavizcatalogue.com](https://datavizcatalogue.com)
+
+> A graph with the x-axis labeled *"Intervals"* ranging from 0 to 6 and the y-axis labeled *"Value Scale"* ranging from 0 to 6.  
+> Points plotted on the graph are marked with an *X* at coordinates (2,1), (4,2), (3,3), (6,4), (5,5), and (2,6).  
+> The shaded area is under the line connecting these points.  
+> *Graph showing shaded area under a line connecting plotted points.*
+
+---
+
+## Bar Chart
+
+**Description:**  
+Uses rectangular bars to represent data values, ideal for comparing different categories.
+
+**Example:**  
+Comparing the population of different cities.
+
+> A horizontal bar chart with two categories, *Category A* and *Category B.*  
+> Category A has a value of 6, and Category B has a value of 3.5.  
+> The x-axis is labeled *"Scale"* and ranges from 0 to 6.  
+> Text in the image indicates *"Bar length = value amount."*  
+> *Horizontal bar chart comparing values of Category A and Category B.*
+
+---
+
+## Box & Whisker Plot
+
+**Description:**  
+Summarises data by displaying its distribution through quartiles, highlighting the median and potential outliers.
+
+**Example:**  
+Analysing test scores to understand the spread and identify any anomalies.
+
+---
+
+## Bubble Chart
+
+**Description:**  
+Similar to a scatter plot but with an added dimension of data represented by the size of the bubbles.
+
+**Example:**  
+Visualising the correlation between advertising spend, sales, and market share.
+
+> A scatter plot with circles of varying sizes positioned on a coordinate plane.  
+> The x-axis is labeled *"Variable B"* and the y-axis is labeled *"Variable A."*  
+> Circles are color-coded with labels: *Label 1 (red), Label 2 (orange), and Label 3 (yellow).*  
+> Each circle's area corresponds to *"Variable C."*  
+> Below the scatter plot, there are two mathematical formulas:  
+> `Circle Area = π × Radius²`  
+> `Circle Diameter = (sqrt(Area / π)) × 2`  
+> *Scatter plot illustrating relationships between three variables.*
+
+---
+
+## Chord Diagram
+
+**Description:**  
+Illustrates relationships between different entities in a circular layout, showing inter-connections.
+
+**Example:**  
+Displaying trade flows between countries.
+
+---
+
+## Choropleth Map
+
+**Description:**  
+A map where areas are shaded in proportion to a statistical variable, useful for geographic data representation.
+
+**Example:**  
+Mapping population density across regions.
+
+> A map divided into different regions, each shaded in varying colors of yellow, orange, and brown.  
+> Below the map is a value legend labeled *"Magnitude,"* indicating that the colors represent different magnitudes, ranging from light yellow (lowest magnitude) to dark brown (highest magnitude).  
+> One of the regions on the map is labeled.  
+> *A choropleth map showing regions shaded by magnitude.*
+
+---
+
+## Heatmap
+
+**Description:**  
+Represents data values through variations in colouring, useful for identifying patterns and correlations.
+
+**Example:**  
+Displaying user activity on a website over time.
+
+> Comparison of heatmaps using numerical and categorical data.
+
+---
+
+## Network Diagram
+
+**Description:**  
+Shows how different entities are interconnected, ideal for illustrating complex networks.
+
+**Example:**  
+Mapping social media interactions among users.
+
+> A diagram of a network with nodes and links.  
+> The top part shows a central node connected to four other nodes via links.  
+> Below this, there are two smaller diagrams: one labeled *"Undirected network"* showing nodes connected by lines without arrows, and another labeled *"Directed network"* showing nodes connected by lines with arrows indicating direction.  
+> *Diagram illustrating different types of network connections.*
+
+---
+
+## Treemap
+
+**Description:**  
+Displays hierarchical data using nested rectangles, with area size representing a quantitative variable.
+
+**Example:**  
+Visualising the composition of a company's revenue streams.
+
+---
+
+# Creating Interactive Visualisations and Dashboards
