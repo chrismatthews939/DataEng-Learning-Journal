@@ -1,5 +1,147 @@
 # Topic 5 Building AI enabled Data Products 13/11/2025
 
+# An overview of AI and machine learning concepts
+
+Artificial Intelligence (AI) and Machine Learning (ML) have transformed how organisations process, analyse, and act on data. Unlike traditional data products that rely on static rules, AI-driven systems learn from data, improve over time, and make intelligent predictions. Understanding the core concepts of AI and ML is essential for designing smart, efficient, and scalable data products.
+
+`Video explaining the 7 stages of Machine Learning` 
+[www.youtube.com%2Fembed%2FnKW8Ndu7Mjw%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DnKW8Ndu7Mjw&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FnKW8Ndu7Mjw%2Fhqdefault.jpg&type=text%2Fhtml&schema=youtube](https://www.youtube.com/watch?v=nKW8Ndu7Mjw)
+
+# Key Concepts in AI and Machine Learning
+
+Artificial Intelligence (AI) and Machine Learning (ML) are foundational technologies reshaping industries and driving innovation. Understanding their distinctions and relationships is crucial for leveraging their full potential. This section explores core concepts of AI and ML, highlighting definitions, types, and real-world applications.
+
+---
+
+## 1. Artificial Intelligence (AI) vs. Machine Learning (ML)
+
+**Artificial Intelligence (AI):**  
+A broad field of computer science that enables machines to simulate human intelligence, including reasoning, problem-solving, and decision-making.
+
+**Machine Learning (ML):**  
+A subset of AI focused on algorithms that learn from data and improve performance without explicit programming (Reis & Housley, 2022).
+
+### Comparison Table
+
+| Concept | Definition | Example |
+|--------|------------|---------|
+| **AI** | The simulation of human intelligence in machines | Chatbots that understand and respond to customer queries |
+| **ML** | Algorithms that improve with experience | A fraud detection system that learns from transaction patterns |
+
+---
+
+## 2. Types of Machine Learning
+
+- **Supervised Learning:** Learns from labelled data (e.g., spam detection in emails).  
+- **Unsupervised Learning:** Finds patterns in unlabelled data (e.g., customer segmentation).  
+- **Reinforcement Learning:** Learns through trial and error (e.g., AI improving at video games).
+
+**Example:**  
+A retail company uses supervised learning to predict future sales based on historical purchase data, improving inventory management.
+
+---
+
+## 3. The Difference Between AI and ML
+
+AI and ML are often used interchangeably, but they are distinct.  
+AI is the broader concept of enabling machines to perform tasks requiring human intelligence, while ML is a subset focused specifically on learning from data to make predictions and improve over time.
+
+---
+
+### AI vs. ML: Understanding the Relationship
+
+| Concept | Definition | Example |
+|---------|------------|---------|
+| **Artificial Intelligence (AI)** | Simulates human intelligence for reasoning, problem-solving, and decision-making | A virtual assistant like Alexa interpreting voice commands |
+| **Machine Learning (ML)** | Trains models using data so systems improve without explicit programming | A fraud detection system improving accuracy over time |
+
+---
+
+### Similarities Between AI and ML
+
+| Aspect | Artificial Intelligence (AI) | Machine Learning (ML) |
+|--------|------------------------------|-------------------------|
+| **Automation** | Automates decision-making and problem-solving | Automates learning from data to improve decisions |
+| **Data-Driven** | Uses data for human-like intelligence | Learns patterns from data for predictions |
+| **Goal** | Improve efficiency, accuracy, and automation | Improves performance by training models |
+
+---
+
+### Differences Between AI and ML
+
+| Feature | Artificial Intelligence (AI) | Machine Learning (ML) |
+|---------|------------------------------|------------------------|
+| **Definition** | Broad field involving human-like cognitive functions | Subset of AI focused on learning from data |
+| **Scope** | Includes ML, robotics, NLP, vision, expert systems | Focuses only on data-driven learning algorithms |
+| **How It Works** | Can be rule-based, data-driven, or hybrid | Relies on data and algorithms for pattern detection |
+| **Example** | AI assistants like Siri or Alexa using rule-based logic + ML | Recommendation systems like Netflix or Amazon |
+
+---
+
+### Real-World Analogy: AI vs. ML
+
+- **AI** is like a chef using experience, intuition, and recipes to cook various dishes.  
+- **ML** is like an apprentice learning from patterns in recipes and improving through practice.  
+
+Both aim for high-quality results, but AI is broader, while ML relies solely on learned data patterns.
+
+---
+
+## Example Scenario: AI in Customer Service Chatbots
+
+A UK-based e-commerce company aims to improve customer support with an AI-powered chatbot.
+
+### Challenges Identified
+
+| Challenge | AI/ML Solution |
+|-----------|----------------|
+| Support overwhelmed with repetitive questions | AI chatbot handles FAQs |
+| Long customer wait times | ML-powered responses deliver instant answers |
+| Limited data on past interactions | AI tracks history to personalise responses |
+
+---
+
+### AI Implementation Steps
+
+1. **Data Collection** – Gather historical customer inquiries and responses.  
+2. **Model Training** – Use NLP to train the chatbot.  
+3. **Evaluation & Testing** – Assess chatbot accuracy.  
+4. **Deployment** – Launch and monitor performance.
+
+---
+
+### The Outcome
+
+| Metric | Before AI Chatbot | After AI Chatbot | Target | Status |
+|--------|--------------------|-------------------|--------|--------|
+| Customer response time | 5 minutes | Instant | < 30 sec | Achieved |
+| Support tickets reduced | – | 40% | 30%+ | Achieved |
+| Customer satisfaction | 75% | 89% | > 85% | Achieved |
+
+By implementing AI-powered automation, the company improved customer satisfaction, reduced workload, and delivered instant service.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Building and deploying an AI-enabled data products
 
 Building an AI-enabled data product involves integrating machine learning models into a scalable system, ensuring real-time data processing, and deploying the AI model in a way that meets business and user needs. The process requires collaboration between data scientists, engineers, and product managers to ensure the AI model is not just accurate, but also usable, maintainable, and valuable.
