@@ -59,5 +59,8 @@ Defining and applying metrics is only the first step in ensuring the success of 
 
 # What is a post-implementation review (PIR)?
 
+After deploying a technology solution, it's crucial to step back and evaluate its performance comprehensively. This is where Post-Implementation Reviews (PIRs) come into play. A PIR is a structured evaluation conducted after a project is completed, aimed at assessing what worked well, what didn't, and what can be improved for future initiatives. In this lesson, we will delve into the importance of PIRs, the key stages involved, and how to conduct them effectively to ensure your technology solutions continually evolve and improve.
+
+
 
 
