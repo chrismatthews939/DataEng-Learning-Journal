@@ -7,6 +7,9 @@ Artificial Intelligence (AI) and Machine Learning (ML) have transformed how orga
 `Video explaining the 7 stages of Machine Learning` 
 [www.youtube.com%2Fembed%2FnKW8Ndu7Mjw%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DnKW8Ndu7Mjw&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FnKW8Ndu7Mjw%2Fhqdefault.jpg&type=text%2Fhtml&schema=youtube](https://www.youtube.com/watch?v=nKW8Ndu7Mjw)
 
+learn ml 
+https://www.mladdict.com/linear-regression-simulator
+
 # Key Concepts in AI and Machine Learning
 
 Artificial Intelligence (AI) and Machine Learning (ML) are foundational technologies reshaping industries and driving innovation. Understanding their distinctions and relationships is crucial for leveraging their full potential. This section explores core concepts of AI and ML, highlighting definitions, types, and real-world applications.
