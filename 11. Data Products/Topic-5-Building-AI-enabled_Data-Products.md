@@ -120,6 +120,98 @@ A UK-based e-commerce company aims to improve customer support with an AI-powere
 
 By implementing AI-powered automation, the company improved customer satisfaction, reduced workload, and delivered instant service.
 
+---
+
+# Identifying opportunities for AI in data products
+
+# Key Factors in Identifying AI Opportunities
+
+Identifying the right opportunities for AI integration in data products is crucial for maximising its potential. This section explores the key factors that determine the suitability and success of AI in various business contexts. By understanding the business problem, ensuring the availability and quality of data, and selecting the appropriate AI techniques, organisations can effectively leverage AI to drive innovation and efficiency.
+
+---
+
+## 1. Business Problem Suitability
+
+AI works best in data-rich environments where historical patterns can be used to make predictions, automate tasks, or personalise experiences.
+
+**Examples of AI-driven business problems include:**
+
+- **Retail:** Personalised recommendations based on customer behaviour  
+- **Finance:** Detecting fraudulent transactions in banking  
+- **Healthcare:** Predicting disease risks based on patient history  
+
+**Key questions to ask:**
+
+- Does the problem involve patterns, predictions, or classification?  
+- Would automation improve efficiency or decision-making?
+
+---
+
+## 2. Availability and Data Quality
+
+AI models require large volumes of high-quality data for training and accuracy. Several factors influence AI feasibility:
+
+| **Factor**      | **Why It Matters** |
+|-----------------|--------------------|
+| **Data volume** | AI performs better with large datasets for training. |
+| **Data quality** | Inaccurate or biased data leads to poor model performance. |
+| **Data diversity** | More diverse data reduces bias and improves generalisation. |
+
+**Key questions to ask:**
+
+- Is there enough data to train an accurate AI model?  
+- Is the data structured, clean, and representative of real-world cases?
+
+---
+
+## 3. AI Technique Fit
+
+Different AI techniques solve different kinds of problems.
+
+| **AI Technique** | **Best Use Case** | **Example** |
+|------------------|-------------------|-------------|
+| Predictive Analytics | Forecasting trends | Demand forecasting in retail |
+| Natural Language Processing (NLP) | Text-based AI tasks | Chatbots, sentiment analysis |
+| Computer Vision | Image/video analysis | Object detection in self-driving cars |
+| Reinforcement Learning | Learning from trial and error | AI-powered robotics |
+
+**Key question to ask:**
+
+- What AI technique best matches the business goal?
+
+---
+
+## Example Scenario: AI-Powered Inventory Management for an E-Commerce Business
+
+A UK-based e-commerce company struggles with overstocking and understocking, leading to wasted resources and lost sales.
+
+### Challenges Identified
+
+| **Challenge** | **AI Solution** |
+|--------------|------------------|
+| Overstocking leads to excess storage costs | Predictive AI forecasts demand |
+| Understocking causes lost sales | AI recommends optimal restocking times |
+| Manual stock management is inefficient | AI automates inventory adjustments |
+
+### AI Implementation Steps
+
+1. **Data Collection:** Sales history, seasonality trends, supplier delivery times  
+2. **Model Training:** AI learns patterns in customer demand fluctuations  
+3. **Deployment:** AI-powered system automatically adjusts stock orders  
+4. **Monitoring & Optimisation:** Performance is reviewed and fine-tuned  
+
+### The Outcome
+
+| **Metric** | **Before AI** | **After AI** | **Target** | **Status** |
+|-----------|---------------|--------------|------------|------------|
+| Overstocking rates | 20% | 5% | Below 10% | ✔ Achieved |
+| Lost sales due to stockouts | 15% | 3% | Below 5% | ✔ Achieved |
+| Inventory cost savings | £50K per year | £120K per year | £100K+ | ✔ Achieved |
+
+By integrating AI-powered demand forecasting, the company improved stock management, reduced waste, and optimised sales potential.
+
+---
+
 
 
 
