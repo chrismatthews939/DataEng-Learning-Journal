@@ -558,31 +558,6 @@ By integrating AI into loan approvals, the bank improved efficiency, fairness, a
 
 ---
 
-# Evaluating the performance and impact of AI features
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # Building and deploying an AI-enabled data products
 
 Building an AI-enabled data product involves integrating machine learning models into a scalable system, ensuring real-time data processing, and deploying the AI model in a way that meets business and user needs. The process requires collaboration between data scientists, engineers, and product managers to ensure the AI model is not just accurate, but also usable, maintainable, and valuable.
@@ -845,3 +820,116 @@ A UK-based retail company uses an AI model to forecast product demand. Over time
 By continuously monitoring and retraining the AI model, the company significantly improved forecast accuracy and inventory management, reducing both stock shortages and excess inventory.
 
 ---
+
+# Evaluating the performance and impact of AI features
+
+Once an AI feature is deployed, it must be evaluated continuously to ensure it provides accurate, fair, and useful insights. Evaluation involves tracking key performance metrics, assessing user impact, and refining the AI system based on real-world feedback. A strong evaluation framework ensures AI delivers business value, meets user expectations, and operates ethically.
+
+# Key Methods for Evaluating AI Performance
+
+To ensure AI systems are effective and reliable, it's crucial to evaluate their performance using a variety of metrics and methods. This section outlines the key approaches to assessing AI models, their business impact, and ethical considerations. By systematically evaluating these aspects, we can ensure AI delivers accurate, efficient, and fair outcomes.
+
+## Overview
+Key methods for evaluating AI performance include:
+- Performance metrics  
+- Evaluating AI’s business and user impact  
+- Ethical considerations: fairness, bias, and explainability  
+
+---
+
+# 1. Performance Metrics for AI Models
+
+AI models should be assessed based on accuracy, efficiency, and reliability.
+
+### Common AI Performance Metrics
+
+| **Metric**        | **Description**                                  | **Example Use Case** |
+|-------------------|--------------------------------------------------|-----------------------|
+| Accuracy          | Measures how often AI predictions are correct    | Fraud detection AI correctly identifies 98% of fraudulent transactions |
+| Precision & Recall| Balances false positives vs. false negatives     | Medical AI must avoid misdiagnosing serious illnesses |
+| F1 Score          | Combines precision & recall into one score       | AI model used for chatbot response accuracy |
+| Model Latency     | Measures how fast the model returns predictions  | Stock trading AI must respond in milliseconds |
+
+### Best Practices
+- Define acceptable accuracy thresholds before deployment.  
+- Use precision–recall tradeoffs depending on the use case (e.g., fraud detection vs. medical AI).
+
+### Key Questions to Ask
+- Does the AI model perform accurately and efficiently in real-world conditions?
+
+---
+
+# 2. Evaluating AI’s Business and User Impact
+
+AI success isn’t just about technical performance — it must also create real business value.
+
+### Business Impact Metrics
+
+| **Impact Area**        | **How It’s Measured**               | **Example** |
+|------------------------|--------------------------------------|-------------|
+| Revenue Growth         | Increase in profits due to automation| AI-powered dynamic pricing boosts e-commerce sales |
+| Customer Satisfaction  | Net Promoter Score (NPS), surveys    | AI chatbots improve customer service response times |
+| Operational Efficiency | Cost savings & process automation    | AI reduces manual data processing time in HR |
+
+### Best Practices
+- Compare pre-AI and post-AI performance to measure effectiveness.  
+- Track user feedback & adoption rates to gauge AI usability.
+
+### Key Questions to Ask
+- Has AI improved efficiency, accuracy, or customer experience?
+
+---
+
+# 3. Ethical Considerations: Fairness, Bias, and Explainability
+
+AI models should be fair, unbiased, and interpretable to users and stakeholders.
+
+### Ethical AI Evaluation Checklist
+
+| **Factor**       | **Why It Matters**                           | **Example** |
+|------------------|-----------------------------------------------|-------------|
+| Bias Detection   | Prevents unfair discrimination in decisions   | A hiring AI should not favour one gender over another |
+| Explainability   | Ensures users understand AI decisions         | A bank’s AI loan system provides reasons for approvals/rejections |
+| Transparency     | Avoids “black box” decision-making            | AI credit scoring explains how factors impact scores |
+
+### Best Practices
+- Use bias detection tools (e.g., IBM AI Fairness 360).  
+- Provide human-readable explanations for AI predictions.
+
+### Key Questions to Ask
+- Can the AI explain its decisions in a fair and understandable way?
+
+---
+
+# Example Scenario: AI-Powered Resume Screening
+
+A UK-based recruitment agency deploys an AI-powered resume screening tool to automatically shortlist candidates.
+
+## Challenges Identified
+
+| **Challenge**                                   | **AI Solution**                                      |
+|-------------------------------------------------|-------------------------------------------------------|
+| HR teams spend too much time reviewing resumes  | AI ranks candidates based on job relevance            |
+| Risk of bias in hiring decisions                | AI fairness checks ensure diverse selections          |
+| AI decisions lack transparency                  | AI provides explanations for hiring recommendations   |
+
+## AI Feature Evaluation Steps
+
+1. **Performance Testing:** The AI’s resume-matching accuracy is compared against human recruiters.  
+2. **Bias Assessment:** Selection rates are analysed across demographics.  
+3. **User Adoption:** Recruiters provide feedback on AI usability and trustworthiness.
+
+## Outcome
+
+| **Metric**                 | **Before AI** | **After AI** | **Target**             | **Status**   |
+|---------------------------|--------------|--------------|------------------------|--------------|
+| Time spent per resume     | 5 minutes    | 30 seconds   | Below 1 minute         | Achieved     |
+| Hiring bias detected      | High         | Low          | No significant bias    | Achieved     |
+| Recruiter trust in AI     | 50%          | 85%          | Above 80%              | Achieved     |
+
+By continuously evaluating and refining the AI-powered hiring tool, the company reduced bias, improved efficiency, and enhanced recruiter trust in AI-based decisions.
+
+---
+
+
+
