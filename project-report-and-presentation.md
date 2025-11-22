@@ -154,6 +154,73 @@ I can use stuff from my portfolio exercises as these are not send to the assesso
 
 For a professional document (750 words) explaining how someone might demonstrate regulatory compliance in a data stewarding role give some industry best practice examples of security standards, ethics and procedures, actions and outcomes and governance applied 
 
+---
+
+# CDP Delivery for EPA Project Report
+
+CDP Project is current and covers the below 
+
+a specific problem
+a recurring issue
+an idea or opportunity
+
+an executive summary (or abstract)
+an introduction
+the scope of the project (including key performance indicators, aims and objectives)
+a project plan
+research outcomes
+data product outcomes
+project outcomes
+discussion of findings
+recommendations and conclusions
+references
+appendix containing mapping of KSBs to the report.
 
 
+
+
+
+
+# CDP Presentation 
+
+20mins and will have 30mins of questions
+
+The presentation should cover:
+
+an overview of the project
+the project scope (including key performance indicators)
+summary of actions undertaken by the apprentice
+project outcomes and how these were achieved
+The presentation with questions must last 50 minutes. This will typically include a presentation of 20 minutes and questioning lasting 30 minutes. The independent assessor must use the full time available for questioning. The independent assessor can increase the time of the presentation and questioning by up to 10%. This time is to allow the apprentice to complete their last point or respond to a question if necessary.
+
+The independent assessor must ask at least 6 questions. They must use the questions from the EPAO’s question bank or create their own questions in line with the EPAO’s training. Follow up questions are allowed where clarification is required.
+
+The purpose of the independent assessor's questions is:
+
+to verify that the activity was completed by the apprentice
+to seek clarification where required
+to assess those KSBs that the apprentice did not have the opportunity to demonstrate with the report, although these should be kept to a minimum
+to assess level of competence against the grading descriptors
+The apprentice must submit any presentation materials to the EPAO at the same time as the report - by the end of week 10 of the EPA period. The apprentice must notify the EPAO, at that point, of any technical requirements for the presentation.
+
+During the presentation, the apprentice must have access to:
+
+audio-visual presentation equipment
+flip chart and writing and drawing materials
+computer
+The independent assessor must have at least 2 weeks to review the project report and any presentation materials, to allow them to prepare questions.
+
+The apprentice must be given at least 2 weeks’ notice of the presentation with questions.
+
+
+
+# Questions
+
+The EPAO will ask ten questions, two for each of the themes:
+
+Data quality and performance
+Problem solving
+Regulatory Compliance
+Continuous Improvement
+Continuous professional development - easy points if i have a good answer from portfolio 5
 
