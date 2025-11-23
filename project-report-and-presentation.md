@@ -159,6 +159,11 @@ For a professional document (750 words) explaining how someone might demonstrate
 # CDP Delivery for EPA Project Report
 
 CDP Project is current and covers the below 
+hybrid coanonical semantic layer 
+focused on core strategic functions if the business 
+revenue table as data product example
+split into seperate procs for each platform 
+best of both with easier fixes/enhancements and common consumption output
 
 a specific problem
 a recurring issue
