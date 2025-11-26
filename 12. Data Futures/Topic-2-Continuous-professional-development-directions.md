@@ -236,6 +236,91 @@ In a world of remote work and online events, digital presence matters. Key tips:
 
 ---
 
+# Why Trend Awareness Matters
+
+The world of data engineering never stands still. New technologies, methods, and expectations emerge constantly — and professionals who stay informed are better able to:
+
+- **Make strategic career choices**
+- **Recommend modern solutions at work**
+- **Avoid becoming outdated or redundant**
+
+Trend awareness is not just about knowing what’s “cool” — it’s about understanding what’s changing, why it matters, and how it may affect your role, your team, and your industry.
+
+---
+
+## What Counts as a Trend?
+
+Not every new tool or buzzword deserves your attention. Useful trends often fall into these categories:
+
+| **Trend Type**                 | **Examples** |
+|-------------------------------|--------------|
+| **Technology Shifts**         | Adoption of DataOps, rise of data mesh, serverless data lakes |
+| **Architectural Patterns**    | Event-driven design, real-time analytics, decentralised pipelines |
+| **Tool and Platform Evolution** | Growth of dbt, Apache Iceberg, or new managed cloud services |
+| **Workplace Expectations**    | Agile data teams, citizen data engineers, embedded analytics |
+| **Regulatory and Ethical Change** | Data privacy laws (e.g. GDPR), growing pressure for transparency |
+
+**The key is to filter for relevance, maturity, and business impact.**
+
+---
+
+## Where to Find Reliable Trend Information
+
+Not all sources are equal. Focus on credible, industry-respected channels.
+
+| **Source Type**          | **Examples** |
+|--------------------------|-------------|
+| **Technology Reports**   | Gartner Hype Cycle, McKinsey Tech Trends, Thoughtworks Radar |
+| **Professional Platforms** | LinkedIn, Stack Overflow, Medium blogs from experts |
+| **Communities and Forums** | DataTalksClub, Reddit r/dataengineering, community Slacks |
+| **Events and Conferences** | Big Data LDN, AWS re:Invent, Snowflake Summit |
+| **Vendors and Platforms** | Google Cloud, Azure, Databricks blogs |
+| **Open Source Projects** | GitHub releases, contributor blogs, changelogs |
+
+> **Tip:** Don’t just skim headlines — read case studies, post-implementation writeups, and user feedback.
+
+---
+
+## Practical Method: Trend Scanning in Three Steps
+
+In a fast-evolving technological landscape, staying ahead means more than just reacting to change — it requires actively scanning for emerging trends that could shape your domain.  
+This method offers a simple, repeatable approach.
+
+### 1. Pick a domain relevant to your role
+Examples: data modelling, orchestration, governance, machine learning pipelines.
+
+### 2. Compare sources
+Ask yourself: Are the same tools, methods, or patterns being discussed across different sources?
+
+### 3. Summarise in 2–3 bullet points
+- **What the trend is**
+- **Why it matters**
+- **Whether it’s ready for use or still emerging**
+
+---
+
+## Apply Activity: Trend Scan Starter
+
+Pick one of the following themes and do a 5-minute scan using a trusted source (e.g., Thoughtworks Radar, Medium, or LinkedIn):
+
+- Real-time data streaming  
+- DataOps and observability  
+- Responsible or ethical AI  
+- Data mesh  
+- AI-based data quality monitoring  
+- Data contracts
+
+Then summarise your findings:
+
+- **What’s the trend?**
+- **Is it gaining traction?**
+- **Could it affect your current or future role?**
+
+---
+
+# Engaging with appropriate professional development activities
+
+
 # Emerging technologies and industry trends
 
 
