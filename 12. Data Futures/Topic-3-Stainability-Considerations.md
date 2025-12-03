@@ -298,5 +298,78 @@ Now it’s your turn to put sustainable thinking into practice. In this activity
 
 >"Corporate Social Responsibility (CSR) is no longer just a line in a company’s annual report - it’s a strategic priority. From climate action to digital inclusion, organisations are being held accountable for how they impact the world. And technology is at the heart of that transformation. In this lesson, we’ll explore how data systems, cloud platforms, and ethical design choices empower companies to meet their CSR goals - and how you, as a data engineer, can be part of that impact."
 
+# What is CSR and why does it matter in technology?
+
+**Corporate Social Responsibility (CSR)** refers to an organisation’s commitment to operate ethically and sustainably, balancing profit with social and environmental responsibility. Key CSR pillars include the following:
+
+- **Environmental sustainability**
+- **Ethical governance and compliance**
+- **Diversity, equity, and inclusion**
+- **Community engagement and digital access**
+
+Technology enables and strengthens CSR efforts by:
+
+- Providing tools to measure and report impact
+- Enabling more efficient, ethical, and inclusive services
+- Reducing the environmental footprint of operations through data-driven optimisations
+
+---
+
+## How technology supports CSR
+
+In this section, we’ll explore how different areas of CSR are powered by smart, ethical, and sustainable technology choices — and how your work as a data professional contributes to that mission.
+
+### CSR Focus Areas and Technology Contributions
+
+| **CSR Focus Area**            | **How Technology Contributes**                                                                                 |
+|------------------------------|-----------------------------------------------------------------------------------------------------------------|
+| Environmental Sustainability | Enables emissions tracking, energy monitoring, and optimisation (e.g., cloud dashboards, smart sensors)        |
+| Ethics and Transparency      | Auditable systems support fair data use, AI accountability, and digital trust                                  |
+| Community & Inclusion        | Builds accessible tools, inclusive platforms, and community learning services                                  |
+| Digital Responsibility       | Guides responsible AI use, carbon-aware compute, and software efficiency                                       |
+
+### In the context of data engineering, your contributions might include:
+
+- Structuring data for accurate sustainability reporting
+- Enabling fair, ethical processing in AI pipelines
+- Choosing designs that reduce energy use and data waste
+
+---
+
+## Case Study Examples
+
+### Case Study 1: Microsoft — Data and Cloud for CSR
+
+Microsoft’s CSR strategy is deeply embedded in its technology platforms.  
+The **Microsoft Cloud for Sustainability** provides real-time emissions monitoring and goal tracking for customers.
+
+> *Image source: techxmedia.com*
+
+Microsoft aims to be carbon negative by **2030** and has committed to removing all historical emissions by **2050**.  
+The role of technology in this aim includes the following:
+
+- Emissions dashboards
+- AI-powered sustainability analytics
+- Open environmental data platforms
+
+---
+
+### Case Study 2: Google — Towards 24/7 Carbon-Free Energy
+
+Google is working toward running all data centres and offices on **24/7 carbon-free energy by 2030**.
+
+> *Image source: devoteam.com*
+
+To achieve this, Google uses advanced AI models, real-time energy data, and carbon-aware scheduling to shift workloads to times and locations where the grid is cleanest.  
+The role of technology in this initiative includes:
+
+- Real-time carbon-aware workload scheduling
+- Grid carbon data integration
+- Forecasting clean energy availability
+
+---
+
+# Strategies for Aligning Technology Practices
+
 
 
