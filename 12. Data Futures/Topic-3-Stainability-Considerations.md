@@ -371,5 +371,112 @@ The role of technology in this initiative includes:
 
 # Strategies for Aligning Technology Practices
 
+>"Sustainability isn’t just a corporate goal - it’s a shared responsibility. As organisations commit to net-zero targets and Environmental, Social, and Governance (ESG) improvements, the role of technology becomes critical. But alignment doesn’t happen by accident. It requires intentional strategies that connect day-to-day engineering decisions with long-term environmental goals. In this lesson, we’ll explore how your technical choices - from system design to vendor selection - can directly support your organisation’s sustainability mission."
+
+# Why alignment matters
+
+Many organisations now set explicit sustainability goals — such as **net-zero targets**, **carbon reduction timelines**, or **ESG (Environmental, Social, Governance) score improvements**.  
+To achieve these, technology teams must do more than optimise operations — they must ensure that:
+
+- Technical practices support business-level sustainability goals
+- Engineering decisions are made with emissions and impact in mind
+- IT and data systems are regularly reviewed for carbon, energy, and resource efficiency
+
+When alignment is strong, sustainability becomes a shared responsibility across roles — including yours as a data engineer.
+
+---
+
+## Common organisational sustainability goals
+
+Organisations often focus on:
+
+- **Carbon reduction** (absolute or per-transaction)
+- **Renewable energy use** (e.g., 100% by 2030)
+- **Digital circularity** (extending hardware life, reducing digital waste)
+- **Sustainable procurement** (green cloud, low-impact vendors)
+- **Regulatory compliance** (e.g., SECR, TCFD, CSRD)
+
+Your technology practices must be designed to contribute to these targets — not conflict with them.
+
+---
+
+## Strategies for aligning technology with sustainability
+
+The following strategies should be reviewed regularly and embedded in governance, design reviews, and development cycles:
+
+| Strategy | Description and application |
+|--------|--------|
+| **Use sustainability frameworks** | Apply AWS/Azure Sustainability Pillars or GSF principles to guide decisions |
+| **Track environmental KPIs** | Integrate energy and emissions metrics into observability dashboards |
+| **Optimise data systems** | Design efficient pipelines and storage to reduce emissions and cost |
+| **Engage in green procurement** | Choose cloud services, hardware, and vendors with strong sustainability credentials |
+| **Collaborate across departments** | Work with ESG, finance, and compliance teams to align on shared sustainability goals |
+| **Prioritise high-impact changes** | Focus efforts where emissions, cost, or visibility are highest (e.g., batch jobs, data storage) |
+
+---
+
+## Framework use in practice
+
+Let’s revisit the **AWS Sustainability Pillar**.  
+It can help align technical activities with sustainability goals by prompting questions such as:
+
+- Are we deploying in low-carbon regions?
+- Are we using just-in-time compute instead of idle capacity?
+- Are our workloads monitored and optimised over time?
+- Have we set clear sustainability objectives during system design?
+
+Answering these questions regularly ensures that technology projects contribute to broader environmental goals, rather than undermining them.
+
+---
+
+# Apply to your own workplace: Aligning tech with sustainability goals
+
+Think about your own organisation (or the one where you’re placed as an apprentice).  
+Whether or not it has published formal sustainability targets, many companies now have internal initiatives linked to **ESG**, **carbon reduction**, or **operational efficiency**.
+
+Scroll down to find out more.
+
+---
+
+## Step 1 — Identify a sustainability goal
+
+Choose a sustainability-related objective that is relevant to your workplace. It might be:
+
+- Reducing electricity or cloud spend
+- Minimising digital waste
+- Reporting on energy use or carbon emissions
+- Migrating systems to more efficient infrastructure
+- Supporting a net-zero or green IT strategy
+
+If you’re unsure, ask your manager, check your company’s website, or refer to internal policies.
+
+---
+
+## Step 2 — Consider how technology can support it
+
+As a data engineer or technical team member:
+
+- What current technology practices could be improved?
+- Where could data, automation, or optimisation support the goal?
+- How could sustainability be embedded into design or delivery cycles?
+
+**List 3 specific actions that would help align your team’s work with this goal.**
+
+---
+
+## Step 3 — Reflect
+
+In your learning journal or portfolio:
+
+- Explain how each action supports the wider sustainability goal
+- Identify any potential blockers or trade-offs (e.g., cost, technical limitations, competing priorities)
+- Note who else in the organisation you would need to collaborate with (e.g., IT operations, compliance, ESG, finance)
+
+---
+
+# Exploring Successful Sustainability Initiatives
+
+
+
 
 
