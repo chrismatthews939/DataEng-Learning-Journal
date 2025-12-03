@@ -476,6 +476,84 @@ In your learning journal or portfolio:
 
 # Exploring Successful Sustainability Initiatives
 
+>"Sustainability in tech isn’t just a theory - it’s already happening. Around the world, leading organisations are using data, cloud platforms, and smart design to reduce their environmental impact and drive meaningful change. In this lesson, you’ll explore real-world case studies from Microsoft and Google to see how sustainability strategies are being put into action - and how you can apply similar thinking in your own work."
+
+# Why Case Studies Matter
+
+Case studies show how real organisations have addressed sustainability challenges and implemented solutions that combine technical innovation with measurable impact.
+
+For data engineers, they offer:
+
+- Practical examples of how data and systems can support CSR goals  
+- Insights into decision-making, tooling, and architecture  
+- Opportunities to apply or adapt solutions in your own work context  
+
+---
+
+## What Makes a Sustainability Initiative “Successful”?
+
+Effective initiatives typically demonstrate the following:
+
+| **Success Factor**             | **Example Indicators**                                      |
+|------------------------------|--------------------------------------------------------------|
+| Measurable environmental impact | Reduction in emissions, energy use, or waste               |
+| Strategic alignment          | Supports ESG goals or regulatory compliance                  |
+| Cross-team collaboration     | Involves ESG, engineering, data, and business stakeholders   |
+| Scalability                  | Designed to grow with the organisation or shared externally  |
+| Transparency                 | Public reporting, open tools, or shared lessons              |
+
+---
+
+## Case Study Example 1: Microsoft – Cloud for Sustainability
+
+Microsoft developed the **Microsoft Cloud for Sustainability**, a platform that enables organisations to record, report, and reduce their environmental impact using integrated data services.
+
+### Key Components
+
+- Prebuilt data connectors for emissions tracking  
+- Emissions Impact Dashboard with real-time visualisation  
+- Data models aligned with ESG and sustainability standards  
+- Integration with Power BI, Azure, and third-party tools  
+
+### Results
+
+- Customers can automate sustainability reporting and decision-making  
+- Supports global ESG compliance (e.g., GHG Protocol, CDP)  
+- Internal use at Microsoft helps track their progress toward carbon negative by 2030  
+
+### Transferable Lessons
+
+- A data-first approach is critical to sustainability strategy  
+- Building reusable data models and APIs enables consistent reporting  
+- Sustainability can be a platform, not just a project  
+
+**Reference:**  
+Microsoft. (n.d.). *Microsoft Cloud for Sustainability.*  
+Available at: https://www.microsoft.com/en-us/sustainability/cloud
+
+---
+
+## Case Study Example 2: Google – Carbon-Aware Computing
+
+Google’s **carbon-aware computing** strategy shifts workloads based on the carbon intensity of the energy grid — both geographically and temporally.
+
+### Key Strategies
+
+- Schedule compute jobs (e.g., ML training) during low-carbon hours  
+- Move workloads to regions with higher renewable energy availability  
+- Use carbon intensity data from electricity providers  
+
+### Results
+
+- Avoided significant carbon emissions without compromising performance  
+- Open-sourced tools and methodologies to share impact  
+- Reinforced Google’s goal of 24/7 carbon-free energy by 2030  
+
+### Transferable Lessons
+
+- **When and where you run data jobs matters**  
+- **Real-time data and intelligent automation can reduce emissions**  
+- **Open sharing accelerates industry-wide progress**
 
 
 
