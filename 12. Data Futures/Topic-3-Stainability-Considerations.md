@@ -220,6 +220,83 @@ Example: _“Minimise storage footprint and reduce emissions from idle compute.�
 
 # Sustainability Principles in Data Management and Storage
 
+>"Every byte we store has a cost - not just in cloud bills, but in carbon. As data engineers, we often focus on performance and availability, but rarely stop to ask: do we really need to keep all this data, and at what environmental price? In this lesson, we’ll explore how smart data management - from compression to lifecycle policies - can dramatically reduce our digital footprint. Because sustainable systems start with sustainable storage."
+
+# Why does data management matter for sustainability?
+
+Data management decisions can have a long-term environmental impact. As a data engineer, your choices regarding the following can significantly affect energy use, carbon emissions, and cost:
+
+- **What data is kept**
+- **How it’s stored**
+- **How often it’s accessed or moved**
+
+According to the **AWS Sustainability Pillar**, reducing unnecessary data storage and applying lifecycle rules are among the most effective ways to improve sustainability in digital systems.
+
+---
+
+## Common sustainability pitfalls in data storage
+
+In this section, we’ll uncover the hidden habits that inflate your carbon footprint — and explore how smarter storage decisions can lead to greener, leaner systems.
+
+| Practice | Sustainability Issue |
+|--------|----------------------|
+| Keeping all raw data indefinitely | High storage cost and unnecessary emissions |
+| Using inefficient file formats | Increases scan time and storage space |
+| Duplicated datasets | Multiplies storage and compute load |
+| No archiving policy | Causes “data hoarding” and unmanaged growth |
+| Defaulting to hot storage tiers | Wastes energy for rarely accessed data |
+
+As noted by **Seagate**, using compression and tiered storage can reduce environmental impact while lowering operational costs.
+
+---
+
+## Applying sustainability principles to data management
+
+Practical strategies aligned with leading frameworks include:
+
+| Sustainability Action | What It Involves |
+|----------------------|------------------|
+| **Data minimisation** | Store only what’s necessary. Remove low-value or expired data. |
+| **Compression & file optimisation** | Use Parquet or ORC formats and apply gzip or Snappy compression. |
+| **Lifecycle automation** | Apply deletion or archiving rules using tools like S3 Lifecycle or Azure Blob policies. |
+| **Storage tiering** | Move cold or infrequently accessed data to archival tiers (e.g., Glacier). |
+| **Partitioning & pruning** | Reduce scan times by partitioning tables (e.g., by date or region). |
+| **Audit and review** | Use tools to periodically identify stale or unused datasets. |
+
+These strategies are supported by guidance from **DATAVERSITY** and **Reply**, which emphasise automated lifecycle management and format optimisation as critical levers for greener data systems.
+
+---
+
+## A real-world example
+
+**Scenario:**  
+Your organisation stores five years of clickstream logs (~60 TB) in uncompressed JSON format with no retention or archiving policy. You could apply the following sustainable practices:
+
+- Convert to **Parquet** and apply **gzip** compression
+- Partition data by **month and region**
+- Archive data older than **6 months** using **Glacier**
+- Introduce **S3 lifecycle rules** to delete stale logs
+
+As shown in the **AWS Sustainability Pillar**, these changes can cut storage costs, reduce compute emissions, and improve system responsiveness.
+
+---
+
+## Micro-activity: Review and improve
+
+Now it’s your turn to put sustainable thinking into practice. In this activity, you’ll examine a real-world storage setup and identify practical ways to reduce its environmental impact.
+
+**Storage setup:**
+
+- 5 years of sensor logs stored in CSV  
+- No compression or partitioning  
+- No data ever deleted or archived  
+- Full dataset scanned weekly
+
+---
+
+# Introduction to Corporate Social Responsibility
+
+>"Corporate Social Responsibility (CSR) is no longer just a line in a company’s annual report - it’s a strategic priority. From climate action to digital inclusion, organisations are being held accountable for how they impact the world. And technology is at the heart of that transformation. In this lesson, we’ll explore how data systems, cloud platforms, and ethical design choices empower companies to meet their CSR goals - and how you, as a data engineer, can be part of that impact."
 
 
 
