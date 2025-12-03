@@ -96,6 +96,130 @@ Carbon factor = 0.0004 kg CO₂ per unit per hour
 
 # Designing Sustainable and Energy-Efficient Technology Systems
 
+> "Every system we design leaves a legacy - not just in code, but in carbon. As data engineers, we often focus on performance, scalability, and cost. But what if sustainability became a core design metric too? In this lesson, we’ll explore how the choices you make at the architecture stage - from storage formats to compute strategies - can significantly reduce environmental impact. Because designing for sustainability isn’t just good practice - it’s smart engineering."
+
+# Why does sustainable design matter?
+
+Design decisions in data systems have long-term environmental consequences. Inefficient pipelines, excessive storage, and poor scheduling can lead to:
+
+- **High energy use and carbon emissions**
+- **Increased cloud costs and infrastructure strain**
+- **Reputational and compliance risks as ESG standards rise**
+
+As a data engineer, you are in a position to design for sustainability from the outset, not just optimise later.
+
+---
+
+## Guiding framework: AWS Well-Architected Sustainability Pillar
+
+The AWS Sustainability Pillar provides a widely used, cloud-native framework to design low-impact, high-efficiency systems. While AWS-specific in origin, its principles are broadly applicable across platforms.
+
+### Summary of core principles
+
+| Principle | Description |
+|---------|------------|
+| Understand your impact | Track carbon and energy usage (e.g., with dashboards or usage estimates) |
+| Set sustainability goals | Align workload decisions with ESG or organisational targets |
+| Maximise utilisation | Use auto-scaling, serverless, and spot instances to avoid overprovisioning |
+| Optimise data storage | Apply compression, partitioning, and lifecycle policies |
+| Use energy-efficient regions | Choose cloud regions powered by renewables |
+| Optimise over time | Continuously monitor and improve workloads based on usage and emissions |
+| Reduce downstream impact | Avoid passing inefficiency to consumers or downstream systems |
+
+These principles are designed to be practical, measurable, and evolving — ideal for use in both SME and enterprise environments.
+
+---
+
+## Applying the AWS Sustainability Pillar to data engineering scenarios
+
+Let’s walk through how a data engineer might apply the AWS Sustainability Pillar when designing a real system.
+
+### Scenario
+
+You’re designing a data platform to collect and analyse sensor data from IoT devices across the UK. The platform receives streaming data, stores historical logs, and supports weekly reporting to stakeholders.
+
+Below is a step-by-step example of how to apply the sustainability pillar to this scenario:
+
+---
+
+### Pillar principle 1 — **Understand your impact**
+Review estimated data volumes, storage size, and expected compute cycles.  
+Use AWS Cost Explorer or Green House Gas (GHG) proxies to estimate emissions.
+
+### Pillar principle 2 — **Set sustainability goals**
+Agree upfront that storage will be limited to 90 days and compute tasks should remain under a fixed carbon threshold.
+
+### Pillar principle 3 — **Maximise utilisation**
+Use AWS Lambda or Glue with auto-scaling for ingestion and aggregation to avoid running idle VMs.
+
+### Pillar principle 4 — **Optimise storage and transfer**
+Store data in compressed, partitioned Parquet format.  
+Set up Amazon S3 lifecycle rules to move old data to Glacier.
+
+### Pillar principle 5 — **Use energy-efficient regions**
+Choose a region with high renewable energy usage (e.g., AWS Ireland) unless latency is critical.
+
+### Pillar principle 6 — **Optimise over time**
+Implement weekly monitoring of compute and storage usage.  
+Set review milestones to improve job logic or eliminate redundancies.
+
+### Pillar principle 7 — **Reduce downstream impact**
+Avoid generating bloated reports or unnecessary intermediate files.  
+Deliver only what is needed to end users.
+
+---
+
+## Summary
+
+The Sustainability Pillar isn’t a checklist — it’s a thinking tool that prompts you to ask better questions about compute, storage, data flow, and operational impact.
+
+By using the framework during system planning, you can make design decisions that are cost-effective, efficient, and environmentally responsible.
+
+---
+
+# Apply activity: Apply the AWS pillar — Structured process
+
+Use this step-by-step process to apply the AWS Sustainability Pillar to a design choice.
+
+### The scenario
+
+You are designing a weekly reporting pipeline that processes 2 TB of sales data for executive dashboards.  
+You have two possible system configurations:
+
+---
+
+## Decision point
+
+| Component | Option A (less sustainable) | Option B (more sustainable) |
+|---------|-----------------------------|------------------------------|
+| Storage format | CSV in S3 (no compression) | Parquet with gzip compression |
+| Compute setup | Always-on EC2 VMs | Auto-scaling serverless compute (e.g., Lambda + Glue) |
+| Deployment region | Closest AWS region (no carbon consideration) | Region with 75% renewable energy (e.g., AWS Ireland) |
+
+---
+
+## Step-by-step instructions
+
+### Step 1 — **Define Your Sustainability Goal**
+Example: _“Minimise storage footprint and reduce emissions from idle compute.”_
+
+### Step 2 — **Compare Options Using Pillar Principles**
+
+| Pillar Principle | Which option supports it? | Why? |
+|-----------------|---------------------------|-----|
+| Maximise Utilisation | Option B | Auto-scaling reduces idle compute |
+| Optimise Storage & Transfer | Option B | Parquet + gzip compresses data and enables efficient querying |
+| Use Energy-Efficient Regions | Option B | Renewable-powered region lowers carbon intensity |
+
+### Step 3 — **Identify Trade-Offs**
+
+- Will Option B cost more in setup time or require new skills?
+- Is there a business reason for keeping workloads in the original region?
+
+---
+
+# Sustainability Principles in Data Management and Storage
+
 
 
 
